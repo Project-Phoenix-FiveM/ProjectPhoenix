@@ -137,16 +137,20 @@ end)
 CreateThread(function()
     while true do
         local ped = PlayerPedId()
-        if IsPedArmed(ped, 7) == 1 and (IsControlJustReleased(0, 24) or IsDisabledControlJustReleased(0, 24)) then
+        local idle = 1
+        if (IsPedArmed(ped, 7) == 1 and (IsControlJustReleased(0, 24) or IsDisabledControlJustReleased(0, 24))) or IsPedShooting(PlayerPedId()) then
             local weapon = GetSelectedPedWeapon(ped)
             local ammo = GetAmmoInPedWeapon(ped, weapon)
+            if weapon == GetHashKey("WEAPON_PETROLCAN")  then
+                idle = 1000
+            end
             TriggerServerEvent("weapons:server:UpdateWeaponAmmo", CurrentWeaponData, tonumber(ammo))
             if MultiplierAmount > 0 then
                 TriggerServerEvent("weapons:server:UpdateWeaponQuality", CurrentWeaponData, MultiplierAmount)
                 MultiplierAmount = 0
             end
         end
-        Wait(0)
+        Wait(idle)
     end
 end)
 

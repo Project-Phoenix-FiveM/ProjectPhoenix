@@ -456,7 +456,7 @@ RegisterNetEvent('qb-garbagejob:client:RequestRoute', function()
                             garbageVehicle = veh
                             SetVehicleNumberPlateText(veh, "QB-" .. tostring(math.random(1000, 9999)))
                             SetEntityHeading(veh, v.w)
-                            exports['LegacyFuel']:SetFuel(veh, 100.0)
+                            exports['ps-fuel']:SetFuel(veh, 100.0)
                             SetVehicleFixed(veh)
                             SetEntityAsMissionEntity(veh, true, true)
                             SetVehicleDoorsLocked(veh, 2)

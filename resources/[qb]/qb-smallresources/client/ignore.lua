@@ -69,29 +69,26 @@ if Config.IdleCamera then --Disable Idle Cinamatic Cam
     DisableIdleCamera(true)
 end
 
-RegisterNetEvent('QBCore:Client:DrawWeapon', function()
-    local sleep
+Citizen.CreateThread(function()
     while true do
-        sleep = 500
         local ped = PlayerPedId()
         local weapon = GetSelectedPedWeapon(ped)
-        if weapon ~= `WEAPON_UNARMED` then
-            if IsPedArmed(ped, 6) then
-                sleep = 0
-                DisableControlAction(1, 140, true)
-                DisableControlAction(1, 141, true)
-                DisableControlAction(1, 142, true)
-            end
+		if weapon ~= GetHashKey("WEAPON_UNARMED") then
+			if IsPedArmed(ped, 6) then
+				DisableControlAction(1, 140, true)
+				DisableControlAction(1, 141, true)
+				DisableControlAction(1, 142, true)
+			end
 
-            if weapon == `WEAPON_FIREEXTINGUISHER` or weapon == `WEAPON_PETROLCAN` then
-                if IsPedShooting(ped) then
-                    SetPedInfiniteAmmo(ped, true, weapon)
-                end
-            end
-        else
-            break
-        end
-        Wait(sleep)
+			if weapon == GetHashKey("WEAPON_FIREEXTINGUISHER")then
+				if IsPedShooting(ped) then
+					SetPedInfiniteAmmo(ped, true, GetHashKey("WEAPON_FIREEXTINGUISHER"))
+				end
+			end
+		else
+			Citizen.Wait(500)
+		end
+        Citizen.Wait(7)
     end
 end)
 
