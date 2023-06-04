@@ -373,6 +373,9 @@ QBShared.Items = {
     ['empty_evidence_bag']              = {['name'] = 'empty_evidence_bag',                ['label'] = 'Empty Evidence Bag',        ['weight'] = 0,            ['type'] = 'item',         ['image'] = 'evidence.png',                ['unique'] = false,         ['useable'] = false,     ['shouldClose'] = false,     ['combinable'] = nil,   ['description'] = 'Used a lot to keep DNA from blood, bullet shells and more'},
     ['filled_evidence_bag']             = {['name'] = 'filled_evidence_bag',               ['label'] = 'Evidence Bag',              ['weight'] = 200,          ['type'] = 'item',         ['image'] = 'evidence.png',                ['unique'] = true,          ['useable'] = false,     ['shouldClose'] = false,     ['combinable'] = nil,   ['description'] = 'A filled evidence bag to see who committed the crime >:('},
 
+    --police/mdw shizz 
+	['mdtcitation'] 				 = {['name'] = 'mdtcitation', 			  	  	['label'] = 'Citation', 			['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'citation.png', 			['unique'] = true, 		['useable'] = false, ['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Citation from a police officer!'},
+    
     -- Firework Tools
     ['firework1']                       = {['name'] = 'firework1',                         ['label'] = '2Brothers',                 ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'firework1.png',               ['unique'] = false,         ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Fireworks'},
     ['firework2']                       = {['name'] = 'firework2',                         ['label'] = 'Poppelers',                 ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'firework2.png',               ['unique'] = false,         ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Fireworks'},

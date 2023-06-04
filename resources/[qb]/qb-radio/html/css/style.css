@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
+
+body {
+    position: relative;
+    font-family: sans-serif;
+    overflow: hidden;
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+  height: 100vh;
+  display:none;
+}
+
+.radio-container {
+  position: absolute;
+  bottom: -56vh;
+  right: 15vh;
+}
+
+.radio {
+  width: 18vh;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#submit {
+  position: absolute;
+  width: 2.2vh;
+  height: 3.2vh;
+  bottom: 14vh;
+  left: 4.2vh;
+  border-radius: 5px;
+  transition: all 0.1s linear;
+}
+
+#submit:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#disconnect {
+  position: absolute;
+  width: 2.2vh;
+  height: 3.2vh;
+  bottom: 14vh;
+  right: 3.2vh;
+  border-radius: 5px;
+  transition: all 0.1s linear;
+}
+
+#disconnect:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#volumeUp {
+  position: absolute;
+  width: 3.3vh;
+  height: 1.9vh;
+  bottom: 18vh;
+  right: 3.1vh;
+  border-radius: 5px;
+  transition: all 0.1s linear;
+}
+
+#volumeUp:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#volumeDown {
+  position: absolute;
+  width: 3.3vh;
+  height: 1.9vh;
+  bottom: 18vh;
+  left: 4.0vh;
+  border-radius: 5px;
+  transition: all 0.1s linear;
+}
+
+#volumeDown:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#increaseradiochannel {
+  position: absolute;
+  width: 3.3vh;
+  height: 1.9vh;
+  bottom: 30vh;
+  left: 0.0vh;
+  border-radius: 5px;
+  transition: all 0.1s linear;
+}
+
+#increaseradiochannel:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#decreaseradiochannel {
+  position: absolute;
+  width: 3.3vh;
+  height: 1.9vh;
+  bottom: 18vh;
+  left: 0.0vh;
+  border-radius: 5px;
+  transition: all 0.1s linear;
+}
+
+#decreaseradiochannel:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#poweredOff {
+  position: absolute;
+  width: 3.3vh;
+  height: 2.9vh;
+  bottom: 50vh;
+  left: 0.0vh;
+  border-radius: 5px;
+  transition: all 0.1s linear;
+}
+
+#poweredOff:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.onoff button {
+  padding: 40px 55px;
+  opacity: .0;
+}
+
+.channel {
+  position: absolute;
+  bottom: 24vh;
+  left: 5.3vh;
+  background: none;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.channel span {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.channel input {
+  text-align: center;
+  border: none;
+  font-size: 25px;
+  background: none;
+  outline: none;
+  font-family: 'Fira Code', monospace;
+  width: 5vw;
+}
+
+::-webkit-inner-spin-button {
+  display: none;
+}
