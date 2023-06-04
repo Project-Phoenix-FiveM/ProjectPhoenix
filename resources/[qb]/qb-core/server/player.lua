@@ -114,6 +114,7 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
     PlayerData.metadata['callsign'] = PlayerData.metadata['callsign'] or 'NO CALLSIGN'
     PlayerData.metadata['fingerprint'] = PlayerData.metadata['fingerprint'] or QBCore.Player.CreateFingerId()
     PlayerData.metadata['walletid'] = PlayerData.metadata['walletid'] or QBCore.Player.CreateWalletId()
+    PlayerData.metadata["communityservice"] = PlayerData.metadata["communityservice"] ~= nil and PlayerData.metadata["communityservice"] or 0
     PlayerData.metadata['criminalrecord'] = PlayerData.metadata['criminalrecord'] or {
         ['hasRecord'] = false,
         ['date'] = nil
