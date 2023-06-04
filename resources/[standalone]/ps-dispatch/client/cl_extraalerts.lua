@@ -222,3 +222,45 @@ local function SignRobbery()
         job = {"LEO", "police"} -- type or jobs that will get the alerts
     })
 end exports('SignRobbery', SignRobbery)
+
+local function ScanPlate(vehdata, scanStatus)
+
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local heading = getCardinalDirectionFromHeading()
+
+    local status = nil
+
+    if vehdata.flagReason[1] ~= nil and vehdata.flagReason[2] ~= nil and vehdata.flagReason[3] ~= nil then
+        status = 'Flags: '..vehdata.flagReason[1]..', '..vehdata.flagReason[2]..' '..vehdata.flagReason[3]
+    elseif vehdata.flagReason[1] ~= nil and vehdata.flagReason[2] ~= nil then
+        status = 'Flags: '..vehdata.flagReason[1]..', '..vehdata.flagReason[2]
+    elseif vehdata.flagReason[1] then
+        status = 'Flags: '..vehdata.flagReason[1]
+    else
+        status = 'Flags: NONE'
+    end
+
+    local prio = 0
+    if vehdata.plateStatus == 'FLAGGED' then prio = 1 end
+        
+    TriggerEvent("dispatch:clNotify", {
+        dispatchcodename = "platescan", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = 'Dispatch',
+        firstStreet = locationInfo,
+        model = vehdata.info3,
+        plate = vehdata.info,
+        priority = prio,
+        firstColor = status,
+        heading = 'Owner: '..vehdata.info2,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = 'Plate Information',
+        job = { "police" }
+    }, 55, 1)
+end
+
+exports('ScanPlate', ScanPlate)

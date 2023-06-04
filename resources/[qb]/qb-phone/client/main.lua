@@ -37,6 +37,11 @@ PhoneData = {
 -- Localized Variables --
 local CallVolume = 0.2
 
+--export to check
+
+local function IsPhoneOpen()
+    return PhoneData.isOpen
+end exports("IsPhoneOpen", IsPhoneOpen)
 
 -- Functions
 

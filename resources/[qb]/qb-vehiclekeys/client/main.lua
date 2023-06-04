@@ -623,6 +623,7 @@ function Hotwire(vehicle, plate)
         TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
         if (math.random() <= Config.HotwireChance) then
             TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', plate)
+            TriggerEvent("qb-platescan:client:AddStolenPlate", vehicle, plate)
         else
             QBCore.Functions.Notify(Lang:t("notify.fvlockpick"), "error")
         end

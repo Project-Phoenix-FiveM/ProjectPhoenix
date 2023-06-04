@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
+
+* {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.alerts-wrapper {
+    display: none;
+    float: right;
+}
+
+.content {
+    padding: 2% 2% 0% 2%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.fas {
+    vertical-align: middle;
+    padding-right:6px;
+    margin-bottom:2px;
+    left: -1px;
+    min-width: 13px;
+    text-align: center;
+    margin-left: 3px;
+}
+
+#code {
+    letter-spacing: 0.5px;
+    font-size: 0.95em;
+    font-weight: 600;
+    line-height:1.4em;
+    padding:0.4em;
+    padding-top:0.1em;
+    padding-bottom:0.1em;
+    background: rgba(209, 21, 99, 1.0);
+    float: left;
+    border-radius: 4px;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.50);
+    margin-left: 3px;
+}
+
+#alert-info {
+    font-size: 1.1em;
+    line-height:calc(1.5em + 2px);
+    vertical-align: middle;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.75);
+    font-weight:500;
+}
+
+#descbanner {
+    letter-spacing: 0.6px;
+    font-size: 1em;
+    font-weight: 700;
+    line-height:calc(1.5em + 2px);
+    padding:0.4em;
+    padding-top:0.15em;
+    padding-bottom:0.05em;
+    background-image: linear-gradient(180deg, white, rgb(223, 61, 61) 2px, white 3px);
+    border-radius: 4px;
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.5), inset 0px -1px 0px 2px white;
+    color: rgb(26, 68, 116);
+    text-shadow: 0px -3px 3px rgba(255, 255, 255, 0.3);
+    margin-right: 3px;
+}
+
+.alerts {
+    width: 370px;
+    height: 73px;
+    color: white;
+}
+
+.template, .notification {
+    display: none;
+}
+
+.notif-container {
+    width: 400px;
+    position: absolute;
+    right: 0.5%;
+    float: right;
+    display: display-block;
+    flex-flow: row;
+    flex-wrap: wrap;
+    line-height:0px;
+    height: 80vh;
+}
+
+.notification {
+    width: 0px;
+    height: 0px;
+    border-radius: 4px;
+    background:rgba(0,0,0,0.7);
+    margin-right: 0px;
+    font: caption;
+    font-size: 0px;
+    font-weight: 600;
+    margin: 0 0 0 350px;
+    opacity:0;
+    float: right;
+}
+
+.bad {
+    box-shadow: 0px -3px 0px 0px rgba(192, 62, 62, 0.9) inset;
+    background: rgba(146, 36, 36, 0.9);
+}
+
+.good {
+    box-shadow: 0px -3px 0px 0px rgba(47, 110, 182, 0.9) inset;
+    background: rgba(26, 68, 116, 0.9);
+}
