@@ -116,7 +116,6 @@ function processVehicleHandling(pCurrentVehicle)
 end
 
 function toggleOffroadState(pState)
-  print("test")
   local vehClass = GetVehicleClass(currentVehicle)
   if currentVehicleIdentifier ~= nil and (vehClass ~= 9 and vehClass ~= 8) then
     local isAWD = (modifiedVehicles[currentVehicleIdentifier].fDriveBiasFront > 0 and modifiedVehicles[currentVehicleIdentifier].fDriveBiasFront < 1)
@@ -135,15 +134,12 @@ function toggleOffroadState(pState)
   end
 end
 
-print("wtf")
 
 AddEventHandler("baseevents:enteredVehicle", function(pCurrentVehicle, currentSeat, vehicleDisplayName)
   currentVehicle = pCurrentVehicle
-  print("hey")
  
   SetPedConfigFlag(PlayerPedId(), 35, false)
 
-  print("nope")
 
   local vehicleClass = GetVehicleClass(pCurrentVehicle)
   if vehicleClass == 15 or vehicleClass == 16 then
@@ -151,7 +147,6 @@ AddEventHandler("baseevents:enteredVehicle", function(pCurrentVehicle, currentSe
   end
 
   if currentSeat == -1 then
-    print("yep")
     processVehicleHandling(pCurrentVehicle)
   end
 end)
