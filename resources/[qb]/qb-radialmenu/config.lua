@@ -44,6 +44,15 @@ Config.MenuItems = {
                 title = 'Interaction',
                 icon = 'triangle-exclamation',
                 items = {
+                    
+                    {
+                        id = 'trafficstop',
+                        title = 'Call in 10-38',
+                        icon = 'car-side',
+                        type = 'client',
+                        event = 'ps-mdt:client:trafficStop',
+                        shouldClose = true
+                    },
                     {
                         id = 'handcuff',
                         title = 'Cuff',
@@ -51,14 +60,16 @@ Config.MenuItems = {
                         type = 'client',
                         event = 'police:client:CuffPlayerSoft',
                         shouldClose = true
-                    }, {
+                    }, 
+                    {
                         id = 'playerinvehicle',
                         title = 'Put In Vehicle',
                         icon = 'car-side',
                         type = 'client',
                         event = 'police:client:PutPlayerInVehicle',
                         shouldClose = true
-                    }, {
+                    }, 
+                    {
                         id = 'playeroutvehicle',
                         title = 'Take Out Of Vehicle',
                         icon = 'car-side',
