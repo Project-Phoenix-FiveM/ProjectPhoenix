@@ -176,7 +176,7 @@ RegisterNetEvent('qb-phone:server:SendEmploymentPayment', function(Job, CID, amo
         ---- Player Account ----
         exports['Renewed-Banking']:handleTransaction(Reciever.PlayerData.citizenid, title, amt, "Payment recieved of $"..amt.." recieved from Business "..QBCore.Shared.Jobs[Job].label.. " and Manager "..BusinessName, BusinessName, RecieverName, "deposit", trans.trans_id)
     else
-        if not exports['qb-management']:RemoveMoney(Job, amt) then return notifyPlayer(src, "Insufficient Funds...") end
+        if not exports['Renewed-Banking']:removeAccountMoney(Job, amt) then return notifyPlayer(src, "Insufficient Funds...") end
     end
     Player.Functions.AddMoney('bank', amt)
 end)
@@ -392,7 +392,7 @@ AddEventHandler('qb-phone:server:InvoiceHandler', function(paid, amount, source,
                 exports['Renewed-Banking']:handleTransaction(bills[source].job, "Business // Invoice Transaction", amount, text2, bills[source].name, name, "deposit", trans.trans_id)
                 exports['Renewed-Banking']:addAccountMoney(bills[source].job, amount)
             else
-                exports['qb-management']:AddMoney(bills[source].job, amount)
+                exports['Renewed-Banking']:addAccountMoney(bills[source].job, amount)
             end
 
             if amount >= 450 then
