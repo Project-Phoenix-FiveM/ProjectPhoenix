@@ -45,14 +45,7 @@ Config.MenuItems = {
                 icon = 'triangle-exclamation',
                 items = {
                     
-                    {
-                        id = 'trafficstop',
-                        title = 'Call in 10-38',
-                        icon = 'car-side',
-                        type = 'client',
-                        event = 'ps-mdt:client:trafficStop',
-                        shouldClose = true
-                    },
+                    
                     {
                         id = 'handcuff',
                         title = 'Cuff',
@@ -612,6 +605,13 @@ Config.JobInteractions = {
             icon = 'list-check',
             items = {
                 {
+                    id = 'trafficstop',
+                    title = 'Call in 10-38',
+                    icon = 'car-side',
+                    type = 'client',
+                    event = 'ps-mdt:client:trafficStop', 
+                    shouldClose = true
+                },{
                     id = 'statuscheck',
                     title = 'Check Health Status',
                     icon = 'heart-pulse',
