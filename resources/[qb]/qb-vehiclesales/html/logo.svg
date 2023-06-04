@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 560" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <line style="stroke: rgb(0, 0, 0); stroke-width: 8px; stroke-linecap: square;" x1="64.474" y1="6.178" x2="6.165" y2="64.487"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 8px; stroke-linecap: square; fill-opacity: 0;" d="M 64.474 6.178 C 81.226 23.365 156.796 83.924 249.119 6.178"/>
+  <polyline style="stroke: rgb(45, 127, 45); fill: rgb(45, 127, 45);" points="190 163 251.501 163 251.501 552 216.65 523 190 513 190 163"/>
+  <polyline style="stroke: rgb(251, 241, 68); fill: rgb(251, 241, 68);" points="117 161.5 117 505 77 495 52.6 480 35 455 25 420 26 395 52 300 60 200 55 161.5"/>
+  <line style="stroke: rgb(0, 0, 0); stroke-width: 8px; stroke-linecap: square;" x1="250" y1="161.669" x2="57.705" y2="161.669"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 8px; fill-opacity: 0; stroke-linecap: round;" d="M 6.165 64.487 C 89.027 138.261 54.384 302.447 31.049 377.452 C 9.782 445.811 48.482 486.981 84.49 498.23 C 139.151 514.069 190.669 487.339 250 555"/>
+  <text style="fill: rgb(45, 127, 45); font-family: Arial, sans-serif; font-size: 21.4px; font-weight: 700; letter-spacing: 2.4px; white-space: pre;" x="140.94" y="138.44">RV ASSOCIATION</text>
+  <text style="fill: rgb(45, 127, 45); font-family: Arial, sans-serif; font-size: 40.8px; font-weight: 700; letter-spacing: 3px; white-space: pre;" x="103.256" y="101.275">LOS SANTOS</text>
+  <line style="stroke: rgb(0, 0, 0); stroke-width: 8px; stroke-linecap: square;" x1="494.746" y1="64.491" x2="436.437" y2="6.182" transform="matrix(-1, 0, 0, -1, 931.183014, 70.672998)"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 8px; stroke-linecap: square; fill-opacity: 0;" d="M 251.792 44.881 C 268.544 27.694 344.114 -32.865 436.437 44.881" transform="matrix(-1, 0, 0, -1, 688.229019, 51.062534)"/>
+  <polyline style="stroke: rgb(45, 127, 45); fill: rgb(45, 127, 45);" points="251.119 552.004 310.911 552.004 310.911 163.004 277.029 192.004 251.119 202.004 251.119 552.004" transform="matrix(-1, 0, 0, -1, 562.030014, 715.008026)"/>
+  <polyline style="stroke: rgb(251, 241, 68); fill: rgb(251, 241, 68);" points="475.911 505.004 475.911 161.504 435.911 171.504 411.511 186.504 393.911 211.504 383.911 246.504 384.911 271.504 410.911 366.504 418.911 466.504 413.911 505.004" transform="matrix(-1, 0, 0, -1, 859.822021, 666.507996)"/>
+  <line style="stroke: rgb(0, 0, 0); stroke-width: 8px; stroke-linecap: square;" x1="443.206" y1="161.673" x2="250.911" y2="161.673" transform="matrix(-1, 0, 0, -1, 694.116989, 323.346008)"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); stroke-width: 8px; fill-opacity: 0; stroke-linecap: round;" d="M 250.911 555.004 C 333.773 481.23 299.13 317.044 275.795 242.039 C 254.528 173.68 293.228 132.51 329.236 121.261 C 383.897 105.422 435.415 132.152 494.746 64.491" transform="matrix(-1, 0, 0, -1, 745.656998, 619.495026)"/>
+  <polyline style="stroke: rgb(0, 0, 0);" points="238.69 243.138 361.244 243.138 373.67 267.66 332.104 267.66 356.958 315.289 374.741 320.712 375.813 355.137 381.405 355.844 381.405 359.268 118.832 359.617 118.788 353.247 121.098 353.247 128.778 242.902 239.761 243.138"/>
+  <circle style="fill: rgb(255, 255, 255);" cx="160.738" cy="364.828" r="24.182"/>
+  <rect style="fill: rgb(255, 255, 255);" x="138.419" y="262.734" width="68.133" height="34.897" rx="2" ry="2"/>
+  <rect style="fill: rgb(255, 255, 255);" x="219.407" y="254.482" width="46.493" height="94.876" rx="2" ry="2"/>
+  <rect style="fill: rgb(255, 255, 255); stroke-linecap: round; stroke: rgb(255, 255, 255);" x="331.096" y="250.113" width="29.076" height="10.473" rx="2" ry="2"/>
+  <polyline style="fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0); paint-order: stroke;" points="327.251 271.683 348.636 314.057 287.852 314.057 293.642 271.899"/>
+  <path d="M 355.429 472.571 m -20.281 0 a 20.281 20.281 0 1 0 40.562 0 a 20.281 20.281 0 1 0 -40.562 0 Z M 355.429 472.571 m -12.169 0 a 12.169 12.169 0 0 1 24.338 0 a 12.169 12.169 0 0 1 -24.338 0 Z" style="paint-order: fill;" transform="matrix(-0.707107, 0.707107, -0.707107, -0.707107, 746.24908, 447.861637)" bx:shape="ring 355.429 472.571 12.169 12.169 20.281 20.281 1@6f971e3b"/>
+  <circle style="fill: rgb(255, 255, 255);" cx="345.532" cy="364.794" r="24.182"/>
+  <path d="M 355.429 472.571 m -20.281 0 a 20.281 20.281 0 1 0 40.562 0 a 20.281 20.281 0 1 0 -40.562 0 Z M 355.429 472.571 m -12.169 0 a 12.169 12.169 0 0 1 24.338 0 a 12.169 12.169 0 0 1 -24.338 0 Z" style="paint-order: fill;" transform="matrix(-0.707107, 0.707107, -0.707107, -0.707107, 931.042598, 447.828037)" bx:shape="ring 355.429 472.571 12.169 12.169 20.281 20.281 1@6f971e3b"/>
+</svg>

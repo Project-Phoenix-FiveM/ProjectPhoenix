@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: none;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.219);
+}
+
+.minigame-container {
+    position: absolute;
+    width: 30vh;
+    height: 30vh;
+    bottom: 10vh;
+    /* background-color: rgb(255, 60, 60); */
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.key {
+    position: absolute;
+    background-color: white;
+    width: 6vh;
+    height: 6vh;
+    text-align: center;
+    line-height: 6vh;
+    color: black;
+    font-family: sans-serif;
+    font-size: 2.2vh;
+    font-weight: bold;
+    border-radius: .7vh;
+    box-shadow: 0 0 0 #000;
+}
+
+#w {
+    left: 12.5vh;
+    top: 6vh;
+}
+
+#a {
+    left: 5.5vh;
+    top: 13vh;
+}
+
+#s {
+    left: 12.5vh;
+    top: 13vh;
+}
+
+#d {
+    left: 19.5vh;
+    top: 13vh;
+}

@@ -1,0 +1,26 @@
+/* Customize style for dialog menus and carousels here */
+
+.brand-logo { width: 14%!important; }
+.text-detailbutton { color: rgb(103, 108, 111)!important; }
+.bg-bgbutton { background: rgb(103, 108, 111)!important; }
+.text-togglecolor { color: rgb(220 20 60)!important; }
+.loadingbar { width: 27%!important; height: auto!important; padding: 20px!important; padding-left: 0px!important; padding-right: 25px!important}
+.loadbar { width: auto; height: 1.5vh; background: rgb(103, 108, 111); box-shadow: 0 1px 5px #0003, 0 2px 2px #00000024, 0 3px 1px -2px #0000001f; z-index: 9999; }
+.thingy { width: auto; height: 1.5vh; background: rgb(220 20 60); z-index: 9999; }
+.q-carousel { background: rgb(0, 0, 0)!important; height: auto!important; } 
+.q-mb-md-d { padding-top: 0px!important; padding-left: 0.3vw!important; }
+.q-toggle { margin-left: -0.5vw!important; }
+.q-toggle__label { font-size: 15px!important; font-weight: 500!important; }
+.q-card { z-index: 9999!important; }
+.q-btn { z-index: 9999!important; }
+
+html, body { background: transparent!important; max-width: 100%!important; overflow-x: hidden!important; }
+body { -webkit-user-select: none!important; -moz-user-select: none!important; -ms-user-select: none!important;  -o-user-select: none!important; user-select: none!important; }
+body.desktop.no-touch.within-iframe.body--light.q-body--prevent-scroll { position: relative!important; }
+.absolute-full, .fixed-full, .fullscreen { top: -3px!important; bottom: -1px!important; }
+.absolute-bottom, .fixed-bottom { z-index: 1!important; }
+span.q-btn__content.text-center.col.items-center.q-anchor--skip.justify-center.column { text-transform: none!important; }
+.q-avatar__content.row.flex-center.overflow-hidden { overflow: initial!important; }
+.q-carousel .q-carousel--padding, .q-carousel__slide { padding-top: 0px!important; }
+.scroll { overflow: hidden!important; }
+.q-focus-helper { opacity: 0!important; }

@@ -1,0 +1,78 @@
+local Translations = {
+    error = {
+        has_no_drugs = "Je hebt geen drugs bij je",
+        not_enough_police = "Er zijn niet genoeg Politie-agenten in-dienst (%{polices} nodig)",
+        no_drugs_left = "Geen drugs meer om te verkopen",
+        too_far_away = "Je bent te ver weg gegaan",
+        offer_declined = "Aanbod geweigerd",
+        no_player_nearby = "Geen speler in de buurt",
+        pending_delivery = "Je hebt nog een levering open staan, waar wacht je op?!",
+        item_unavailable = "Dit product is niet beschikbaar, je kreeg je geld terug",
+        order_not_right = "Dit voldoet niet aan de bestelling",
+        too_late = "Jij bent te laat",
+        dealer_already_exists = "Er bestaat al een dealer met deze naam",
+        dealer_not_exists = "De dealer bestaat niet",
+        no_dealers = "Er zijn geen dealers geplaatst",
+        dealer_not_exists_command = "Dealer %{dealerName} bestaat niet"
+    },
+    success = {
+        helped_player = "Je hebt een persoon opgeholpen",
+        route_has_been_set = "De route naar de levering is gezet op jouw map",
+        teleported_to_dealer = "Je bent geleteporteerd naar %{dealerName}",
+        offer_accepted = "Aanbod geaccepteerd",
+        order_delivered = "De bestelling is geleverd",
+        dealer_deleted = "Dealer %{dealerName} is verwijderd"
+    },
+    info = {
+        started_selling_drugs = "Je bent gestart met het verkopen van drugs",
+        stopped_selling_drugs = "Je bent gestopt met het verkopen van drugs",
+        has_been_robbed = "Je bent beroofd en verloor (een) %{bags} zak(ken) %{drugType}",
+        suspicious_situation = "Verdachte situatie",
+        possible_drug_dealing = "Mogelijke drugs deal",
+        drug_offer = "[~g~E~w~] %{bags}x %{drugLabel} voor €%{randomPrice}? / [~g~G~w~] Weiger aanbod",
+        pick_up_button = "[~g~E~w~] Oppakken",
+        knock_button = "[~g~E~w~] Aankloppen",
+        mystery_man_button = "[~g~E~w~] Kopen / [~g~G~w~] Help je vriend ($5000)",
+        other_dealers_button = "[~g~E~w~] Kopen / [~g~G~w~] Start een missie",
+        reviving_player = "Persoon ophelpen...",
+        dealer_name = "Dealer %{dealerName}",
+        sending_delivery_email = "Dit zijn de producten, Ik hou je op de hoogte via email",
+        mystery_man_knock_message = "Hallo mijn kind, wat kan ik voor je doen?",
+        treated_fred_bad = "Helaas doe ik geen business meer ... Jij had mij beter moeten behandelen",
+        fred_knock_message = "Yo %{firstName}, wat kan ik voor je doen?",
+        no_one_home = "Het ziet er naar uit dat niemand thuis is",
+        delivery_info_email = "Hier is alle informatie over jouw levering, <br>Producten: <br> %{itemAmount}x %{itemLabel}<br><br> wees op tijd",
+        deliver_items_button = "[~g~E~w~] %{itemAmount}x %{itemLabel} leveren",
+        delivering_products = "Producten Leveren...",
+        drug_deal_alert = "911: Drugs Deal",
+        perfect_delivery = "Je hebt goed werk verricht, ik hoop jou weer terug te zien ;)<br><br>Groeten, %{dealerName}",
+        bad_delivery = "Ik heb klachten ontvangen van jouw levering, laat dit niet meer gebeuren",
+        late_delivery = "Jij was niet op tijd. Had jij iets belangrijkers te doen dan business?",
+        police_message_server = "Een verdachte situatie is gerapporteerd op %{street}, mogelijke drugs deal",
+        drug_deal = "Drugs Deal",
+        newdealer_command_desc = "Plaats een dealer (Alleen Admin)",
+        newdealer_command_help1_name = "naam",
+        newdealer_command_help1_help = "Dealer naam",
+        newdealer_command_help2_name = "min",
+        newdealer_command_help2_help = "Minimum Tijd",
+        newdealer_command_help3_name = "max",
+        newdealer_command_help3_help = "Maximum Tijd",
+        deletedealer_command_desc = "Verwijder een dealer (Alleen Admin)",
+        deletedealer_command_help1_name = "naam",
+        deletedealer_command_help1_help = "Dealer naam",
+        dealers_command_desc = "Bekijk alle dealers (Alleen Admin)",
+        dealergoto_command_desc = "Teleporteer naar een dealer (Alleen Admin)",
+        dealergoto_command_help1_name = "naam",
+        dealergoto_command_help1_help = "Dealer naam",
+        list_dealers_title = "Lijst van alle dealers: ",
+        list_dealers_name_prefix = "Naam: "
+    }
+}
+
+if GetConvar('qb_locale', 'en') == 'nl' then
+    Lang = Locale:new({
+        phrases = Translations,
+        warnOnMissing = true,
+        fallbackLang = Lang,
+    })
+end

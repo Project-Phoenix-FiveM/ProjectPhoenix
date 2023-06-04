@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: none;
+    height: 100vh;
+    /* background-color: rgb(255, 22, 22); */
+}
+
+.hotdogs-stock {
+    position: absolute;
+    width: 16vh;
+    height: 17vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    right: 5vh;
+    top: 15.5vh;
+    border-radius: .8vh;
+    text-align: center;
+}
+
+#hotdogs-stock-header {
+    line-height: 4vh;
+    font-size: 1.5vh;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hotdogs-stocks {
+    position: absolute;
+    width: 85%;
+    height: 57%;
+    background-color: rgba(0, 0, 0, 0.25);
+    top: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 4vh;
+    border-radius: .5vh;
+    overflow: hidden;
+}
+
+.stock {
+    position: relative;
+    width: 100%;
+    height: 2.69vh;
+    background-color: rgba(255, 255, 255, 0.014);
+    margin-bottom: .8vh;
+}
+
+.stock-rating {
+    position: absolute;
+    left: 3.7vh;
+    line-height: 2.69vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1vh;
+}
+
+.stock-amount {
+    position: absolute;
+    right: 1.5vh;
+    line-height: 2.69vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1vh;
+    color: white;
+    float: left;
+}
+
+.stock-img {
+    position: absolute;
+    width: 2.5vh;
+    left: .5vh;
+    top: .4vh;
+}
+
+#my-level {
+    position: absolute;
+    font-size: 1vh;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    bottom: 1.2vh;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}

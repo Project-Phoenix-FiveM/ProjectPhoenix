@@ -1,0 +1,15 @@
+name: autoupdate
+on:
+  push:
+    branches:
+       - main
+jobs:
+  autoupdate:
+    name: autoupdate
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: chinthakagodawita/autoupdate@v1.6.0
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          MERGE_CONFLICT_ACTION: "ignore"
+          MERGE_MSG: "Branch was auto-updated"

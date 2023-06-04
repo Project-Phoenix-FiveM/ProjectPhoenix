@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="scripting/jquery-ui.css" rel="stylesheet">
+ 
+    <title>QBCore Banking</title>
+  </head>
+  <body>
+
+    <div class="container p-2" id="cardSelector" style="max-width:500px; min-height:900px; display:none">
+        <div class="row" style="position: relative; top: 54px;">
+                <div class="col-12 text-center p-2">
+                    <img src="images/logo1.png" class="img-fluid" style="width: 150px;"> 
+                </div>
+            </div>
+    <div class="row" style="position: relative; top: 54px; left: 2%;">
+        <div class="col-12" id="cardsDisplay">
+            <div class="card mb-3 mx-auto" style="width:100%; background:#505050; box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); color: #dcdcdc">
+                <div class="row no-gutters">
+                    <div class="col-2 my-auto">
+                        <img src="images/visa.png" class="card-img" alt="">
+                    </div>
+                    <div class="col-8">
+                        <div class="card-body p-0">
+                            <h5 class="card-title pb-0 pt-1 pl-2 mb-0" id="cardOwner">Card title</h5>
+                            <p class="card-text pl-2"><small class="text-muted"><span id="cardType">Visa</span><br><span id="cardNumber">************4354</span></small></p>
+                        </div>
+                    </div>
+                    <div class="col-2 my-auto pr-1">
+                        <button class="btn btn-primary btn-sm btn-block">Use</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="position: relative; top: 54px;">
+        <div class="col-12 text-center">
+            <button class="btn btn-danger" id="cancelTransaction" style=" color: white">Cancel Transaction</button>
+        </div>
+    </div>
+</div>
+
+<div class="container p-2" id="pinContainer" style="max-width:500px; display:none;">
+    <div class="row">
+        <div class="col-12 text-center p-2">
+            <img src="images/logo1.png" class="img-fluid" style="width: 150px;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center p-2" style="font-size: 16px; color: white;">Please enter your debit card pin, to access the ATM.</div>
+    </div>
+    <div class="row m-1">
+        <div class="col-12 pt-2 pb-4"><input type="password" class="form-control text-center" id="pinCode" style="height:60px; line-height:60px; font-size:30px;" readonly="readonly"></div>
+    </div>
+    <div class="row m-1" style="position: relative; top: 5px;">
+        <div class="col-4 text-center"><button class="btn btn-block btn-info" data-act="enterNumber" data-number="1">1</button></div>
+        <div class="col-4 text-center"><button class="btn btn-block btn-info" data-act="enterNumber" data-number="2">2</button></div>
+        <div class="col-4 text-center"><button class="btn btn-block btn-info" data-act="enterNumber" data-number="3">3</button></div>
+    </div>
+    <div class="row m-1" style="position: relative; top: 5px;">
+        <div class="col-4 text-center"><button class="btn btn-block btn-info" data-act="enterNumber" data-number="4">4</button></div>
+        <div class="col-4 text-center"><button class="btn btn-block btn-info" data-act="enterNumber" data-number="5">5</button></div>
+        <div class="col-4 text-center"><button class="btn btn-block btn-info" data-act="enterNumber" data-number="6">6</button></div>
+    </div>
+    <div class="row m-1" style="position: relative; top: 5px;">
+        <div class="col-4 text-center"><button class="btn btn-block btn-info" data-act="enterNumber" data-number="7">7</button></div>
+        <div class="col-4 text-center"><button class="btn btn-block btn-info" data-act="enterNumber" data-number="8">8</button></div>
+        <div class="col-4 text-center"><button class="btn btn-block btn-info" data-act="enterNumber" data-number="9">9</button></div>
+    </div>
+    <div class="row m-1" style="position: relative; top: 5px;">
+        <div class="col-4 text-center"><button class="btn btn-block btn-danger" data-act="enterNumber" data-number="CANCEL">CANCEL</button></div>
+        <div class="col-4 text-center"><button class="btn btn-block btn-info" data-act="enterNumber" data-number="0">0</button></div>
+        <div class="col-4 text-center"><button class="btn btn-block btn-success" data-act="enterNumber" data-number="ACCEPT" id="acceptButton">ACCEPT</button></div>
+    </div>
+    <div class="row m-1" style="position: relative; top: 5px;">
+        <div class="col-12 text-center"><button class="btn btn-block btn-warning" data-act="enterNumber" data-number="CLEAR">CLEAR</button></div>
+    </div>
+    <div class="row" style="position: relative; top: 10px;">
+        <div class="col-12 text-center p-2" style="font-size: 12px; color: white; margin-bottom: 50px;">By entering your pin and pressing the accept button you are authorising a debit of $<span id="amount2">3535</span> from your bank account directly to the merchant.</div>
+    </div>
+</div>
+
+    <div class="container p-2" id="ATMContainer">
+        <div class="row">
+            <div class="col-3">
+                    <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <img src="images/logo1.png" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="nav flex-column nav-pills p-2 shadow-lg" id="v-pills-tab-atm" role="tablist" aria-orientation="vertical" style="background:rgba(51, 51, 51, 0.8); border-radius: 5px;">
+                                        <a class="nav-link active m-1" id="bankingHomeATM-tab" data-toggle="pill" href="#bankingHomeATM" role="tab" aria-controls="bankingHomeATM" aria-selected="true">Account Home</a>
+                                        <a class="nav-link m-1" id="bankingWithdrawATM-tab" data-toggle="pill" href="#bankingWithdrawATM" role="tab" aria-controls="bankingWithdrawATM" aria-selected="false">Withdrawals</a>
+                                      </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #ffffff">
+                                        <div class="card-header">Account Information</div>
+                                            <div class="card-body">
+                                                <p class="card-text"><small>
+                                                Account Name: <span id="accountNameATM"></span><br>
+                                                Account Number: <span id="accountNumberATM"></span><br>
+                                                </small></p>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button class="btn btn-block btn-danger mt-2" id="logoffbuttonatm">Logoff</button>
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+
+            <div class="col-9">
+                <div class="tab-content p-2 shadow-lg" id="v-pills-tabContent-atm" style="max-height:780px; min-height:780px;">
+                        <div class="tab-pane fade active show" id="bankingHomeATM" role="tabpanel" aria-labelledby="enteringPinTab">
+                                <div class="container-fluid p-2" style="position: relative; top: 54px;">
+                                        <div class="row">
+                                            <div class="col-12 title"><h3 style="font-size: 24px; color: white;">Welcome <span id="customerNameATM"></span></h3></div>
+                                            <div class="col-12 content"><p style="font-size: 12px; color: white;">Welcome to your personal banking screen, from this screen you can make deposits, withdrawals and transfer money to other people, You can also check your recent activity using your statement.</p></div>
+                                        </div>
+                                    <div class="row" id="successRowATM" style="display:none;">
+                                        <div class="col-12">
+                                            <div class="alert alert-success" role="alert" id="successMessageATM"></div>
+                                        </div>
+                                    </div>
+                                <div class="row" style="position: relative; top: 15px;">
+                                    <div class="col-6">
+                                        <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #fff">
+                                            <div class="card-header"><i class="fad fa-fw fa-money-bill-wave"></i> Current Account Balance</div>
+                                            <div class="card-body">
+                                              <h5 class="card-title" id="currentBalanceATM" style=" color: #28a745"></h5>
+                                              <p class="card-text">This is currently how much is avaliable to spend in your account.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #fff">
+                                            <div class="card-header"><i class="fad fa-fw fa-coin"></i> Current Cash Balance</div>
+                                            <div class="card-body">
+                                              <h5 class="card-title" id="currentCashBalanceATM" style=" color: #28a745"></h5>
+                                              <p class="card-text">This is currently how much cash you have on your person.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="position: relative; top: 15px;">
+                                    <div class="col-12">
+                                        <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white">
+                                            <div class="card-header"><i class="fad fa-fw fa-pencil-alt"></i> Quick Actions</div>
+                                            <div class="card-body">
+                                                <div class="container-fluid">
+                                                    <div class="row m-1">
+                                                        <div class="col-6">
+                                                            <button class="btn btn-secondary2 btn-block" data-withdrawal="preset" data-amount="100">Withdrawal $100</button>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <button class="btn btn-secondary2 btn-block" data-withdrawal="preset" data-amount="1000">Withdrawal $1000</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer"><p class="card-text"><small>These are some quick actions that will enable a quicker and smoother process.</small></p></div>
+                                          </div>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="bankingWithdrawATM" role="tabpanel" aria-labelledby="bankingWithdrawATM-tab">
+                            <div class="container-fluid p-2" style="position: relative; top: 54px;">
+                                    <div class="row">
+                                        <div class="col-12 title"><h3 style="font-size: 24px; color: white;">Withdrawals</h3></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12" style="font-size: 12px; color: white;">
+                                            Withdrawal of specific amounts can be completed on this screen, a Withdrawal is where money being taken out of your current account, if you are wanting to withdraw money from your savings, you must first transfer the funds to your current account.
+                                        </div>
+                                    </div>
+                                    <div class="row" style="position: relative; top: 15px;">
+                                        <div class="col-6">
+                                            <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #fff">
+                                                <div class="card-header"><i class="fad fa-fw fa-money-bill-wave"></i> Current Account Balance</div>
+                                                <div class="card-body">
+                                                  <h5 class="card-title" id="currentBalanceATM1" style=" color: #28a745"></h5>
+                                                  <p class="card-text">This is currently how much is avaliable to spend in your account.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: #fff">
+                                                <div class="card-header"><i class="fad fa-fw fa-coin"></i> Current Cash Balance</div>
+                                                <div class="card-body">
+                                                  <h5 class="card-title" id="currentCashBalance1ATM" style=" color: #28a745"></h5>
+                                                  <p class="card-text">This is currently how much cash you have on your person.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="position: relative; top: 15px;">
+                                        <div class="col-12">
+                                                <div class="card mb-3" style="background:rgba(51, 51, 51, 0.8); color: white">
+                                                        <div class="card-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="alert alert-danger d-none" id="withdrawATMErrorMsg">
+                                                                        An unexpected error has occured, please try again later.
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-12 content">Please specify the amount you wish to Withdraw below.</div>
+                                                                </div>
+                                                                <div class="row mt-2">
+                                                                    <div class="col-3 my-auto"><label for="withdrawAmountATM"><small>Amount to Withdraw</small></label></div>
+                                                                    <div class="col-9"><input type="number" placeholder="$" class="form-control" id="withdrawAmountATM" name="withdrawAmountATM"></div>
+                                                                </div>
+                                                            </div>
+        
+                                                        </div>
+                                                      </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="position: relative; top: 15px;">
+                                        <div class="col-12 text-center">
+                                            <button class="btn btn-secondary2" data-withdrawal="manual">Complete Withdrawal</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="tab-pane fade" id="bankingStatementATM" role="tabpanel" aria-labelledby="bankingStatementATM-tab">
+                                <div class="container-fluid p-2">
+                                    <div class="row">
+                                        <div class="col-12 title"><h3>Current Account Statement</h3></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                                <div class="card bg-light mb-3">
+                                                        <div class="card-body">
+                                                <table id="currentStatementATM" class="display" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Date</th>
+                                                            <th>Description</th>
+                                                            <th class="text-center">Withdrawn</th>
+                                                            <th class="text-center">Deposit</th>
+                                                            <th class="text-center">New Balance</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="currentStatementContentsATM">
+                                                    </tbody>
+                                                </table></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="scripting/external/jquery/jquery.js"></script>
+    <script src="scripting/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.6/fc-3.2.5/kt-2.5.0/r-2.2.2/datatables.min.js"></script>
+    <script src="qb-atms.js"></script>
+  </body>
+</html>

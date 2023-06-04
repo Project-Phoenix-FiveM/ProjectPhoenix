@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: none;
+    height: 100vh;
+}
+
+.keys-block {
+    position: relative;
+    height: 50vh;
+    width: 40vh;
+    background: rgba(23, 23, 23, 80%);
+    margin: 0 auto;
+    top: 20vh;
+    border-radius: 0.7vh;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.05);
+}
+
+.keys-block-header {
+    position: absolute;
+    width: 100%;
+    height: 5vh;
+    background: #dc143c;
+    text-align: center;
+    top: 0;
+    line-height: 1vh;
+    z-index: 101;
+    border-radius: 0.7vh 0.7vh 0 0;
+}
+
+.keys-block-header>p {
+    color: white;
+    font-weight: 900;
+    font-size: 2vh;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.15vh;
+    text-transform: uppercase;
+}
+
+.keys {
+    position: relative;
+    overflow-y: scroll;
+    height: 85%;
+    max-height: 85%;
+    z-index: 90;
+    width: 80%;
+    top: 1.5vh;
+    margin: 0 auto;
+}
+
+.command {
+    position: absolute;
+    bottom: 0;
+    left: 5.5vh;
+    height: 3vh;
+    width: 9vh;
+    background: none;
+    border: none;
+    outline: none;
+    background: rgba(37, 37, 37, 0.418);
+    transition: all 0.1s linear;
+    border-radius: 0.7vh 0.7vh 0 0;
+    text-align: center;
+    margin-left: 1.5vh;
+}
+
+input[type="text"] {
+    /* padding-left: 1vh; */
+    font-weight: bold;
+    font-size: 1vh;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1vh;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+}
+
+.command::-webkit-input-placeholder {
+    font-weight: bold;
+    font-size: 1vh;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1vh;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.argument {
+    position: absolute;
+    bottom: 0;
+    left: 19vh;
+    height: 3vh;
+    width: 9vh;
+    background: none;
+    border: none;
+    outline: none;
+    background: rgba(37, 37, 37, 0.418);
+    transition: all 0.1s linear;
+    border-radius: 0.7vh 0.7vh 0 0;
+    text-align: center;
+}
+
+.argument:focus,
+.command:focus {
+    background: #202020c5;
+}
+
+input[type="text"] {
+    /* padding-left: 1vh; */
+    font-weight: bold;
+    font-size: 1vh;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1vh;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+}
+
+.argument::-webkit-input-placeholder {
+    font-weight: bold;
+    font-size: 1vh;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1vh;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.keys-block-binding {
+    position: relative;
+    width: 100%;
+    height: 5vh;
+    top: 5vh;
+    border-bottom: 2px solid #dc143c;
+    margin-bottom: 1.2vh;
+}
+
+.keys-block-binding-keyprefix {
+    color: rgb(255, 255, 255);
+    height: 100%;
+    width: 5vh;
+    text-align: center;
+    line-height: 5vh;
+    font-weight: bold;
+    font-size: 1.2vh;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1vh;
+    text-transform: uppercase;
+    background: rgba(37, 37, 37, 0.418);
+    border-radius: 0.7vh 0.7vh 0 0;
+}
+
+.save-bindings {
+    position: absolute;
+    width: 100%;
+    height: 3.5vh;
+    bottom: 0;
+    text-align: center;
+    background: #dc143c;
+    line-height: 0.7vh;
+    transition: all 0.1s linear;
+    border-radius: 0 0 0.7vh 0.7vh;
+}
+
+.save-bindings>p {
+    color: white;
+    font-weight: bold;
+    font-size: 1.4vh;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1vh;
+    text-transform: uppercase;
+}
+
+.save-bindings:hover {
+    background: #ee3251;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotdog Stock</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./ui.css">
+</head>
+    <body>
+        <div class="container">
+            <div class="hotdogs-stock">
+                <span id="hotdogs-stock-header">STOCK</span>
+                <span id="my-level">LEVEL 1 : 100xp</span>
+
+                <div class="hotdogs-stocks">
+                    <div class="stock" data-stock="exotic">
+                        <img src="./icon.png" class="stock-img">
+                        <span class="stock-amount">0 / 15</span>
+                        <span class="stock-rating" style="color: green;">A</span>
+                    </div>
+                    <div class="stock" data-stock="rare">
+                        <img src="./icon.png" class="stock-img">
+                        <span class="stock-amount">0 / 15</span>
+                        <span class="stock-rating" style="color: orange;">B</span>
+                    </div>
+                    <div class="stock" data-stock="common">
+                        <img src="./icon.png" class="stock-img">
+                        <span class="stock-amount">0 / 15</span>
+                        <span class="stock-rating" style="color: red;">C</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./ui.js"></script>
+</html>

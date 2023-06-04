@@ -1,0 +1,78 @@
+.container{
+    position:fixed;
+    top: 65%;
+    left: 85%;
+    width: 200px;
+    height: 300px;
+    border-radius: 50%;
+    
+}
+.container img{
+    position: absolute;
+    width: 200px;
+    height: 300px;
+}
+.button{
+	position:relative;
+	top:50px;
+}
+div {
+    margin-bottom: 20px;
+}
+.btn4{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 75px;
+    left: 104px;
+    z-index: 1;
+    border-radius:5px;
+    font-size: 25px;   
+    background-color: rgba(248, 0, 0, 0); 
+    border: 0;
+    cursor: pointer;
+}
+.btn5{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 75px;
+    left: 45px;
+    z-index: 1;
+    border-radius:5px;
+    font-size: 25px;   
+    background-color: rgba(248, 0, 0, 0); 
+    border: 0;
+    cursor: pointer;
+}
+.btn7{  
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 130px;
+    left: 47px;
+    z-index: 1;
+    border-radius:5px;
+    font-size: 25px;   
+    background-color: rgba(248, 0, 0, 0);
+    border: 0;
+    cursor: pointer;
+}
+.btn9{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 130px;
+    left: 105px;
+    z-index: 1;
+    border-radius:5px;
+    border: 0;
+    font-size: 25px;   
+    background-color: rgba(248, 0, 0, 0); 
+    cursor: pointer;
+}
+img {
+    display: block;
+    width: 400px;
+    margin: auto;
+}

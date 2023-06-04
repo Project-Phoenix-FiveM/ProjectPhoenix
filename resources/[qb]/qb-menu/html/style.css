@@ -1,0 +1,176 @@
+/* Nice font for button from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+@media (width: 3840px) and (height: 2160px) {
+  #container {
+    position: absolute;
+    font-size: 25px !important;
+    height: auto;
+    top: 20%;
+    right: 20%;
+    border-radius: 5px;
+    background: transparent !important;
+  }
+
+  #buttons {
+    font-size: 25px !important;
+    max-height: 75vh;
+    width: 300px;
+    overflow-x: none;
+    overflow-y: auto;
+    padding: 10px;
+  }
+
+  div > .text {
+    flex-direction: column;
+    font-size: 25px !important;
+    overflow: hidden;
+  }
+
+  div > .header {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: left;
+    overflow: wrap;
+    color: white;
+    font-size: 25px !important;
+    font-weight: 400;
+    overflow: hidden;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #171717e6;
+  border-radius: 10px;
+}
+
+#container {
+  position: absolute;
+  height: auto;
+  top: 20%;
+  right: 20%;
+  border-radius: 5px;
+  background: transparent !important;
+}
+.button {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row !important;
+  gap: 10px;
+}
+.title {
+  cursor: default;
+  gap: 10px;
+  display: flex;
+  flex-direction: row !important;
+}
+
+#buttons {
+  max-height: 75vh;
+  width: 300px;
+  overflow-x: none;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+html,
+body {
+  background: transparent !important;
+}
+
+.button {
+  width: auto;
+  height: 10%;
+  background: rgba(23, 23, 23, 90%);
+  color: white;
+  margin: auto;
+  position: relative;
+  top: 10%;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  padding: 0.45rem;
+  border-radius: 0.15rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0rem 0rem 0.5rem 0.05rem #000000;
+  cursor: pointer;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: left;
+}
+
+.button:hover {
+  background-color: #dc143c;
+}
+
+.title {
+  width: auto;
+  height: 10%;
+  background: rgba(23, 23, 23, 90%);
+  color: white;
+  margin: auto;
+  position: relative;
+  top: 10%;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  padding: 0.45rem;
+  border-radius: 0.15rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0rem 0rem 0.5rem 0.05rem #000000;
+}
+
+.title > div.column > div.header {
+  text-decoration: underline !important;
+}
+
+.disabled {
+  background: rgba(102, 102, 102, 0.9) !important;
+  cursor: default;
+}
+
+div > .text {
+  flex-direction: column;
+  font-size: 0.75rem;
+  overflow: hidden;
+}
+
+div > .header {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: left;
+  overflow: wrap;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 400;
+  overflow: hidden;
+}

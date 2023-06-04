@@ -1,0 +1,78 @@
+local Translations = {
+    error = {
+        has_no_drugs = "Não tens nenhumas drogas contigo",
+        not_enough_police = "Não há polícia suficiente, são necessarios (%{polices} polícias)",
+        no_drugs_left = "Não tens mais drogas para vender",
+        too_far_away = "Foste para muito longe",
+        offer_declined = "Oferta recusada",
+        no_player_nearby = "Não há jogadores perto",
+        pending_delivery = "Ainda tens de acabar uma entrega, do que estás a espera?!",
+        item_unavailable = "Este item não está disponivel, recebeste o dinheiro de volta",
+        order_not_right = "A encomenda não pedia isto",
+        too_late = "Chegaste tarde",
+        dealer_already_exists = "Já existe um dealer com este nome",
+        dealer_not_exists = "Este dealer não existe",
+        no_dealers = "Não foi colocado nenhum dealer",
+        dealer_not_exists_command = "Dealer %{dealerName} não existe"
+    },
+    success = {
+        helped_player = "Ajudaste uma pessoa",
+        route_has_been_set = "A rota da entrega foi inserida no teu gps",
+        teleported_to_dealer = "Foste teleportado para %{dealerName}",
+        offer_accepted = "Oferta aceite",
+        order_delivered = "A encomenda foi entregue",
+        dealer_deleted = "Dealer %{dealerName} foi apagado"
+    },
+    info = {
+        started_selling_drugs = "Começaste a vender drogas",
+        stopped_selling_drugs = "Paraste de vender drogas",
+        has_been_robbed = "Foste roubado e perdeste %{bags} saco(s) de %{drugType}",
+        suspicious_situation = "Atividade suspeita",
+        possible_drug_dealing = "Possivel venda de drogas",
+        drug_offer = "[~g~E~w~] %{bags}x %{drugLabel} por $%{randomPrice}? / [~g~G~w~] Rejeitar oferta",
+        pick_up_button = "[~g~E~w~] Apanhar",
+        knock_button = "[~g~E~w~] Bater",
+        mystery_man_button = "[~g~E~w~] Comprar / [~g~G~w~] Ajuda o homem ($5000)",
+        other_dealers_button = "[~g~E~w~] Comprar / [~g~G~w~] Começar uma missão",
+        reviving_player = "Ajudar pessoa a levantar...",
+        dealer_name = "Dealer %{dealerName}",
+        sending_delivery_email = "São estes os produtos, vou-te falando por email",
+        mystery_man_knock_message = "Olá meu filho, o que posso fazer por ti?",
+        treated_fred_bad = "Infelizmente já não faço negocios ... Devias-me ter tratado melhor",
+        fred_knock_message = "Hey %{firstName}, o que posso fazer por ti?",
+        no_one_home = "Parece que não está ninguem em casa",
+        delivery_info_email = "Aqui está toda a informação da entrega, <br>Items: <br> %{itemAmount}x %{itemLabel}<br><br> chega a tempo",
+        deliver_items_button = "[~g~E~w~] %{itemAmount}x %{itemLabel} entregar",
+        delivering_products = "A entregar produtos...",
+        drug_deal_alert = "911: Tráfico de Drogas",
+        perfect_delivery = "Fizeste um bom trabalho, espero ver-te outra vez ;)<br><br>Fica bem, %{dealerName}",
+        bad_delivery = "Recebi reclamações da entrega, não quero que isto aconteça novamente",
+        late_delivery = "Não chegaste a tempo. Tinhas coisas mais importantes para fazer do que o negócio?",
+        police_message_server = "Uma situação suspeita foi localizada em %{street}, possivel venda de drogas",
+        drug_deal = "Vendendo droga",
+        newdealer_command_desc = "Coloca um dealer (Admin)",
+        newdealer_command_help1_name = "nome",
+        newdealer_command_help1_help = "Nome Dealer",
+        newdealer_command_help2_name = "min",
+        newdealer_command_help2_help = "Tempo Mínimo",
+        newdealer_command_help3_name = "max",
+        newdealer_command_help3_help = "Tempo Máximo",
+        deletedealer_command_desc = "Apagar um dealer (Admin)",
+        deletedealer_command_help1_name = "nome",
+        deletedealer_command_help1_help = "Nome Dealer",
+        dealers_command_desc = "Ver todos os dealers (Admin)",
+        dealergoto_command_desc = "Teleportar para um dealer (Admin)",
+        dealergoto_command_help1_name = "nome",
+        dealergoto_command_help1_help = "Nome Dealer",
+        list_dealers_title = "Lista de todos os dealers: ",
+        list_dealers_name_prefix = "Nome: "
+    }
+}
+
+if GetConvar('qb_locale', 'en') == 'pt' then
+    Lang = Locale:new({
+        phrases = Translations,
+        warnOnMissing = true,
+        fallbackLang = Lang,
+    })
+end

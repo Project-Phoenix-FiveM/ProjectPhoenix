@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="scripting/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>QBCore Bankieren</title>
+</head>
+<body><div class="container" id="bankingContainer">
+    <div class="row">
+        <div class="col-3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="images/logo.png" class="img-fluid">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="nav flex-column nav-pills p-2 shadow-lg" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="background:rgba(51, 51, 51, 0.8); border-radius: 5px;">
+                            <a class="nav-link active m-1" id="bankingHome-tab" data-toggle="pill" href="#bankingHome" role="tab" aria-controls="bankingHome" aria-selected="true" style="color: white">Startpagina</a>
+                            <a class="nav-link m-1" id="bankingWithdraw-tab" data-toggle="pill" href="#bankingWithdraw" role="tab" aria-controls="bankingWithdraw" aria-selected="false" style="color: white">Opnames</a>
+                            <a class="nav-link m-1" id="bankingDeposit-tab" data-toggle="pill" href="#bankingDeposit" role="tab" aria-controls="bankingDeposit" aria-selected="false" style="color: white">Storting</a>
+                            <a class="nav-link m-1" id="bankingTransfer-tab" data-toggle="pill" href="#bankingTransfer" role="tab" aria-controls="bankingTransfer" aria-selected="false" style="color: white">Overdracht</a>
+                            <a class="nav-link m-1" id="bankingStatement-tab" data-toggle="pill" href="#bankingStatement" role="tab" aria-controls="bankingStatement" aria-selected="false" style="color: white">Overzicht</a>
+                            <a class="nav-link m-1" id="bankingSavings-tab" style="display:none; color: white;" data-toggle="pill" href="#bankingSavings" role="tab" aria-controls="bankingSavings" aria-selected="false">Spaarrekening</a>
+                            <a class="nav-link m-1" id="bankingInvest-tab" style="display:none; color: white;" data-toggle="pill" href="#bankingInvest" role="tab" aria-controls="bankingInvest" aria-selected="false">Beleggen</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow-lg mt-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Account Informatie</h5>
+                                <div class="card-text">
+                                    <p>Naam: <span id="accountName">John Doe</span></p>
+                                    <p>Rekeningnummer: <span id="accountNumber">1234567890</span></p>
+                                    <p>Saldo: <span id="accountBalance">€0,00</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="container-fluid">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="bankingHome" role="tabpanel" aria-labelledby="bankingHome-tab">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card shadow-lg mt-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Account Home</h5>
+                                        <div class="card-text">
+                                            <p>Welkom bij de QBCore Bankieren App. Kies een tabblad om door de bankfunctionaliteiten te navigeren.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="btn btn-primary btn-lg mt-4">Opnames</button>
+                                <button class="btn btn-primary btn-lg mt-4">Storting</button>
+                                <button class="btn btn-primary btn-lg mt-4">Overdracht</button>
+                                <button class="btn btn-primary btn-lg mt-4">Overzicht</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bankingWithdraw" role="tabpanel" aria-labelledby="bankingWithdraw-tab">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card shadow-lg mt-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Opnames</h5>
+                                        <div class="card-text">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="withdrawAmount">Bedrag:</label>
+                                                    <input type="text" class="form-control" id="withdrawAmount">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Opnemen</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bankingDeposit" role="tabpanel" aria-labelledby="bankingDeposit-tab">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card shadow-lg mt-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Storting</h5>
+                                        <div class="card-text">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="depositAmount">Bedrag:</label>
+                                                    <input type="text" class="form-control" id="depositAmount">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Storten</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bankingTransfer" role="tabpanel" aria-labelledby="bankingTransfer-tab">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card shadow-lg mt-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Overdracht</h5>
+                                        <div class="card-text">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="transferAmount">Bedrag:</label>
+                                                    <input type="text" class="form-control" id="transferAmount">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="transferRecipient">Ontvanger:</label>
+                                                    <input type="text" class="form-control" id="transferRecipient">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Overdragen</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bankingStatement" role="tabpanel" aria-labelledby="bankingStatement-tab">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card shadow-lg mt-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Overzicht</h5>
+                                        <div class="card-text">
+                                            <p>Uw transactiegeschiedenis wordt hier weergegeven.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bankingSavings" role="tabpanel" aria-labelledby="bankingSavings-tab">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card shadow-lg mt-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Spaarrekening</h5>
+                                        <div class="card-text">
+                                            <p>Uw spaarrekeninginformatie wordt hier weergegeven.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="bankingInvest" role="tabpanel" aria-labelledby="bankingInvest-tab">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card shadow-lg mt-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Beleggen</h5>
+                                        <div class="card-text">
+                                            <p>Beleggingsinformatie wordt hier weergegeven.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optionele JavaScript -->
+<!-- jQuery eerste, daarna Popper.js, dan Bootstrap JS -->
+<script src="scripting/external/jquery/jquery.js"></script>
+<script src="scripting/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.6/fc-3.2.5/kt-2.5.0/r-2.2.2/datatables.min.js"></script>
+<script src="qb-banking.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./ui.css">
+    <title>qb-vehiclesales</title>
+</head>
+    <body>
+        <div class="sell-container" id="app">
+            <div id="sell-contract" class="centred">
+                <div id="form-header" class="v-centred-container">
+                    <object type="image/svg+xml" data="logo.svg" class="logo">
+                        Shop Logo <!-- fallback image in CSS -->
+                    </object>
+                    <div>
+                        <div id="biz-name" class="vertical-center">{{ bizName }}</div>
+                    </div>
+                </div>
+
+                <div id="the-form" class="centred">
+                    <div class="form-entry">
+                        <div id="seller-name" class="form-field" >{{ sellerName }}</div>
+                        <span class="form-field-summary">(Name of Seller)</span>
+                    </div>
+                    <div class="form-entry">
+                        <div id="seller-banknr" class="form-field">{{ bankAccount }}</div>
+                        <span class="form-field-summary">(Bank Account Number)</span>
+                    </div>
+                    <div class="form-entry">
+                        <div id="seller-telnr" class="form-field">{{ phoneNumber }}</div>
+                        <span class="form-field-summary">(Telephone Number)</span>
+                    </div>
+                    <div class="form-entry">
+                        <div id="vehicle-plate" class="form-field">{{ licensePlate }}</div>
+                        <span class="form-field-summary">(Vehicle License Plate)</span>
+                    </div>
+                    <div class="form-entry">
+                        <div class="form-field" v-if="mode==='sellVehicle'">
+                            <input type="text"
+                                class="vehicle-description"
+                                maxlength="500"
+                                placeholder="Enter Your Vehicle Description Here, Maximum 500 Characters"
+                                v-model="vehicleDescription">
+                        </div>
+                        <span class="form-field-summary"v-if="mode==='sellVehicle'">(Vehicle Description. max 500)</span>
+                        <div id="vehicle-plate" class="form-field" v-if="mode==='buyVehicle'">{{ vehicleDescription }}</div>
+                    </div>
+
+                    <div class="form-entry" v-if="mode==='sellVehicle'">
+                        <table class="pricing-table centred-h">
+                            <tr><td><span class="table-field-heading">Selling Price:</span>
+                                <input type="text"
+                                    class="vehicle-sell-price"
+                                    placeholder="Enter Vehicle Price Here"
+                                    v-model="sellPrice">
+                            </td></tr>
+                            <tr><td><span class="table-field-heading">Tax:</span><span id="tax"> &dollar; {{ tax }}</span></td></tr>
+                            <tr><td><span class="table-field-heading">Mosely's Cut:</span><span id="mosley-cut"> &dollar; {{ mosleys }}</span></td></tr>
+                            <tr><td><span class="table-field-heading">Total Yield:</span><span id="total-money"> &dollar; {{ total }}</span></td></tr>
+                        </table>
+                    </div>
+
+                    <div class="form-entry" v-if="mode==='buyVehicle'">
+                        <table class="pricing-table centred-h">
+                            <tr><td><span class="table-field-heading">Vehicle Price:</span><span id="tax"> &dollar; {{ sellPrice }}</span></td></tr>
+                        </table>
+                    </div>
+
+                    <div class="btn" id="sell-vehicle" v-if="mode==='sellVehicle'" @click="sell(sellPrice)"><p>Sell</p></div>
+                    <div class="btn" id="buy-vehicle" v-if="mode==='buyVehicle'" @click="buy()"><p>Buy</p></div>
+                    <div class="btn" id="buy-vehicle-back" v-if="showTakeBackOption" @click="takeBack()"><p>Take Back</p></div>
+
+                    <div v-if="errors.length" class="errors centred-h">
+                        <ul>
+                            <li v-for="error in errors">{{ error }}</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="./vue.min.js"></script>
+        <script src="./ui.js"></script>
+    </body>
+</html>

@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: none;
+}
+
+.watch {
+    position: absolute;
+    height: 35vh;
+    right: 15vh;
+    bottom: 10vh;
+}
+
+.watch-screen {
+    position: absolute;
+    right: 18.5vh;
+    bottom: 20vh;
+    height: 16.5vh;
+    width: 14.5vh;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2vh;
+}
+
+.main-screen {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.food-app {
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.thirst-app {
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.app-title {
+    position: relative;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1vh;
+    top: 1.5vh;
+    font-size: 1.3vh;
+}
+
+.app-buttons {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    bottom: 1vh;
+    width: 100%;
+}
+
+.app-button {
+    position: relative;
+    float: left;
+    background-color: rgba(32, 32, 32, 0.685);
+    width: 40%;
+    border-radius: 1vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto 0 1vh;
+    transition: all 0.1s linear;
+}
+
+.app-button:hover {
+    background-color: rgba(56, 56, 56, 0.877);
+}
+
+.app-button > p {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8vh;
+}
+
+.alert-setting {
+    position: absolute;
+    width: 70%;
+    height: 50%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 4vh;
+}
+
+.alert-setting > p {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9vh;
+}
+
+.percentage {
+    background: none;
+    position: absolute;
+    left: 0;
+    width: 30%;
+    top: 9vh;
+    margin: 0 auto;
+    right: 0;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+    color: white;
+}
+
+input[type="number"] {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2vh;
+}
+
+::-webkit-inner-spin-button {
+    display: none;
+}
+
+.fitbit-app {
+    position: relative;
+    float: left;
+    width: 3.5vh;
+    height: 3.5vh;
+    top: 0.5vh;
+    left: 1.2vh;
+    border-radius: 0.4vh;
+    margin-right: 0.8vh;
+    margin-top: 0.8vh;
+    background: rgba(158, 158, 158, 0.096);
+    transition: all 0.1s linear;
+    text-align: center;
+}
+
+.fitbit-app.food {
+    color: #3da83b;
+}
+
+.fitbit-app.thirst {
+    color: #6767dd;
+}
+
+.fitbit-app:hover {
+    background: rgba(158, 158, 158, 0.219);
+}
+
+.fitbit-app > i {
+    padding-top: 1vh;
+    font-size: 1.8vh;
+}

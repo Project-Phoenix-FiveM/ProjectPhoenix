@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>QBCore Fitbit</title>
+</head>
+<body>
+    <div class="container">
+        <img src="./watch.png" alt="watch" class="watch">
+        <div class="watch-screen">
+            <div class="main-screen">
+                <!-- <div class="fitbit-app" data-app="settings"><i class="fa fa-cog" style="color: #d3d3d3;"></i></div> -->
+                <div class="fitbit-app food" data-app="food"><i class="fa fa-utensils"></i></div>
+                <div class="fitbit-app thirst" data-app="thirst"><i class="fa fa-tint"></i></div>
+            </div>
+            <div class="food-app">
+                <span class="app-title">Fome</span>
+                <div class="alert-setting">
+                    <p>A que % gostaria de receber um alerta?</p>
+                </div>
+                <input type="number" class="percentage" placeholder="50%" min="1" max="100">
+                <div class="app-buttons">
+                    <div class="app-button save-food-settings"><p>Guardar</p></div>
+                    <div class="app-button back-food-settings"><p>Voltar</p></div>
+                </div>
+            </div>
+            <div class="thirst-app">
+                <span class="app-title">Sede</span>
+                <div class="alert-setting">
+                    <p>A que % gostaria de receber um alerta?</p>
+                </div>
+                <input type="number" class="percentage" placeholder="50%" min="1" max="100">
+                <div class="app-buttons">
+                    <div class="app-button save-thirst-settings"><p>Guardar</p></div>
+                    <div class="app-button back-thirst-settings"><p>Voltar</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="./app.js"></script>
+</body>
+</html>

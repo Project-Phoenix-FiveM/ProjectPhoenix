@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas Neue');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+body {
+    overflow: hidden;
+    display: none;
+}
+
+.container {
+    overflow: hidden;
+}
+
+.centred {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.centred-h {
+    position: fixed;
+    left: 28%;
+    transform: translate(-50%, 0%);
+}
+
+#sell-contract {
+    max-width: 700px;
+    max-height: 70vh;
+    width: 30vw;
+    height: 75vh;
+    background-color: white;
+    padding: 10px;
+    background: rgb(23 23 23);
+    border-radius: 8px;
+    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
+}
+
+#buy-contract {
+    position: absolute;
+    width: 165vh;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    user-select: none;
+}
+
+#buy-vehicle-desc {
+    position: absolute;
+    left: 66.8vh;
+    bottom: 48vh;
+    font-family: 'Poppins';
+    font-size: 13px;
+    width: 45vh;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.vehicle-description:hover {
+    color: #ffffff;
+}
+
+.vehicle-description:focus {
+    color: #ffffff;
+}
+
+.vehicle-description::placeholder {
+    text-align: left;
+    color:white
+}
+
+#sell-vehicle {
+    width: 100px;
+    height: 35px;
+    background: rgb(30 30 30);
+    box-shadow: -0.072rem 0rem 0.6rem 0.05rem #000000;
+    border-radius: 25px 0px 0px 25px;
+    margin-top: 100px;
+    margin-left: 452px;
+    left: 0;
+    right: 0;
+    transition: all 0.1s ease-in-out;
+}
+
+#sell-vehicle:hover {
+    background: #dc143c;
+    transition: all 0.1s ease-in-out;
+}
+
+#sell-vehicle > p {
+    text-align: center;
+    line-height: 3.5vh;
+    color: white;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+input.vehicle-sell-price::placeholder {
+    color: white;
+    opacity: 1;
+
+}
+
+#buy-vehicle {
+   
+width: 250px;
+   
+height: 35px;
+   
+background: rgb(30 30 30);
+
+box-shadow: -0.072rem 0rem 0.6rem 0.05rem #000000;
+
+border-radius: 25px;
+   
+transition: all 0.1s ease-in-out;
+   
+bottom: 50vh;
+   
+margin:auto;
+   
+user-select: none;
+}
+
+#buy-vehicle-back {
+    width: 250px;
+    height: 35px;
+    background: rgb(30 30 30);
+    box-shadow: -0.072rem 0rem 0.6rem 0.05rem #000000;
+    border-radius: 25px;
+    transition: all 0.1s ease-in-out;
+    bottom: 88vh;
+    margin: 0 auto;
+    user-select: none;
+}
+
+#buy-vehicle:hover {
+    border-radius: 25px;
+    background: #dc143c;
+    transition: all 0.1s ease-in-out;
+}
+
+ #buy-vehicle-back:hover {
+    border-radius: 25px;
+    background: #dc143c;
+    transition: all 0.1s ease-in-out;
+
+}
+
+#buy-vehicle > p {
+    text-align: center;
+    line-height: 3.5vh;
+    color: rgb(255, 255, 255);
+    font-size: 19px;
+    font-family: "Poppins", sans-serif !important;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#buy-vehicle-back > p {
+    text-align: center;
+    line-height: 3.5vh;
+    color: rgb(255, 255, 255);
+    font-size: 19px;
+    font-family: "Poppins", sans-serif !important;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+#form-header {
+    height: 120px;
+    border-bottom: solid;
+    border-color: #ffffffde;
+    border-width: 2px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.v-centred-container {
+    position: relative;
+
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.logo {
+    width: 20%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+#biz-name {
+    width: 68%;
+    text-align: center;
+    font-family: 'Bebas Neue';
+    font-size: 35px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 3.0px;
+}
+
+#the-form {
+    margin-top: 45px;
+    width: 85%;
+    height: 72%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.errors {
+    font-family: 'Poppins';
+    background: #f7a261;
+    width: 50%;
+    border-radius: 25px;
+    bottom: -10vh;
+    left:25vh;
+}
+
+.form-entry {
+    margin-top: 60px;
+    height: 2%;
+}
+
+.form-entry input {
+    width: 90.5%;
+    margin-top: 1px;
+    border-radius: 0.1px;
+    outline:none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid rgb(255, 255, 255) 1.5px;
+}
+
+.form-field {
+    font-family: 'Poppins';
+    font-size: 16px;
+    padding-top: 3px;
+    border-top: solid;
+    color: rgb(170, 170, 170);
+    border-color: #d8d8d8b0;
+    border-width: 1px;
+}
+
+.form-field-summary {
+    font-family: 'Poppins';
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.vehicle-description {
+    outline: none;
+    background: none;
+    font-family: 'Poppins';
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white
+}
+
+.vehicle-sell-price {
+    font-size: 12px;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background-color: #00000000;
+}
+
+table {
+    font-size: 18px;
+    bottom: -500px;
+    font-family: 'Poppins';
+    color: white;
+}
+
+.pricing-table {
+    margin-bottom: 480px;
+    margin-left: -50px;
+    width: 50%;
+}
+
+
+.table-field-heading {
+    font-weight:500;
+}
+
+#buy-price {
+    position: absolute;
+    left: 87vh;
+    bottom: 35.8vh;
+    font-family: 'Poppins';
+    font-size: 12px;
+}
+
+#buy-seller-name {
+    position: absolute;
+    left: 66.8vh;
+    top: 21.5vh;
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+#buy-seller-banknr {
+    position: absolute;
+    left: 66.8vh;
+    top: 28vh;
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+#buy-seller-telnr {
+    position: absolute;
+    left: 66.8vh;
+    top: 34.2vh;
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+#buy-vehicle-plate {
+    position: absolute;
+    left: 66.8vh;
+    top: 40.5vh;
+    font-family: 'Poppins';
+}

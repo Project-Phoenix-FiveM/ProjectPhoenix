@@ -1,0 +1,78 @@
+local Translations = {
+    error = {
+        has_no_drugs = "Non porti nessuna droga con te",
+        not_enough_police = "Non ci sono abbastanza poliziotti in servizio (%{polices} richiesti)",
+        no_drugs_left = "Niente più droga da vendere",
+        too_far_away = "Ti sei allontanato troppo",
+        offer_declined = "Offerta rifiutata",
+        no_player_nearby = "Nessun cittadino nelle vicinanze",
+        pending_delivery = "Hai ancora bisogno di completare una consegna, cosa stai aspettando?!",
+        item_unavailable = "Questo articolo non è disponibile, hai ottenuto un rimborso",
+        order_not_right = "Questo non soddisfa l'ordine",
+        too_late = "È troppo tardi",
+        dealer_already_exists = "Esiste già uno spacciatore con questo nome",
+        dealer_not_exists = "Questo spacciatore non esiste",
+        no_dealers = "Nessuno spacciatore è stato impostato",
+        dealer_not_exists_command = "Lo spacciatore %{dealerName} non esiste"
+    },
+    success = {
+        helped_player = "Hai aiutato una persona",
+        route_has_been_set = "Il percorso per il luogo di consegna è stato impostato sulla mappa",
+        teleported_to_dealer = "Sei stato teletrasportato da %{dealerName}",
+        offer_accepted = "Offerta accettata",
+        order_delivered = "L'ordine è stato consegnato",
+        dealer_deleted = "Lo spacciatore %{dealerName} è stato eliminato"
+    },
+    info = {
+        started_selling_drugs = "Hai iniziato a vendere droga",
+        stopped_selling_drugs = "Hai smesso di vendere droga",
+        has_been_robbed = "Sei stato derubato e hai perso %{bags} sacchetto(i) %{drugType}",
+        suspicious_situation = "Situazione sospetta",
+        possible_drug_dealing = "Possibile traffico di droga",
+        drug_offer = "[~g~E~w~] %{bags}x %{drugLabel} per $%{randomPrice}? / [~g~G~w~] Declina l'offerta",
+        pick_up_button = "[~g~E~w~] Raccogli",
+        knock_button = "[~g~E~w~] Bussa",
+        mystery_man_button = "[~g~E~w~] Compra / [~g~G~w~] Aiuta il tuo amico ($5000)",
+        other_dealers_button = "[~g~E~w~] Compra / [~g~G~w~] Inizia una missione",
+        reviving_player = "Aiutando la persona ad alzarsi...",
+        dealer_name = "Spacciatore %{dealerName}",
+        sending_delivery_email = "Questi sono i prodotti, mi terrò in contatto tramite e-mail",
+        mystery_man_knock_message = "Ciao, figlio mio, cosa posso fare per te?",
+        treated_fred_bad = "Sfortunatamente non faccio più affari ... Avresti dovuto trattarmi meglio",
+        fred_knock_message = "Oh %{firstName}, cosa posso fare per te?",
+        no_one_home = "Sembra che nessuno sia in casa",
+        delivery_info_email = "Ecco tutte le informazioni sulla consegna, <br>Oggetti: <br> %{itemAmount}x %{itemLabel}<br><br> arriva in orario",
+        deliver_items_button = "[~g~E~w~] %{itemAmount}x %{itemLabel} consegna",
+        delivering_products = "Consegnando prodotti...",
+        drug_deal_alert = "911: Spaccio di droga",
+        perfect_delivery = "Hai fatto un buon lavoro, spero di rivederti ;)<br><br>I miei auguri, %{dealerName}",
+        bad_delivery = "Ho ricevuto lamentele sulla tua consegna, non lasciare che accada di nuovo",
+        late_delivery = "Non eri puntuale. Avevi cose più importanti da fare degli affari?",
+        police_message_server = "Una situazione sospetta è stata individuata a %{street}, possibile spaccio di droga",
+        drug_deal = "Spaccio di droga",
+        newdealer_command_desc = "Posiziona uno spacciatore (Solo Admin)",
+        newdealer_command_help1_name = "nome",
+        newdealer_command_help1_help = "Nome dello spacciatore",
+        newdealer_command_help2_name = "min",
+        newdealer_command_help2_help = "Orario minimo(es. 14)",
+        newdealer_command_help3_name = "max",
+        newdealer_command_help3_help = "Orario massimo(es. 22)",
+        deletedealer_command_desc = "Elimina uno spacciatore (Solo Admin)",
+        deletedealer_command_help1_name = "nome",
+        deletedealer_command_help1_help = "Nome dello spacciatore",
+        dealers_command_desc = "Vedi tutti gli spacciatori (Solo Admin)",
+        dealergoto_command_desc = "Teletrasportati da uno spacciatore (Solo Admin)",
+        dealergoto_command_help1_name = "nome",
+        dealergoto_command_help1_help = "Nome dello spacciatore",
+        list_dealers_title = "Lista degli spacciatori: ",
+        list_dealers_name_prefix = "Nome: "
+    }
+}
+
+if GetConvar('qb_locale', 'en') == 'it' then
+    Lang = Locale:new({
+        phrases = Translations,
+        warnOnMissing = true,
+        fallbackLang = Lang,
+    })
+end
