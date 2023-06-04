@@ -5,7 +5,7 @@
     display: none;
     height: 100%;
     width: 100%;
-    background: rgb(36, 36, 36);
+    background: #212832;
     overflow: hidden;
 }
 
@@ -23,7 +23,6 @@
     height: 100%;
     text-align: center;
     line-height: 5vh;
-    font-family: 'Poppins', sans-serif;
     transition: .075s linear;
 }
 
@@ -34,7 +33,7 @@
 }
 
 .houses-app-header-tab-selected {
-    border-bottom: .3vh solid #c23616;
+    border-bottom: .3vh solid #8ee074;
 }
 
 .houses-app-header-tab-selected > p {
@@ -80,13 +79,13 @@
     width: 100%;
     transition: all 0.05s linear 0s;
     margin-bottom: 10px;
-    background: rgba(23, 23, 23, 90%);
+    background: #2c465f;
     border-radius: 0.15rem;
-    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
+    box-shadow: 0rem 0rem 0.2rem 0.02rem #000000a6;
 }
 
 .myhouses-house:hover {
-    background-color: #dc143c;
+    background-color: #0d1218c0;
 }
 
 .myhouse-house-icon {
@@ -108,7 +107,6 @@
     left: 5.5vh;
     top: 1.7vh;
     color: white;
-    font-family: 'Poppins', sans-serif;
     font-size: 1.2vh;
 }
 
@@ -117,7 +115,6 @@
     left: 5.5vh;
     bottom: 1.7vh;
     color: white;
-    font-family: 'Poppins', sans-serif;
     font-size: 1.3vh;
 }
 
@@ -141,7 +138,7 @@
     margin: 0 auto;
     left: 0vw;
     right: 0;
-    background-color: rgb(36, 36, 36);
+    background-color: #212832;
     border-radius: .5vh;
     box-shadow:
     inset 0 0 1vh .2vh rgba(0, 0, 0, 0.281),
@@ -156,7 +153,6 @@
     color: rgb(255 255 255);
     text-align: center;
     line-height: 5vh;
-    font-family: 'Poppins', sans-serif;
     font-size: 1.8vh;
     border-bottom: .1vh solid rgba(0, 0, 0, 0.26);
 }
@@ -168,7 +164,6 @@
     width: 12vh;
     height: 5vh;
     color: white;
-    font-family: 'Poppins', sans-serif;
     font-size: 1.5vh;
     border-radius: .3vh;
     top: 6vh;
@@ -195,27 +190,20 @@
 }
 
 #myhouse-option-close {
-    background-color: #c23616;
+    background-color: #f5a15b;
+    color: black;
 }
 
 #myhouse-option-close:hover {
-    background-color: #e84118;
-}
-
-#myhouse-option-transfer-confirm {
-    background-color: #27ae60;
-}
-
-#myhouse-option-transfer-confirm:hover {
-    background-color: #2ecc71;
+    background-color: #c27e47;
 }
 
 #myhouse-option-transfer-back {
-    background-color: #c23616;
+    background-color: #8ee074;
 }
 
 #myhouse-option-transfer-back:hover {
-    background-color: #e74c3c;
+    background-color: #6cac59;
 }
 
 .myhouse-option-transfer-container {
@@ -224,9 +212,8 @@
     height: 50%;
     margin: 0 auto;
     left: 35vw;
-    /* left: 0; */
     right: 0;
-    background-color: rgb(36, 36, 36);
+    background-color: #212832;
     border-radius: .5vh;
     box-shadow:
     inset 0 0 1vh .2vh rgba(0, 0, 0, 0.281),
@@ -241,7 +228,7 @@
     margin: 0 auto;
     left: 35vw;
     right: 0;
-    background-color: rgb(36, 36, 36);
+    background-color: #212832;
     border-radius: .5vh;
     box-shadow:
     inset 0 0 1vh .2vh rgba(0, 0, 0, 0.281),
@@ -256,7 +243,6 @@
     color: rgb(255 255 255);
     text-align: center;
     line-height: 5vh;
-    font-family: 'Poppins', sans-serif;
     font-size: 1.8vh;
     border-bottom: .1vh solid rgba(0, 0, 0, 0.26);
 }
@@ -271,7 +257,6 @@
     top: 7.5vh;
     border: none;
     outline: none;
-    font-family: 'Poppins', sans-serif;
     font-size: 1.8vh;
     text-indent: 1vh;
     color: black;
@@ -291,11 +276,11 @@
 
 #myhouse-option-keys-back {
     top: 22vh;
-    background-color: #c23616;
+    background-color: #f5a15b;
 }
 
 #myhouse-option-keys-back:hover {
-    background-color: #e74c3c;
+    background-color: #c27e47;
 }
 
 .keys-container {
@@ -316,13 +301,12 @@
 
 .house-key-holder {
     display: inline-block;
-    max-width: 50%;
+    max-width: 90%;
     white-space: nowrap;
     overflow: hidden !important;
     text-overflow: ellipsis;
     position: absolute;
     padding: 1.2vh;
-    font-family: 'Poppins', sans-serif;
     font-size: 1.5vh;
     color: white;
 }
@@ -385,13 +369,13 @@
     height: 7vh;
     margin-bottom: 10px;
     transition: 0.1s ease;
-    background: rgba(23, 23, 23, 90%);
+    background: #2c465f;
     border-radius: 0.15rem;
-    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
+    box-shadow: 0rem 0rem 0.2rem 0.02rem #000000a6;
 }
 
 .mykeys-key:hover {
-    background-color: #dc143c;
+    background-color: #0d1218c0;
 }
 
 .mykeys-key-label {
@@ -399,7 +383,6 @@
     top: 0;
     left: 0;
     color: white;
-    font-family: 'Poppins', sans-serif;
     font-size: 1.3vh;
     margin: 1vh;
 }
@@ -409,7 +392,6 @@
     bottom: 0;
     left: 0;
     color: white;
-    font-family: 'Poppins', sans-serif;
     font-size: 1.2vh;
     margin: 1vh;
 }

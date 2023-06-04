@@ -4,13 +4,20 @@
     display: none;
     height: 100%;
     width: 100%;
-    background: rgb(36, 36, 36);
+    background: #212832;
+    overflow: hidden;
+}
+
+.contacts-app {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: #212832;
     overflow: hidden;
 }
 
 .phone-app-header {
     position: relative;
-    font-family: 'Poppins', sans-serif;
     font-size: 2.5vh;
     top: 5vh;
     color: white;
@@ -21,7 +28,6 @@
 #total-contacts {
     position: relative;
     font-size: 1.1vh;
-    font-family: 'Poppins', sans-serif;
     top: -3vh;
     color: white;
 }
@@ -30,37 +36,25 @@
     position: absolute;
     height: 5vh;
     width: 100%;
-    bottom: 30px;
+    bottom: -2vh;
     z-index: 101;
 }
 
-.phone-app-footer-button {
-    position: relative;
-    height: 100%;
-    width: 25%;
-    text-align: center;
-    float: left;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    transition: .1s;
-}
-
 .phone-selected-footer-tab {
-    color: #dc143c;
+    color: #2c465f;
 }
 
 .phone-contacts {
     display: block;
     position: absolute;
-    height: 60%;
+    height: 79%;
     width: 100%;
-    top: 10vh;
+    top: 4vh;
 }
 
 .phone-keypad-header {
     padding-top: 6vh;
     padding-left: 3vh;
-    font-family: 'Poppins', sans-serif;
     font-size: 1.8vh;
 }
 
@@ -78,7 +72,6 @@
     outline: none;
     box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
     text-indent: 1vh;
-    font-family: 'Poppins', sans-serif;
     text-align: left;
     line-height: 3.9vh;
     font-size: 1.75vh;
@@ -100,13 +93,23 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    top: 0;
-    background: rgb(36, 36, 36);
+    top: 4.0vh;
+    background: #212832;
+}
+
+#phone-recent-call-number{
+    position: absolute;
+    top: 0.7vh;
+    right: 2.8vh;
+    font-size: 1.8vh;
+    color: #FFFFFF;
+}
+#phone-recent-call-number:hover{
+    color: rgb(187, 187, 187);
 }
 
 .phone-recent-header {
     padding-top: 8vh;
-    font-family: 'Poppins', sans-serif;
     font-size: 1.8vh;
     color: white;
     text-align: center;
@@ -116,114 +119,71 @@
 }
 .phone-recent-calls {
     position: absolute;
-    width: 100%;
-    height: 35vh;
+    width: 90%;
+    height: 45vh;
     margin: 0 auto;
     left: 0;
-    right: 0;
-    top: 15vh;
+    right: 0.0vh;
+    top: 8vh;
     overflow-x: hidden;
     overflow-y: scroll;
 }
 .phone-recent-call {
     position: relative;
-    height: 6.25vh;
     width: 90%;
+    color: white;
     left: 15px;
-    margin-bottom: 10px;
-    background: rgba(23, 23, 23, 90%);
+    height: 5.0vh;
+    margin-bottom: 8px;
+    background-color: rgb(44, 70, 95);
+    box-shadow: rgba(0, 0, 0, 0.557) 0rem 0rem 0.1rem 0.01rem;
     border-radius: 0.15rem;
-    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
+    border-bottom: 0.1vh solid rgba(245, 245, 245, 0.68);
 }
 
 .phone-recent-call:hover {
-    background-color: #dc143c;
+    background-color: #15222e;
 }
 .phone-recent-call-image {
     position: absolute;
-    width: 4vh;
-    height: 4vh;
-    top: 1.2vh;
-    left: 1vh;
+    height: 3.5vh;
+    width: 3.5vh;
+    margin: .8vh;
+    margin-left: 1.0vh;
     text-align: center;
-    line-height: 4.2vh;
-    font-size: 1.6vh;
-    color: white;
+    line-height: 3.5vh;
     border-radius: 50%;
-    font-family: 'Poppins', sans-serif;
-    background: #4e54c8;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    background: #ffffff; 
 }
 .phone-recent-call-name {
     position: absolute;
-    top: 1.1vh;
-    left: 6vh;
-    color: white;
-    font-family: 'Poppins', sans-serif;
+    left: 5.5vh;
+    line-height: 3.0vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vh;
+}
+.phone-recent-call-number {
+    position: absolute;
+    left: 5.5vh;
+    line-height: 6.5vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vh;
 }
 .phone-recent-call-type {
     position: absolute;
-    bottom: 1.1vh;
-    left: 6vh;
-    font-size: 1.2vh;
+    bottom: 2.5vh;
+    right: 0.9vh;
+    font-size: 1.1vh;
     color: rgba(54, 54, 54, 0.808);
 }
 .phone-recent-call-time {
     position: absolute;
-    bottom: 1.1vh;
-    right: 1.75vh;
-    font-size: 1.2vh;
-    font-family: 'Poppins', sans-serif;
+    bottom: 0.7vh;
+    right: 0.9vh;
+    font-size: 1.1vh;
+    font-family: 'Roboto', sans-serif;
     color: white;
-}
-
-.phone-keypad-keys {
-    position: absolute;
-    width: 23vh;
-    height: 27vh;
-    left: 3vh;
-    top: 17vh;
-    color: white;
-}
-
-.phone-keypad-key-call {
-    position: absolute;
-    margin: 0 auto;
-    bottom: 12vh;
-    left: 11.7vh;
-    font-size: 2.5vh;
-    height: 5.5vh;
-    width: 5.5vh;
-    text-align: center;
-    line-height: 5.8vh;
-    background-color: #27ae60;
-    color: white;
-    border-radius: 50%;
-    transition: .1s;
-}
-
-.phone-keypad-key-call:hover {
-    background-color: #1e8046;
-}
-
-.phone-keypad-key {
-    position: relative;
-    float: left;
-    height: 23%;
-    width: 33.33%;
-    text-align: center;
-    line-height: 7vh;
-    font-family: 'Poppins', sans-serif;
-    font-size: 2vh;
-    color: white;
-    border-bottom: 2px solid rgba(0, 0, 0, 0);
-    transition: .1s;
-}
-
-.phone-keypad-key:hover {
-    color: #6e6e6e;
-    border-bottom: 2px solid #e74c3c;
 }
 
 .phone-contacts-header {
@@ -233,67 +193,60 @@
     width: 100%;
 }
 
-.phone-contacts-header > i {
-    float: right;
-    line-height: 4vh;
-    font-size: 1.8vh;
-    padding-right: 2vh;
-    margin-left: 0.2vh;
-    transition: .1s;
-    color: white;
-    z-index: 150;
-}
-
-.phone-contacts-header > i:hover {
-    color: #dc143c;
-}
-
-/* #phone-search-icon {
-    position: relative;
-}
-
-#phone-plus-icon {
-    position: relative;
-} */
-
-#contact-search {
-    display: none;
+#phone-contact-search {
+    display: block;
     position: absolute;
     background: none;
     border: none;
-    background: rgb(226, 226, 226);
-    top: .7vh;
-    width: 17vh;
+    background: none;
+    top: 2.7vh;
+    width: 80%;
     margin: 0 auto;
-    left: 0;
-    right: 0;
-    opacity: 0.0;
+    left: 0.5vh;
+    right: 0.3vh;
+    opacity: 1;
     height: 2.5vh;
-    border-radius: 1vh;
-    box-shadow: 0 0 .2vh 0 rgba(0, 0, 0, 0.281);
-    font-family: 'Poppins', sans-serif;
+    border-bottom: .1vh solid #f5f5f5ad;
     outline: none;
-    text-indent: 1vh;
+    text-indent: 2vh;
     z-index: 100;
+    color: whitesmoke;
 }
-
-#contact-search::placeholder{
-    font-family: 'Poppins', sans-serif;
+#contact-search-icon {
+    position: absolute;
+    top: 3.2vh;
+    left: 3.0vh;
+    font-size: 1.4vh;
+    color: #FFFFFF;
+}
+#phone-plus-icon {
+    position: absolute;
+    top: 0.7vh;
+    right: 2.8vh;
+    font-size: 1.8vh;
+    color: #FFFFFF;
+}
+#phone-search-text {
+    position: absolute;
+    top: 0.7vh;
+    left: 3.0vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2vh;
+    color: #FFFFFF;
+}
+#phone-plus-icon:hover{
+    color: rgb(187, 187, 187);
 }
 
 .phone-contact-list::-webkit-scrollbar {
-    width: .4vh;
-}
-
-.phone-contact-list::-webkit-scrollbar-thumb {
-    background-color: #dc143c;
+    display: none;
 }
 
 .phone-contact-list {
     position: absolute;
     height: 100%;
-    top: 4.5vh;
-    width: 99%;
+    top: 8.0vh;
+    width: 90%;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -306,55 +259,48 @@
     width: 90%;
     color: white;
     left: 15px;
-    height: 4.5vh;
+    height: 5.0vh;
     margin-top: 2px;
-    margin-bottom: 10px;
-    background-color: rgba(23, 23, 23, 90%);
+    margin-bottom: 8px;
+    background-color: #2c465f;
     border-radius: 0.15rem;
-    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
+    box-shadow: 0rem 0rem 0.1rem 0.01rem #0000008e;
+    border-bottom: .1vh solid #f5f5f5ad;
 }
 
 .phone-contact-firstletter {
     position: absolute;
-    height: 3.4vh;
-    width: 3.4vh;
-    margin: .5vh;
-    margin-left: .6vh;
+    height: 3.5vh;
+    width: 3.5vh;
+    margin: .8vh;
+    margin-left: 1.0vh;
     text-align: center;
     line-height: 3.5vh;
     border-radius: 50%;
-    font-family: 'Poppins', sans-serif;
     color: white;
 }
 
 .phone-contact-name {
     position: absolute;
-    left: 5vh;
-    line-height: 4.5vh;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.4vh;
+    left: 5.5vh;
+    line-height: 3.0vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vh;
 }
 
-.phone-contact-actions {
+.phone-contact-number {
     position: absolute;
-    right: 0;
-    top: .3vh;
-    right: 2vh;
-    font-size: 2.2vh;
-    transition: .1s;
-}
-
-.phone-contact-actions:hover {
-    color: #e74c3c;
+    left: 5.5vh;
+    line-height: 6.5vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3vh;
 }
 
 .phone-contact-action-buttons {
-    display: none;
+    visibility: hidden;
     position: absolute;
-    bottom: 1.2vh;
-    height: 5vh;
-    width: 95%;
-    margin: 0 auto;
+    height: 100%;
+    width: 100%;
     left: 0;
     right: 0;
 }
@@ -362,23 +308,60 @@
 .phone-contact-action-buttons > i {
     position: relative;
     float: left;
-    margin-left: 5vh;
-    left: -.2vh;
-    top: 1vh;
-    font-size: 2.3vh;
-    color: white;
-    transition: .1s;
+    margin-left: 1.8vh;
+    left: 2.0vh;
+    top: 1.7vh;
+    font-size: 1.7vh;
+    color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 .phone-contact-action-buttons > i:hover {
-    color: #dc143c;
+    color: #2c465f;
 }
-.phone-add-contact {
-    display: none;
+
+.phone-contact:hover .phone-contact-action-buttons {
+    background: #0d1218c0;
+    visibility: visible;
+}
+
+.phone-recent-call-action-buttons {
+    visibility: hidden;
     position: absolute;
     height: 100%;
     width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.phone-recent-call-action-buttons > i {
+    position: relative;
+    float: left;
+    margin-left: 1.8vh;
+    left: 5.5vh;
+    top: 1.7vh;
+    font-size: 1.7vh;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.phone-recent-call-action-buttons > i:hover {
+    color: #2c465f;
+}
+
+.phone-recent-call:hover .phone-recent-call-action-buttons {
+    background: #0d1218c0;
+    visibility: visible;
+}
+
+
+.phone-add-contact {
+    display: none;
+    position: absolute;
+    height: 40%;
+    width: 80%;
     top: -100%;
+    left: 10%;
     background: rgb(36, 36, 36);
     z-index: 102;
 }
@@ -386,7 +369,6 @@
 .phone-add-contact-header {
     padding-top: 6vh;
     padding-left: 8vh;
-    font-family: 'Poppins', sans-serif;
     font-size: 2vh;
     color: white;
 }
@@ -394,15 +376,14 @@
 .phone-add-contact-name {
     position: absolute;
     color: white;
-    top: 12vh;
+    top: 2.3vh;
     left: 6vh;
     background: none;
     border: none;
     outline: none;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.555);
-    font-family: 'Poppins', sans-serif;
+    border-bottom: 2px solid #f5f5f5ad;
     height: 3.5vh;
-    width: 20vh;
+    width: 70%;
     text-indent: .4vh;
     border-radius: .5vh .5vh 0 0;
     transition: .1s;
@@ -411,7 +392,7 @@
 
 #phone-add-contact-name-icon {
     position: absolute;
-    top: 13.1vh;
+    top: 3.1vh;
     left: 2.1vh;
     font-size: 2.4vh;
     color: white;
@@ -428,15 +409,14 @@
 .phone-add-contact-number {
     position: absolute;
     color: white;
-    top: 19vh;
+    top: 8.3vh;
     left: 6vh;
     background: none;
     border: none;
     outline: none;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.555);
-    font-family: 'Poppins', sans-serif;
+    border-bottom: 2px solid #f5f5f5ad;
     height: 3.5vh;
-    width: 20vh;
+    width: 70%;
     text-indent: .4vh;
     border-radius: .5vh .5vh 0 0;
     transition: .1s;
@@ -455,52 +435,6 @@
     border-bottom: 2px solid #6ab04c;
 }
 
-.phone-add-contact-iban {
-    position: absolute;
-    color: white;
-    top: 26vh;
-    left: 6vh;
-    background: none;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.555);
-    font-family: 'Poppins', sans-serif;
-    height: 3.5vh;
-    width: 20vh;
-    text-indent: .4vh;
-    border-radius: .5vh .5vh 0 0;
-    transition: .1s;
-    font-size: 1.5vh;
-}
-
-.phone-add-contact-iban::-webkit-inner-spin-button {
-    display: none;
-}
-
-.phone-add-contact-iban:focus {
-    border-bottom: 2px solid #30336b;
-}
-
-.phone-add-contact-iban:valid {
-    border-bottom: 2px solid #6ab04c;
-}
-
-#phone-add-contact-number-icon {
-    position: absolute;
-    top: 20.1vh;
-    left: 2.1vh;
-    font-size: 2.4vh;
-    color: white;
-}
-
-#phone-add-contact-iban-icon {
-    position: absolute;
-    top: 27.1vh;
-    left: 2.1vh;
-    font-size: 2.4vh;
-    color: white;
-}
-
 .phone-add-contact-buttons {
     position: absolute;
     bottom: 40px;
@@ -510,23 +444,32 @@
 
 .phone-add-contact-button {
     position: relative;
-    color: white;
+    color: black;
     float: left;
-    width: 50%;
+    width: 30%;
     height: 5vh;
+    margin-left: 13.3%;
     text-align: center;
     line-height: 4.3vh;
-    font-family: 'Poppins', sans-serif;
-    border-top: 2px solid #30336b00;
     transition: .1s;
     font-size: 1.4vh;
+    transition: 0.25s;
+    border-radius: 4px;
 }
 
-.phone-add-contact-button:hover {
-    border-top: 2px solid #eb4d4b;
+#add-contact-save{
+    background: #8ee074;
+}
+#add-contact-save:hover{
+    background: #6cac59;
 }
 
-/* EDIT CONTACT YEEY */
+#add-contact-cancel{
+    background: #f5a15b;
+}
+#add-contact-cancel:hover{
+    background: #c27e47;
+}
 
 .phone-edit-contact {
     display: none;
@@ -543,7 +486,6 @@
     color: white;
     padding-top: 6vh;
     padding-left: 3vh;
-    font-family: 'Poppins', sans-serif;
     font-size: 2vh;
 }
 
@@ -556,7 +498,6 @@
     border: none;
     outline: none;
     border-bottom: 2px solid rgba(0, 0, 0, 0.555);
-    font-family: 'Poppins', sans-serif;
     height: 3.5vh;
     width: 20vh;
     text-indent: .4vh;
@@ -590,7 +531,6 @@
     border: none;
     outline: none;
     border-bottom: 2px solid rgba(0, 0, 0, 0.555);
-    font-family: 'Poppins', sans-serif;
     height: 3.5vh;
     width: 20vh;
     text-indent: .4vh;
@@ -611,47 +551,9 @@
     border-bottom: 2px solid #6ab04c;
 }
 
-.phone-edit-contact-iban {
-    position: absolute;
-    color: white;
-    top: 26vh;
-    left: 6vh;
-    background: none;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.555);
-    font-family: 'Poppins', sans-serif;
-    height: 3.5vh;
-    width: 20vh;
-    text-indent: .4vh;
-    border-radius: .5vh .5vh 0 0;
-    transition: .1s;
-    font-size: 1.5vh;
-}
-
-.phone-edit-contact-iban::-webkit-inner-spin-button {
-    display: none;
-}
-
-.phone-edit-contact-iban:focus {
-    border-bottom: 2px solid #30336b;
-}
-
-.phone-edit-contact-iban:valid {
-    border-bottom: 2px solid #6ab04c;
-}
-
 #phone-edit-contact-number-icon {
     position: absolute;
     top: 20.1vh;
-    left: 2.1vh;
-    font-size: 2.4vh;
-    color: white;
-}
-
-#phone-edit-contact-iban-icon {
-    position: absolute;
-    top: 27.1vh;
     left: 2.1vh;
     font-size: 2.4vh;
     color: white;
@@ -672,7 +574,6 @@
     height: 5vh;
     text-align: center;
     line-height: 4.3vh;
-    font-family: 'Poppins', sans-serif;
     border-top: 2px solid #30336b00;
     transition: .1s;
     font-size: 1.4vh;
@@ -683,19 +584,17 @@
 }
 
 /* Phone Call App */
-
 .phone-call-app {
     display: none;
-    height: 100%;
+    height: 20%;
     width: 100%;
-    background: #de6262  ;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #de6262 , #ffb88c);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #de6262 , #ffb88c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: rgba(30, 30, 30, 0.972);
+   
     background-size: 400% 400%;
-
+    
     -webkit-animation: AnimationName 35s ease infinite;
     -moz-animation: AnimationName 35s ease infinite;
-    animation: AnimationName 35s ease infinite;
+    animation: AnimationName 35s ease infinite;  
     overflow: hidden;
 }
 
@@ -708,7 +607,6 @@
     position: relative;
     text-align: center;
     top: 7.5vh;
-    font-family: 'Poppins', sans-serif;
     color: white;
     font-size: 1.1vh;
     text-shadow: 0 0 1vh rgba(0, 0, 0, 0.1);
@@ -717,7 +615,6 @@
     position: relative;
     text-align: center;
     top: 10vh;
-    font-family: 'Poppins', sans-serif;
     color: white;
     font-size: 2.5vh;
     text-shadow: 0 0 1vh rgba(0, 0, 0, 0.1);
@@ -736,41 +633,21 @@
     box-shadow: 0 0 .5vh 0 rgba(0, 0, 0, 0.5);
     animation: pulse 2s infinite;
 }
+
 #incoming-answer {
     position: absolute;
-    bottom: 8vh;
-    left: 5vh;
-    transform: rotate(90deg);
-    color: #2ecc70e5;
-    background-color: white;
-    padding: 1.5vh;
-    font-size: 2.2vh;
-    border-radius: 50%;
-    transition: .1s;
-    animation: pulse 2s infinite;
+    top: 26px;
+    right: 15px;
+    font-size: 1.2vh;
+    color: #a6f1a6;
 }
-#incoming-answer:hover {
-    color: #2ecc71;
-    background-color: rgba(255, 255, 255, 0.8);
-    transition: .1s;
-}
+
 #incoming-deny {
     position: absolute;
-    bottom: 8vh;
-    right: 5vh;
-    transform: rotate(-135deg);
-    color: #e74d3ce0;
-    background-color: white;
-    padding: 1.5vh;
-    font-size: 2.2vh;
-    border-radius: 50%;
-    transition: .1s;
-    animation: pulse 2s infinite;
-}
-#incoming-deny:hover {
-    color: #e74c3c;
-    background-color: rgba(255, 255, 255, 0.8);
-    transition: .1s;
+    top: 26px;
+    right: 35px;
+    font-size: 1.2vh;
+    color: #F28C28;
 }
 
 /* Outgoing */
@@ -784,7 +661,6 @@
     position: relative;
     text-align: center;
     top: 7.5vh;
-    font-family: 'Poppins', sans-serif;
     color: white;
     font-size: 1.1vh;
     text-shadow: 0 0 1vh rgba(0, 0, 0, 0.1);
@@ -793,7 +669,6 @@
     position: relative;
     text-align: center;
     top: 10vh;
-    font-family: 'Poppins', sans-serif;
     color: white;
     font-size: 2.5vh;
     text-shadow: 0 0 1vh rgba(0, 0, 0, 0.1);
@@ -883,7 +758,6 @@
     position: relative;
     text-align: center;
     top: 7.5vh;
-    font-family: 'Poppins', sans-serif;
     color: white;
     font-size: 1.1vh;
     text-shadow: 0 0 1vh rgba(0, 0, 0, 0.1);
@@ -892,7 +766,6 @@
     position: relative;
     text-align: center;
     top: 10vh;
-    font-family: 'Poppins', sans-serif;
     color: white;
     font-size: 2.5vh;
     text-shadow: 0 0 1vh rgba(0, 0, 0, 0.1);
@@ -915,7 +788,6 @@
     position: relative;
     text-align: center;
     top: 28vh;
-    font-family: 'Poppins', sans-serif;
     color: white;
     font-size: 1.2vh;
     text-shadow: 0 0 1vh rgba(0, 0, 0, 0.1);
@@ -939,84 +811,6 @@
     transition: .2s;
 }
 
-.phone-suggestedcontacts {
-    display: none;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    background: rgb(36, 36, 36);
-}
-
-.phone-suggestedcontacts-header {
-    position: absolute;
-    width: 100%;
-    height: 8vh;
-    top: 5vh;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.6vh;
-    line-height: 5vh;
-    color: white;
-}
-
-.phone-suggestedcontacts-header p {
-    font-size: 1.1vh;
-    margin-top: -2vh;
-}
-
-.suggested-contacts {
-    position: absolute;
-    width: 90%;
-    height: 35vh;
-    top: 15vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    left: 15px;
-}
-
-.suggested-contacts::-webkit-scrollbar {
-    display: none;
-}
-
-.suggested-contact {
-    position: relative;
-    height: 6vh;
-    width: 100%;
-    margin-bottom: 10px;
-    background: rgba(23, 23, 23, 90%);
-    border-radius: 0.15rem;
-    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
-    transition: .05s ease-in-out;
-}
-
-.suggested-contact:hover {
-    background-color: #dc143c;
-}
-
-.suggested-contact > i {
-    position: absolute;
-    top: 1.7vh;
-    left: 1.5vh;
-    font-size: 2.5vh;
-    color: rgb(255, 164, 44);
-}
-
-.suggested-name {
-    position: absolute;
-    left: 5vh;
-    top: 2.1vh;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    font-size: 1.3vh;
-}
-
-.suggested-number {
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    font-size: 1.2vh;
-}
-
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
@@ -1025,4 +819,189 @@
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Opera and Firefox */
+}
+
+/* Check Box Input */
+
+.phone-menu-checkbox-title{
+    position: relative;
+    bottom: 2.5vh;
+    left: 0.5vh;
+    font-size: 1.0vh;
+    color: white;
+}
+
+.phone-menu-checkbox{
+    position: relative;
+    margin-left: 35%;
+    margin-bottom: -10%;
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    text-indent: 3vh;
+    text-align: left;
+    line-height: 3.0vh;
+    font-size: 1.45vh;
+    overflow: hidden;
+    color: white;
+    border-bottom: .1vh solid #fff;
+    transition: 0.25s;
+}
+
+/* Regular Input Menu */
+
+.phone-menu-body{
+    display: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 200%;
+    background-color: rgba(0, 0, 0, 0.624);
+    z-index: 700;
+}
+
+.phone-menu-main{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    width: 73%;
+    background-color: rgb(44, 70, 95);
+}
+
+.phone-menu-text{
+    position: relative;
+    margin-left: 10%;
+    margin-bottom: -10%;
+    width: 80%;
+    border: none;
+    background: none;
+    outline: none;
+    text-indent: 3vh;
+    text-align: left;
+    line-height: 3.0vh;
+    font-size: 1.45vh;
+    overflow: hidden;
+    color: white;
+    border-bottom: .1vh solid #fff;
+    transition: 0.25s;
+}
+
+#phone-menu-icon{
+    position: relative;
+    top: 0.2vh;
+    right: 16.2vh;
+    font-size: 1.4vh;
+    color: white;
+}
+
+.phone-menu-title{
+    position: relative;
+    left: 2.0vh;
+    font-size: 1.0vh;
+    color: white;
+}
+
+.phone-menu-button{
+    display: inline;
+    transition: 0.25s;
+    padding: 2%;
+    border-radius: 5px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1vh;
+    margin-bottom: 4%;
+}
+
+.phone-menu-info{
+    background:#5a7bd6;
+    color: white;
+    margin-left: 15%;
+    padding: 4.0%;
+}
+.phone-menu-info:hover{
+    background: #324373;
+}
+
+.phone-menu-cancel{
+    background:#f6a167;
+    margin-left: 15%;
+    padding: 4.0%;
+}
+.phone-menu-cancel:hover{
+    background: #c27e47;
+}
+
+.phone-menu-accept{
+    background:#90e278;
+    margin-left: 15%;
+    padding: 4.0%;
+}
+.phone-menu-accept:hover{
+    background: #6cac59;
+}
+
+.phone-new-box-main input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.phone-new-input-class:focus {
+    border-bottom: .1vh solid #8ee074;
+}
+
+#phone-recent-search {
+    display: block;
+    position: absolute;
+    background: none;
+    border: none;
+    background: none;
+    top: 2.7vh;
+    width: 80%;
+    margin: 0 auto;
+    left: 0.5vh;
+    right: 0.3vh;
+    opacity: 1;
+    height: 2.5vh;
+    border-bottom: .1vh solid #f5f5f5ad;
+    outline: none;
+    text-indent: 2vh;
+    z-index: 100;
+    color: whitesmoke;
+}
+#recent-search-icon {
+    position: absolute;
+    top: 3.2vh;
+    left: 3.0vh;
+    font-size: 1.4vh;
+    color: #FFFFFF;
+}
+#phone-recent-search-text {
+    position: absolute;
+    top: 0.7vh;
+    left: 3.0vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2vh;
+    color: #FFFFFF;
+}
+
+#phone-header-text {
+    position: absolute;
+    top: 30.5%;
+    left: 31%;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.7vh;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+#header-frown-icon {
+    position: absolute;
+    top: 17.5%;
+    left: 40.5%;
+    font-size: 275%;
+    color: #FFFFFF;
 }

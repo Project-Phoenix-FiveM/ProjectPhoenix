@@ -1,269 +1,174 @@
-var SelectedCryptoTab = Config.DefaultCryptoPage;
-var ActionTab = null;
-$(".cryptotab-"+SelectedCryptoTab).css({"display":"block"});
-$(".crypto-header-footer").find('[data-cryptotab="'+SelectedCryptoTab+'"]').addClass('crypto-header-footer-item-selected');
-
-var CryptoData = [];
-CryptoData.Portfolio = 0;
-CryptoData.Worth = 1000;
-CryptoData.WalletId = null;
-CryptoData.History = [];
-
-function SetupCryptoData(Crypto) {
-    CryptoData.History = Crypto.History;
-    CryptoData.Portfolio = (Crypto.Portfolio).toFixed(6);
-    CryptoData.Worth = Crypto.Worth;
-    CryptoData.WalletId = Crypto.WalletId;
-
-    $(".crypto-action-page-wallet").html("Wallet: "+CryptoData.Portfolio+" Qbit('s)");
-    $(".crypto-walletid").html(CryptoData.WalletId);
-    $(".cryptotab-course-list").html("");
-    if (CryptoData.History.length > 0) {
-        CryptoData.History = CryptoData.History.reverse();
-        $.each(CryptoData.History, function(i, change){
-            var PercentageChange = ((change.NewWorth - change.PreviousWorth) / change.PreviousWorth) * 100;
-            var PercentageElement = '<span style="color: green;" class="crypto-percentage-change"><i style="color: green; font-weight: bolder; transform: rotate(-45deg);" class="fas fa-arrow-right"></i> +('+Math.ceil(PercentageChange)+'%)</span>';
-            if (PercentageChange < 0 ) {
-                PercentageChange = (PercentageChange * -1);
-                PercentageElement = '<span style="color: red; font-weight: bolder;" class="crypto-percentage-change"><i style="color: red; font-weight: bolder; transform: rotate(125deg);" class="fas fa-arrow-right"></i> -('+Math.ceil(PercentageChange)+'%)</span>';
-            }
-            var Element =   '<div class="cryptotab-course-block">' +
-                                '<i class="fas fa-exchange-alt"></i>' +
-                                '<span class="cryptotab-course-block-title">Value change</span>' +
-                                '<span class="cryptotab-course-block-happening"><span style="font-size: 1.3vh;">$'+change.PreviousWorth+'</span> to <span style="font-size: 1.3vh;">$'+change.NewWorth+'</span>'+PercentageElement+'</span>' +
-                            '</div>';
-
-            $(".cryptotab-course-list").append(Element);
-        });
-    }
-
-    $(".crypto-portofolio").find('p').html(CryptoData.Portfolio);
-    $(".crypto-course").find('p').html("$"+CryptoData.Worth);
-    $(".crypto-volume").find('p').html("$"+Math.ceil(CryptoData.Portfolio * CryptoData.Worth));
-}
-
-function UpdateCryptoData(Crypto) {
-    CryptoData.History = Crypto.History;
-    CryptoData.Portfolio = (Crypto.Portfolio).toFixed(6);
-    CryptoData.Worth = Crypto.Worth;
-    CryptoData.WalletId = Crypto.WalletId;
-
-    $(".crypto-action-page-wallet").html("Wallet: "+CryptoData.Portfolio+" Qbit('s)");
-    $(".crypto-walletid").html(CryptoData.WalletId);
-    $(".cryptotab-course-list").html("");
-    if (CryptoData.History.length > 0) {
-        CryptoData.History = CryptoData.History.reverse();
-        $.each(CryptoData.History, function(i, change){
-            var PercentageChange = ((change.NewWorth - change.PreviousWorth) / change.PreviousWorth) * 100;
-            var PercentageElement = '<span style="color: green; font-weight: bolder;" class="crypto-percentage-change"><i style="color: green; font-weight: bolder; transform: rotate(-45deg); "class="fas fa-arrow-right"></i> +('+Math.ceil(PercentageChange)+'%)</span>';
-            if (PercentageChange < 0 ) {
-                PercentageChange = (PercentageChange * -1);
-                PercentageElement = '<span style="color: red; font-weight: bolder;" class="crypto-percentage-change"><i style="color: red; font-weight: bolder; transform: rotate(125deg); "class="fas fa-arrow-right"></i> -('+Math.ceil(PercentageChange)+'%)</span>';
-            }
-            var Element =   '<div class="cryptotab-course-block">' +
-                                '<i class="fas fa-exchange-alt"></i>' +
-                                '<span class="cryptotab-course-block-title">Value change</span>' +
-                                '<span class="cryptotab-course-block-happening"><span style="font-size: 1.3vh;">$'+change.PreviousWorth+'</span> to <span style="font-size: 1.3vh;">$'+change.NewWorth+'</span>'+PercentageElement+'</span>' +
-                            '</div>';
-
-            $(".cryptotab-course-list").append(Element);
-        });
-    }
-
-    $(".crypto-portofolio").find('p').html(CryptoData.Portfolio);
-    $(".crypto-course").find('p').html("$"+CryptoData.Worth);
-    $(".crypto-volume").find('p').html("$"+Math.ceil(CryptoData.Portfolio * CryptoData.Worth));
-}
-
-function RefreshCryptoTransactions(data) {
-    $(".cryptotab-transactions-list").html("");
-    if (data.CryptoTransactions.length > 0) {
-        data.CryptoTransactions = (data.CryptoTransactions).reverse();
-        $.each(data.CryptoTransactions, function(i, transaction){
-            var Title = "<span style='color: green; font-weight: bolder;'>"+transaction.TransactionTitle+"</span>"
-            if (transaction.TransactionTitle == "Sold" || transaction.TransactionTitle == "Transferred") {
-                Title = "<span style='color: red; font-weight: bolder;'>"+transaction.TransactionTitle+"</span>"
-            }
-            var Element = '<div class="cryptotab-transactions-block"> <i class="fas fa-exchange-alt"></i> <span class="cryptotab-transactions-block-title">'+Title+'</span> <span class="cryptotab-transactions-block-happening">'+transaction.TransactionMessage+'</span></div>';
-
-            $(".cryptotab-transactions-list").append(Element);
-        });
-    }
-}
-
-$(document).on('click', '.crypto-header-footer-item', function(e){
-    e.preventDefault();
-
-    var CurrentTab = $(".crypto-header-footer").find('[data-cryptotab="'+SelectedCryptoTab+'"]');
-    var SelectedTab = this;
-    var HeaderTab = $(SelectedTab).data('cryptotab');
-
-    if (HeaderTab !== SelectedCryptoTab) {
-        $(CurrentTab).removeClass('crypto-header-footer-item-selected');
-        $(SelectedTab).addClass('crypto-header-footer-item-selected');
-        $(".cryptotab-"+SelectedCryptoTab).css({"display":"none"});
-        $(".cryptotab-"+HeaderTab).css({"display":"block"});
-        SelectedCryptoTab = $(SelectedTab).data('cryptotab');
-    }
+var CryptoMeta = ''
+var CryptoName = ''
+var formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
 });
 
-$(document).on('click', '.cryptotab-general-action', function(e){
-    e.preventDefault();
-
-    var Tab = $(this).data('action');
-
-    $(".crypto-action-page").css({"display":"block"});
-    $(".crypto-action-page").animate({
-        left: 0,
-    }, 300);
-    $(".crypto-action-page-"+Tab).css({"display":"block"});
-    QB.Phone.Functions.HeaderTextColor("black", 300);
-    ActionTab = Tab;
-});
-
-$(document).on('click', '#cancel-crypto', function(e){
-    e.preventDefault();
-
-    $(".crypto-action-page").animate({
-        left: -30+"vh",
-    }, 300, function(){
-        $(".crypto-action-page-"+ActionTab).css({"display":"none"});
-        $(".crypto-action-page").css({"display":"none"});
-        ActionTab = null;
-    });
-    QB.Phone.Functions.HeaderTextColor("white", 300);
-});
-
-function CloseCryptoPage() {
-    $(".crypto-action-page").animate({
-        left: -30+"vh",
-    }, 300, function(){
-        $(".crypto-action-page-"+ActionTab).css({"display":"none"});
-        $(".crypto-action-page").css({"display":"none"});
-        ActionTab = null;
-    });
-    QB.Phone.Functions.HeaderTextColor("white", 300);
+function ConfirmationFrame() {
+    $('.spinner-input-frame').css("display", "flex");
+    setTimeout(function () {
+        $('.spinner-input-frame').css("display", "none");
+        $('.checkmark-input-frame').css("display", "flex");
+        setTimeout(function () {
+            $('.checkmark-input-frame').css("display", "none");
+        }, 2000)
+    }, 1000)
 }
 
-$(document).on('click', '#buy-crypto', function(e){
-    e.preventDefault();
+function LoadCryptoCoins(){
+    $.post('https://qb-phone/GetCryptosFromDegens', JSON.stringify({}), function(Jobs){
+        $(".crypto-lists").html("");
+        for (const [k, v] of Object.entries(Jobs)) {
+            var CryptoType = QB.Phone.Data.PlayerData.metadata.crypto;
+            var Crypto = v.metadata;
 
-    var Coins = $(".crypto-action-page-buy-crypto-input-coins").val();
-    var Price = Math.ceil(Coins * CryptoData.Worth);
-
-    if ((Coins !== "") && (Price !== "")) {
-        if (QB.Phone.Data.PlayerData.money.bank >= Price) {
-            $.post('https://qb-phone/BuyCrypto', JSON.stringify({
-                Coins: Coins,
-                Price: Price,
-            }), function(CryptoData){
-                if (CryptoData !== false) {
-                    UpdateCryptoData(CryptoData)
-                    CloseCryptoPage()
-                    QB.Phone.Data.PlayerData.money.bank = parseInt(QB.Phone.Data.PlayerData.money.bank) - parseInt(Price);
-                    QB.Phone.Notifications.Add("fas fa-university", "QBank", "&#36; "+Price+",- has been withdrawn from your balance!", "#badc58", 2500);
-                } else {
-                    QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "You don't have enough money..", "#badc58", 1500);
-                }
-            });
-        } else {
-            QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "You don't have enough money..", "#badc58", 1500);
+            if (v.sell && v.purchase){
+                var AddOption = '<div class="crypto-list" id="crypto-id"><span class="crypto-icon"><i class="'+v.icon+'"></i></span> <span class="crypto-label">'+v.label+'</span> <span class="crypto-value">'+CryptoType[Crypto]+'</span>' +
+                '<div class="crypto-block">' +
+                    '<div class="crypto-abbrev"><i class="fas fa-id-card"></i>'+v.abbrev+' ('+k+')</div>' +
+                    '<div class="crypto-extralabel"><i class="fas fa-tag"></i>'+v.label+'</div>' +
+                    '<div class="crypto-current"><i class="fas fa-money-check-alt"></i>'+CryptoType[Crypto]+'</div>' +
+                    '<div class="crypto-cost"><i class="fas fa-chart-bar"></i>'+formatter.format(v.value)+'</div>' +
+                    '<div class="crypto-box"><span class="crypto-box box-purchase" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style="margin-left: 0.3vh;">PURCHASE</span><span class="crypto-box box-exchange" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style = "margin-left: 0.9vh;">EXCHANGE</span><span class="crypto-box box-sell" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style = "margin-left: 0.8vh;">SELL</span></div>' +
+                    '</div>' +
+                '</div>';
+            }
+            else if (v.purchase){
+                var AddOption = '<div class="crypto-list" id="crypto-id"><span class="crypto-icon"><i class="'+v.icon+'"></i></span> <span class="crypto-label">'+v.label+'</span> <span class="crypto-value">'+CryptoType[Crypto]+'</span>' +
+                '<div class="crypto-block">' +
+                    '<div class="crypto-abbrev"><i class="fas fa-id-card"></i>'+v.abbrev+' ('+k+')</div>' +
+                    '<div class="crypto-extralabel"><i class="fas fa-tag"></i>'+v.label+'</div>' +
+                    '<div class="crypto-current"><i class="fas fa-money-check-alt"></i>'+CryptoType[Crypto]+'</div>' +
+                    '<div class="crypto-cost"><i class="fas fa-chart-bar"></i>'+formatter.format(v.value)+'</div>' +
+                    '<div class="crypto-box"><span class="crypto-box box-purchase" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style="margin-left: 1.9vh;">PURCHASE</span><span class="crypto-box box-exchange" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style = "margin-left: 1.1vh;">EXCHANGE</span></div>' +
+                    '</div>' +
+                '</div>';
+            }else if (v.sell){
+                var AddOption = '<div class="crypto-list" id="crypto-id"><span class="crypto-icon"><i class="'+v.icon+'"></i></span> <span class="crypto-label">'+v.label+'</span> <span class="crypto-value">'+CryptoType[Crypto]+'</span>' +
+                '<div class="crypto-block">' +
+                    '<div class="crypto-abbrev"><i class="fas fa-id-card"></i>'+v.abbrev+' ('+k+')</div>' +
+                    '<div class="crypto-extralabel"><i class="fas fa-tag"></i>'+v.label+'</div>' +
+                    '<div class="crypto-current"><i class="fas fa-money-check-alt"></i>'+CryptoType[Crypto]+'</div>' +
+                    '<div class="crypto-cost"><i class="fas fa-chart-bar"></i>'+formatter.format(v.value)+'</div>' +
+                    '<div class="crypto-box"><span class="crypto-box box-exchange" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style = "margin-left: 3.5vh;">EXCHANGE</span><span class="crypto-box box-sell" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style = "margin-left: 0.9vh;">SELL</span></div>' +
+                    '</div>' +
+                '</div>';
+            }else{
+                var AddOption = '<div class="crypto-list" id="crypto-id" ><span class="crypto-icon"><i class="'+v.icon+'"></i></span> <span class="crypto-label">'+v.label+'</span> <span class="crypto-value">'+CryptoType[Crypto]+'</span>' +
+                '<div class="crypto-block">' +
+                    '<div class="crypto-abbrev"><i class="fas fa-id-card"></i>'+v.abbrev+' ('+k+')</div>' +
+                    '<div class="crypto-extralabel"><i class="fas fa-tag"></i>'+v.label+'</div>' +
+                    '<div class="crypto-current"><i class="fas fa-money-check-alt"></i>'+CryptoType[Crypto]+'</div>' +
+                    '<div class="crypto-cost"><i class="fas fa-chart-bar"></i>'+formatter.format(v.value)+'</div>' +
+                    '<div class="crypto-box"><span class="crypto-box box-exchange" data-cryptometa="'+v.metadata+'" data-label="'+v.label+'" style = "margin-left: 5.2vh;">EXCHANGE</span></div>' +
+                    '</div>' +
+                '</div>';
+            }
+            
+            $('.crypto-lists').append(AddOption);
         }
-    } else {
-        QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "Fill out all fields!", "#badc58", 1500);
-    }
+    });
+};
+
+$(document).ready(function(){
+    $("#crypto-search").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".crypto-list").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+    });
 });
 
-$(document).on('click', '#sell-crypto', function(e){
+$(document).on('click', '.crypto-list', function(e){
     e.preventDefault();
-    if(e.handled !== true) {
-        e.handled = true;
 
-    var Coins = $(".crypto-action-page-sell-crypto-input-coins").val();
-    var Price = Math.ceil(Coins * CryptoData.Worth);
+    $(this).find(".crypto-block").toggle();
+});
 
-    if ((Coins !== "") && (Price !== "")) {
-        if (CryptoData.Portfolio >= parseInt(Coins)) {
+$(document).on('click', '.box-purchase', function(e){
+    e.preventDefault();
+    ClearInputNew()
+    CryptoMeta = $(this).data('cryptometa')
+    CryptoName = $(this).data('label')
+    $('#crypto-purchase-tab').fadeIn(350);
+});
+
+$(document).on('click', '#crypto-send-purchase', function(e){
+    e.preventDefault();
+    var crypto = CryptoMeta;
+    var amount = $(".crypto-amount").val();
+    if(amount != ""){
+        setTimeout(function(){
+            ConfirmationFrame()
+        }, 150);
+        $.post('https://qb-phone/BuyCrypto', JSON.stringify({
+            metadata: crypto,
+            amount: amount,
+        }));
+    }
+    ClearInputNew()
+    $('#crypto-purchase-tab').fadeOut(350);
+});
+
+$(document).on('click', '.box-exchange', function(e){
+    e.preventDefault();
+    ClearInputNew()
+    CryptoMeta = $(this).data('cryptometa')
+    CryptoName = $(this).data('label')
+    $('#crypto-exchange-tab').fadeIn(350);
+});
+
+$(document).on('click', '#crypto-send-exchange', function(e){
+    e.preventDefault();
+    var crypto = CryptoMeta;
+    var amount = $(".crypto-amount-exchange").val();
+    var stateid = $(".crypto-stateid-exchange").val();
+    var CryptoType = QB.Phone.Data.PlayerData.metadata.crypto;
+    if(amount != "" || stateid != ""){
+        if (CryptoType[crypto] - amount >= 0){
+            setTimeout(function(){
+                ConfirmationFrame()
+            }, 150);
+            $.post('https://qb-phone/ExchangeCrypto', JSON.stringify({
+                metadata: crypto,
+                amount: amount,
+                stateid: stateid,
+            }));
+        }else{
+            QB.Phone.Notifications.Add("fas fa-chart-line", "WALLET", "You don\'t have that much crypto", "#D3B300");
+        }
+    }
+    ClearInputNew()
+    $('#crypto-exchange-tab').fadeOut(350);
+});
+
+$(document).on('click', '.box-sell', function(e){
+    e.preventDefault();
+    ClearInputNew()
+    CryptoMeta = $(this).data('cryptometa')
+    CryptoName = $(this).data('label')
+    $('#crypto-sell-tab').fadeIn(350);
+});
+
+$(document).on('click', '#crypto-send-sell', function(e){
+    e.preventDefault();
+    var crypto = CryptoMeta;
+    var amount = $(".crypto-amount-sell").val();
+    var CryptoType = QB.Phone.Data.PlayerData.metadata.crypto;
+    if(amount != ""){
+        if (CryptoType[crypto] - amount >= 0){
+            setTimeout(function(){
+                ConfirmationFrame()
+            }, 150);
             $.post('https://qb-phone/SellCrypto', JSON.stringify({
-                Coins: Coins,
-                Price: Price,
-            }), function(CryptoData){
-                if (CryptoData !== false) {
-                    UpdateCryptoData(CryptoData)
-                    CloseCryptoPage()
-                    QB.Phone.Data.PlayerData.money.bank = parseInt(QB.Phone.Data.PlayerData.money.bank) + parseInt(Price);
-                    QB.Phone.Notifications.Add("fas fa-university", "QBank", "&#36; "+Price+",- has been added to your balance!", "#badc58", 2500);
-                } else {
-                    QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "You don't have enough Qbits..", "#badc58", 1500);
-                }
-            });
-        } else {
-            QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "You don't have enough Qbits..", "#badc58", 1500);
+                metadata: crypto,
+                amount: amount,
+            }));
+        }else{
+            QB.Phone.Notifications.Add("fas fa-chart-line", "WALLET", "You don\'t have that much crypto", "#D3B300");
         }
-    } else {
-        QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "Fill out all fields!", "#badc58", 1500);
     }
-    CloseCryptoPage();
-    e.handled = false;
-}
-});
-
-$(document).on('click', '#transfer-crypto', function(e){
-    e.preventDefault();
-
-    var Coins = $(".crypto-action-page-transfer-crypto-input-coins").val();
-    var WalletId = $(".crypto-action-page-transfer-crypto-input-walletid").val();
-
-    if ((Coins !== "") && (WalletId !== "")) {
-        if (CryptoData.Portfolio >= Coins) {
-            if (WalletId !== CryptoData.WalletId) {
-                $.post('https://qb-phone/TransferCrypto', JSON.stringify({
-                    Coins: Coins,
-                    WalletId: WalletId,
-                }), function(CryptoData){
-                    if (CryptoData == "notenough") {
-                        QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "You don't have enough Qbits..", "#badc58", 1500);
-                    } else if (CryptoData == "notvalid") {
-                        QB.Phone.Notifications.Add("fas fa-university", "Crypto", "this Wallet-ID doesn't exist!", "#badc58", 2500);
-                    } else {
-                        UpdateCryptoData(CryptoData)
-                        CloseCryptoPage()
-                        QB.Phone.Notifications.Add("fas fa-university", "Crypto", "You transferred "+Coins+",- to "+WalletId+"!", "#badc58", 2500);
-                    }
-                });
-            } else {
-                QB.Phone.Notifications.Add("fas fa-university", "Crypto", "You can't transfer to yourself..", "#badc58", 2500);
-            }
-        } else {
-            QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "You don't have enough Qbits..", "#badc58", 1500);
-        }
-    } else {
-        QB.Phone.Notifications.Add("fas fa-chart-pie", "Crypto", "Fill out all fields!!", "#badc58", 1500);
-    }
-});
-
-// $(".crypto-action-page-buy-crypto-input-money").keyup(function(){
-//     var MoneyInput = this.value
-//     $(".crypto-action-page-buy-crypto-input-coins").val((MoneyInput / CryptoData.Worth).toFixed(6));
-// }); 
-
-
-$(".crypto-action-page-buy-crypto-input-coins").keyup(function(){
-    var MoneyInput = this.value
-    var MoneyAmount = Math.ceil(CryptoData.Worth * MoneyInput)
-
-    $(".crypto-action-page-buy-crypto-input-money").html(MoneyAmount+" Dollars");
-});
-
-// $(".crypto-action-page-sell-crypto-input-money").keyup(function(){
-//     var MoneyInput = this.value
-//     $(".crypto-action-page-sell-crypto-input-coins").val((MoneyInput / CryptoData.Worth).toFixed(6));
-// }); 
-
-
-$(".crypto-action-page-sell-crypto-input-coins").keyup(function(){
-    var MoneyInput = this.value
-    var MoneyAmount = Math.ceil(CryptoData.Worth * MoneyInput)
-
-    $(".crypto-action-page-sell-crypto-input-money").html(MoneyAmount+" Dollars");
+    ClearInputNew()
+    $('#crypto-sell-tab').fadeOut(350);
 });

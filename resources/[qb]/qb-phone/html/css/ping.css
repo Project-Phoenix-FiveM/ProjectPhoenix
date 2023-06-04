@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+.ping-app {
+    display: none;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #242833;
+}
+
+.ping-header {
+    position: absolute;
+    width: 90%;
+    height: 35%;
+    top: 8%;
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 1.8vh;
+    margin: 0 auto;
+}
+
+.erpinger {
+    position: absolute;
+    width: 175%;
+    margin: 0 auto;
+    left: -9.7vh;
+    right: 6vh;
+    top: -6.5vh;
+}
+
+.ping-header > p {
+    line-height: 12vh;
+    text-indent: 2vh;
+    margin: 0 0 0 9vh;
+}
+
+.ping-header > span {
+    position: absolute;
+    top: 8vh;
+    left: 9vh;
+    font-size: 1.2vh;
+    height: 2vh;
+    color: white;
+}
+
+.ping-list {
+    position: absolute;
+    width: 98%;
+    height: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    /* bottom: 3%; */
+    border-radius: .5vh;
+    overflow-y: scroll;
+}
+
+.ping-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+.imagepingapp{
+    width: 100%;
+    height: 100%;
+}
+
+.channel {
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    font-size: 2vh;
+    background: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    z-index: 1;
+    color: whitesmoke;
+}
+
+
+.ping-sender-piinger{
+    display: block;
+    height: 4.5vh;
+    width: 80%;
+    top: 1.5vh;
+    text-align: center;
+    margin-left: 10%;
+    background: rgb(49,71,94);
+    border-radius: 4px;
+    box-shadow: 1px 1px 6px rgb(5, 5, 5);
+    text-shadow: 1px 1px 3px rgb(5, 5, 5);
+    transition: 0.3s;
+    padding: 8px;
+}
+
+.ping-sender-piinger > i{
+    margin-right: 2.5vh;
+}
+
+.ping-sender-piinger:hover{
+    background: rgb(37, 68, 111);
+}
+
+.ping-menu-text{
+    position: relative;
+    top: 2.2vh;
+    margin-left: 20%;
+    margin-bottom: 20%;
+    width: 55%;
+    border: none;
+    background: none;
+    outline: none;
+    text-indent: 3vh;
+    text-align: left;
+    line-height: 3.0vh;
+    font-size: 1.45vh;
+    overflow: hidden;
+    color: white;
+    border-bottom: .1vh solid #fff;
+    transition: 0.25s;
+}
+
+#ping-menu-icon{
+    position: relative;
+    top: 2.2vh;
+    right: 13.7vh;
+    font-size: 1.4vh;
+    color: white;
+}
+
+.ping-menu-title{
+    position: relative;
+    bottom: 0.2vh;
+    right: 15.4vh;
+    font-size: 1.1vh;
+    color: white;
+}

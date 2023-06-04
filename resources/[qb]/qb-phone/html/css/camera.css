@@ -20,7 +20,7 @@
 
 .loader {
   z-index: 1000;
-  border: 16px solid #f3f3f3; /* Light grey */
+  border: 16px solid #f3f3f3;
   border-top: 16px solid #3498db;
   border-bottom: 16px solid #3498db;
   border-radius: 50%;

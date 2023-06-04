@@ -108,21 +108,13 @@ RegisterNetEvent('qb-cityhall:server:ApplyJob', function(job, cityhallCoords)
     if not Player then return end
     local ped = GetPlayerPed(src)
     local pedCoords = GetEntityCoords(ped)
-
-    local data = {
-        ["src"] = src,
-        ["job"] = job
-    }
+    local JobInfo = QBCore.Shared.Jobs[job]
     if #(pedCoords - cityhallCoords) >= 20.0 or not availableJobs[job] then
-        return false -- DropPlayer(source, "Attempted exploit abuse")
+        return DropPlayer(source, "Attempted exploit abuse")
     end
-    if QBCore.Shared.QBJobsStatus then
-        exports["qb-jobs"]:submitApplication(data, "Jobs")
-    else
-        local JobInfo = QBCore.Shared.Jobs[job]
-        Player.Functions.SetJob(data.job, 0)
-        TriggerClientEvent('QBCore:Notify', data.src, Lang:t('info.new_job', { job = JobInfo.label }))
-    end
+    Player.Functions.SetJob(job, 0)
+    exports['qb-phone']:hireUser(job, Player.PlayerData.citizenid, 0)
+TriggerClientEvent('QBCore:Notify', src, Lang:t('info.new_job', {job = JobInfo.label}))
 end)
 
 RegisterNetEvent('qb-cityhall:server:getIDs', giveStarterItems)

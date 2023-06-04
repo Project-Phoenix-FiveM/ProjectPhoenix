@@ -1,8 +1,9 @@
-fx_version 'bodacious'
+fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-Phone'
-version '1.3.0'
+author 'FjamZoo#0001 & MannyOnBrazzers#6826'
+description 'A No Pixel inspired edit of QBCore\'s Phone. Released By RenewedScripts'
+version 'Release'
 
 ui_page 'html/index.html'
 
@@ -13,13 +14,12 @@ shared_scripts {
 }
 
 client_scripts {
-    'client/main.lua',
-    'client/animation.lua'
+    'client/*.lua',
 }
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
-    'server/main.lua'
+    'server/*.lua',
 }
 
 files {
@@ -32,3 +32,5 @@ files {
 }
 
 lua54 'yes'
+
+dependency 'qb-target'

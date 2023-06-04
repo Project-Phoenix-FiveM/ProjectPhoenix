@@ -16,13 +16,11 @@
     :root { font-size: 9px; }
 }
 
-/* CSS Reset */
 body {
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
-/* CSS Reset END */
 
 .disableSelection{
     -webkit-touch-callout: none;
@@ -34,43 +32,47 @@ body {
     outline: 0;
 }
 
-/* Complete Phone */
 .container {
     display: none;
-    /* display: block; */
     position: absolute;
     bottom: -70%;
-    /* bottom: 0%; */
-    right: 5vh;
+    right: -6.8vh;
 }
-/*  */
 
 .phone-currentcall-container {
     display: none;
     position: absolute;
+    height: 4.3vh;
+    width: 24.5vh;
+    background-color: #2a2a2aee;
     margin: 0 auto;
     left: 0;
     right: 0;
-    height: 5vh;
-    width: 70%;
-    background-color: rgba(0, 0, 0, 0.65);
-    top: 10vh;
-    z-index: 99;
+    top: 4vh;
+    border-radius: 0.9vh;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.11);
+    z-index: 140;
     transition: background-color .1s linear;
-    border-radius: 3vh;
     animation: pulse 2s infinite;
 }
-.phone-currentcall-container:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+
+.phone-currentcall-icon-square {
+    position: absolute;
+    width: 3.0vh;
+    text-align: center;
+    border-radius: 1.5vh;
+    color: #ffffff;
+    font-size: 1.6vh;
 }
 
 .phone-currentcall-icon {
     position: absolute;
-    top: 1.2vh;
-    left: 1.3vh;
+    width: 3.0vh;
+    text-align: center;
+    border-radius: 1.5vh;
+    color: #0b7468;
     font-size: 1.9vh;
-    color: white;
-    transform: rotate(90deg);
 }
 @-webkit-keyframes pulse {
     0% {
@@ -100,26 +102,28 @@ body {
 
 .phone-currentcall-title {
     position: absolute;
-    top: 1vh;
-    left: 4vh;
-    font-size: 1.1vh;
-    color: white;
-    font-family: 'Poppins', sans-serif;
+    top: 0.75vh;
+    left: 2.8vh;
+    font-size: 0.9vh;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    text-transform: capitalize;
 }
 
 .phone-currentcall-contact {
     position: absolute;
-    bottom: 1vh;
-    left: 4vh;
+    top: 2.4vh;
+    left: 0.8vh;
     font-size: 1vh;
-    color: rgba(255, 255, 255, 0.7);
     font-family: 'Poppins', sans-serif;
+    color: rgb(255, 255, 255);
+    width: 22vh;
+    overflow: hidden;
 }
 
-/* Phone Container */
 .phone-frame {
     position: absolute;
-    width: 30vh;
+    width: 32vh;
     bottom: 0;
     right: 0;
     margin: 5vh;
@@ -128,7 +132,7 @@ body {
 }
 
 .phone-container {
-    height: 61.7vh;
+    height: 70.7vh;
     width: 29vh;
     bottom: 1vh;
     border-radius: 3vh;
@@ -139,11 +143,11 @@ body {
 }
 
 .phone-background {
-    height: 61.7vh;
-    width: 29vh;
-    bottom: 1vh;
-    border-radius: 3vh;
-    right: 0.5vh;
+    height: 62.7vh;
+    width: 28.0vh;
+    bottom: 1.65vh;
+    border-radius: 1vh;
+    right: 2.0vh;
     margin: 5vh;
     overflow: hidden;
     position: absolute;
@@ -151,13 +155,9 @@ body {
     background-position-x: center;
     background-repeat: no-repeat;
     overflow: hidden;
-    background-image: url('../img/backgrounds/background-1.png');
+    background-image: url('../img/backgrounds/default-qbcore.png');
 }
 
-/* Phone Container END */
-/* -------------------------- */
-
-/* Phone Header */
 .phone-header {
     width: 100%;
     height: 5vh;
@@ -166,105 +166,106 @@ body {
     color: white;
 }
 
-#phone-server {
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    font-size: 1vh;
-    padding: 2vh 0 0 1vh;
+#phone-time {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1vh;
+    padding: 1.2vh 0 0 1.1vh;
     float: left;
     color: white !important;
 }
 
 #player-id {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
-    font-size: 1vh;
-    padding: 2vh 0 0 1vh;
-    float: left;
-    color: white !important;
-}
-
-#phone-time {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1vh;
-    padding: 2vh 0 0 5.5vh;
+    font-size: 1.1vh;
+    padding: 1.2vh 0 0 1vh;
     float: left;
     color: white !important;
 }
 
 #phone-icons {
-    font-size: 0.95vh;
-    padding: 2vh 1.5vh 0 0vh;
+    font-size: 1.1vh;
+    padding: 1.2vh 1.1vh 0 0vh;
     float: right;
     color: white !important;
 }
 
-#phone-signal {
-    font-size: 1vh;
-    left: -0.3vh;
+#phone-arrow {
+    font-size: 1.5vh;
+    top: 0.25vh;
+    left: -8.25vh;
+    position: relative;
+}
+
+#phone-sun {
+    left: -1.2vh;
+    position: relative;
+}
+
+#phone-unlock {
+    left: -0.6vh;
     position: relative;
 }
 
 #phone-battery {
-    transform: rotate(-90deg);
-    top: -0.1vh;
+    top: 0vh;
     position: relative;
 }
 
-/* Phone Header END */
-/* -------------------------- */
-
-/* Phone Application Contanier */
 .phone-application-container {
     display: none;
     position: absolute;
     top: 8%;
-    height: 100%;
+    height: 93%;
     width: 100%;
     background-color: rgb(65, 65, 65);
     z-index: 100;
 }
-/* Phone Application Container END */
-/* -------------------------- */
 
-/* Phone Footer */
 .phone-footer {
     position: absolute;
-    bottom: 0;
+    bottom: -0.5vh;
     height: 5vh;
     width: 100%;
+    background: #00000029;
+    z-index: 140;
+    border-top: 0.1vh solid #0000003b;
 }
 
 .phone-home-container {
+    margin-top: 0.6vh;
     position: relative;
-    height: 2.3vh;
-    width: 100%;
-    margin: 0 auto;
-    top: 2vh;
-    transform: translateY(-50%);
-    border-radius: 0.8vh;
-    transition: .15s;
-    z-index: 500;
 }
 
-.phone-home-button {
-    position: relative;
-    height: 0.5vh;
-    width: 10vh;
-    background-color: white;
-    border-radius: 0.8vh;
-    top: 80%;
-    transform: translateY(-50%);
-    margin: 0px auto;
-    transition: all 0.1s ease 0s;
-}
-
-/* Phone Footer END */
-
-/* Home Applications */
-.phone-applications {
+.phone-home-button-class {
     position: relative;
     height: 100%;
+    width: 20%;
+    text-align: center;
+    float: left;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    transition: .3s;
+}
+
+.phone-home-button-class:hover{
+    color: rgb(165, 165, 165);
+}
+
+.ghasem {
+    position: relative;
+    height: 100%;
+    width: 25%;
+    text-align: center;
+    float: left;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    transition: .1s;
+}
+
+.phone-applications {
+    position: relative;
+    height: 97%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.05);
 }
@@ -273,13 +274,12 @@ body {
     position: relative;
     height: 4.8vh;
     width: 4.8vh;
-    left: 1vh;
+    left: 0vh;
     float: left;
     margin-left: 1.75vh;
     margin-top: 1.5vh;
     border-radius: 1.25vh;
     text-align: center;
-    /* box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.13); */
     opacity: 0.9;
     transition: .05s;
 }
@@ -297,7 +297,7 @@ body {
 .phone-home-applications {
     position: absolute;
     width: 100%;
-    bottom: 17vh;
+    bottom: 13vh;
 }
 
 .phone-application > i {
@@ -308,57 +308,136 @@ body {
 .ApplicationIcon {
     color: white;
 }
-/* Home Applications END */
 
-
-/* Phone Notification */
-
-.phone-notification-container {
+.phone-notification-container-new {
     position: absolute;
-    height: 5.5vh;
-    width: 22vh;
-    background-color: rgba(39, 39, 39, 0.9);
+    height: 4.3vh;
+    width: 24.5vh;
+    background-color: #2a2a2aee;
     margin: 0 auto;
     left: 0;
     right: 0;
     top: -8%;
-    border-radius: 3vh;
+    border-radius: 0.9vh;
     overflow: hidden;
     box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.11);
     z-index: 140;
+  }
+
+.notification-accept {
+    position: absolute;
+    top: 23px;
+    right: 15px;
+    font-size: 1.2vh;
+}    
+
+.notification-deny {
+    position: absolute;
+    top: 23px;
+    right: 35px;
+    font-size: 1.2vh;
 }
+
+.notification-icon-new {
+    position: absolute;
+    height: 50%;
+    width: 3.0vh;
+    text-align: center;
+    line-height: 2.8vh;
+    color: #ffffff;
+    font-size: 1.5vh;
+}
+
+.notification-title-new {
+    position: absolute;
+    top: 0.75vh;
+    left: 2.8vh;
+    font-size: 0.9vh;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+}
+
+.notification-text-new {
+    position: absolute;
+    top: 2.4vh;
+    left: 0.8vh;
+    font-size: 1vh;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(255, 255, 255);
+    max-width: 18vh;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notification-time-new {
+    position: absolute;
+    top: 0.70vh;
+    left: 20.0vh;
+    font-size: 0.9vh;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255, 255, 255);
+    width: 22vh;
+    overflow: hidden;
+}
+
+.phone-notification-container {
+    position: absolute;
+    height: 4.3vh;
+    width: 24.5vh;
+    background-color: #2a2a2aee;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -8%;
+    border-radius: 0.9vh;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.11);
+    z-index: 140;
+  }
 
 .notification-icon {
     position: absolute;
-    height: 100%;
-    width: 5vh;
+    height: 50%;
+    width: 3.0vh;
     text-align: center;
-    line-height: 5.7vh;
-    color: #e74c3c;
-    font-size: 2.5vh;
+    line-height: 2.8vh;
+    color: #ffffff;
+    font-size: 1.5vh;
 }
 
 .notification-title {
     position: absolute;
-    top: 1vh;
-    left: 4.5vh;
-    font-size: 1.1vh;
-    font-family: 'Poppins', sans-serif;
+    top: 0.75vh;
+    left: 2.8vh;
+    font-size: 0.9vh;
+    font-family: 'Arial', sans-serif;
     color: #ffffff;
 }
 
 .notification-text {
     position: absolute;
-    top: 2.7vh;
-    left: 4.5vh;
+    top: 2.4vh;
+    left: 0.8vh;
     font-size: 1vh;
     font-family: 'Poppins', sans-serif;
     color: rgb(255, 255, 255);
-    width: 16vh;
+    max-width: 22vh;
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Phone Notification END */
+.notification-time {
+    position: absolute;
+    top: 0.70vh;
+    left: 20.0vh;
+    font-size: 0.9vh;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255, 255, 255);
+    width: 22vh;
+    overflow: hidden;
+}
 
 .call-notifications {
     display: none;
@@ -372,10 +451,7 @@ body {
     z-index: -5;
 }
 .call-notifications-shake {
-    /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
-
-    /* When the animation is finished, start again */
     animation-iteration-count: infinite;
 }
 
@@ -445,11 +521,12 @@ body {
 
 .call-notifications-title {
     position: absolute;
-    line-height: 5.5vh;
-    left: 7.5vh;
-    font-size: 1.5vh;
-    color: white;
-    font-family: 'Poppins', sans-serif;
+    top: 0.75vh;
+    left: 2.8vh;
+    font-size: 0.9vh;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    text-transform: capitalize;
 }
 
 .call-notifications-content {
@@ -486,7 +563,6 @@ body {
     width: 33vh;
     height: 20vh;
     background-color: #004682;
-    /* border: .1vh solid #002f5831; */
     border-radius: 1vh;
     overflow: hidden;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.199);
@@ -525,3 +601,215 @@ body {
     right: 0;
     bottom: 0;
 }
+
+/* Checkmark Confirmation Frame */
+
+.box-frame {
+    width: calc(100% - 64px);
+    height: auto;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    max-height: 80%;
+    min-height: 30%;
+    background-color: rgb(48, 71, 94);
+}
+
+.content-frame {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 16px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner-input-frame{
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.checkmark-input-frame {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+
+.main-spinning-frame {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-spinning {
+    color: official;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.div-spinning div {
+    transform-origin: 40px 40px;
+    -webkit-animation: div-spinning 1.2s linear infinite;
+    animation: div-spinning 1.2s linear infinite;
+}
+.div-spinning div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 37px;
+    width: 6px;
+    height: 18px;
+    border-radius: 20%;
+    background: #fff;
+}
+.div-spinning div:first-child {
+    transform: rotate(0deg);
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+.div-spinning div:nth-child(2) {
+    transform: rotate(30deg);
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+}
+.div-spinning div:nth-child(3) {
+    transform: rotate(60deg);
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+.div-spinning div:nth-child(4) {
+    transform: rotate(90deg);
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+.div-spinning div:nth-child(5) {
+    transform: rotate(120deg);
+    -webkit-animation-delay: -0.7s;
+    animation-delay: -0.7s;
+}
+.div-spinning div:nth-child(6) {
+    transform: rotate(150deg);
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s;
+}
+.div-spinning div:nth-child(7) {
+    transform: rotate(180deg);
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+.div-spinning div:nth-child(8) {
+    transform: rotate(210deg);
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s;
+}
+.div-spinning div:nth-child(9) {
+    transform: rotate(240deg);
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s;
+}
+.div-spinning div:nth-child(10) {
+    transform: rotate(270deg);
+    -webkit-animation-delay: -0.2s;
+    animation-delay: -0.2s;
+}
+.div-spinning div:nth-child(11) {
+    transform: rotate(300deg);
+    -webkit-animation-delay: -0.1s;
+    animation-delay: -0.1s;
+}
+.div-spinning div:nth-child(12) {
+    transform: rotate(330deg);
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+@-webkit-keyframes div-spinning {
+    0% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes div-spinning {
+    0% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.main-checkmark-frame .checkmark-circle-frame {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #009688;
+    fill: none;
+    -webkit-animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+.main-checkmark-frame .checkmark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 10% auto;
+    box-shadow: inset 0 0 0 #009688;
+    -webkit-animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+    animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+}
+.main-checkmark-frame .checkmark-check-frame {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    -webkit-animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+@-webkit-keyframes stroke { 
+    100% { stroke-dashoffset: 0; }
+  }
+  @keyframes stroke { 
+    100% { stroke-dashoffset: 0; }
+  }
+  @-webkit-keyframes scale { 
+    0%, 100% { transform: none; }
+    50% { transform: scale3d(1.1, 1.1, 1); }
+  }
+  @keyframes scale { 
+    0%, 100% { transform: none; }
+    50% { transform: scale3d(1.1, 1.1, 1); }
+  }
+  @-webkit-keyframes fill { 
+    100% { box-shadow: rgb(0, 150, 136) 0px 0px 0px 30px inset; }
+  }
+  @keyframes fill { 
+    100% { box-shadow: rgb(0, 150, 136) 0px 0px 0px 30px inset; }
+  }
+
+
+

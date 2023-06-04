@@ -13,7 +13,6 @@ function setUpGalleryData(Images){
 $(document).on('click', '.tumbnail', function(e){
     e.preventDefault();
     let source = $(this).attr('src')
-    // QB.Screen.popUp(source)
     $(".gallery-homescreen").animate({
         left: 30+"vh"
     }, 200);
@@ -64,7 +63,6 @@ $(document).on('click', '#make-post-button', function(e){
     let source = $('#imagedata').attr('src')
     postImageUrl=source
 
-    // QB.Screen.popUp(source)
     $(".gallery-detailscreen").animate({
         left: 30+"vh"
     }, 200);
@@ -74,6 +72,20 @@ $(document).on('click', '#make-post-button', function(e){
     SetupPostDetails();
 });
 
+$(document).on('click', '#gallery-coppy-button', function(e){
+    e.preventDefault();
+    let source = $('#imagedata').attr('src')
+    copyToClipboard(source)
+});
+
+const copyToClipboard = str => {
+    const el = document.createElement('textarea');
+    el.value = str;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+ };
 
 $(document).on('click', '#return-button', function(e){
     e.preventDefault();
@@ -120,7 +132,6 @@ $(document).on('click', '#tweet-button', function(e){
         $.post('https://qb-phone/GetHashtags', JSON.stringify({}), function(Hashtags){
             QB.Phone.Notifications.LoadHashtags(Hashtags)
         })
-        // QB.Phone.Animations.TopSlideUp(".twitter-new-tweet-tab", 450, -120);
         returnDetail()
     } else {
         QB.Phone.Notifications.Add("fab fa-twitter", "Twitter", "Fill a message!", "#1DA1F2");

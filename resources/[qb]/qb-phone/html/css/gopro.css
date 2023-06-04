@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+.gopro-icon {
+    margin-top: .5vh;
+    width: 3.4vh;
+}
+
+.gopro-app {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: #212832;
+    overflow: hidden;
+}
+
+.gopro-app-header {
+    position: absolute;
+    height: 9vh;
+    width: 100%;
+    text-align: center;
+    line-height: 13.5vh;
+    color: white;
+    font-size: 1.5vh;
+}
+
+.gopro-homescreen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0vh;
+}
+
+.gopro-lists::-webkit-scrollbar {
+    display: none;
+}
+
+.gopro-lists {
+    position: absolute;
+    width: 90%;
+    height: 45vh;
+    margin: 0 auto;
+    left: 0;
+    right: 0.0vh;
+    top: 12vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.gopro-list {
+    position: relative;
+    width: 90%;
+    color: white;
+    left: 15px;
+    height: 5.5vh;
+    margin-bottom: 8px;
+    background-color: rgb(44, 70, 95);
+    box-shadow: rgba(0, 0, 0, 0.557) 0rem 0rem 0.1rem 0.01rem;
+    border-radius: 0.15rem;
+    border-bottom: 0.1vh solid rgba(245, 245, 245, 0.68);
+}
+
+.gopro-list:hover {
+    background-color: #15222e;
+}
+
+.gopro-list-icon {
+    position: absolute;
+    margin: .7vh;
+    margin-left: 1.0vh;
+    text-align: center;
+    line-height: 3.5vh;
+    color: white;
+    font-size: 4.0vh;
+}
+
+.gopro-list-name {
+    position: absolute;
+    left: 6.8vh;
+    color: white;
+    line-height: 2.7vh;
+    font-size: 1.35vh;
+}
+
+/* Action Buttons */
+
+.gopro-action-buttons {
+    visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 5.1vh;
+    left: 0;
+    right: 0;
+}
+
+.gopro-action-buttons > i {
+    position: relative;
+    float: left;
+    margin-left: 1.8vh;
+    left: 5.5vh;
+    top: 1.7vh;
+    font-size: 1.8vh;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.gopro-action-buttons > i:hover {
+    color: #2c465f;
+}
+
+.gopro-list:hover .gopro-action-buttons {
+    background: #0d1218c0;
+    visibility: visible;
+}
+
+/* Search Bar / Icon */
+
+#gopro-search {
+    display: block;
+    position: absolute;
+    background: none;
+    border: none;
+    background: none;
+    top: 6.9vh;
+    width: 79%;
+    margin: 0 auto;
+    left: 0%;
+    right: 0;
+    opacity: 1;
+    height: 2.5vh;
+    /* border-radius: 1vh; */
+    border-bottom: .1vh solid #f5f5f5ad;
+    /* box-shadow: 0 0 .2vh 0 rgba(0, 0, 0, 0.281); */
+    /* font-family: 'Poppins', sans-serif; */
+    outline: none;
+    text-indent: 2.5vh;
+    z-index: 100;
+    color: whitesmoke;
+}
+#gopro-search-icon {
+    position: absolute;
+    top: 7.5vh;
+    left: 3.5vh;
+    font-size: 1.4vh;
+    color: #FFFFFF;
+}

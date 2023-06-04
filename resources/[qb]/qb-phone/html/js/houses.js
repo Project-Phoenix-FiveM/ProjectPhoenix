@@ -56,13 +56,8 @@ var AnimationDuration = 200;
 $(document).on('click', '#myhouse-option-transfer', function(e){
     e.preventDefault();
 
-    $(".myhouses-options").animate({
-        left: -35+"vw"
-    }, AnimationDuration);
-
-    $(".myhouse-option-transfer-container").animate({
-        left: 0
-    }, AnimationDuration);
+    ClearInputNew()
+    $('#house-transfer-new-box').fadeIn(350);
 });
 
 $(document).on('click', '#myhouse-option-keys', function(e){

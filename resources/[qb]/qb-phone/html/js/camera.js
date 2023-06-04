@@ -1,3 +1,3 @@
 function setUpCameraApp(url){
-    $('.phone-home-container').click();
+    $('.phone-tab-button').click();
 }

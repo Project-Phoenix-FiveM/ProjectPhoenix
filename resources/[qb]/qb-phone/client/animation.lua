@@ -1,5 +1,5 @@
 local phoneProp = 0
-local phoneModel = `prop_npc_phone_02`
+local phoneModel = joaat("prop_npc_phone_02")
 
 local function LoadAnimation(dict)
 	RequestAnimDict(dict)
@@ -10,7 +10,7 @@ end
 
 local function CheckAnimLoop()
     CreateThread(function()
-        while PhoneData.AnimationData.lib ~= nil and PhoneData.AnimationData.anim ~= nil do
+        while PhoneData.AnimationData.lib and PhoneData.AnimationData.anim do
             local ped = PlayerPedId()
             if not IsEntityPlayingAnim(ped, PhoneData.AnimationData.lib, PhoneData.AnimationData.anim, 3) then
                 LoadAnimation(PhoneData.AnimationData.lib)
@@ -28,17 +28,17 @@ function newPhoneProp()
 		Wait(1)
 	end
 	phoneProp = CreateObject(phoneModel, 1.0, 1.0, 1.0, 1, 1, 0)
-
-	local bone = GetPedBoneIndex(PlayerPedId(), 28422)
-	if phoneModel == `prop_cs_phone_01` then
-		AttachEntityToEntity(phoneProp, PlayerPedId(), bone, 0.0, 0.0, 0.0, 50.0, 320.0, 50.0, 1, 1, 0, 0, 2, 1)
+    local ped = PlayerPedId()
+	local bone = GetPedBoneIndex(ped, 28422)
+	if phoneModel == joaat("prop_cs_phone_01") then
+		AttachEntityToEntity(phoneProp, ped, bone, 0.0, 0.0, 0.0, 50.0, 320.0, 50.0, 1, 1, 0, 0, 2, 1)
 	else
 		AttachEntityToEntity(phoneProp, PlayerPedId(), bone, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1, 1, 0, 0, 2, 1)
 	end
 end
 
 function deletePhone()
-	if phoneProp ~= 0 then
+	if phoneProp then
 		DeleteObject(phoneProp)
 		phoneProp = 0
 	end
