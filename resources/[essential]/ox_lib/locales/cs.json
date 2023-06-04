@@ -1,0 +1,14 @@
+{
+  "language": "Čeština",
+  "ui": {
+    "cancel": "Zrušit",
+    "close": "Zavřít",
+    "confirm": "Potvrdit",
+    "more": "Více..."
+  },
+  "txadmin_announcement": "Server oznámení od %s",
+  "txadmin_dm": "Soukromá zpráva od %s",
+  "txadmin_warn": "Byl jsi varován %s",
+  "txadmin_warn_content": "%s  \nID Akce: %s",
+  "txadmin_scheduledrestart": "Plánovaný restart"
+}

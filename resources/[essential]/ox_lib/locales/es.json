@@ -1,0 +1,14 @@
+{
+  "language": "Español",
+  "ui": {
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "confirm": "Confirmar",
+    "more": "Más..."
+  },
+  "txadmin_announcement": "Server announcement by %s",
+  "txadmin_dm": "Direct Message from %s",
+  "txadmin_warn": "You have been warned by %s",
+  "txadmin_warn_content": "%s  \nAction ID: %s",
+  "txadmin_scheduledrestart": "Scheduled Restart"
+}
