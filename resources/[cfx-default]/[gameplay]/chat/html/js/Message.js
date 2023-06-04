@@ -1,48 +1,43 @@
-import CONFIG from './config';
-import Vue, { PropType } from 'vue';
-
-export default Vue.component('message', {
+Vue.component('message', {
+  template: '#message_template',
   data() {
     return {};
   },
   computed: {
-    textEscaped(): string {
+    textEscaped() {
       let s = this.template ? this.template : this.templates[this.templateId];
 
+      if (this.template) {
+        //We disable templateId since we are using a direct raw template
+        this.templateId = -1;
+      }
+
+      //this.$el.style.background = `rgba(${this.color[0]}, ${this.color[1]}, ${this.color[2]}, 0.9)`;
       //This hack is required to preserve backwards compatability
-      if (!this.template && this.templateId == CONFIG.defaultTemplateId
+      if (this.templateId == CONFIG.defaultTemplateId
           && this.args.length == 1) {
         s = this.templates[CONFIG.defaultAltTemplateId] //Swap out default template :/
       }
 
-      s = s.replace(`@default`, this.templates[this.templateId]);
-
       s = s.replace(/{(\d+)}/g, (match, number) => {
-        const argEscaped = this.args[number] != undefined ? this.escape(this.args[number]) : match;
+        const argEscaped = this.args[number] != undefined ? this.escape(this.args[number]) : match
         if (number == 0 && this.color) {
           //color is deprecated, use templates or ^1 etc.
-          return this.colorizeOld(argEscaped);
+          return argEscaped;
         }
         return argEscaped;
       });
-
-      // format variant args
-      s = s.replace(/\{\{([a-zA-Z0-9_\-]+?)\}\}/g, (match, id) => {
-        const argEscaped = this.params[id] != undefined ? this.escape(this.params[id]) : match;
-        return argEscaped;
-      });
-
       return this.colorize(s);
     },
   },
   methods: {
-    colorizeOld(str: string): string {
+    colorizeOld(str) {
       return `<span style="color: rgb(${this.color[0]}, ${this.color[1]}, ${this.color[2]})">${str}</span>`
     },
-    colorize(str: string): string {
-      let s = "<span>" + colorTrans(str) + "</span>";
+    colorize(str) {
+      let s = "<span>" + (str.replace(/\^([0-9])/g, (str, color) => `</span><span class="color-${color}">`)) + "</span>";
 
-      const styleDict: {[ key: string ]: string} = {
+      const styleDict = {
         '*': 'font-weight: bold;',
         '_': 'text-decoration: underline;',
         '~': 'text-decoration: line-through;',
@@ -55,15 +50,8 @@ export default Vue.component('message', {
         s = s.replace(styleRegex, (str, style, inner) => `<em style="${styleDict[style]}">${inner}</em>`)
       }
       return s.replace(/<span[^>]*><\/span[^>]*>/g, '');
-
-      function colorTrans(str: string) {
-        return str
-          .replace(/\^([0-9])/g, (str, color) => `</span><span class="color-${color}">`)
-          .replace(/\^#([0-9A-F]{3,6})/gi, (str, color) => `</span><span class="color" style="color: #${color}">`)
-          .replace(/~([a-z])~/g, (str, color) => `</span><span class="gameColor-${color}">`);
-      }
     },
-    escape(unsafe: string): string {
+    escape(unsafe) {
       return String(unsafe)
        .replace(/&/g, '&amp;')
        .replace(/</g, '&lt;')
@@ -74,13 +62,10 @@ export default Vue.component('message', {
   },
   props: {
     templates: {
-      type: Object as PropType<{ [key: string]: string }>,
+      type: Object,
     },
     args: {
-      type: Array as PropType<string[]>,
-    },
-    params: {
-      type: Object as PropType<{ [ key: string]: string }>,
+      type: Array,
     },
     template: {
       type: String,
@@ -95,8 +80,8 @@ export default Vue.component('message', {
       default: false,
     },
     color: { //deprecated
-      type: Array as PropType<number[]>,
-      default: null,
+      type: Array,
+      default: false,
     },
   },
 });
