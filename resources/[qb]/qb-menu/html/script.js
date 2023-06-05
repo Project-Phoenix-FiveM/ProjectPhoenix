@@ -9,7 +9,7 @@ const openMenu = (data = null) => {
             let isMenuHeader = item.isMenuHeader;
             let isDisabled = item.disabled;
             let icon = item.icon;
-            html += getButtonRender(header, message, index, isMenuHeader, isDisabled, icon);
+            html += getButtonRender(header, message, index, isMenuHeader, isDisabled, icon);  
             if (item.params) buttonParams[index] = item.params;
         }
     });
@@ -28,7 +28,7 @@ const getButtonRender = (header, message = null, id, isMenuHeader, isDisabled, i
     return `
         <div class="${isMenuHeader ? "title" : "button"} ${isDisabled ? "disabled" : ""}" id="${id}">
             <div class="icon"> <img src=nui://${icon} width=30px onerror="this.onerror=null; this.remove();"> <i class="${icon}" onerror="this.onerror=null; this.remove();"></i> </div>
-            <div class="column">
+            <div className="column">
             <div class="header"> ${header}</div>
             ${message ? `<div class="text">${message}</div>` : ""}
             </div>
