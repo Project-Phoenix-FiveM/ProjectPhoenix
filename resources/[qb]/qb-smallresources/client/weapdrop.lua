@@ -82,7 +82,7 @@ local disabledPickups = {
     `PICKUP_WEAPON_STUNGUN`,
     `PICKUP_WEAPON_SWITCHBLADE`,
     `PICKUP_WEAPON_VINTAGEPISTOL`,
-    `PICKUP_WEAPON_WRENCH`
+    `PICKUP_WEAPON_WRENCH`,
 }
 
 CreateThread(function()
