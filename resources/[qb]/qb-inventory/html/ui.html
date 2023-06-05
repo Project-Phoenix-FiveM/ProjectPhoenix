@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
         <link href="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.prod.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <!-- Google Fonts -->
@@ -18,11 +18,12 @@
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" integrity="sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k=" crossorigin="anonymous"></script>
     </head>
+
     <body style="background-color: rgba(0, 0, 0, 0); font-family: 'Roboto', sans-serif !important;">
-        <div id="qbcore-inventory">
+      <div id="qbcore-inventory">
             <div class="inventory-info">
                 <div class="player-inv-info">
-                    <span id="player-inv-label">Player</span><br>
+                    <span id="player-inv-label" class="player-inv-label">Player</span><br>
                     <!-- <img class="weight-img" src="images/weight.png"> -->
                         <div>
                             <div id="progressbar">
@@ -46,27 +47,27 @@
                 <div class="ply-inv-container">
                     <div class="player-inventory-bg">
                     <div class="player-inventory" data-inventory="player"></div>
+                    <div class="player-inventory-first" data-inventory="player"></div>
                 </div>
-            </div>
                 <div class="inv-options">
-                    <div class="inv-options-list">
-                        <img class="brand-logo" src="./images/lj-symbol.svg"></img>
-                        <div class="inv-option-item color-picker-container">
-                          <label for="favcolor">Color:</label>
-                          <input type="color" id="favcolor" name="favcolor" value="#ff0000">
-                        </div>
-                        <input type="number" id="item-amount" class="inv-option-item" min=1 max="10000" placeholder="Amount"
-                        pattern="[0-9]" onfocus="this.value=''" placeholder="" oninput="validity.valid||(value='');"></input>
-                        <div class="inv-option-item" id="item-use"><p>Use</p></div>
-                        <!-- <img class="inv-option-hand" id= "item-use" src="images/hand-1.png"> -->
-                        <div class="inv-option-item" id="item-give"><p>Give</p></div>
-                        <div class="inv-option-item" id="inv-close"><p>Close</p></div>
-                        <div class="combine-option-container">
-                            <div class="btn-combine CombineItem"><p>Combine</p></div>
-                            <div class="btn-combine SwitchItem"><p>Switch</p></div>
-                        </div>
-                    </div>
-                </div>
+                  <div class="inv-options-list">
+                      <img class="brand-logo" src="./images/qb-symbol.svg"></img>
+                      <!-- <div class="inv-option-item color-picker-container">
+                        <label for="favcolor">Color:</label>
+                        <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+                      </div> -->
+                      <input  type="number" id="item-amount" class="inv-option-item" min=1 max="10000" placeholder="0"
+                      pattern="[0-9]" onfocus="this.value=''" placeholder="" oninput="validity.valid||(value='');"></input>
+                      <div class="inv-option-item" id="item-use"><p>Use</p></div> 
+                      <!-- <img class="inv-option-hand" id= "item-use" src="images/hand-1.png">  -->
+                      <div class="inv-option-item" id="item-give"><p>Give</p></div>
+                      <div class="combine-option-container">
+                          <div class="btn-combine CombineItem"><p>Combine</p></div>
+                          <!-- <div class="btn-combine SwitchItem"><p>Switch</p></div> -->
+                      </div> 
+                  </div>
+              </div>
+            </div>
                 <div class="oth-inv-container">
                     <div class="other-inventory-bg">
                     <div class="other-inventory" data-inventory="other">
@@ -88,9 +89,12 @@
                 </div>
             </div>
             <div id="inventory-menus" style="min-height: 100vh;">
-                <div class="row justify-center">
-                  <q-btn style="top: 20vh; margin-right: 1vh;" icon="settings_suggest" color="button" @click="options = true"></q-btn>
-                  <q-btn style="top: 20vh;" icon="help" color="button" @click="help = true"></q-btn>
+                <div class="row">
+                  <!-- Anyone really use this? -Ok1ez -->
+                  <div class="inv-help-options">
+                    <q-btn class="" color="button" @click="options = true"><i class="fas fa-gear"></i></q-btn>
+                    <!-- <q-btn class="" color="button" @click="help = true"><i class="fas fa-question"></i></q-btn> -->
+                  </div>
                   <q-dialog v-model="options">
                     <q-card>
                       <q-card-section>

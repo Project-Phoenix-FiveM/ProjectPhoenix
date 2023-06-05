@@ -429,6 +429,9 @@ RegisterNetEvent('inventory:client:OpenInventory', function(PlayerAmmo, inventor
                 if other then
                     currentOtherInventory = other.name
                 end
+            QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
+                inventory = data.inventory
+                other = data.other
                 SendNUIMessage({
                     action = "open",
                     inventory = inventory,
@@ -437,10 +440,12 @@ RegisterNetEvent('inventory:client:OpenInventory', function(PlayerAmmo, inventor
                     maxweight = Config.MaxInventoryWeight,
                     Ammo = PlayerAmmo,
                     maxammo = Config.MaximumAmmoValues,
+                    Name = PlayerData.charinfo.firstname .." ".. PlayerData.charinfo.lastname .." - [".. GetPlayerServerId(PlayerId()) .."]", 
                 })
                 inInventory = true
-                end, function() -- Play When Cancel
-            end)
+                end, inventory, other)
+
+        end)
         else
             Wait(500)
             ToggleHotbar(false)
@@ -451,6 +456,9 @@ RegisterNetEvent('inventory:client:OpenInventory', function(PlayerAmmo, inventor
             if other then
                 currentOtherInventory = other.name
             end
+        QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
+            inventory = data.inventory
+            other = data.other
             SendNUIMessage({
                 action = "open",
                 inventory = inventory,
@@ -459,10 +467,22 @@ RegisterNetEvent('inventory:client:OpenInventory', function(PlayerAmmo, inventor
                 maxweight = Config.MaxInventoryWeight,
                 Ammo = PlayerAmmo,
                 maxammo = Config.MaximumAmmoValues,
+                Name = PlayerData.charinfo.firstname .." ".. PlayerData.charinfo.lastname .." - [".. GetPlayerServerId(PlayerId()) .."]", 
             })
             inInventory = true
+            end,inventory,other)
         end
     end
+end)
+
+RegisterNetEvent('inventory:client:UpdateOtherInventory', function(items, isError)
+    SendNUIMessage({
+        action = "update",
+        inventory = items,
+        maxweight = Config.MaxInventoryWeight,
+        slots = Config.MaxInventorySlots,
+        error = isError,
+    })
 end)
 
 RegisterNetEvent('inventory:client:UpdatePlayerInventory', function(isError)
