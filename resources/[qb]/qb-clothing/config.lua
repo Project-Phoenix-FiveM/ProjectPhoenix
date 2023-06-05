@@ -508,7 +508,7 @@ Config.LoadedWomanModels = {}
 
 -- Set to true or false or GetConvar('UseTarget', 'false') == 'true' to use global option or script specific
 -- These have to be a string thanks to how Convars are returned.
-Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
+Config.UseTarget = true
 
 -- width, length, minZ and maxZ are for the size and height of the PolyZone
 Config.Stores = {

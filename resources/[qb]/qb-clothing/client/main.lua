@@ -643,6 +643,7 @@ local function GetPositionByRelativeHeading(ped, head, dist)
     return finPosx, finPosy
 end
 local function openMenu(allowedMenus)
+    TriggerEvent("backitems:displayItems", false)
     previousSkinData = json.encode(skinData)
     creatingCharacter = true
     PlayerData = QBCore.Functions.GetPlayerData()
@@ -1778,6 +1779,7 @@ RegisterNUICallback('close', function(_, cb)
     SetNuiFocus(false, false)
     creatingCharacter = false
     disableCam()
+    TriggerEvent("backitems:displayItems", true)
     FreezeEntityPosition(PlayerPedId(), false)
     TriggerEvent('qb-clothing:client:onMenuClose')
     cb('ok')
