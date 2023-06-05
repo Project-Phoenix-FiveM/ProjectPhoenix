@@ -213,7 +213,7 @@ RegisterNetEvent('cdn-syphoning:callcops', function(coords)
 end)
 
 --- Update Alerts
-local updatePath
+--[[ local updatePath
 local resourceName
 
 local function checkVersion(err, responseText, headers)
@@ -231,4 +231,4 @@ CreateThread(function()
 	updatePath = "/CodineDev/cdn-fuel"
 	resourceName = "cdn-fuel ("..GetCurrentResourceName()..")"
 	PerformHttpRequest("https://raw.githubusercontent.com"..updatePath.."/master/version", checkVersion, "GET")
-end)
+end) ]]
