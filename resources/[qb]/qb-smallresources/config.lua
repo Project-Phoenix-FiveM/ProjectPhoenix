@@ -87,13 +87,13 @@ Config.Stun = {
 }
 
 Config.Cruise = 'mp/h'
-Config.IdleCamera = true
+Config.IdleCamera = false
 Config.disableHandsupControls = {24, 25, 47, 58, 59, 63, 64, 71, 72, 75, 140, 141, 142, 143, 257, 263, 264}
-Config.DisableAmbience = false -- Disabled distance sirens, distance car alarms, etc
+Config.DisableAmbience = true -- Disabled distance sirens, distance car alarms, etc
 Config.HarnessUses = 20
 Config.DamageNeeded = 100.0 -- vehiclepush 0-1000
 Config.EnableProne = false -- prone isnt recomended at this time
-Config.MapText = "Server Name" -- This is the name / text shown above the map
+Config.MapText = "Project Phoenix" -- This is the name / text shown above the map
 
 Config.Disable = {
     disableHudComponents = {1, 2, 3, 4, 7, 9, 13, 14, 19, 20, 21, 22}, -- Hud Components: https://docs.fivem.net/natives/?_0x6806C51AD12B83B8
@@ -107,12 +107,27 @@ Config.ConsumablesEat = {
     ["tosti"] = math.random(40, 50),
     ["twerks_candy"] = math.random(35, 54),
     ["snikkel_candy"] = math.random(40, 50),
+    ["crisps"] = math.random(35, 54),
+    ["egochaser"] = math.random(35, 54),
+    ["nachos"] = math.random(35, 54),
+    ["meteorite-bar"] = math.random(35, 54),
+    ["twix"] = math.random(35, 54),
 }
 
 Config.ConsumablesDrink = {
     ["water_bottle"] = math.random(35, 54),
     ["kurkakola"] = math.random(35, 54),
     ["coffee"] = math.random(40, 50),
+    ["cola"] = math.random(40, 50),
+    ["ecoladiet"] = math.random(40, 50),
+    ["sprunk"] = math.random(40, 50),
+    ["sprunklight"] = math.random(40, 50),
+    ["orang-o-tang"] = math.random(40, 50),
+    ["grapejuice"] = math.random(40, 50),
+    ["cranberry"] = math.random(40, 50),
+    ["water_bottle2"] = math.random(40, 50),
+    ["espresso"] = math.random(40, 50),
+    ["latte-machiatto"] = math.random(40, 50),
 }
 
 Config.ConsumablesAlcohol = {
