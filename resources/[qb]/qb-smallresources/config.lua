@@ -252,7 +252,15 @@ Config.HolsterableWeapons = {
     'WEAPON_REVOLVER',
     'WEAPON_SNSPISTOL',
     'WEAPON_HEAVYPISTOL',
-    'WEAPON_VINTAGEPISTOL'
+    'WEAPON_VINTAGEPISTOL',
+	--Custom Weapon
+	'WEAPON_DE',
+	'WEAPON_GLOCK17',
+	'WEAPON_M9',
+	'WEAPON_M1911',
+	'WEAPON_FNX45',
+	'WEAPON_GLOCK18C',
+	'WEAPON_GLOCK22',
 }
 
 Config.Objects = { -- for object removal

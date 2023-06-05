@@ -42,7 +42,27 @@ local WeaponTable = {
     [317205821]   = "CLASS 2: Autoshotgun",
     [-1568386805] = "CLASS 5: GRENADE LAUNCHER",
     [-1312131151] = "CLASS 5: RPG",
-    [125959754]   = "CLASS 5: Compactlauncher"
+    [125959754]   = "CLASS 5: Compactlauncher",
+    -- Custom weapons
+    [GetHashKey("weapon_ak47")] = "CLASS 3: AK-47",
+    [GetHashKey("weapon_de")] = "CLASS 2: Desert Eagle",
+    [GetHashKey("weapon_fnx45")] = "CLASS 1: FN .45",
+    [GetHashKey("weapon_glock17")] = "CLASS 1: Glock 17",
+    [GetHashKey("weapon_m4")] = "CLASS 3: M4",
+    [GetHashKey("weapon_hk416")] = "CLASS 3: HK-416",
+    [GetHashKey("weapon_mk14")] = "CLASS 4: MK 14",
+    [GetHashKey("weapon_mk14")] = "CLASS 4: M110",
+    [GetHashKey("weapon_huntingrifle")] = "CLASS 3: Hunting Rifle",
+    [GetHashKey("weapon_ar15")] = "CLASS 3: AR-15",
+    [GetHashKey("weapon_m9")] = "CLASS 1: M9",
+    [GetHashKey("weapon_m70")] = "CLASS 3: m70",
+    [GetHashKey("weapon_m1911")] = "CLASS 1: 1911",
+    [GetHashKey("weapon_mac10")] = "CLASS 2: Mac-10",
+    [GetHashKey("weapon_uzi")] = "CLASS 2: Uzi",
+    [GetHashKey("weapon_mp9")] = "CLASS 2: MP9",
+    [GetHashKey("weapon_mossberg")] = "CLASS 2: Mossberg",
+    [GetHashKey("weapon_remington")] = "CLASS 2: Remington",
+    [GetHashKey("weapon_scarh")] = "CLASS 3: Scar-H"
 }
 local function VehicleTheft(vehicle)
     local vehdata = vehicleData(vehicle)

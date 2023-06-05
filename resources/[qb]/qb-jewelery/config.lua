@@ -47,6 +47,57 @@ Config.WhitelistedWeapons = {
     [`weapon_pistol50`] = {
         ["timeOut"] = 10000
     },
+    [`weapon_m4`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_hk416`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_ar15`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_scarh`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_de`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_fnx45`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_glock17`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_mossberg`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_remington`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_ak47`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_m70`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_uzi`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_mp9`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_mac10`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_m9`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_m1911`] = {
+        ["timeOut"] = 10000
+    },
+    [`weapon_m110`] = {
+        ["timeOut"] = 10000
+    },
 }
 
 Config.VitrineRewards = {
