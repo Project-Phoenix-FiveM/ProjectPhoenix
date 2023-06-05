@@ -860,7 +860,7 @@ RegisterNetEvent('police:server:JailPlayer', function(playerId, time)
 
     local currentDate = os.date("*t")
     if currentDate.day == 31 then
-        currentDate.day = 30
+        currentDate.day = 30 
     end
 
     OtherPlayer.Functions.SetMetaData("injail", time)
@@ -868,6 +868,8 @@ RegisterNetEvent('police:server:JailPlayer', function(playerId, time)
         ["hasRecord"] = true,
         ["date"] = currentDate
     })
+    local name = OtherPlayer.PlayerData.charinfo.firstname.." "..OtherPlayer.PlayerData.charinfo.lastname
+    exports['futte-newspaper']:CreateJailStory(name, time)
     TriggerClientEvent("police:client:SendToJail", OtherPlayer.PlayerData.source, time)
     TriggerClientEvent('QBCore:Notify', src, Lang:t("info.sent_jail_for", {time = time}))
 end)

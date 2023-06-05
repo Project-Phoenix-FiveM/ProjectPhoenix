@@ -298,6 +298,8 @@ QBShared.Items = {
     ['snikkel_candy']                   = {['name'] = 'snikkel_candy',                     ['label'] = 'Snikkel',                   ['weight'] = 100,          ['type'] = 'item',         ['image'] = 'snikkel_candy.png',           ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Some delicious candy :O' , ["created"] = nil, ["decay"] = 28.0, ["delete"] = true }, 
     ['sandwich']                        = {['name'] = 'sandwich',                          ['label'] = 'Sandwich',                  ['weight'] = 200,          ['type'] = 'item',         ['image'] = 'sandwich.png',                ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Nice bread for your stomach' , ["created"] = nil, ["decay"] = 28.0, ["delete"] = true }, 
 
+    --newspaper 
+    ['newspaper'] = {['name'] = 'newspaper', ['label'] = 'Newspaper', ['weight'] = 10, ['type'] = 'item', ['image'] = 'newspaper.png', ['unique'] = false , ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Los Santos Newspaper', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
 
     -- QB-Vending
 	['cola'] 				 	     = {['name'] = 'cola', 			  	     		['label'] = 'eCola', 					['weight'] = 500, 		['type'] = 'item', 		['image'] = 'cola.png', 			    ['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Genuine Cola', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
