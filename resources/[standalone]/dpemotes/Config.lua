@@ -33,7 +33,7 @@ Config = {
 	WalkingStylesEnabled = true,	
 -- You can disable the Shared Emotes here.
     SharedEmotesEnabled = true,
-    CheckForUpdates = true,
+    CheckForUpdates = false,
 -- If you have the SQL imported enable this to turn on keybinding.
     SqlKeybinding = true,
 -- Saves walk styles to client and applies them periodically
