@@ -72,3 +72,9 @@ local function PhoneNotification(title, text, icon, color, timeout, accept, deny
     Wait(100)
     return Result
 end exports("PhoneNotification", PhoneNotification)
+
+RegisterNetEvent("qb-phone:client:clearnotify", function()
+    SendNUIMessage({
+        action = "ClearNotify",
+    })
+end)

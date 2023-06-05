@@ -142,6 +142,15 @@ end exports('isGroupLeader', isGroupLeader)
 
 ---- All the job functions for the groups
 
+local function JobStatusNotify(stages, id)
+    for _,v in pairs(stages) do
+        if not v.isDone then
+            TriggerClientEvent('qb-phone:client:CustomNotification2', id, 'CURRENT', v.name, 'fas fa-people-carry', '#b3e0f2', "NONE")
+            return
+        end
+    end
+end
+
 local function setJobStatus(groupID, status, stages)
     if not groupID then return print("setJobStatus was sent an invalid groupID :"..groupID) end
     EmploymentGroup[groupID].status = status
@@ -151,6 +160,7 @@ local function setJobStatus(groupID, status, stages)
     for i=1, #m do
         if m[i] then
             TriggerClientEvent("qb-phone:client:AddGroupStage", m[i], status, stages)
+            JobStatusNotify(stages, m[i])
         end
     end
 end exports('setJobStatus', setJobStatus)
@@ -170,6 +180,7 @@ local function resetJobStatus(groupID)
         if m[i] then
             TriggerClientEvent("qb-phone:client:AddGroupStage", m[i], EmploymentGroup[groupID].status, EmploymentGroup[groupID].stage)
             TriggerClientEvent('qb-phone:client:RefreshGroupsApp', m[i], EmploymentGroup, true)
+            TriggerClientEvent('qb-phone:client:clearnotify', m[i])
         end
     end
 end exports('resetJobStatus', resetJobStatus)

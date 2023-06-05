@@ -13,7 +13,7 @@ QB.Phone.ContactColors = {
     4: "#1abc9c",
     5: "#9c88ff",
 }
-
+isNotified = false
 QB.Phone.Data = {
     currentApplication: null,
     PlayerData: {},
@@ -407,6 +407,11 @@ QB.Phone.Functions.Close = function() {
     }
     $('.publicphonebase').css('display', 'none')
     QB.Phone.Animations.BottomSlideDown('.container', 500, -70);
+    if (isNotified) {
+        QB.Phone.Animations.BottomSlideDown('.container', 500, -55, true);
+    } else {
+        QB.Phone.Animations.BottomSlideDown('.container', 500, -70);
+    }
     $.post('https://qb-phone/Close');
     QB.Phone.Data.IsOpen = false;
 }
@@ -473,6 +478,7 @@ QB.Phone.Notifications.Custom.Add = function(icon, title, text, color, timeout, 
             }
 
             QB.Phone.Animations.TopSlideDown(".phone-notification-container-new", 600, 6);
+            isNotified = true
 
             $(".notification-icon-new").html('<i class="'+icon+'"></i>');
             $(".notification-title-new").html(title);
@@ -491,6 +497,7 @@ QB.Phone.Notifications.Custom.Add = function(icon, title, text, color, timeout, 
                     clearTimeout(QB.Phone.Notifications.Timeout);
                 }
                 QB.Phone.Notifications.Timeout = setTimeout(function(){
+                    isNotified = false
                     QB.Phone.Animations.TopSlideUp(".phone-notification-container-new", 150, -8);
                     QB.Phone.Notifications.Timeout = setTimeout(function(){
                         if (!QB.Phone.Data.IsOpen == true) {
@@ -502,6 +509,19 @@ QB.Phone.Notifications.Custom.Add = function(icon, title, text, color, timeout, 
             }
         }
     });
+}
+
+QB.Phone.Notifications.Clear = function() {
+    if (isNotified) {
+        isNotified = false
+        QB.Phone.Animations.TopSlideUp2(".phone-notification-container-new", 150, -8);
+        if (!QB.Phone.Data.IsOpen == true) {
+            QB.Phone.Notifications.Timeout = setTimeout(function(){
+                QB.Phone.Animations.BottomSlideUp('.container', 450, -70);
+                QB.Phone.Data.IsOpen = false;
+            }, 500)
+        }
+    }
 }
 
 QB.Phone.Notifications.Add = function(icon, title, text, color, timeout) {
@@ -522,6 +542,7 @@ QB.Phone.Notifications.Add = function(icon, title, text, color, timeout) {
                     QB.Phone.Animations.BottomSlideUp('.container', 450, -57);
                 }
                     QB.Phone.Animations.TopSlideDown(".phone-notification-container", 600, 6);
+                    isNotified = true
                 if (icon !== "politie") {
                     $(".notification-icon").html('<i class="'+icon+'"></i>');
                 } else {
@@ -534,6 +555,7 @@ QB.Phone.Notifications.Add = function(icon, title, text, color, timeout) {
                     clearTimeout(QB.Phone.Notifications.Timeout);
                 }
                 QB.Phone.Notifications.Timeout = setTimeout(function(){
+                    isNotified = false
                     QB.Phone.Animations.TopSlideUp(".phone-notification-container", 600, -8);
 
                     QB.Phone.Notifications.Timeout = setTimeout(function(){
@@ -562,6 +584,7 @@ QB.Phone.Notifications.Add = function(icon, title, text, color, timeout) {
                     clearTimeout(QB.Phone.Notifications.Timeout);
                 }
                 QB.Phone.Notifications.Timeout = setTimeout(function(){
+                    isNotified = false
                     QB.Phone.Animations.TopSlideUp(".phone-notification-container", 150, -8);
                     QB.Phone.Notifications.Timeout = setTimeout(function(){
                         if (!QB.Phone.Data.IsOpen == true) {
@@ -717,6 +740,9 @@ $(document).ready(function(){
                 break;
             case "UpdateTime":
                 QB.Phone.Functions.UpdateTime(event.data);
+                break;
+            case 'ClearNotify':
+                QB.Phone.Notifications.Clear();
                 break;
             case "Notification":
                 QB.Screen.Notification(event.data.NotifyData.title, event.data.NotifyData.content, event.data.NotifyData.icon, event.data.NotifyData.timeout, event.data.NotifyData.color);
