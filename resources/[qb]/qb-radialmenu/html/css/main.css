@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
 h1 {
     font-weight: normal;
@@ -6,7 +6,7 @@ h1 {
 }
 
 div.info {
-    margin: 12px 0;
+    margin: 10px 0;
 }
 
 div.info * {
@@ -41,6 +41,7 @@ div.menuHolder {
 
 svg.icons {
     display: none;
+    filter:url(#drop-shadow);
 }
 
 svg.menu {
@@ -51,7 +52,7 @@ svg.menu {
 }
 
 svg.menu.inner {
-    transform: scale(0.66) rotate(-10deg);
+    transform: scale(1.0) rotate(-10deg);
     opacity: 0;
     visibility: hidden;
 }
@@ -62,7 +63,8 @@ svg.menu.outer {
 }
 
 svg.menu > g > path {
-    fill: rgb(23 23 23 / 80%);
+    fill: #00000080;
+    transition: 0.3s;
 }
 
 svg.menu > g.sector > path {
@@ -71,27 +73,29 @@ svg.menu > g.sector > path {
 
 svg.menu > g.sector > text,
 svg.menu > g.sector > use {
-    font-family: 'Poppins', sans-serif;
-    margin-top: 5px;
-    font-size: 2.8px;
-    letter-spacing: 0.2px;
+    font-family: 'Roboto';
+    font-weight: 520px;
+    margin-top: 10px;
+    font-size: 3.6px;
     text-transform: uppercase;
     cursor: pointer;
     fill: white;
 }
 
 svg.menu > g.sector:hover > path {
-    fill: #dc143c;
-
+    fill: #2D98DA;
+    fill-opacity: 0.6;
 }
 
 svg.menu > g.center:hover > circle {
-    fill:#dc143c;
+    fill: #2D98DA;
+    fill-opacity: 0.6;
 }
 
 svg.menu > g.center > circle {
     cursor: pointer;
-    fill: rgb(23 23 23 / 80%);
+    fill: #00000080;
+    fill-opacity: 0.2s;
 }
 
 svg.menu > g.center > text,
