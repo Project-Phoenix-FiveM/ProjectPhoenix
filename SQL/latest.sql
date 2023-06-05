@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `apartments` (
   KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Dumping data for table projectphoenix.apartments: ~0 rows (approximately)
+-- Dumping data for table projectphoenix.apartments: ~1 rows (approximately)
 INSERT INTO `apartments` (`id`, `name`, `type`, `label`, `citizenid`) VALUES
 	(3, 'apartment55839', 'apartment5', 'Fantastic Plaza 5839', 'REF10868');
 
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `crypto` (
 
 -- Dumping data for table projectphoenix.crypto: ~0 rows (approximately)
 INSERT INTO `crypto` (`crypto`, `worth`, `history`) VALUES
-	('qbit', 1023, '[{"PreviousWorth":1016,"NewWorth":1015},{"PreviousWorth":1016,"NewWorth":1015},{"PreviousWorth":1016,"NewWorth":1015},{"PreviousWorth":1015,"NewWorth":1023}]');
+	('qbit', 1000, '[{"PreviousWorth":1000,"NewWorth":1000},{"PreviousWorth":1000,"NewWorth":1000}]');
 
 -- Dumping structure for table projectphoenix.crypto_transactions
 CREATE TABLE IF NOT EXISTS `crypto_transactions` (
@@ -168,6 +168,27 @@ CREATE TABLE IF NOT EXISTS `dealers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Dumping data for table projectphoenix.dealers: ~0 rows (approximately)
+
+-- Dumping structure for table projectphoenix.dpkeybinds
+CREATE TABLE IF NOT EXISTS `dpkeybinds` (
+  `id` varchar(50) DEFAULT NULL,
+  `keybind1` varchar(50) DEFAULT 'num4',
+  `emote1` varchar(255) DEFAULT '',
+  `keybind2` varchar(50) DEFAULT 'num5',
+  `emote2` varchar(255) DEFAULT '',
+  `keybind3` varchar(50) DEFAULT 'num6',
+  `emote3` varchar(255) DEFAULT '',
+  `keybind4` varchar(50) DEFAULT 'num7',
+  `emote4` varchar(255) DEFAULT '',
+  `keybind5` varchar(50) DEFAULT 'num8',
+  `emote5` varchar(255) DEFAULT '',
+  `keybind6` varchar(50) DEFAULT 'num9',
+  `emote6` varchar(255) DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Dumping data for table projectphoenix.dpkeybinds: ~1 rows (approximately)
+INSERT INTO `dpkeybinds` (`id`, `keybind1`, `emote1`, `keybind2`, `emote2`, `keybind3`, `emote3`, `keybind4`, `emote4`, `keybind5`, `emote5`, `keybind6`, `emote6`) VALUES
+	('license:77d729d6d03cc754a0cfae92ad5dfda1d7ad0244', 'num4', '', 'num5', '', 'num6', '', 'num7', '', 'num8', '', 'num9', '');
 
 -- Dumping structure for table projectphoenix.gloveboxitems
 CREATE TABLE IF NOT EXISTS `gloveboxitems` (
@@ -568,11 +589,11 @@ CREATE TABLE IF NOT EXISTS `players` (
   KEY `id` (`id`),
   KEY `last_updated` (`last_updated`),
   KEY `license` (`license`)
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Dumping data for table projectphoenix.players: ~1 rows (approximately)
 INSERT INTO `players` (`id`, `citizenid`, `cid`, `license`, `name`, `money`, `charinfo`, `job`, `gang`, `position`, `metadata`, `inventory`, `last_updated`) VALUES
-	(61, 'REF10868', 1, 'license:77d729d6d03cc754a0cfae92ad5dfda1d7ad0244', 'Karxi', '{"crypto":0,"cash":500,"bank":5020}', '{"nationality":"UK","phone":"3075991428","backstory":"placeholder backstory","birthdate":"1900-01-01","cid":"1","account":"US05QBCore9362428694","gender":0,"lastname":"Phoenix","firstname":"Project"}', '{"name":"unemployed","label":"Civilian","onduty":true,"payment":10,"isboss":false,"grade":{"name":"Freelancer","level":0},"type":"none"}', '{"name":"none","label":"No Gang Affiliaton","grade":{"name":"none","level":0},"isboss":false}', '{"x":-41.0505485534668,"y":-1085.77587890625,"z":32.4139404296875}', '{"isdead":false,"dealerrep":0,"commandbinds":[],"stress":0,"fitbit":[],"jailitems":[],"walletid":"QB-17171189","inlaststand":false,"licences":{"driver":true,"business":false,"weapon":false},"inside":{"apartment":[]},"hunger":78.99999999999999,"phonedata":{"SerialNumber":17975586,"InstalledApps":[]},"crypto":{"lme":0,"shung":0,"gne":0,"xcoin":0},"thirst":81.00000000000002,"phone":[],"criminalrecord":{"hasRecord":false},"status":[],"injail":0,"craftingrep":0,"ishandcuffed":false,"bloodtype":"A-","armor":0,"callsign":"NO CALLSIGN","tracker":false,"fingerprint":"ch322X28szZ3809","communityservice":0,"jobrep":{"hotdog":0,"tow":0,"trucker":0,"taxi":0},"attachmentcraftingrep":0}', '[{"amount":1,"name":"driver_license","info":{"birthdate":"1900-01-01","firstname":"Project","lastname":"Phoenix","type":"Class C Driver License"},"slot":1,"type":"item"},{"amount":1,"name":"id_card","info":{"firstname":"Project","citizenid":"REF10868","nationality":"UK","birthdate":"1900-01-01","lastname":"Phoenix","gender":0},"slot":2,"type":"item"},{"amount":1,"name":"phone","info":[],"slot":3,"type":"item"}]', '2023-06-05 11:56:19');
+	(61, 'REF10868', 1, 'license:77d729d6d03cc754a0cfae92ad5dfda1d7ad0244', 'Karxi', '{"bank":4890,"cash":448,"crypto":0}', '{"nationality":"UK","backstory":"placeholder backstory","birthdate":"1900-01-01","lastname":"Phoenix","phone":"3075991428","account":"US05QBCore9362428694","gender":0,"cid":"1","firstname":"Project"}', '{"onduty":true,"label":"Civilian","type":"none","payment":10,"grade":{"level":0,"name":"Freelancer"},"isboss":false,"name":"unemployed"}', '{"label":"No Gang Affiliaton","name":"none","isboss":false,"grade":{"name":"none","level":0}}', '{"x":-328.5758056640625,"y":-1481.248291015625,"z":30.5435791015625}', '{"thirst":50.60000000000004,"bloodtype":"A-","hunger":45.39999999999996,"fitbit":[],"communityservice":0,"craftingrep":0,"isdead":false,"jailitems":[],"armor":0,"callsign":"NO CALLSIGN","licences":{"driver":true,"weapon":false,"business":false},"fingerprint":"ch322X28szZ3809","jobrep":{"trucker":0,"tow":0,"hotdog":0,"taxi":0},"attachmentcraftingrep":0,"ishandcuffed":false,"dealerrep":0,"commandbinds":[],"inlaststand":false,"stress":0,"crypto":{"gne":0,"xcoin":0,"shung":0,"lme":0},"injail":0,"tracker":false,"walletid":"QB-17171189","criminalrecord":{"hasRecord":false},"phone":[],"inside":{"apartment":[]},"phonedata":{"InstalledApps":[],"SerialNumber":17975586},"status":[]}', '[{"amount":1,"created":1685990440,"name":"weapon_pistol","info":{"quality":99,"ammo":0,"serie":"19uAv0JF383cTOB"},"slot":1,"type":"weapon"},{"amount":1,"created":1686002153,"name":"syphoningkit","info":{"quality":99,"gasamount":0},"slot":2,"type":"item"},{"amount":1,"created":1686002073,"name":"jerrycan","info":{"gasamount":25,"quality":99},"slot":3,"type":"item"},{"amount":1,"created":1685990456,"name":"driver_license","info":{"quality":99,"lastname":"Phoenix","birthdate":"1900-01-01","firstname":"Project","type":"Class C Driver License"},"slot":4,"type":"item"},{"amount":1,"created":1685990403,"name":"id_card","info":{"quality":99,"gender":0,"lastname":"Phoenix","citizenid":"REF10868","birthdate":"1900-01-01","nationality":"UK","firstname":"Project"},"slot":5,"type":"item"},{"amount":1,"created":1686002188,"name":"phone","info":{"quality":100},"slot":18,"type":"item"}]', '2023-06-05 21:56:56');
 
 -- Dumping structure for table projectphoenix.playerskins
 CREATE TABLE IF NOT EXISTS `playerskins` (
@@ -586,7 +607,7 @@ CREATE TABLE IF NOT EXISTS `playerskins` (
   KEY `active` (`active`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Dumping data for table projectphoenix.playerskins: ~0 rows (approximately)
+-- Dumping data for table projectphoenix.playerskins: ~1 rows (approximately)
 INSERT INTO `playerskins` (`id`, `citizenid`, `model`, `skin`, `active`) VALUES
 	(6, 'REF10868', '1885233650', '{"accessory":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"decals":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"nose_4":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"hat":{"defaultTexture":0,"defaultItem":-1,"item":-1,"texture":0},"chimp_bone_lenght":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"eyebrows":{"defaultTexture":1,"defaultItem":-1,"item":-1,"texture":1},"lipstick":{"defaultTexture":1,"defaultItem":-1,"item":-1,"texture":1},"ear":{"defaultTexture":0,"defaultItem":-1,"item":-1,"texture":0},"jaw_bone_back_lenght":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"eyebrown_high":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"arms":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"lips_thickness":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"hair":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"pants":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"cheek_3":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"nose_0":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"facemix":{"skinMix":0,"defaultSkinMix":0.0,"defaultShapeMix":0.0,"shapeMix":0},"blush":{"defaultTexture":1,"defaultItem":-1,"item":-1,"texture":1},"cheek_2":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"watch":{"defaultTexture":0,"defaultItem":-1,"item":-1,"texture":0},"glass":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"face2":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"beard":{"defaultTexture":1,"defaultItem":-1,"item":-1,"texture":1},"vest":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"bracelet":{"defaultTexture":0,"defaultItem":-1,"item":-1,"texture":0},"torso2":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"shoes":{"defaultTexture":0,"defaultItem":1,"item":0,"texture":0},"neck_thikness":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"bag":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"eye_color":{"defaultTexture":0,"defaultItem":-1,"item":8,"texture":0},"jaw_bone_width":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"chimp_bone_lowering":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"eyebrown_forward":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"nose_5":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"eye_opening":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"cheek_1":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"chimp_hole":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"nose_2":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"nose_3":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"moles":{"defaultTexture":0,"defaultItem":-1,"item":0,"texture":0},"ageing":{"defaultTexture":0,"defaultItem":-1,"item":-1,"texture":0},"makeup":{"defaultTexture":1,"defaultItem":-1,"item":-1,"texture":1},"chimp_bone_width":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"mask":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"nose_1":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"face":{"defaultTexture":0,"defaultItem":0,"item":0,"texture":0},"t-shirt":{"defaultTexture":0,"defaultItem":1,"item":1,"texture":0}}', 1);
 
@@ -750,7 +771,7 @@ CREATE TABLE IF NOT EXISTS `scenes` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table projectphoenix.scenes: ~1 rows (approximately)
+-- Dumping data for table projectphoenix.scenes: ~0 rows (approximately)
 
 -- Dumping structure for table projectphoenix.stashitems
 CREATE TABLE IF NOT EXISTS `stashitems` (
