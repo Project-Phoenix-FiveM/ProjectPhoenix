@@ -484,9 +484,18 @@ RegisterNetEvent('qb-doorlock:client:setState', function(serverId, doorID, state
 end)
 
 RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
-	if not closestDoor.data or not next(closestDoor.data) or PlayerData.metadata['isdead'] or PlayerData.metadata['ishandcuffed'] or (not closestDoor.data.pickable and not closestDoor.data.lockpick) or not closestDoor.data.locked then return end
-	usingAdvanced = isAdvanced
-	TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
+    if not closestDoor.data or not next(closestDoor.data) or PlayerData.metadata['isdead'] or PlayerData.metadata['ishandcuffed'] or (not closestDoor.data.pickable and not closestDoor.data.lockpick) or not closestDoor.data.locked then return end
+    usingAdvanced = isAdvanced
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            lockpickFinish(success)
+            QBCore.Functions.Notify(Lang:t("success.lockpick_success"), "success")
+        else
+            QBCore.Functions.Notify(Lang:t("error.lockpick_fail"), "error")
+        end
+    end, 5, 10) -- NumberOfCircles, MS
+    -- This TriggerEvent for qb-lockpick
+    -- TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
 end)
 
 RegisterNetEvent('qb-doorlock:client:addNewDoor', function()
