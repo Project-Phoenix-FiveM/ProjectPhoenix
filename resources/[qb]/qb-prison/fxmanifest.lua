@@ -1,28 +1,22 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-Prison'
-version '2.1.0'
+author 'xViperAG & xThrasherrr'
+description 'Custom Prison Script'
+version '1.3.0'
 
 shared_scripts {
     '@qb-core/shared/locale.lua',
-    'locales/en.lua',
-    'locales/*.lua',
-    'config.lua'
+	'locales/en.lua',
+	'config.lua'
 }
 
-client_scripts {
-    '@PolyZone/client.lua',
-    '@PolyZone/BoxZone.lua',
-    '@PolyZone/EntityZone.lua',
-    '@PolyZone/CircleZone.lua',
-    '@PolyZone/ComboZone.lua',
-    'client/main.lua',
-    'client/jobs.lua',
-    'client/prisonbreak.lua'
+
+client_script 'client/*.lua'
+
+server_scripts {
+	'@oxmysql/lib/MySQL.lua',
+	'server/main.lua'
 }
 
-server_script 'server/main.lua'
-
-use_fxv2_oal 'yes'
 lua54 'yes'

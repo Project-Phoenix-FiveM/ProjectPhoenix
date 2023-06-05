@@ -10,7 +10,6 @@ local Translations = {
         ["item_missing"] = "You are missing an Item..",
         ["escaped"] = "You escaped... Get the hell out of here.!",
         ["do_some_work"] = "Do some work for sentence reduction, instant job: %{currentjob} ",
-        ["security_activated"] = "Highest security level is active, stay with the cell blocks!"
     },
     success = {
         ["found_phone"] = "You found a phone..",
@@ -19,26 +18,13 @@ local Translations = {
         ["timesup"] = "Your time is up! Check yourself out at the visitors center",
     },
     info = {
-        ["timeleft"] = "You still have to... %{JAILTIME} months",
+        ["timeleft"] = "Time Left: %{JAILTIME} months",
         ["lost_job"] = "You're Unemployed",
-        ["job_interaction"] = "[E] Electricity Work",
-        ["job_interaction_target"] = "Do %{job} Work",
-        ["received_property"] = "You got your property back..",
-        ["seized_property"] = "Your property has been seized, you'll get everything back when your time is up..",
-        ["cells_blip"] = "Cells",
-        ["freedom_blip"] = "Jail Front Desk",
-        ["canteen_blip"] = "Canteen",
-        ["work_blip"] = "Prison Work",
-        ["target_freedom_option"] = "Check Time",
-        ["target_canteen_option"] = "Get Food",
-        ["police_alert_title"] = "New Call",
-        ["police_alert_description"] = "Prison Outbreak",
-        ["connecting_device"] = "Connecting Device",
-        ["working_electricity"] = "Connecting Wires"
+        ["sent_jail"] = "You've been sent to jail, but kept your job. Nice!",
+        ["prison_stash"] = "Enter the Prisoner's CID",
+        ["slot"] = "Citizen ID",
     }
 }
-
-Lang = Lang or Locale:new({
-    phrases = Translations,
-    warnOnMissing = true
-})
+Lang = Locale:new({
+phrases = Translations,
+warnOnMissing = true})

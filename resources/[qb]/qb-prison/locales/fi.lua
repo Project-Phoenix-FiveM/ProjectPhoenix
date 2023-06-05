@@ -9,8 +9,7 @@ local Translations = {
         ["injail"] = "Olet vankilassa %{Time} kuukautta..",
         ["item_missing"] = "Sinulta puuttuu esine..",
         ["escaped"] = "Pääsit pakoon... painu hiiteen!",
-        ["do_some_work"] = "Tee töitä rangaistuksen keventämiseksi, välitöntä työtä: %{currentjob} ",
-        ["security_activated"] = "Korkein suojaustaso on aktiivinen, pysy sellissäsi!"
+        ["do_some_work"] = "Tee työtä tuomion lyhentämiseksi, tämänhetkinen työ: %{currentjob} ",
     },
     success = {
         ["found_phone"] = "Löysit puhelimen..",
@@ -21,24 +20,8 @@ local Translations = {
     info = {
         ["timeleft"] = "Tuomiosi kestää vielä %{JAILTIME} kuukautta",
         ["lost_job"] = "Olet saaut potkut",
-        ["job_interaction"] = "[E] Sähkötyöt", -- This needs to be translated
-        ["job_interaction_target"] = "Tee %{job} Töitä",
-        ["received_property"] = "Sait omaisuutesi takaisin..",
-        ["seized_property"] = "Omaisuutesi on takavarikoitu, saat kaiken takaisin, kun aikasi loppuu..",
-        ["cells_blip"] = "Sellit",
-        ["freedom_blip"] = "Vankilan vastaanotto",
-        ["canteen_blip"] = "Kahvila",
-        ["work_blip"] = "Vankilatyöt",
-        ["target_freedom_option"] = "Katso tuomion pituus",
-        ["target_canteen_option"] = "Hae ruokaa",
-        ["police_alert_title"] = "Uusi puhelu",
-        ["police_alert_description"] = "Vankila Pako",
-        ["connecting_device"] = "Yhdistetään laitetta",
-        ["working_electricity"] = "Yhdistetään johtoja"
     }
 }
-
-Lang = Lang or Locale:new({
-    phrases = Translations,
-    warnOnMissing = true
-})
+Lang = Locale:new({
+phrases = Translations,
+warnOnMissing = true})
