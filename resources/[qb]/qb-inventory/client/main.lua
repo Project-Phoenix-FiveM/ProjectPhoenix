@@ -1007,7 +1007,7 @@ CreateThread(function()
                         end
                     else
                         sleep = 0
-                        DrawMarker(20, v.coords.x, v.coords.y, v.coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.15, 120, 10, 20, 155, false, false, false, 1, false, false, false)
+                        DrawMarker(20, v.coords.x, v.coords.y, v.coords.z - 0.50, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.2, 0.1, 247, 242, 242, 155, false, false, false, false, false, false, false)
                     end
 
 					local coords = (v.object ~= nil and GetEntityCoords(v.object)) or vector3(v.coords.x, v.coords.y, v.coords.z)
