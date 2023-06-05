@@ -187,6 +187,40 @@ QBCore.Commands.Add("pobject", Lang:t("commands.place_object"), {{name = "type",
     end
 end)
 
+RegisterNetEvent('bunny-cuff:server:cuffcommand', function(issoftcuffs)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if Player.PlayerData.job.name == "police" and Player.PlayerData.job.onduty then
+        TriggerClientEvent("bunny-cuff:client:CuffPlayer", src, issoftcuffs)
+    else
+        TriggerClientEvent('QBCore:Notify', src, Lang:t("error.on_duty_police_only"), 'error')
+    end
+end)
+
+-- Admin UN-Cuff
+QBCore.Commands.Add("adminuncuff", "Uncuff yourself", {{name = "id", help = "Player ID (may be empty)"}}, false, function(source, args)
+    local src = source
+    if args[1] then
+        local Player = QBCore.Functions.GetPlayer(tonumber(args[1]))
+        if Player then
+            Player.Functions.SetMetaData("ishandcuffed", false)
+            Player.Functions.SetMetaData("issofthandcuffed", false)
+            TriggerClientEvent('animations:client:EmoteCommandStart', {"c"})
+            TriggerClientEvent('bunny-cuff:client:getuncuffed', Player.PlayerData.source)
+        else
+            TriggerClientEvent('QBCore:Notify', src, "Player not online", "error")
+        end
+    else
+        local Player = QBCore.Functions.GetPlayer(src)
+        if Player then
+            Player.Functions.SetMetaData("ishandcuffed", false)
+            Player.Functions.SetMetaData("issofthandcuffed", false)
+            TriggerClientEvent('animations:client:EmoteCommandStart', {"c"})
+            TriggerClientEvent('bunny-cuff:client:getuncuffed', src)
+        end
+    end
+end, "admin")
+
 QBCore.Commands.Add("cuff", Lang:t("commands.cuff_player"), {}, false, function(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
@@ -652,6 +686,40 @@ RegisterNetEvent('police:server:policeAlert', function(text)
     end
 end)
 
+RegisterNetEvent('bunny-cuff:server:CuffPlayer', function(playerId, issoftcuffs)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    local TargetPlayer = QBCore.Functions.GetPlayer(playerId)
+    if TargetPlayer then
+        if Player.Functions.GetItemByName("handcuffs") then
+            if TargetPlayer.PlayerData.metadata["isdead"] then
+                local brokeout = true
+                TriggerClientEvent("bunny-cuff:client:AfterCuffMiniGame", TargetPlayer.PlayerData.source, Player.PlayerData.source, brokeout, issoftcuffs)
+                TriggerClientEvent("bunny-cuff:client:DoCuffingAnimation", src)
+            else
+                TriggerClientEvent("bunny-cuff:client:CuffMiniGame", TargetPlayer.PlayerData.source, Player.PlayerData.source, issoftcuffs)
+                TriggerClientEvent("bunny-cuff:client:DoCuffingAnimation", src)
+            end
+        end
+    end
+end)
+
+-- Un CUff
+RegisterNetEvent('bunny-cuff:server:clientuncuffcommand', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    TriggerClientEvent("bunny-cuff:client:UnCuffFully", src)
+end)
+
+RegisterNetEvent('bunny-cuff:server:UnCuffPlayer', function(playerId)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    local TargetPlayer = QBCore.Functions.GetPlayer(playerId)
+    if TargetPlayer then
+        TriggerClientEvent("bunny-cuff:client:getuncuffed", TargetPlayer.PlayerData.source, Player.PlayerData.source)
+    end
+end)
+
 RegisterNetEvent('police:server:TakeOutImpound', function(plate, garage)
     local src = source
     local playerPed = GetPlayerPed(src)
@@ -768,6 +836,14 @@ RegisterNetEvent('police:server:BillPlayer', function(playerId, price)
     OtherPlayer.Functions.RemoveMoney("bank", price, "paid-bills")
     exports['Renewed-Banking']:addAccountMoney("police", price)
     TriggerClientEvent('QBCore:Notify', OtherPlayer.PlayerData.source, Lang:t("info.fine_received", {fine = price}))
+end)
+
+RegisterNetEvent('bunny-cuff:server:SetHandcuffStatus', function(isHandcuffed)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if Player then
+        Player.Functions.SetMetaData("ishandcuffed", isHandcuffed)
+    end
 end)
 
 RegisterNetEvent('police:server:JailPlayer', function(playerId, time)

@@ -27,7 +27,7 @@ local function IsTargetDead(playerId)
 end
 
 local function HandCuffAnimation()
-    local ped = PlayerPedId()
+    local ped = PlayerPedId()  
     if isHandcuffed == true then
         TriggerServerEvent("InteractSound_SV:PlayOnSource", "Cuff", 0.2)
     else
@@ -42,11 +42,36 @@ local function HandCuffAnimation()
     TaskPlayAnim(ped, "mp_arrest_paired", "exit", 3.0, 3.0, -1, 48, 0, 0, 0, 0)
 end
 
-local function GetCuffedAnimation(playerId)
+local function CopSideUnCuffAnimation()
+    local ped = PlayerPedId()
+    TriggerEvent('animations:client:EmoteCommandStart', {"uncuff"})
+    TriggerServerEvent("InteractSound_SV:PlayOnSource", "Uncuff", 0.2)
+    Wait(6100)
+    TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    ClearPedTasks(ped)
+end
+
+local function CuffingAnimation()
+    local ped = PlayerPedId()
+    loadAnimDict("mp_arrest_paired")
+	Wait(100)
+    TaskPlayAnim(ped, "mp_arrest_paired", "cop_p2_back_right", 3.0, 3.0, -1, 48, 0, 0, 0, 0)
+    TriggerServerEvent("InteractSound_SV:PlayOnSource", "Cuff", 0.2)
+	Wait(3500)
+    TaskPlayAnim(ped, "mp_arrest_paired", "exit", 3.0, 3.0, -1, 48, 0, 0, 0, 0)
+end
+
+RegisterNetEvent('bunny-cuff:client:DoCuffingAnimation', function()
+    CuffingAnimation()
+end)
+
+local function GetCuffAnimation(playerId, brokeout)
     local ped = PlayerPedId()
     local cuffer = GetPlayerPed(GetPlayerFromServerId(playerId))
     local heading = GetEntityHeading(cuffer)
-    TriggerServerEvent("InteractSound_SV:PlayOnSource", "Cuff", 0.2)
+    if not brokeout then
+        TriggerServerEvent("InteractSound_SV:PlayOnSource", "Cuff", 0.2)
+    end
     loadAnimDict("mp_arrest_paired")
     SetEntityCoords(ped, GetOffsetFromEntityInWorldCoords(cuffer, 0.0, 0.45, 0.0))
 
@@ -85,6 +110,123 @@ RegisterNetEvent('police:client:PutInVehicle', function()
         end
     end
 end)
+
+RegisterNetEvent('bunny-cuff:client:getuncuffed', function(playerId)
+    local ped = PlayerPedId()
+    isHandcuffed = false
+    TriggerServerEvent("bunny-cuff:server:SetHandcuffStatus", false)
+    if GetSelectedPedWeapon(ped) ~= `WEAPON_UNARMED` then
+        SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
+    end
+    Wait(1000)
+    TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+    ClearPedTasks(ped)
+end)
+
+RegisterNetEvent('bunny-cuff:client:UnCuffFully', function()
+    if not IsPedRagdoll(PlayerPedId()) then
+        local player, distance = QBCore.Functions.GetClosestPlayer()
+        local ped = PlayerPedId()
+        if player ~= -1 and distance <1.5 then
+            local hasitem = QBCore.Functions.HasItem(Config.HandCuffItem, 1)
+            if hasitem then
+                local playerId = GetPlayerServerId(player)
+                if not IsPedInAnyVehicle(GetPlayerPed(player)) and not IsPedInAnyVehicle(PlayerPedId()) then
+                    TriggerServerEvent("bunny-cuff:server:UnCuffPlayer", playerId)
+                    CopSideUnCuffAnimation()
+                else
+                    QBCore.Functions.Notify(Lang:t("error.vehicle_cuff"), "error")
+                end
+            else 
+                QBCore.Functions.Notify(Lang:t("error.no_cuff"), "error")
+            end
+        else
+            QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
+        end
+    else
+        Wait(2000)
+    end
+end)
+
+RegisterNetEvent('bunny-cuff:client:AfterCuffMiniGame', function(playerId, brokeout, issoftcuffs)
+    local ped = PlayerPedId()
+    if brokeout == true then
+        isHandcuffed = false
+        --TriggerServerEvent("bunny-cuff:server:SetHandcuffStatus", false)
+        ClearPedTasksImmediately(ped)
+        if GetSelectedPedWeapon(ped) ~= `WEAPON_UNARMED` then
+            SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
+        end
+        GetCuffAnimation(playerId, brokeout)
+    elseif brokeout == false then
+        isHandcuffed = true
+        TriggerServerEvent("bunny-cuff:server:SetHandcuffStatus", true)
+        ClearPedTasksImmediately(ped)
+        if GetSelectedPedWeapon(ped) ~= `WEAPON_UNARMED` then
+            SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
+        end
+        if issoftcuffs then
+            cuffType = 49
+        else
+            cuffType = 16
+        end
+        GetCuffAnimation(playerId, brokeout)
+        QBCore.Functions.Notify(Lang:t("info.cuff"), 'primary')
+    end
+end)
+
+local cantCuff = false -- Cop Cant Cuff people timer
+
+RegisterCommand('Cuff', function()
+    local ped = PlayerPedId()
+    local copId = GetPlayerServerId(ped)
+    local Vehicle = GetVehiclePedIsIn(ped) ~= 0 and GetVehiclePedIsIn(ped)
+    if copId then
+        if not IsPedInAnyVehicle(PlayerPedId(), false) and not cantCuff then
+            if not IsPauseMenuActive() then
+                cantCuff = true
+                if IsDisabledControlPressed(0, 19) then
+                    issoftcuffs = true
+                    TriggerServerEvent('bunny-cuff:server:cuffcommand', issoftcuffs)
+                else
+                    issoftcuffs = false
+                    TriggerServerEvent('bunny-cuff:server:cuffcommand', issoftcuffs)
+                end
+                Wait(3500)
+                cantCuff = false
+            else
+                QBCore.Functions.Notify("Action not available at the moment..", "error")
+            end
+        elseif IsPedInAnyVehicle(PlayerPedId(), false) then
+            QBCore.Functions.Notify("Action not available at the moment(In Vehicle)..", "error")
+        end
+    end
+end)
+RegisterKeyMapping('Cuff', '(GOV) Hard-Cuff Player / With Alt Soft-Cuff', 'keyboard', 'UP')
+
+-- UN Cuff for all
+local cantunCuff = false
+
+RegisterCommand('UnCuff', function()
+    local ped = PlayerPedId()
+    local playerId = GetPlayerServerId(ped)
+    if playerId then
+        if not IsPedInAnyVehicle(PlayerPedId(), false) and not cantCuff then
+            if not IsPauseMenuActive() then
+                cantCuff = true
+                TriggerServerEvent('bunny-cuff:server:clientuncuffcommand')
+                Wait(1500)
+                cantCuff = false
+            else
+                QBCore.Functions.Notify("Action not available at the moment..", "error")
+            end
+        elseif IsPedInAnyVehicle(PlayerPedId(), false) then
+            QBCore.Functions.Notify("Action not available at the moment(In Vehicle)..", "error")
+        end
+    end
+end)
+
+RegisterKeyMapping('UnCuff', '(GOV) Un-Cuff Player', 'keyboard', 'DOWN')
 
 RegisterNetEvent('police:client:SearchPlayer', function()
     local player, distance = QBCore.Functions.GetClosestPlayer()
@@ -275,16 +417,15 @@ RegisterNetEvent('police:client:CuffPlayerSoft', function()
     end
 end)
 
-RegisterNetEvent('police:client:CuffPlayer', function()
+RegisterNetEvent('bunny-cuff:client:CuffPlayer', function(issoftcuffs)
     if not IsPedRagdoll(PlayerPedId()) then
         local player, distance = QBCore.Functions.GetClosestPlayer()
         if player ~= -1 and distance < 1.5 then
-            local result = QBCore.Functions.HasItem(Config.HandCuffItem)
-            if result then
+            local hasitem = QBCore.Functions.HasItem(Config.HandCuffItem, 1)
+            if hasitem then
                 local playerId = GetPlayerServerId(player)
                 if not IsPedInAnyVehicle(GetPlayerPed(player)) and not IsPedInAnyVehicle(PlayerPedId()) then
-                    TriggerServerEvent("police:server:CuffPlayer", playerId, false)
-                    HandCuffAnimation()
+                    TriggerServerEvent("bunny-cuff:server:CuffPlayer", playerId, issoftcuffs)
                 else
                     QBCore.Functions.Notify(Lang:t("error.vehicle_cuff"), "error")
                 end
@@ -297,6 +438,19 @@ RegisterNetEvent('police:client:CuffPlayer', function()
     else
         Wait(2000)
     end
+end)
+
+RegisterNetEvent('bunny-cuff:client:CuffMiniGame', function(playerId, issoftcuffs)
+    local ped = PlayerPedId()
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            local brokeout = true
+            TriggerEvent("bunny-cuff:client:AfterCuffMiniGame", playerId, brokeout, issoftcuffs)
+        else
+            local brokeout = false
+            TriggerEvent("bunny-cuff:client:AfterCuffMiniGame", playerId, brokeout, issoftcuffs)
+        end
+    end, 1, 5)
 end)
 
 RegisterNetEvent('police:client:GetEscorted', function(playerId)
