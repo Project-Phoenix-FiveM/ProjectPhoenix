@@ -299,57 +299,585 @@ Config.MenuItems = {
             }
         }
     },
+    [3] = {
+        id = 'emotes',
+        title = 'Emotes',
+        icon = 'face-meh',
+        type = 'client',
+        event = 'dp:RecieveMenu',
+        shouldClose = true,
+    },
+    [4] = {
+        id = 'blips',
+        title = 'GPS',
+        icon = 'map-location-dot',
+        items = {
+            {
+                id = 'gasstation',
+                title = 'Gas Station',
+                icon = 'gas-pump',
+                type = 'client',
+                event = 'qb-radialmenu:client:togglegas',
+                shouldClose = true
+            }, {
+                id = 'barbershop',
+                title = 'Barber Shop',
+                icon = 'scissors',
+                type = 'client',
+                event = 'qb-radialmenu:client:togglebarber',
+                shouldClose = true
+            }, {
+                id = 'clothing',
+                title = 'Clothing Shop',
+                icon = 'shirt',
+                type = 'client',
+                event = 'qb-radialmenu:client:toggleclothing',
+                shouldClose = true
+            }, {
+                id = 'store',
+                title = 'Stores',
+                icon = 'store',
+                type = 'client',
+                event = 'qb-radialmenu:client:togglestores',
+                shouldClose = true
+            }, {
+                id = 'benny',
+                title = 'Bennys',
+                icon = 'paint-roller',
+                type = 'client',
+                event = 'qb-radialmenu:client:togglebenny',
+                shouldClose = true
+            }, {
+                id = 'ammunation',
+                title = 'Ammunation',
+                icon = 'crosshairs',
+                type = 'client',
+                event = 'qb-radialmenu:client:togglegun',
+                shouldClose = true
+            }
+        }
+    },
+    [5] = {
+        id = 'walkstyles',
+        title = 'Walkstyle',
+        icon = 'person-walking',
+        items = {
+            {
+                id = 'alien',
+                title = 'Alien',
+                icon = '',
+                type = 'command',
+                event = 'walk Alien',
+                shouldClose = true
+            }, {
+                id = 'armored',
+                title = 'Armored',
+                icon = 'shield-halved',
+                type = 'command',
+                event = 'walk Armored',
+                shouldClose = true
+            }, {
+                id = 'arrogant',
+                title = 'Arrogant',
+                icon = 'face-rolling-eyes',
+                type = 'command',
+                event = 'walk Arrogant',
+                shouldClose = true
+            }, {
+                id = 'brave',
+                title = 'Brave',
+                icon = 'dumbbell',
+                type = 'command',
+                event = 'walk Brave',
+                shouldClose = true
+            }, {
+                id = 'casual',
+                title = 'Casual',
+                icon = 'face-meh',
+                type = 'command',
+                event = 'walk Casual',
+                shouldClose = true
+            }, {
+                id = 'casual2',
+                title = 'Casual 2',
+                icon = 'face-meh',
+                type = 'command',
+                event = 'walk Casual2',
+                shouldClose = true
+            }, {
+                id = 'casual3',
+                title = 'Casual 3',
+                icon = 'face-meh',
+                type = 'command',
+                event = 'walk Casual3',
+                shouldClose = true
+            }, {
+                id = 'morewalk',
+                title = 'More Styles',
+                icon = 'bars',
+                items = {
+                    {
+                        id = 'casual4',
+                        title = 'Casual 4',
+                        icon = 'face-meh',
+                        type = 'command',
+                        event = 'walk Casual4',
+                        shouldClose = true
+                    }, {
+                        id = 'casual5',
+                        title = 'Casual 5',
+                        icon = 'face-meh',
+                        type = 'command',
+                        event = 'walk Casual5',
+                        shouldClose = true
+                    }, {
+                        id = 'casual6',
+                        title = 'Casual 6',
+                        icon = 'face-meh',
+                        type = 'command',
+                        event = 'walk Casual6',
+                        shouldClose = true
+                    }, {
+                        id = 'chichi',
+                        title = 'Chichi',
+                        icon = 'yin-yang',
+                        type = 'command',
+                        event = 'walk Chichi',
+                        shouldClose = true
+                    }, {
+                        id = 'confident',
+                        title = 'Confident',
+                        icon = 'face-smile-wink',
+                        type = 'command',
+                        event = 'walk Confident',
+                        shouldClose = true
+                    }, {
+                        id = 'cop',
+                        title = 'Buisness',
+                        icon = 'briefcase',
+                        type = 'command',
+                        event = 'walk Cop',
+                        shouldClose = true
+                    }, {
+                        id = 'cop2',
+                        title = 'Buisness 2',
+                        icon = 'briefcase',
+                        type = 'command',
+                        event = 'walk Cop2',
+                        shouldClose = true
+                    }, {
+                        id = 'morewalk',
+                        title = 'More Styles',
+                        icon = 'bars',
+                        items = {
+                            {
+                                id = 'cop2',
+                                title = 'Buisness 3',
+                                icon = 'briefcase',
+                                type = 'command',
+                                event = 'walk Cop3',
+                                shouldClose = true
+                            }, {
+                                id = 'drunk',
+                                title = 'Drunk',
+                                icon = 'wine-glass-empty',
+                                type = 'command',
+                                event = 'walk Drunk',
+                                shouldClose = true
+                            }, {
+                                id = 'drunk1',
+                                title = 'Drunk 1',
+                                icon = 'wine-glass-empty',
+                                type = 'command',
+                                event = 'walk Drunk1',
+                                shouldClose = true
+                            }, {
+                                id = 'drunk2',
+                                title = 'Drunk 2',
+                                icon = 'wine-glass-empty',
+                                type = 'command',
+                                event = 'walk Drunk2',
+                                shouldClose = true
+                            }, {
+                                id = 'drunk3',
+                                title = 'Drunk 3',
+                                icon = 'wine-glass-empty',
+                                type = 'command',
+                                event = 'walk Drunk3',
+                                shouldClose = true
+                            }, {
+                                id = 'femme',
+                                title = 'Femme',
+                                icon = 'person-dress',
+                                type = 'command',
+                                event = 'walk Femme',
+                                shouldClose = true
+                            }, {
+                                id = 'fire',
+                                title = 'Fire',
+                                icon = 'fire',
+                                type = 'command',
+                                event = 'walk Fire',
+                                shouldClose = true
+                            }, {
+                                id = 'morewalk',
+                                title = 'More Styles',
+                                icon = 'bars',
+                                items = {
+                                    {
+                                        id = 'fire3',
+                                        title = 'Fire 3',
+                                        icon = 'fire',
+                                        type = 'command',
+                                        event = 'walk Fire3',
+                                        shouldClose = true
+                                    }, {
+                                        id = 'franklin',
+                                        title = 'Franklin',
+                                        icon = 'person-walking',
+                                        type = 'command',
+                                        event = 'walk Franklin',
+                                        shouldClose = true
+                                    }, {
+                                        id = 'gangster',
+                                        title = 'Gangster',
+                                        icon = 'dollar-sign',
+                                        type = 'command',
+                                        event = 'walk Gangster',
+                                        shouldClose = true
+                                    }, {
+                                        id = 'femme',
+                                        title = 'Femme',
+                                        icon = 'person-dress',
+                                        type = 'command',
+                                        event = 'walk Gangster2',
+                                        shouldClose = true
+                                    }, {
+                                        id = 'gangster3',
+                                        title = 'Gangster 3',
+                                        icon = 'dollar-sign',
+                                        type = 'command',
+                                        event = 'walk Gangster3',
+                                        shouldClose = true
+                                    }, {
+                                        id = 'morewalk',
+                                        title = 'More Styles',
+                                        icon = 'bars',
+                                        items = {
+                                            {
+                                                id = 'gangster4',
+                                                title = 'Gangster 4',
+                                                icon = 'dollar-sign',
+                                                type = 'command',
+                                                event = 'walk Gangster4',
+                                                shouldClose = true
+                                            }, {
+                                                id = 'gangster5',
+                                                title = 'Gangster 5',
+                                                icon = 'dollar-sign',
+                                                type = 'command',
+                                                event = 'walk Gangster5',
+                                                shouldClose = true
+                                            }, {
+                                                id = 'grooving',
+                                                title = 'Grooving',
+                                                icon = 'headphones',
+                                                type = 'command',
+                                                event = 'walk Grooving',
+                                                shouldClose = true
+                                            }, {
+                                                id = 'guard',
+                                                title = 'Guard',
+                                                icon = 'shield-halved',
+                                                type = 'command',
+                                                event = 'walk Guard',
+                                                shouldClose = true
+                                            }, {
+                                                id = 'handcuffs',
+                                                title = 'Handcuffs',
+                                                icon = 'hand',
+                                                type = 'command',
+                                                event = 'walk Handcuffs',
+                                                shouldClose = true
+                                            }, {
+                                                id = 'heels',
+                                                title = 'Heels',
+                                                icon = 'person-dress',
+                                                type = 'command',
+                                                event = 'walk Heels',
+                                                shouldClose = true
+                                            }, {
+                                                id = 'heels2',
+                                                title = 'Heels 2',
+                                                icon = 'person-dress',
+                                                type = 'command',
+                                                event = 'walk Heels2',
+                                                shouldClose = true
+                                            }, {
+                                                id = 'morewalk',
+                                                title = 'More Styles',
+                                                icon = 'bars',
+                                                items = {
+                                                    {
+                                                        id = 'person-hiking',
+                                                        title = 'person-hiking',
+                                                        icon = 'person-hiking',
+                                                        type = 'command',
+                                                        event = 'walk person-hiking',
+                                                        shouldClose = true
+                                                    }, {
+                                                        id = 'hobo',
+                                                        title = 'Hobo',
+                                                        icon = 'dumpster',
+                                                        type = 'command',
+                                                        event = 'walk Hobo',
+                                                        shouldClose = true
+                                                    }, {
+                                                        id = 'hurry',
+                                                        title = 'Quick',
+                                                        icon = 'person-running',
+                                                        type = 'command',
+                                                        event = 'walk Hurry',
+                                                        shouldClose = true
+                                                    }, {
+                                                        id = 'janitor',
+                                                        title = 'Janitor',
+                                                        icon = 'broom',
+                                                        type = 'command',
+                                                        event = 'walk Janitor',
+                                                        shouldClose = true
+                                                    }, {
+                                                        id = 'janitor2',
+                                                        title = 'Janitor 2',
+                                                        icon = 'broom',
+                                                        type = 'command',
+                                                        event = 'walk Janitor2',
+                                                        shouldClose = true
+                                                    }, {
+                                                        id = 'jog',
+                                                        title = 'Jog',
+                                                        icon = 'person-running',
+                                                        type = 'command',
+                                                        event = 'walk Jog',
+                                                        shouldClose = true
+                                                    }, {
+                                                        id = 'lemar',
+                                                        title = 'Lemar',
+                                                        icon = 'person-walking',
+                                                        type = 'command',
+                                                        event = 'walk Lemar',
+                                                        shouldClose = true
+                                                    }, {
+                                                        id = 'morewalk',
+                                                        title = 'More Styles',
+                                                        icon = 'bars',
+                                                        items = {
+                                                            {
+                                                                id = 'lester',
+                                                                title = 'Lester',
+                                                                icon = 'person-cane',
+                                                                type = 'command',
+                                                                event = 'walk Lester',
+                                                                shouldClose = true
+                                                            }, {
+                                                                id = 'lester2',
+                                                                title = 'Lester 2',
+                                                                icon = 'person-cane',
+                                                                type = 'command',
+                                                                event = 'walk Lester2',
+                                                                shouldClose = true
+                                                            }, {
+                                                                id = 'maneater',
+                                                                title = 'Maneater',
+                                                                icon = 'face-grin-tongue-wink',
+                                                                type = 'command',
+                                                                event = 'walk Maneater',
+                                                                shouldClose = true
+                                                            }, {
+                                                                id = 'michael',
+                                                                title = 'Michael',
+                                                                icon = 'person-walking',
+                                                                type = 'command',
+                                                                event = 'walk Michael',
+                                                                shouldClose = true
+                                                            }, {
+                                                                id = 'money',
+                                                                title = 'Money',
+                                                                icon = 'dollar-sign',
+                                                                type = 'command',
+                                                                event = 'walk Money',
+                                                                shouldClose = true
+                                                            }, {
+                                                                id = 'muscle',
+                                                                title = 'Muscle',
+                                                                icon = 'dumbbell',
+                                                                type = 'command',
+                                                                event = 'walk Muscle',
+                                                                shouldClose = true
+                                                            }, {
+                                                                id = 'posh',
+                                                                title = 'Posh',
+                                                                icon = 'crown',
+                                                                type = 'command',
+                                                                event = 'walk Posh',
+                                                                shouldClose = true
+                                                            }, {
+                                                                id = 'wide',
+                                                                title = 'Wide',
+                                                                icon = 'left-right',
+                                                                type = 'command',
+                                                                event = 'walk Wide',
+                                                                shouldClose = true
+                                                            }, {
+                                                                id = 'morewalk',
+                                                                title = 'More Styles',
+                                                                icon = 'bars',
+                                                                items = {
+                                                                    {
+                                                                        id = 'posh2',
+                                                                        title = 'Posh 2',
+                                                                        icon = 'crown',
+                                                                        type = 'command',
+                                                                        event = 'walk Posh2',
+                                                                        shouldClose = true
+                                                                    }, {
+                                                                        id = 'quick',
+                                                                        title = 'Quick',
+                                                                        icon = 'person-walking',
+                                                                        type = 'person-running',
+                                                                        event = 'walk Quick',
+                                                                        shouldClose = true
+                                                                    }, {
+                                                                        id = 'runner',
+                                                                        title = 'Runner',
+                                                                        icon = 'person-running',
+                                                                        type = 'command',
+                                                                        event = 'walk Runner',
+                                                                        shouldClose = true
+                                                                    }, {
+                                                                        id = 'sad',
+                                                                        title = 'Sad',
+                                                                        icon = 'face-sad-tear',
+                                                                        type = 'command',
+                                                                        event = 'walk Sad',
+                                                                        shouldClose = true
+                                                                    }, {
+                                                                        id = 'sassy',
+                                                                        title = 'Sassy',
+                                                                        icon = 'face-kiss',
+                                                                        type = 'command',
+                                                                        event = 'walk Sassy',
+                                                                        shouldClose = true
+                                                                    }, {
+                                                                        id = 'sassy2',
+                                                                        title = 'Sassy 2',
+                                                                        icon = 'face-kiss',
+                                                                        type = 'command',
+                                                                        event = 'walk Sassy2',
+                                                                        shouldClose = true
+                                                                    }, {
+                                                                        id = 'scared',
+                                                                        title = 'Scared',
+                                                                        icon = 'face-grimace',
+                                                                        type = 'command',
+                                                                        event = 'walk Scared',
+                                                                        shouldClose = true
+                                                                    }, {
+                                                                        id = 'trevor',
+                                                                        title = 'Trevor',
+                                                                        icon = 'person-walking',
+                                                                        type = 'command',
+                                                                        event = 'walk Trevor',
+                                                                        shouldClose = true
+                                                                    }, {
+                                                                        id = 'morewalk',
+                                                                        title = 'More Styles',
+                                                                        icon = 'bars',
+                                                                        items = {
+                                                                            {
+                                                                                id = 'sexy',
+                                                                                title = 'Sexy',
+                                                                                icon = 'face-kiss',
+                                                                                type = 'command',
+                                                                                event = 'walk Sexy',
+                                                                                shouldClose = true
+                                                                            }, {
+                                                                                id = 'shady',
+                                                                                title = 'Shady',
+                                                                                icon = 'user-ninja',
+                                                                                type = 'command',
+                                                                                event = 'walk Shady',
+                                                                                shouldClose = true
+                                                                            }, {
+                                                                                id = 'slow',
+                                                                                title = 'Slow',
+                                                                                icon = 'person-walking',
+                                                                                type = 'command',
+                                                                                event = 'walk Slow',
+                                                                                shouldClose = true
+                                                                            }, {
+                                                                                id = 'swagger',
+                                                                                title = 'Swagger',
+                                                                                icon = 'person-walking-with-cane',
+                                                                                type = 'command',
+                                                                                event = 'walk Swagger',
+                                                                                shouldClose = true
+                                                                            }, {
+                                                                                id = 'tough',
+                                                                                title = 'Tough',
+                                                                                icon = 'dumbbell',
+                                                                                type = 'command',
+                                                                                event = 'walk Tough',
+                                                                                shouldClose = true
+                                                                            }, {
+                                                                                id = 'tough2',
+                                                                                title = 'Tough 2',
+                                                                                icon = 'dumbbell',
+                                                                                type = 'command',
+                                                                                event = 'walk Tough2',
+                                                                                shouldClose = true
+                                                                            }, {
+                                                                                id = 'trash',
+                                                                                title = 'Trash',
+                                                                                icon = 'dumpster',
+                                                                                type = 'command',
+                                                                                event = 'walk Trash',
+                                                                                shouldClose = true
+                                                                            }, {
+                                                                                id = 'trash2',
+                                                                                title = 'Trash 2',
+                                                                                icon = 'dumpster',
+                                                                                type = 'command',
+                                                                                event = 'walk Trash2',
+                                                                                shouldClose = true
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
 }
 
 Config.VehicleDoors = {
     id = 'vehicledoors',
-    title = 'Vehicle Doors',
+    title = 'Vehicle',
     icon = 'car-side',
-    items = {
-        {
-            id = 'door0',
-            title = 'Drivers door',
-            icon = 'car-side',
-            type = 'client',
-            event = 'qb-radialmenu:client:openDoor',
-            shouldClose = false
-        }, {
-            id = 'door4',
-            title = 'Hood',
-            icon = 'car',
-            type = 'client',
-            event = 'qb-radialmenu:client:openDoor',
-            shouldClose = false
-        }, {
-            id = 'door1',
-            title = 'Passengers door',
-            icon = 'car-side',
-            type = 'client',
-            event = 'qb-radialmenu:client:openDoor',
-            shouldClose = false
-        }, {
-            id = 'door3',
-            title = 'Right rear',
-            icon = 'car-side',
-            type = 'client',
-            event = 'qb-radialmenu:client:openDoor',
-            shouldClose = false
-        }, {
-            id = 'door5',
-            title = 'Trunk',
-            icon = 'car',
-            type = 'client',
-            event = 'qb-radialmenu:client:openDoor',
-            shouldClose = false
-        }, {
-            id = 'door2',
-            title = 'Left rear',
-            icon = 'car-side',
-            type = 'client',
-            event = 'qb-radialmenu:client:openDoor',
-            shouldClose = false
-        }
-    }
+    type = 'client',
+    event = 'vehcontrol:openExternal',
+    shouldClose = true
 }
 
 Config.VehicleExtras = {
@@ -452,13 +980,13 @@ Config.VehicleExtras = {
     }
 }
 
-Config.VehicleSeats = {
+--[[ Config.VehicleSeats = {
     id = 'vehicleseats',
     title = 'Vehicle Seats',
     icon = 'chair',
     items = {}
 }
-
+ ]]
 Config.JobInteractions = {
     ["ambulance"] = {
         {

@@ -104,7 +104,7 @@ local function SetupVehicleMenu()
             }
         end
 
-        if IsPedInAnyVehicle(ped) then
+        --[[ if IsPedInAnyVehicle(ped) then
             local seatIndex = #VehicleMenu.items+1
             VehicleMenu.items[seatIndex] = deepcopy(Config.VehicleSeats)
 
@@ -127,7 +127,7 @@ local function SetupVehicleMenu()
                     shouldClose = false,
                 }
             end
-        end
+        end ]]
     end
 
     if #VehicleMenu.items == 0 then
