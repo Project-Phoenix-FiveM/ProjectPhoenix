@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<style>
+      .container {visibility: hidden;}
+		</style>
+	</head>
+  <body id="body">
+    <div class="container">
+      <div class="content">
+        <div class="slot"><img id="ignition" src="img/ignition.png" /></div>
+        <div class="slot"><img id="bombbay" src="img/bombbay.png" /></div>
+        <div class="slot"><img id="frontHood" src="img/frontHood.png" /></div>
+        <div class="slot"><img id="rearHood" src="img/rearHood.png" /></div>
+        <div class="slot"><img id="rearHood2" src="img/rearHood2.png" /></div>
+        <div class="slot"><img id="interiorLight" src="img/interiorLight.png" /></div>
+        <div class="slot"><img id="windowFrontLeft" src="img/windowFrontLeft.png" /></div>
+        <div class="slot"><img id="doorFrontLeft" src="img/doorFrontLeft.png" /></div>
+        <div class="slot"><img id="seatFrontLeft" src="img/seatFrontLeft.png" /></div>
+        <div class="slot"><img id="seatFrontRight" src="img/seatFrontLeft.png" /></div>
+        <div class="slot"><img id="doorFrontRight" src="img/doorFrontRight.png" /></div>
+        <div class="slot"><img id="windowFrontRight" src="img/windowFrontRight.png" /></div>
+        <div class="slot"><img id="windowRearLeft" src="img/windowRearLeft.png" /></div>
+        <div class="slot"><img id="doorRearLeft" src="img/doorRearLeft.png" /></div>
+        <div class="slot"><img id="seatRearLeft" src="img/seatFrontLeft.png" /></div>
+        <div class="slot"><img id="seatRearRight" src="img/seatFrontLeft.png" /></div>
+        <div class="slot"><img id="doorRearRight" src="img/doorRearRight.png" /></div>
+        <div class="slot"><img id="windowRearRight" src="img/windowRearRight.png" /></div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $(function() {
+        /* open the UI for user */
+        window.addEventListener('message', function(event) {
+          if (event.data.type == "openGeneral"){
+            $('.container').css('visibility', 'visible')
+          } else if (event.data.type == "closeAll"){
+            $('.container').css('visibility', 'hidden')
+          }
+        });
+      });
+  
+      document.onkeyup = function(data){
+        if (data.which == 27){
+          $('.container').css('visibility', 'hidden')
+              $.post('http://vehcontrol/NUIFocusOff', JSON.stringify({}));
+          }
+      }
+
+      $('#ignition').click(function(){
+        $.post('http://vehcontrol/ignition', JSON.stringify({}));
+      })
+      $('#frontHood').click(function(){
+        $.post('http://vehcontrol/doors', JSON.stringify({
+          door: 4
+        }));
+      })
+      $('#rearHood').click(function(){
+        $.post('http://vehcontrol/doors', JSON.stringify({
+          door: 5
+        }));
+      })
+      $('#rearHood2').click(function(){
+        $.post('http://vehcontrol/doors', JSON.stringify({
+          door: 6
+        }));
+      })
+      $('#interiorLight').click(function(){
+        $.post('http://vehcontrol/interiorLight', JSON.stringify({}));
+      })
+      $('#bombbay').click(function(){
+        $.post('http://vehcontrol/bombbay', JSON.stringify({}));
+      })
+      $('#windowFrontLeft').click(function(){
+        $.post('http://vehcontrol/windows', JSON.stringify({
+          window: 0,
+          door: 0
+        }));
+      })
+      $('#doorFrontLeft').click(function(){
+        $.post('http://vehcontrol/doors', JSON.stringify({
+          door: 0
+        }));
+      })
+      $('#seatFrontLeft').click(function(){
+        $.post('http://vehcontrol/seatchange', JSON.stringify({
+          seat: -1
+        }));
+      })
+      $('#seatFrontRight').click(function(){
+        $.post('http://vehcontrol/seatchange', JSON.stringify({
+          seat: 0,
+        }));
+      })
+      $('#doorFrontRight').click(function(){
+        $.post('http://vehcontrol/doors', JSON.stringify({
+          door: 1
+        }));
+      })
+      $('#windowFrontRight').click(function(){
+        $.post('http://vehcontrol/windows', JSON.stringify({
+          window: 1,
+          door: 1
+        }));
+      })
+      $('#windowRearLeft').click(function(){
+        $.post('http://vehcontrol/windows', JSON.stringify({
+          window: 2,
+          door: 2
+        }));
+      })
+      $('#doorRearLeft').click(function(){
+        $.post('http://vehcontrol/doors', JSON.stringify({
+          door: 2
+        }));
+      })
+      $('#seatRearLeft').click(function(){
+        $.post('http://vehcontrol/seatchange', JSON.stringify({
+          seat: 1,
+        }));
+      })
+      $('#seatRearRight').click(function(){
+        $.post('http://vehcontrol/seatchange', JSON.stringify({
+          seat: 2,
+        }));
+      })
+      $('#doorRearRight').click(function(){
+        $.post('http://vehcontrol/doors', JSON.stringify({
+          door: 3
+        }));
+      })
+      $('#windowRearRight').click(function(){
+        $.post('http://vehcontrol/windows', JSON.stringify({
+          window: 3,
+          door: 3
+        }));
+      })
+    </script>
+  </body>
+</html>
