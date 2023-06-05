@@ -76,86 +76,60 @@ local function IsBackEngine(vehModel)
 end
 
 local function RepairVehicleFull(veh)
-    if (IsBackEngine(GetEntityModel(veh))) then
-        SetVehicleDoorOpen(veh, 5, false, false)
-    else
-        SetVehicleDoorOpen(veh, 4, false, false)
-    end
-
-    QBCore.Functions.Progressbar("repair_vehicle", Lang:t("progress.repair_veh"), math.random(20000, 30000), false, true, {
-        disableMovement = true,
-        disableCarMovement = true,
-        disableMouse = false,
-        disableCombat = true,
-    }, {
-        animDict = "mini@repair",
-        anim = "fixing_a_player",
-        flags = 1,
-    }, {}, {}, function() -- Done
-        StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_player", 1.0)
-        QBCore.Functions.Notify(Lang:t("success.repaired_veh"))
-        SetVehicleEngineHealth(veh, 1000.0)
-        SetVehicleEngineOn(veh, true, false)
-        for i = 0, 5 do
-            SetVehicleTyreFixed(veh, i)
-            TriggerEvent('qb-vehiclefailure:client:TyreSync', veh, i)
-        end
-        if (IsBackEngine(GetEntityModel(veh))) then
-            SetVehicleDoorShut(veh, 5, false)
+    local backEngine = IsBackEngine(GetEntityModel(veh))
+    local doorIndex = backEngine and 5 or 4
+    
+    SetVehicleDoorOpen(veh, doorIndex, false, false)
+    TriggerEvent('animations:client:EmoteCommandStart', {"mechanic2"})
+    
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            TriggerServerEvent('qb-vehiclefailure:removeItem', "advancedrepairkit")
+            QBCore.Functions.Notify(Lang:t("success.repaired_veh"))
+            SetVehicleEngineHealth(veh, 1000.0)
+            SetVehicleEngineOn(veh, true, false)
+            
+            for i = 0, 4 do
+                SetVehicleTyreFixed(veh, i)
+            end
+            
+            SetVehicleFixed(veh)
+            SetVehicleDoorShut(veh, doorIndex, false)
+            StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_player", 1.0)
         else
-            SetVehicleDoorShut(veh, 4, false)
+            StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_player", 1.0)
+            QBCore.Functions.Notify(Lang:t("error.failed_notification"), "error")
+            SetVehicleDoorShut(veh, doorIndex, false)
         end
-        TriggerServerEvent('qb-vehiclefailure:removeItem', "advancedrepairkit")
-    end, function() -- Cancel
-        StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_player", 1.0)
-        QBCore.Functions.Notify(Lang:t("error.failed_notification"), "error")
-        if (IsBackEngine(GetEntityModel(veh))) then
-            SetVehicleDoorShut(veh, 5, false)
-        else
-            SetVehicleDoorShut(veh, 4, false)
-        end
-    end)
+    end, 6, 30) -- NumberOfCircles, MS
 end
 
 local function RepairVehicle(veh)
-    if (IsBackEngine(GetEntityModel(veh))) then
-        SetVehicleDoorOpen(veh, 5, false, false)
-    else
-        SetVehicleDoorOpen(veh, 4, false, false)
-    end
-    QBCore.Functions.Progressbar("repair_vehicle", Lang:t("progress.repair_veh"), math.random(10000, 20000), false, true, {
-        disableMovement = true,
-        disableCarMovement = true,
-        disableMouse = false,
-        disableCombat = true,
-    }, {
-        animDict = "mini@repair",
-        anim = "fixing_a_player",
-        flags = 1,
-    }, {}, {}, function() -- Done
-        StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_player", 1.0)
-        QBCore.Functions.Notify(Lang:t("success.repaired_veh"))
-        SetVehicleEngineHealth(veh, 500.0)
-        SetVehicleEngineOn(veh, true, false)
-        for i = 0, 5 do
-            SetVehicleTyreFixed(veh, i)
-            TriggerEvent('qb-vehiclefailure:client:TyreSync', veh, i)
-        end
-        if (IsBackEngine(GetEntityModel(veh))) then
-            SetVehicleDoorShut(veh, 5, false)
+    local backEngine = IsBackEngine(GetEntityModel(veh))
+    local doorIndex = backEngine and 5 or 4
+    
+    SetVehicleDoorOpen(veh, doorIndex, false, false)
+    TriggerEvent('animations:client:EmoteCommandStart', {"mechanic2"})
+    
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            TriggerServerEvent('qb-vehiclefailure:removeItem', "repairkit")
+            QBCore.Functions.Notify(Lang:t("success.repaired_veh"))
+            SetVehicleEngineHealth(veh, 1000.0)
+            SetVehicleEngineOn(veh, true, false)
+            
+            for i = 0, 4 do
+                SetVehicleTyreFixed(veh, i)
+            end
+            
+            SetVehicleDoorShut(veh, doorIndex, false)
+            StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_player", 1.0)
         else
-            SetVehicleDoorShut(veh, 4, false)
+            StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_player", 1.0)
+            QBCore.Functions.Notify(Lang:t("error.failed_notification"), "error")
+            SetVehicleDoorShut(veh, doorIndex, false)
         end
-        TriggerServerEvent('qb-vehiclefailure:removeItem', "repairkit")
-    end, function() -- Cancel
-        StopAnimTask(PlayerPedId(), "mini@repair", "fixing_a_player", 1.0)
-        QBCore.Functions.Notify(Lang:t("error.failed_notification"), "error")
-        if (IsBackEngine(GetEntityModel(veh))) then
-            SetVehicleDoorShut(veh, 5, false)
-        else
-            SetVehicleDoorShut(veh, 4, false)
-        end
-    end)
+    end, 4, 20) -- NumberOfCircles, MS
 end
 
 local function isPedDrivingAVehicle()
