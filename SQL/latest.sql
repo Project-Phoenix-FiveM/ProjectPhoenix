@@ -140,9 +140,9 @@ CREATE TABLE IF NOT EXISTS `crypto` (
   PRIMARY KEY (`crypto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Dumping data for table projectphoenix.crypto: ~0 rows (approximately)
+-- Dumping data for table projectphoenix.crypto: ~1 rows (approximately)
 INSERT INTO `crypto` (`crypto`, `worth`, `history`) VALUES
-	('qbit', 1000, '[{"PreviousWorth":1000,"NewWorth":1000},{"PreviousWorth":1000,"NewWorth":1000}]');
+	('qbit', 998, '[{"NewWorth":998,"PreviousWorth":1007},{"NewWorth":998,"PreviousWorth":1007},{"NewWorth":998,"PreviousWorth":1007},{"NewWorth":998,"PreviousWorth":998}]');
 
 -- Dumping structure for table projectphoenix.crypto_transactions
 CREATE TABLE IF NOT EXISTS `crypto_transactions` (
@@ -593,7 +593,7 @@ CREATE TABLE IF NOT EXISTS `players` (
 
 -- Dumping data for table projectphoenix.players: ~1 rows (approximately)
 INSERT INTO `players` (`id`, `citizenid`, `cid`, `license`, `name`, `money`, `charinfo`, `job`, `gang`, `position`, `metadata`, `inventory`, `last_updated`) VALUES
-	(61, 'REF10868', 1, 'license:77d729d6d03cc754a0cfae92ad5dfda1d7ad0244', 'Karxi', '{"bank":4890,"cash":448,"crypto":0}', '{"nationality":"UK","backstory":"placeholder backstory","birthdate":"1900-01-01","lastname":"Phoenix","phone":"3075991428","account":"US05QBCore9362428694","gender":0,"cid":"1","firstname":"Project"}', '{"onduty":true,"label":"Civilian","type":"none","payment":10,"grade":{"level":0,"name":"Freelancer"},"isboss":false,"name":"unemployed"}', '{"label":"No Gang Affiliaton","name":"none","isboss":false,"grade":{"name":"none","level":0}}', '{"x":-328.5758056640625,"y":-1481.248291015625,"z":30.5435791015625}', '{"thirst":50.60000000000004,"bloodtype":"A-","hunger":45.39999999999996,"fitbit":[],"communityservice":0,"craftingrep":0,"isdead":false,"jailitems":[],"armor":0,"callsign":"NO CALLSIGN","licences":{"driver":true,"weapon":false,"business":false},"fingerprint":"ch322X28szZ3809","jobrep":{"trucker":0,"tow":0,"hotdog":0,"taxi":0},"attachmentcraftingrep":0,"ishandcuffed":false,"dealerrep":0,"commandbinds":[],"inlaststand":false,"stress":0,"crypto":{"gne":0,"xcoin":0,"shung":0,"lme":0},"injail":0,"tracker":false,"walletid":"QB-17171189","criminalrecord":{"hasRecord":false},"phone":[],"inside":{"apartment":[]},"phonedata":{"InstalledApps":[],"SerialNumber":17975586},"status":[]}', '[{"amount":1,"created":1685990440,"name":"weapon_pistol","info":{"quality":99,"ammo":0,"serie":"19uAv0JF383cTOB"},"slot":1,"type":"weapon"},{"amount":1,"created":1686002153,"name":"syphoningkit","info":{"quality":99,"gasamount":0},"slot":2,"type":"item"},{"amount":1,"created":1686002073,"name":"jerrycan","info":{"gasamount":25,"quality":99},"slot":3,"type":"item"},{"amount":1,"created":1685990456,"name":"driver_license","info":{"quality":99,"lastname":"Phoenix","birthdate":"1900-01-01","firstname":"Project","type":"Class C Driver License"},"slot":4,"type":"item"},{"amount":1,"created":1685990403,"name":"id_card","info":{"quality":99,"gender":0,"lastname":"Phoenix","citizenid":"REF10868","birthdate":"1900-01-01","nationality":"UK","firstname":"Project"},"slot":5,"type":"item"},{"amount":1,"created":1686002188,"name":"phone","info":{"quality":100},"slot":18,"type":"item"}]', '2023-06-05 21:56:56');
+	(61, 'REF10868', 1, 'license:77d729d6d03cc754a0cfae92ad5dfda1d7ad0244', 'Karxi', '{"bank":5640,"cash":346,"crypto":0}', '{"nationality":"UK","backstory":"placeholder backstory","birthdate":"1900-01-01","lastname":"Phoenix","phone":"3075991428","account":"US05QBCore9362428694","gender":0,"cid":"1","firstname":"Project"}', '{"onduty":true,"label":"Law Enforcement","type":"leo","payment":150,"grade":{"level":4,"name":"Chief"},"isboss":true,"name":"police"}', '{"label":"No Gang Affiliaton","name":"none","isboss":false,"grade":{"name":"none","level":0}}', '{"x":413.0769348144531,"y":-1006.3780517578125,"z":29.3304443359375}', '{"thirst":84.80000000000001,"bloodtype":"A-","hunger":83.19999999999999,"fitbit":[],"communityservice":0,"craftingrep":0,"isdead":false,"jailitems":[],"armor":0,"callsign":"NO CALLSIGN","licences":{"driver":true,"weapon":false,"business":false},"fingerprint":"ch322X28szZ3809","jobrep":{"trucker":0,"tow":0,"hotdog":0,"taxi":0},"attachmentcraftingrep":0,"ishandcuffed":false,"dealerrep":0,"commandbinds":[],"inlaststand":false,"stress":0,"crypto":{"gne":0,"xcoin":0,"shung":0,"lme":0},"injail":0,"tracker":false,"walletid":"QB-17171189","criminalrecord":{"hasRecord":false},"phone":[],"inside":{"apartment":[]},"phonedata":{"InstalledApps":[],"SerialNumber":17975586},"status":[]}', '[{"info":{"firstname":"Project","lastname":"Phoenix","birthdate":"1900-01-01","nationality":"UK","citizenid":"REF10868","gender":0,"quality":99},"slot":5,"created":1685990403,"name":"id_card","amount":1,"type":"item"},{"info":{"gasamount":25,"quality":99},"slot":3,"created":1686002073,"name":"jerrycan","amount":1,"type":"item"},{"info":{"firstname":"Project","type":"Class C Driver License","lastname":"Phoenix","birthdate":"1900-01-01","quality":99},"slot":4,"created":1685990456,"name":"driver_license","amount":1,"type":"item"},{"info":{"gasamount":0,"quality":99},"slot":12,"created":1686002153,"name":"syphoningkit","amount":1,"type":"item"},{"info":{"serie":"19uAv0JF383cTOB","ammo":0,"quality":99},"slot":6,"created":1686004066,"name":"weapon_pistol","amount":1,"type":"weapon"},{"info":{"quality":99},"slot":18,"created":1686002188,"name":"phone","amount":1,"type":"item"}]', '2023-06-05 22:41:57');
 
 -- Dumping structure for table projectphoenix.playerskins
 CREATE TABLE IF NOT EXISTS `playerskins` (
@@ -654,7 +654,7 @@ CREATE TABLE IF NOT EXISTS `player_jobs` (
 -- Dumping data for table projectphoenix.player_jobs: ~15 rows (approximately)
 INSERT INTO `player_jobs` (`id`, `jobname`, `employees`, `maxEmployee`) VALUES
 	(106, 'realestate', '[]', 15),
-	(107, 'police', '{"RSF59658":{"grade":4,"cid":"RSF59658","name":"Project Phoenix"}}', 15),
+	(107, 'police', '{"RSF59658":{"cid":"RSF59658","name":"Project Phoenix","grade":4},"REF10868":{"cid":"REF10868","name":"Project Phoenix","grade":4}}', 15),
 	(108, 'judge', '[]', 15),
 	(109, 'reporter', '[]', 15),
 	(110, 'tow', '[]', 15),
@@ -709,7 +709,7 @@ CREATE TABLE IF NOT EXISTS `player_transactions` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Dumping data for table projectphoenix.player_transactions: ~0 rows (approximately)
+-- Dumping data for table projectphoenix.player_transactions: ~1 rows (approximately)
 INSERT INTO `player_transactions` (`id`, `isFrozen`, `transactions`) VALUES
 	('RSF59658', 0, '[{"trans_id":"1ef78fc4-354a-4731-a801-44cb59e51ee8","title":"Personal Account / RSF59658","time":1685903649,"message":"hewllo","trans_type":"withdraw","receiver":"Law Enforcement","amount":50,"issuer":"Project Phoenix"}]');
 
@@ -783,6 +783,8 @@ CREATE TABLE IF NOT EXISTS `stashitems` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Dumping data for table projectphoenix.stashitems: ~0 rows (approximately)
+INSERT INTO `stashitems` (`id`, `stash`, `items`) VALUES
+	(2, 'policetrash', '[]');
 
 -- Dumping structure for table projectphoenix.trunkitems
 CREATE TABLE IF NOT EXISTS `trunkitems` (

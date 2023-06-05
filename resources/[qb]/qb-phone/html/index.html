@@ -963,31 +963,34 @@
                             <div class="racing-app-header">
                                 Racing - Setup
                             </div>
-
+                        
                             <span id="racing-setup-trackheader">Race Track</span>
                             <div class="dropdown">
                                 <div class="select">
-                                  <span>Select a Track</span>
-                                  <i class="fa fa-chevron-left"></i>
+                                    <span>Select a Track</span>
+                                    <i class="fa fa-chevron-left"></i>
                                 </div>
                                 <input type="hidden" name="gender">
                                 <ul class="dropdown-menu"></ul>
                             </div>
-
+                        
                             <span id="racing-setup-lapsheader">Laps</span>
                             <input type="number" min="0" oninput="this.value = Math.abs(this.value)" class="racing-setup-laps" required spellcheck="false" placeholder="Number of laps (0 is Sprint)">
-
+                        
+                            <span id="phasing-header">Phasing</span>
+                            <input type="text" class="phasing-toggle" required spellcheck="false" placeholder="true or false">
+                        
                             <span id="racing-setup-informationheader">Race Information</span>
                             <div class="racing-setup-information-distance">Select a Track</div>
                             <div class="racing-setup-information-creator">Select a Track</div>
                             <div class="racing-setup-information-wr">Select a Track</div>
-
+                        
                             <div class="racing-setup-buttons">
                                 <div class="racing-setup-button" id="setup-race-accept" data-toggle="race-setup" data-placement="bottom" title="Accept">
-                                    <i>SUBMIT</i>
+                                    <i class="fas fa-check-circle"></i>
                                 </div>
                                 <div class="racing-setup-button" id="setup-race-cancel" data-toggle="race-setup" data-placement="bottom" title="Cancel">
-                                    <i>CANCEL</i>
+                                    <i class="fas fa-times-circle"></i>
                                 </div>
                             </div>
                         </div>

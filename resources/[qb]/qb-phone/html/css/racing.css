@@ -373,7 +373,7 @@
 #racing-setup-informationheader {
     position: absolute;
     left: 0.5vh;
-    top: 21vh;
+    top: 27vh;
     color: white;
     font-family: 'Poppins', sans-serif;
 }
@@ -381,7 +381,7 @@
 .racing-setup-information-distance {
     position: absolute;
     left: 0vh;
-    top: 30vh;
+    top: 36vh;
     color: white;
     padding: .5vh;
     padding-left: .5vh;
@@ -393,7 +393,7 @@
 .racing-setup-information-creator {
     position: absolute;
     left: 0vh;
-    top: 27vh;
+    top: 33vh;
     color: white;
     padding: .5vh;
     padding-left: .5vh;
@@ -405,7 +405,7 @@
 .racing-setup-information-wr {
     position: absolute;
     left: 0vh;
-    top: 24vh;
+    top: 30vh;
     color: white;
     padding: .5vh;
     padding-left: .5vh;
@@ -583,6 +583,41 @@ i {
     background-color: #3E4551;
     z-index: 102;
     left: -30vh;
+}
+
+#phasing-header {
+    position: absolute; 
+    left: 0.5vh;
+    top: 20.8vh;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.phasing-toggle {
+    position: absolute;
+    width: 22vh;
+    height: 4vh;
+    top: 21.5vh;
+    left: 0.5vh;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: .2vh solid #fff;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    transition: .1s linear;
+}
+
+.phasing-toggle:focus {
+    border-bottom: .2vh solid rgb(60, 128, 192);
+}
+
+.phasing-toggle:valid {
+    border-bottom: .2vh solid rgb(55, 199, 27);
+}
+
+.phasing-toggle::-webkit-inner-spin-button {
+    display: none;
 }
 
 .racing-leaderboards {

@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-font-size: 1.6vh;  
+}
+
+.container {
+    height: 100vh;
+    opacity: 1.0;
+}
+
+.ui {
+    position: absolute;
+    width: 30vh;
+    height: 0vh;
+    bottom: 5.0vh;
+    border-radius: 0vh;
+    left: 145.0vh;
+}
+
+.setup {
+    position: absolute;
+    width: 30vh;
+    height: 20vh;
+    bottom: 23vh;
+    border-radius: 1vh;
+    left: 2.7vh;
+}
+
+.background {
+    border: thick double #00000021;
+    position: absolute;
+    display: none;
+    top: -16.0vh;
+    bottom: 0.3vh;
+    left: 5vh;
+    right: 5vh;
+    background-color: #00000069;
+}
+
+.editor {
+    display: none;
+}
+
+#editor-racename {
+    position: absolute;
+    left: 2vh;
+    top: 2vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--main-font-size);
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+#editor-checkpoints {
+    position: absolute;
+    left: 2vh;
+    top: 5vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--main-font-size);
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+#editor-keys-tiredistance {
+    position: absolute;
+    left: 2vh;
+    top: 8vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--main-font-size);
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+#editor-keys-add {
+    position: absolute;
+    left: 2vh;
+    top: 11vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--main-font-size);
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+#editor-keys-delete {
+    position: absolute;
+    left: 2vh;
+    top: 14vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--main-font-size);
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+#editor-keys-cancel {
+    position: absolute;
+    left: 2vh;
+    top: 17vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--main-font-size);
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+#editor-keys-save {
+    position: absolute;
+    left: 2vh;
+    top: 20vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--main-font-size);
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+/* RACE */
+
+.race {
+    display: none;
+}
+
+
+#race-racename {
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    left: 0vh;
+    top: -15vh;
+    font-family: sans-serif;
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 0vh;
+}
+
+#race-checkpoints {
+    white-space: nowrap;
+    word-spacing: 7.4vh;
+    position: absolute;
+    left: 6vh;
+    top: -9vh;
+    font-family: sans-serif;
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 10vh;
+}
+
+#race-lap {
+    white-space: nowrap;
+    word-spacing: 12vh;
+    position: absolute;
+    left: 6vh;
+    top: -11vh;
+    font-family: sans-serif;
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 10vh;
+}
+
+#race-position {
+    white-space: nowrap;
+    word-spacing: 12vh;
+    position: absolute;
+    left: 6vh;
+    right: 4vh;
+    top: -13vh;
+    font-family: sans-serif;
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 10vh;
+}
+
+#race-time {
+    white-space: nowrap;
+    word-spacing: 5.3vh;
+    position: absolute;
+    left: 6vh;
+    top: -5.0vh;
+    font-family: sans-serif;
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 10vh;
+}
+
+#race-besttime {
+    white-space: nowrap;
+    word-spacing: 5.5vh;
+    position: absolute;
+    left: 6vh;
+    top: -7vh;
+    font-family: sans-serif;
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 10vh;
+}
+
+#race-totaltime {
+    white-space: nowrap;
+    word-spacing: 4.5vh;
+    position: absolute;
+    left: 6vh;
+    top: -3.0vh;
+    font-family: sans-serif;
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    right: 10vh;
+}

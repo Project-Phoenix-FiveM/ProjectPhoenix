@@ -297,10 +297,16 @@ QBShared.Items = {
     ['twerks_candy']                    = {['name'] = 'twerks_candy',                      ['label'] = 'Twerks',                    ['weight'] = 100,          ['type'] = 'item',         ['image'] = 'twerks_candy.png',            ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Some delicious candy :O' , ["created"] = nil, ["decay"] = 28.0, ["delete"] = true }, 
     ['snikkel_candy']                   = {['name'] = 'snikkel_candy',                     ['label'] = 'Snikkel',                   ['weight'] = 100,          ['type'] = 'item',         ['image'] = 'snikkel_candy.png',           ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Some delicious candy :O' , ["created"] = nil, ["decay"] = 28.0, ["delete"] = true }, 
     ['sandwich']                        = {['name'] = 'sandwich',                          ['label'] = 'Sandwich',                  ['weight'] = 200,          ['type'] = 'item',         ['image'] = 'sandwich.png',                ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'Nice bread for your stomach' , ["created"] = nil, ["decay"] = 28.0, ["delete"] = true }, 
-
+ 
     --newspaper 
     ['newspaper'] = {['name'] = 'newspaper', ['label'] = 'Newspaper', ['weight'] = 10, ['type'] = 'item', ['image'] = 'newspaper.png', ['unique'] = false , ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Los Santos Newspaper', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
 
+
+    --Racing
+    ['ausb2']                       = {['name'] = 'ausb2',                        ['label'] = 'Alias USB',                     ['weight'] = 3000,         ['type'] = 'item',         ['image'] = 'ausb.png',                 ['unique'] = true,         ['useable'] = true,     ['shouldClose'] = true,   ['combinable'] = nil,   ['description'] = 'Be whoever you want to be...', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['racingusb2']                       = {['name'] = 'racingusb2',                        ['label'] = 'Racing Dongle',                     ['weight'] = 3000,         ['type'] = 'item',         ['image'] = 'racingusb2.png',                 ['unique'] = true,         ['useable'] = false,     ['shouldClose'] = true,   ['combinable'] = nil,   ['description'] = 'To be seized - Illegal Item!', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    
+    
     -- QB-Vending
 	['cola'] 				 	     = {['name'] = 'cola', 			  	     		['label'] = 'eCola', 					['weight'] = 500, 		['type'] = 'item', 		['image'] = 'cola.png', 			    ['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Genuine Cola', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
 	['ecoladiet'] 				 	 = {['name'] = 'ecoladiet', 			  	    ['label'] = 'Diet eCola', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'ecoladiet.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Genuine Diet Cola', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
