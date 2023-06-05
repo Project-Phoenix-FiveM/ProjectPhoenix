@@ -138,3 +138,19 @@ ox_target:addGlobalVehicle({
         end
     }
 })
+
+ox_target:addGlobalVehicle({
+    {
+        name = 'ox_target:garbage',
+        icon = 'fa-solid fa-truck',
+        label = locale('garbage_bag'),
+        bones = 'boot',
+        canInteract = function(entity, distance, coords, name, boneId)
+            if distance >= 0.9 then return end
+            return exports['prisma-sanitation']:garbageTarget()
+        end,
+        onSelect = function(data)
+            TriggerEvent('qb-garbage-asd')
+        end
+    }
+})
