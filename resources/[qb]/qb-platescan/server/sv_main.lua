@@ -71,12 +71,10 @@ RegisterNetEvent("qb-platescan:server:ScanPlate", function(data)
 	local Player = QBCore.Functions.GetPlayer(src)
 	local veh, plate, name, class, locked = data.veh, data.plate, data.name, data.class, data.locked
 	local vehData
-	print('something else')
 	if plate ~= "" and plate ~= nil then
 		local vehicle = MySQL.query.await("select pv.*, p.charinfo from player_vehicles pv LEFT JOIN players p ON pv.citizenid = p.citizenid WHERE pv.plate = :plate LIMIT 1", {
 			plate = string.gsub(plate, "^%s*(.-)%s*$", "%1")
 		})
-		QBCore.Debug(vehicle)
 		if vehicle and vehicle[1] then
 			local owner = json.decode(vehicle[1].charinfo)
 			local ownerName = owner['firstname'] .. " " .. owner['lastname']
