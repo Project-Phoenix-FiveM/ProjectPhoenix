@@ -305,6 +305,7 @@ function isBlacklistedVehicle(vehicle)
     if Entity(vehicle).state.ignoreLocks or GetVehicleClass(vehicle) == 13 then isBlacklisted = true end
     return isBlacklisted
 end
+local NotifyCooldown = false
 function ToggleEngine(veh)
     if veh then
         local EngineOn = GetIsVehicleEngineRunning(veh)
@@ -313,7 +314,20 @@ function ToggleEngine(veh)
                 if EngineOn then
                     SetVehicleEngineOn(veh, false, false, true)
                 else
-                    SetVehicleEngineOn(veh, true, true, true)
+                    if exports['cdn-fuel']:GetFuel(veh) ~= 0 then
+                        SetVehicleEngineOn(veh, true, false, true)
+                    else
+                        if not NotifyCooldown then
+                            RequestAmbientAudioBank("DLC_PILOT_ENGINE_FAILURE_SOUNDS", 0)
+                            PlaySoundFromEntity(l_2613, "Landing_Tone", PlayerPedId(), "DLC_PILOT_ENGINE_FAILURE_SOUNDS", 0, 0)
+                            NotifyCooldown = true
+                            QBCore.Functions.Notify('No fuel..', 'error')
+                            Wait(1500)
+                            StopSound(l_2613)
+                            Wait(3500)
+                            NotifyCooldown = false
+                        end
+                    end                
                 end
             end
         end

@@ -256,6 +256,14 @@ Config.Products = {
             slot = 15,
             requiredJob = { "mechanic" }
         },
+        [16] = {
+            name = "syphoningkit",
+            price = 5000,
+            amount = 5,
+            info = { gasamount = 0 }, -- This must be included or, your item will not store fuel properly!
+            type = "item",
+            slot = 16,
+        }, -- CDN-Fuel / CDN-Syphoning
     },
     ["weedshop"] = {
         [1] = {

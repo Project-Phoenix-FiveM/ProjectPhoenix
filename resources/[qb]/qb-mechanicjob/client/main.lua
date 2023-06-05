@@ -425,17 +425,17 @@ local function ApplyEffects(vehicle)
             end
 
             if VehicleStatus[plate]["fuel"] <= 80 and (chance >= 81 and chance <= 100) then
-                local fuel = exports['ps-fuel']:GetFuel(vehicle)
+                local fuel = exports['cdn-fuel']:GetFuel(vehicle)
                 if VehicleStatus[plate]["fuel"] <= 80 and VehicleStatus[plate]["fuel"] >= 60 then
-                    exports['ps-fuel']:SetFuel(vehicle, fuel - 2.0)
+                    exports['cdn-fuel']:SetFuel(vehicle, fuel - 2.0)
                 elseif VehicleStatus[plate]["fuel"] <= 59 and VehicleStatus[plate]["fuel"] >= 40 then
-                    exports['ps-fuel']:SetFuel(vehicle, fuel - 4.0)
+                    exports['cdn-fuel']:SetFuel(vehicle, fuel - 4.0)
                 elseif VehicleStatus[plate]["fuel"] <= 39 and VehicleStatus[plate]["fuel"] >= 20 then
-                    exports['ps-fuel']:SetFuel(vehicle, fuel - 6.0)
+                    exports['cdn-fuel']:SetFuel(vehicle, fuel - 6.0)
                 elseif VehicleStatus[plate]["fuel"] <= 19 and VehicleStatus[plate]["fuel"] >= 6 then
-                    exports['ps-fuel']:SetFuel(vehicle, fuel - 8.0)
+                    exports['cdn-fuel']:SetFuel(vehicle, fuel - 8.0)
                 else
-                    exports['ps-fuel']:SetFuel(vehicle, fuel - 10.0)
+                    exports['cdn-fuel']:SetFuel(vehicle, fuel - 10.0)
                 end
             end
         end
@@ -637,7 +637,7 @@ local function SpawnListVehicle(model)
         local veh = NetToVeh(netId)
         SetVehicleNumberPlateText(veh, "ACBV"..tostring(math.random(1000, 9999)))
         SetEntityHeading(veh, coords.w)
-        exports['ps-fuel']:SetFuel(veh, 100.0)
+        exports['cdn-fuel']:SetFuel(veh, 100.0)
         TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
         TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
         SetVehicleEngineOn(veh, true, true)
