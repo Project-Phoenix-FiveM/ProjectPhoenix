@@ -31,7 +31,7 @@
 ---------------------------------------------------------------------------------------]]--
 
 -- Branding!
-local label =
+--[[ local label =
 [[ 
   //
   ||       __      __        _ _   _        _   ___  ___   _____  __
@@ -40,15 +40,15 @@ local label =
   ||         \_/\_/|_| \__,_|_|\__|_||_| /_/ \_\_|_\|___/ /___/_/\_\
   || 
   ||                        Created by WolfKnight
-  ||]]
+  ||]] 
 
 -- Returns the current version set in fxmanifest.lua
-function GetCurrentVersion()
+--[[ function GetCurrentVersion()
 	return GetResourceMetadata( GetCurrentResourceName(), "version" )
-end
+end ]]
 
 -- Grabs the latest version number from the web GitHub
-PerformHttpRequest( "https://wolfknight98.github.io/wk_wars2x_web/version.txt", function( err, text, headers )
+--[[ PerformHttpRequest( "https://wolfknight98.github.io/wk_wars2x_web/version.txt", function( err, text, headers )
 	-- Wait to reduce spam
 	Citizen.Wait( 2000 )
 
@@ -79,4 +79,4 @@ PerformHttpRequest( "https://wolfknight98.github.io/wk_wars2x_web/version.txt", 
 	if ( GetCurrentResourceName() ~= "wk_wars2x" ) then
 		print( "^1ERROR: Resource name is not wk_wars2x, expect there to be issues with the resource. To ensure there are no issues, please leave the resource name as wk_wars2x^0\n\n" )
 	end
-end )
+end ) ]]
