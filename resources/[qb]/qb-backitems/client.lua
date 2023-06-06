@@ -28,7 +28,6 @@ RegisterNetEvent("backitems:start", function()
 end)
 
 RegisterNetEvent("backitems:showagain", function()
-    print("[Backitems]: Showing Again")
     resetItems()
     check()
     Wait(10)
@@ -75,7 +74,6 @@ CreateThread(function()
 				local model = GetEntityModel(currentVehicle)
 				local name = GetDisplayNameFromVehicleModel()
 				local netId = VehToNet(currentVehicle)
-                print("NONCE")
 				TriggerEvent('baseevents:leftVehicle-backitems', currentVehicle, currentSeat, GetDisplayNameFromVehicleModel(GetEntityModel(currentVehicle)), netId)
 				isInVehicle = false
 				currentVehicle = 0
@@ -96,7 +94,6 @@ end
 
 
 AddEventHandler('baseevents:enteredVehicle-backitems', function(pEntity, pSeat, pName, pClass, pModel)
-    print("remove spin spin car rollercoaster")
     for k, v in pairs(GetGamePool('CObject')) do
         if IsEntityAttachedToEntity(PlayerPedId(), v) then
             SetEntityAsMissionEntity(v, true, true)
@@ -107,7 +104,6 @@ AddEventHandler('baseevents:enteredVehicle-backitems', function(pEntity, pSeat, 
 end)
 
 AddEventHandler('baseevents:leftVehicle-backitems', function(pEntity, pSeat, pName, pClass, pModel)
-    print("Okay no more spin spin")
     TriggerEvent("backitems:showagain")
 end)
 
@@ -138,7 +134,6 @@ function resetItems()
 end
 
 function BackLoop()
-    print("[Backitems]: Starting Loop")
     checking = true
     CreateThread(function()
         while checking do
