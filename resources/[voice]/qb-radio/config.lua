@@ -1,5 +1,14 @@
 Config = {}
 
+Config.keyBind = {
+    useRadio = "CAPS",
+    openRadio = "F7",
+    volUp1 = "PAGEUP",
+    radioVolDown = "PAGEDOWN",
+    RadioChannelUp = "F9",
+    RadioChannelDown = "F10"
+}
+
 Config.RestrictedChannels = {
     [1] = {
         police = true,
@@ -18,29 +27,22 @@ Config.RestrictedChannels = {
         ambulance = true
     },
     [5] = {
-        police = true,
-        ambulance = true
+        police = true
     },
     [6] = {
-        police = true,
-        ambulance = true
+        police = true
     },
     [7] = {
-        police = true,
-        ambulance = true
+        police = true
     },
     [8] = {
-        police = true,
-        ambulance = true
+        police = true
     },
     [9] = {
         police = true,
-        ambulance = true
+        judge = true,
+        court = true
     },
-    [10] = {
-        police = true,
-        ambulance = true
-    }
 }
 
 Config.MaxFrequency = 500
@@ -49,7 +51,7 @@ Config.messages = {
     ["not_on_radio"] = "You're not connected to a signal",
     ["on_radio"] = "You're already connected to this signal",
     ["joined_to_radio"] = "You're connected to: ",
-    ["restricted_channel_error"] = "You can not connect to this signal!",
+    ["restricted_channel_error"] = "You are not allow to connect to this signal!",
     ["invalid_radio"] = "This frequency is not available.",
     ["you_on_radio"] = "You're already connected to this channel",
     ["you_leave"] = "You left the channel.",

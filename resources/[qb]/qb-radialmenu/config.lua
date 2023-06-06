@@ -1128,6 +1128,83 @@ Config.JobInteractions = {
             event = 'police:client:SeizeDriverLicense',
             shouldClose = true
         }, {
+            id = 'policeradio',
+            title = 'Police Radio',
+            icon = 'radio',
+            items = {
+                {
+                    id = 'joinradio1',
+                    title = 'Channel 1',
+                    icon = 'radio',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel1',
+                    shouldClose = true
+                },{
+                    id = 'joinradio2',
+                    title = 'Channel 2',
+                    icon = 'radio',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel2',
+                    shouldClose = true
+                }, {
+                    id = 'joinradio3',
+                    title = 'Channel 3',
+                    icon = 'radio',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel3',
+                    shouldClose = true
+                }, {
+                    id = 'joinradio4',
+                    title = 'Channel 4',
+                    icon = 'radio',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel4',
+                    shouldClose = true
+                }, {
+                    id = 'joinradio5',
+                    title = 'Channel 5',
+                    icon = 'radio',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel5',
+                    shouldClose = true
+                }, {
+                    id = 'joinradio6',
+                    title = 'Channel 6',
+                    icon = 'radio',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel6',
+                    shouldClose = true
+                }, {
+                    id = 'joinradio7',
+                    title = 'Channel 7',
+                    icon = 'radio',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel7',
+                    shouldClose = true
+                }, {
+                    id = 'joinradio8',
+                    title = 'Channel 8',
+                    icon = 'radio',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel8',
+                    shouldClose = true
+                }, {
+                    id = 'joinradio9',
+                    title = 'Channel 9',
+                    icon = 'radio',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel9',
+                    shouldClose = true
+                }, {
+                    id = 'joinradio10',
+                    title = 'Channel 10',
+                    icon = 'radio',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel10',
+                    shouldClose = true
+                }
+            }
+        }, {
             id = 'policeinteraction',
             title = 'Police Actions',
             icon = 'list-check',
