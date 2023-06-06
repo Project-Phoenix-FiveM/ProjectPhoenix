@@ -88,6 +88,10 @@ end)
 RegisterNetEvent('qb-dumpsters:client:open:Dumpster:storage') 
 AddEventHandler('qb-dumpsters:client:open:Dumpster:storage', function()
     local DumpsterFound = ClosestContainer()
+    if DumpsterFound == nil then 
+        QBCore.Functions.Notify("Get closer or face directly at the bin.")
+        return
+    end
     local Dumpster = 'Container | '..math.floor(DumpsterFound.x).. ' | '..math.floor(DumpsterFound.y)..' |'
     TriggerServerEvent("inventory:server:OpenInventory", "stash", Dumpster, {maxweight = 1000000, slots = 50})
     TriggerEvent("inventory:client:SetCurrentStash", Dumpster)
