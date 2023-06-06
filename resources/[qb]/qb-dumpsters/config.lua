@@ -43,4 +43,12 @@ Config.Dumpsters = {
     [12] = {['Model'] = -918089089,  ['Name'] = 'Onbekende Bak'},
     [13] = {['Model'] = 1511880420,  ['Name'] = 'Onbekende Bak'},
     [14] = {['Model'] = 1329570871,  ['Name'] = 'Onbekende Bak'},
+    [15] = {['Model'] = -1096777189,  ['Name'] = 'Bin'},
+    [16] = {['Model'] = -1437508529,  ['Name'] = 'Bin'},
+    [17] = {['Model'] = -1426008804,  ['Name'] = 'Bin'},
+    [18] = {['Model'] = -228596739,  ['Name'] = 'Bin'},
+    [19] = {['Model'] = 161465839,  ['Name'] = 'Bin'},
+    [20] = {['Model'] = 651101403,  ['Name'] = 'Bin'},
+
+
 }
