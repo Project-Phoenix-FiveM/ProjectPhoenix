@@ -13,7 +13,7 @@ Config = {
     peds = {
         [1] = { -- Pacific Standard
             model = 'u_m_m_bankman',
-            coords = vector4(241.44, 227.19, 106.29, 170.43),
+            coords = vector4(243.8, 226.26, 106.29, 161.8),
             createAccounts = true
         },
         [2] = {
