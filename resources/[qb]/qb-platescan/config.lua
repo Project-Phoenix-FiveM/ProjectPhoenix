@@ -8,13 +8,12 @@ Config.LockOnFlag = true    -- Set to true to lock front plate reader on flagged
 Config.NotifDuration = 6000  -- Time until scan notification disappears (default = 6sec)
 Config.OxTarget = true      -- Set True if using ox-target, false will use qb-target
 
---TODO: Change to new vehicles.
 Config.AllowedVehicles = {
-    [1] = {model = "nkbuffalos", label = 'Bravado Buffalo S'},
-    [2] = {model = 'nkscout', label = 'Vapid Scout'},
-    [3] = {model = 'nkcoquette', label = 'Invetero Coquette'},
-    [4] = {model = 'nkcruiser', label = 'Vapid Stainer'},
-    [5] = {model = 'nktorrence', label = 'Vapid Torrence'}
+    [1] = {model = "pd1", label = 'Ford Crown Victoria'},
+    [2] = {model = 'mach1rb', label = 'Ford Mustang 2021'},
+    [3] = {model = 'char', label = 'Dodge Charger 2018'},
+    [4] = {model = 'poldemonrb', label = 'Demon'},
+    [5] = {model = 'zr1rb', label = 'Corvette'}
 }
 
 Config.GTAVSounds = {        -- Frontend sounds from GTAV (https://wiki.gtanet.work/index.php?title=FrontEndSoundlist)
