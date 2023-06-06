@@ -305,7 +305,9 @@ function isBlacklistedVehicle(vehicle)
     if Entity(vehicle).state.ignoreLocks or GetVehicleClass(vehicle) == 13 then isBlacklisted = true end
     return isBlacklisted
 end
+
 local NotifyCooldown = false
+
 function ToggleEngine(veh)
     if veh then
         local EngineOn = GetIsVehicleEngineRunning(veh)
@@ -327,7 +329,7 @@ function ToggleEngine(veh)
                             Wait(3500)
                             NotifyCooldown = false
                         end
-                    end                
+                    end
                 end
             end
         end
@@ -583,9 +585,31 @@ function LockpickDoor(isAdvanced)
     if GetVehicleDoorLockStatus(vehicle) <= 0 then return end
 
     usingAdvanced = isAdvanced
-    Config.LockPickDoorEvent()
+    loadAnimDict("veh@break_in@0h@p_m_one@")
+    if usingAdvanced then
+        TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, -1, 16, 0, 0, 0, 0)
+        exports['ps-ui']:Circle(function(success)
+            if success then
+                print("success")
+            else
+                print("fail")
+            end
+            lockpickFinish(success)
+        end, 2, 20) -- NumberOfCircles, MS
+    else
+        TaskPlayAnim(ped, "veh@break_in@0h@p_m_one@", "low_force_entry_ds", 3.0, 3.0, -1, 16, 0, 0, 0, 0)
+        exports['ps-ui']:Circle(function(success)
+            if success then
+                print("success")
+            else
+                print("fail")
+            end
+            lockpickFinish(success)
+        end, 4, 10) -- NumberOfCircles, MS
+    end
 end
-function LockpickFinishCallback(success)
+
+function lockpickFinish(success)
     local vehicle = QBCore.Functions.GetClosestVehicle()
 
     local chance = math.random()
@@ -637,7 +661,6 @@ function Hotwire(vehicle, plate)
         TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
         if (math.random() <= Config.HotwireChance) then
             TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', plate)
-            TriggerEvent("qb-platescan:client:AddStolenPlate", vehicle, plate)
         else
             QBCore.Functions.Notify(Lang:t("notify.fvlockpick"), "error")
         end
@@ -727,7 +750,12 @@ function AttemptPoliceAlert(type)
             chance = Config.PoliceNightAlertChance
         end
         if math.random() <= chance then
-           TriggerServerEvent('police:server:policeAlert', Lang:t("info.palert") .. type)
+            if Config.UsePSDispatch then
+                local vehicle = QBCore.Functions.GetClosestVehicle()
+                exports['ps-dispatch']:VehicleTheft(vehicle)
+            else
+                TriggerServerEvent('police:server:policeAlert', Lang:t("info.palert") .. type)
+            end
         end
         AlertSend = true
         SetTimeout(Config.AlertCooldown, function()
