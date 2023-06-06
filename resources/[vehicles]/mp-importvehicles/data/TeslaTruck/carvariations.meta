@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CVehicleModelInfoVariation>
+  <variationData>
+    <Item>
+      <modelName>savanna</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            0
+            0
+            0
+            0 
+            0
+            0
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            118
+            118
+            3
+            0 
+            4
+            111
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            27
+            27
+            0
+            0 
+            4
+            111
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            106
+            106
+            0
+            0 
+            4
+            111
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            33
+            33
+            7
+            0 
+            4
+            111
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            42
+            42
+            0
+            0 
+            4
+            111
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            68
+            68
+            0
+            0 
+            4
+            111
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            112
+            112
+            0
+            0 
+            4
+            111
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            32
+            32
+            0
+            0 
+            4
+            111
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            36
+            36
+            0
+            0 
+            4
+            111
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            125
+            125
+            0
+            0 
+            4
+            111
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            90
+            90
+            2
+            0 
+            4
+            111
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+      </colors>
+      <kits>
+        <Item>765_savanna_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Standard White</Name>
+            <Value value="85" />
+          </Item>
+          <Item>
+            <Name>White Plate 2</Name>
+            <Value value="15" />
+          </Item>
+<!--          <Item>
+            <Name>SA Lake</Name>
+            <Value value="35" />
+          </Item>
+          <Item>
+            <Name>Sprunk Plate</Name>
+            <Value value="55" />
+          </Item>
+          <Item>
+            <Name>Patriot Plate</Name>
+            <Value value="30" />
+          </Item>
+          <Item>
+            <Name>Shrimps Plate</Name>
+            <Value value="30" />
+          </Item>
+          <Item>
+            <Name>Liberty City Plate 2</Name>
+            <Value value="3" />
+          </Item>
+          <Item>
+            <Name>Alderney Plate</Name>
+            <Value value="2" />
+          </Item>
+          <Item>
+            <Name>North Birds</Name>
+            <Value value="1" />
+          </Item>
+          <Item>
+            <Name>Miami Plate</Name>
+            <Value value="1" />
+          </Item>
+          <Item>
+            <Name>Epsilon Plate</Name>
+            <Value value="5" />
+          </Item>
+          <Item>
+            <Name>Lincoln Plate</Name>
+            <Value value="1" />
+          </Item>
+          <Item>
+            <Name>South Yankton Plate</Name>
+            <Value value="2" />
+          </Item>
+          <Item>
+            <Name>South Birds</Name>
+            <Value value="1" />
+          </Item>
+          <Item>
+            <Name>Alamo Plate</Name>
+            <Value value="2" />
+          </Item>
+          <Item>
+            <Name>Alamo Plate 2</Name>
+            <Value value="2" />
+          </Item>
+          <Item>
+            <Name>Cataldo Plate</Name>
+            <Value value="2" />
+          </Item>
+          <Item>
+            <Name>Swampland Plate</Name>
+            <Value value="1" />
+          </Item>
+          <Item>
+            <Name>Cascadia Plate</Name>
+            <Value value="5" />
+          </Item>
+          <Item>
+            <Name>SA Arts</Name>
+            <Value value="15" />
+          </Item>
+          <Item>
+            <Name>Colina Plate</Name>
+            <Value value="1" />
+          </Item>
+          <Item>
+            <Name>Coloverdo Plate</Name>
+            <Value value="2" />
+          </Item>
+          <Item>
+            <Name>Jefferson Plate</Name>
+            <Value value="4" />
+          </Item>
+          <Item>
+            <Name>SA Yellow</Name>
+            <Value value="8" />
+          </Item>
+          <Item>
+            <Name>Minnewa Plate</Name>
+            <Value value="1" />
+          </Item>
+          <Item>
+            <Name>yankton plate 2</Name>
+            <Value value="1" />
+          </Item>
+          <Item>
+            <Name>Misquakewan Plate</Name>
+            <Value value="1" />
+          </Item>
+          <Item>
+            <Name>SA Digital</Name>
+            <Value value="15" />
+          </Item>-->
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="1" />
+      <sirenSettings value="0" />
+    </Item> 
+  </variationData>
+</CVehicleModelInfoVariation>

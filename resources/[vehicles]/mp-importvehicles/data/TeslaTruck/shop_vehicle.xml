@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDataFileMgr__ContentsOfDataFileXml>
+  <disabledFiles />
+  <includedXmlFiles />
+  <includedDataFiles />
+  <dataFiles>
+<!-- :)-->
+    <Item>
+      <filename>dlc_spsavannaCRC:/common/data/levels/gta5/vehicles.meta</filename>
+      <fileType>VEHICLE_METADATA_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
+    </Item><!--
+    <Item>
+      <filename>dlc_spsavannaCRC:/common/data/levels/gta5/vehicles/aa42f76f.ymt</filename>
+      <fileType>VEHICLE_METADATA_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
+    </Item>-->
+    <Item>
+      <filename>dlc_spsavannaCRC:/common/data/carcols.meta</filename>
+      <fileType>CARCOLS_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
+    </Item>
+    <Item>
+      <filename>dlc_spsavannaCRC:/common/data/carvariations.meta</filename>
+      <fileType>VEHICLE_VARIATION_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
+    </Item>
+    <Item>
+      <filename>dlc_spsavannaCRC:/common/data/dlctext.meta</filename>
+      <fileType>TEXTFILE_METAFILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="true" />
+    </Item>
+    <Item>
+      <filename>dlc_spsavannaCRC:/common/data/handling.meta</filename>
+      <fileType>HANDLING_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
+    </Item>
+    <Item>
+      <filename>dlc_spsavanna:/%PLATFORM%/audio/dlcsavanna_game.dat</filename>
+      <fileType>AUDIO_GAMEDATA</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
+    </Item>
+    <Item>
+      <filename>dlc_spsavanna:/common/data/levels/gta5/vehicles/aa42f76f.rpf</filename>
+      <fileType>RPF_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="true" />
+    </Item>
+    <Item>
+      <filename>dlc_spsavanna:/%PLATFORM%/levels/spsavanna/vehiclemods/savanna_mods.rpf</filename>
+      <fileType>RPF_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="true" />
+    </Item>
+  </dataFiles>
+  <contentChangeSets>
+    <Item>
+      <changeSetName>SP_SAVANNA_AUTOGEN</changeSetName>
+      <filesToDisable />
+      <filesToEnable>
+            <Item>dlc_spsavannaCRC:/common/data/levels/gta5/vehicles.meta</Item>
+<!--            <Item>dlc_spsavannaCRC:/common/data/levels/gta5/vehicles/aa42f76f.ymt</Item>-->
+            <Item>dlc_spsavannaCRC:/common/data/carcols.meta</Item>
+            <Item>dlc_spsavannaCRC:/common/data/carvariations.meta</Item>
+            <Item>dlc_spsavannaCRC:/common/data/dlctext.meta</Item>
+            <Item>dlc_spsavannaCRC:/common/data/handling.meta</Item>
+            <Item>dlc_spsavanna:/%PLATFORM%/audio/dlcsavanna_game.dat</Item>
+            <Item>dlc_spsavanna:/common/data/levels/gta5/vehicles/aa42f76f.rpf</Item>
+            <Item>dlc_spsavanna:/%PLATFORM%/levels/spsavanna/vehiclemods/savanna_mods.rpf</Item>
+      </filesToEnable>
+      <executionConditions />
+      <txdToLoad />
+      <txdToUnload />
+      <residentResources />
+      <unregisterResources />
+    </Item>
+  </contentChangeSets>
+  <patchFiles />
+</CDataFileMgr__ContentsOfDataFileXml>
