@@ -154,3 +154,26 @@ ox_target:addGlobalVehicle({
         end
     }
 })
+
+ox_target:addGlobalPed({
+    {
+        type = "client",
+        event = "bunny-cuff:client:CuffPlayer", 
+        icon = "fas fa-hands",
+        label = "Cuff Player",
+        item = 'handcuffs',
+    },
+    {
+        type = "client",
+        event = "bunny-cuff:client:UnCuffFully",
+        icon = "fas fa-hands", 
+        label = "UnCuff Player",
+        item = 'handcuffs',
+    },
+    {
+        type = "client",
+        event = "police:client:EscortPlayer",
+        icon = "fas fa-key",
+        label = "Escort",
+    },
+})
