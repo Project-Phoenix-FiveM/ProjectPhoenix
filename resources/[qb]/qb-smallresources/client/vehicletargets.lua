@@ -1,3 +1,5 @@
+local insideShop = false
+
 local bones = {
     "door_dside_f",
     "door_dside_r",
@@ -13,34 +15,87 @@ exports['qb-target']:AddTargetBone(bones, {
             event = "police:client:PutPlayerInVehicle",
             icon = "fas fa-chevron-circle-left",
             label = "Place In Vehicle",
+            canInteract = function()
+                if insideShop then return false end
+                    QBCore.Functions.Notify("You cant do this in here.", "error")
+                    return true
+                end
+            end,
         },
         {
             type = "client",
             event = "police:client:SetPlayerOutVehicle",
             icon = "fas fa-chevron-circle-right",
             label = "Take Out Vehicle",
-        },
+            canInteract = function()
+                if insideShop then return false end
+                    QBCore.Functions.Notify("You cant do this in here.", "error")
+                    return true
+                end
+            end,
+        }, 
         {
             type = "client",
             event = "qb-trunk:client:GetIn",
             icon = "fas fa-user-secret",
             label = "Get In Trunk",
+            canInteract = function()
+                if insideShop then return false end
+                    QBCore.Functions.Notify("You cant do this in here.", "error")
+                    return true
+                end
+            end,
         },
         {
             type = "client",
             event = "qb:flipvehicle", 
             icon = "fas fa-car",
             label = "Flip Vehicle",
+            canInteract = function()
+                if insideShop then return false end
+                    QBCore.Functions.Notify("You cant do this in here.", "error")
+                    return true
+                end
+            end,
         },
         {
             type = "client",
             event = "vehiclekeys:client:GiveKeys",
             icon = "fas fa-key", 
             label = "Give Keys",
-        },
+            canInteract = function()
+                if insideShop then return false end
+                    QBCore.Functions.Notify("You cant do this in here.", "error")
+                    return true
+                end
+            end,
+        }, 
     },
 distance = 4.0,
-})
+}) 
+
+CreateThread(function()
+    exports["qb-polyzone"]:AddBoxZone("carshop1", vector3(-45.84, -1096.88, 26.42), 14.2, 27.0, {
+      heading=339,
+      minZ=25.42,
+      maxZ=29.42,
+      data = {
+        id = "carshop:1", 
+      }
+    })
+end)
+
+AddEventHandler("qb-polyzone:enter", function(zone, data)
+    if zone == "carshop1" then
+      insideShop = true
+    end
+  end)
+  
+  AddEventHandler("qb-polyzone:exit", function(zone, data)
+    if zone == "carshop1" then
+        insideShop = false
+    end
+  end)
 
 -- flip vehicle
 RegisterNetEvent("qb:flipvehicle", function()
