@@ -7,7 +7,6 @@ Citizen.CreateThread( function()
 	local ped = PlayerPedId()
 		if jumpDisabled and resetcounter > 0 and IsPedJumping(ped) then	
 			SetPedToRagdoll(ped, 1000, 1000, 3, 0, 0, 0)
-			print("jump")
 			resetcounter = 0
 		end
 		if not jumpDisabled and IsPedJumping(ped) then
