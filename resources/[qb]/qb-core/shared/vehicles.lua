@@ -5611,6 +5611,1353 @@ QBShared.Vehicles = {
     },
 
     --Custom Vehicles
-    
+    -- 180SX
+	['nis180'] = {
+		['name'] = '180SX',
+		['brand'] = 'Nissan',
+		['model'] = 'nis180',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `nis180`,
+		['shop'] = 'luxury',
+	},
+	-- 1979CamaroZ28
+	['z2879'] = {
+		['name'] = 'Camaro Z28',
+		['brand'] = 'Chevrolet',
+		['model'] = 'z2879',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `z2879`,
+		['shop'] = 'luxury',
+	},
+	-- 350Z
+	['maj350z'] = {
+		['name'] = '350z',
+		['brand'] = 'Nissan',
+		['model'] = 'maj350z',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `maj350z`,
+		['shop'] = 'luxury',
+	},
+	-- 675LTSpider
+	['675ltsp'] = {
+		['name'] = '675',
+		['brand'] = 'McLaren',
+		['model'] = '675ltsp',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `675ltsp`,
+		['shop'] = 'luxury',
+	},
+	-- 720s
+	['m720'] = {
+		['name'] = '720s',
+		['brand'] = 'McLaren',
+		['model'] = 'm720',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `m720`,
+		['shop'] = 'luxury',
+	},
+	-- 911GT3
+	['pgt322'] = {
+		['name'] = '911 GT3',
+		['brand'] = 'Porsche',
+		['model'] = 'pgt322',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `pgt322`,
+		['shop'] = 'luxury',
+	},
+	-- 911Turbo
+	['turbo33'] = {
+		['name'] = '911 930 Turbo',
+		['brand'] = 'Porsche',
+		['model'] = 'turbo33',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `turbo33`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	-- A45AMG
+	['a45amg'] = {
+		['name'] = 'A45 AMG',
+		['brand'] = 'Mercedes',
+		['model'] = 'a45amg',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `a45amg`,
+		['shop'] = 'luxury',
+	},
+	-- AlfaRomero
+	['gtam21'] = {
+		['name'] = 'Giulia GTA',
+		['brand'] = 'Alfa Romeo',
+		['model'] = 'gtam21',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `gtam21`,
+		['shop'] = 'luxury',
+	},
+	-- AMCJavelin-AMX
+	['aamx'] = {
+		['name'] = 'Javelin',
+		['brand'] = 'AMC',
+		['model'] = 'aamx',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `aamx`,
+		['shop'] = 'luxury',
+	},
+	-- AMGG63
+	['22g63'] = {
+		['name'] = 'G63 AMG',
+		['brand'] = 'Mercedes',
+		['model'] = '22g63',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `22g63`,
+		['shop'] = 'luxury',
+	},
+	-- AMGGT
+	['amggtbs'] = {
+		['name'] = 'GT AMG',
+		['brand'] = 'Mercedes',
+		['model'] = 'amggtbs',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `amggtbs`,
+		['shop'] = 'luxury',
+	},
+	-- AstonMartinVictor
+	['victor'] = {
+		['name'] = 'Victor',
+		['brand'] = 'Aston Martin',
+		['model'] = 'victor',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `victor`,
+		['shop'] = 'luxury',
+	},
+	-- AstonMartinVulcan
+	['vulcan'] = {
+		['name'] = 'Vulcan',
+		['brand'] = 'Aston Martin',
+		['model'] = 'vulcan',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `vulcan`,
+		['shop'] = 'luxury',
+	},
+	-- AudiA6
+	['a6'] = {
+		['name'] = 'A6',
+		['brand'] = 'Audi',
+		['model'] = 'a6',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `a6`,
+		['shop'] = 'luxury',
+	},
+	-- AudiRS6
+	['audirs6tk'] = {
+		['name'] = 'RS6',
+		['brand'] = 'Audi',
+		['model'] = 'audirs6tk',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `audirs6tk`,
+		['shop'] = 'luxury',
+	},
+	-- AventadorLP700-4
+	['lp700'] = {
+		['name'] = 'Aventador',
+		['brand'] = 'Lamborghini',
+		['model'] = 'lp700',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `lp700`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	-- Bearcat
+	['bcat'] = {
+		['name'] = 'Bearcat',
+		['brand'] = 'Police',
+		['model'] = 'bcat',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `bcat`,
+		['shop'] = 'police',
+	},
+	-- BentleyGT
+	['contss18'] = {
+		['name'] = 'Continental GT',
+		['brand'] = 'Bentley',
+		['model'] = 'contss18',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `contss18`,
+		['shop'] = 'luxury',
+	},
+	-- Bolide
+	['bolide'] = {
+		['name'] = 'Bolide',
+		['brand'] = 'Buggati',
+		['model'] = 'bolide',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `bolide`,
+		['shop'] = 'luxury',
+	},
+	-- Brabham
+	['bt62r'] = {
+		['name'] = '62R',
+		['brand'] = 'Brabham',
+		['model'] = 'bt62r',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `bt62r`,
+		['shop'] = 'luxury',
+	},
+	-- BugattiChiron
+	['chiron17'] = {
+		['name'] = 'Chiron',
+		['brand'] = 'Bugatti',
+		['model'] = 'chiron17',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `chiron17`,
+		['shop'] = 'luxury',
+	},
+	-- BugattiDivo
+	['bdivo'] = {
+		['name'] = 'Divo',
+		['brand'] = 'Bugatti',
+		['model'] = 'bdivo',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `bdivo`,
+		['shop'] = 'luxury',
+	},
+	-- C63AMG
+	['mbc63'] = {
+		['name'] = 'C63 AMG',
+		['brand'] = 'Mercedes',
+		['model'] = 'mbc63',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `mbc63`,
+		['shop'] = 'luxury',
+	},
+	-- CarreraGT
+	['cgt'] = {
+		['name'] = 'Carrera GT',
+		['brand'] = 'Porsche',
+		['model'] = 'cgt',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `cgt`,
+		['shop'] = 'luxury',
+	},
+	-- CivicEG6
+	['eg6'] = {
+		['name'] = 'Civic EG6',
+		['brand'] = 'Honda',
+		['model'] = 'eg6',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `eg6`,
+		['shop'] = 'luxury',
+	},
+	-- CivicTypeR-FK8
+	['fk8'] = {
+		['name'] = 'Civic TypeR',
+		['brand'] = 'Honda',
+		['model'] = 'fk8',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `fk8`,
+		['shop'] = 'luxury',
+	},
+	-- ClioRS
+	['cliors'] = {
+		['name'] = 'Clio IV RS',
+		['brand'] = 'Renault',
+		['model'] = 'cliors',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `cliors`,
+		['shop'] = 'luxury',
+	},
+	-- CorvetteC7
+	['c7'] = {
+		['name'] = 'Corvette C7',
+		['brand'] = 'Chevrolet',
+		['model'] = 'c7',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `c7`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	-- CouchCar
+	['couchcar'] = {
+		['name'] = 'Couch Supreme',
+		['brand'] = 'Flywheels',
+		['model'] = 'couchcar',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `couchcar`,
+		['shop'] = 'luxury',
+	},
+	-- CountachLPI800-4
+	['lpi8004'] = {
+		['name'] = 'Countach',
+		['brand'] = 'Lamborghini',
+		['model'] = 'lpi8004',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `lpi8004`,
+		['shop'] = 'luxury',
+	},
+	-- CW19
+	['cw2019'] = {
+		['name'] = 'CW 2019',
+		['brand'] = 'F1',
+		['model'] = 'cw2019',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `cw2019`,
+		['shop'] = 'luxury',
+	},
+	-- DB11
+	['db11'] = {
+		['name'] = 'DB11',
+		['brand'] = 'Aston Martin',
+		['model'] = 'db11',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `db11`,
+		['shop'] = 'luxury',
+	},
+	-- DiabloGTR
+	['500gtrlam'] = {
+		['name'] = 'Diablo GTR',
+		['brand'] = 'Lamborghini',
+		['model'] = '500gtrlam',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `500gtrlam`,
+		['shop'] = 'luxury',
+	},
+	-- DodgeCharger1969
+	['69charger'] = {
+		['name'] = 'Charger 1969',
+		['brand'] = 'Dodge',
+		['model'] = '69charger',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `69charger`,
+		['shop'] = 'luxury',
+	},
+	-- DodgeDart
+	['68dart'] = {
+		['name'] = 'Dart 1968',
+		['brand'] = 'Dodge',
+		['model'] = '68dart',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `68dart`,
+		['shop'] = 'luxury',
+	},
+	-- DodgeDemon
+	['demon'] = {
+		['name'] = 'Challenger Demon',
+		['brand'] = 'Dodge',
+		['model'] = 'demon',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `demon`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	-- DrafterWidebody
+	['draftgpr'] = {
+		['name'] = 'Drafter Widebody',
+		['brand'] = 'Obey',
+		['model'] = 'draftgpr',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `draftgpr`,
+		['shop'] = 'luxury',
+	},
+	-- Escalade
+	['gmt900escalade'] = {
+		['name'] = 'Escalade GMT',
+		['brand'] = 'Cadillac',
+		['model'] = 'gmt900escalade',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `gmt900escalade`,
+		['shop'] = 'luxury',
+	},
+	-- FairladyZ
+	['s30'] = {
+		['name'] = 'Fairlady Z',
+		['brand'] = 'Nissan',
+		['model'] = 's30',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `s30`,
+		['shop'] = 'luxury',
+	},
+	-- FairladyZ
+	['fusilade'] = {
+		['name'] = 'M3 E30',
+		['brand'] = 'BMW',
+		['model'] = 'fusilade',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `fusilade`,
+		['shop'] = 'luxury',
+		['tier'] = 'S+',
+	},
+	-- Ferrari488
+	['488gtb'] = {
+		['name'] = '488',
+		['brand'] = 'Ferrari',
+		['model'] = '488gtb',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `488gtb`,
+		['shop'] = 'luxury',
+	},
+	-- FerrariFXX-K
+	['fxxkevo-K'] = {
+		['name'] = 'FXX-K',
+		['brand'] = 'Ferrari',
+		['model'] = 'fxxkevo',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `fxxkevo`,
+		['shop'] = 'luxury',
+	},
+	-- FocusRS
+	['ffrs'] = {
+		['name'] = 'Focus RS',
+		['brand'] = 'Ford',
+		['model'] = 'ffrs',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `ffrs`,
+		['shop'] = 'luxury',
+	},
+	-- FordF150
+	['f150'] = {
+		['name'] = 'F150',
+		['brand'] = 'Ford',
+		['model'] = 'f150',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `f150`,
+		['shop'] = 'luxury',
+	},
+	-- FordGT
+	['gt17'] = {
+		['name'] = 'GT',
+		['brand'] = 'Ford',
+		['model'] = 'gt17',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `gt17`,
+		['shop'] = 'luxury',
+	},
+	-- FordMustang1965
+	['mustang65'] = {
+		['name'] = 'Mustang 1965',
+		['brand'] = 'Ford',
+		['model'] = 'mustang65',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `mustang65`,
+		['shop'] = 'luxury',
+	},
+	-- GT63AMG
+	['rmodgt63'] = {
+		['name'] = 'GT63 AMG',
+		['brand'] = 'Mercedes',
+		['model'] = 'rmodgt63',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `rmodgt63`,
+		['shop'] = 'luxury',
+	},
+	-- GT86
+	['gt86'] = {
+		['name'] = 'GT86',
+		['brand'] = 'Toyota',
+		['model'] = 'gt86',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `gt86`,
+		['shop'] = 'luxury',
+	},
+	-- Holden
+	['asea2'] = {
+		['name'] = 'Hodlen',
+		['brand'] = 'Vauxhall',
+		['model'] = 'asea',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `asea`,
+		['shop'] = 'luxury',
+	},
+	-- HondaS200
+	['s2k'] = {
+		['name'] = 'S2000',
+		['brand'] = 'Honda',
+		['model'] = 's2k',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `s2k`,
+		['shop'] = 'luxury',
+	},
+	-- HuracanLP-610
+	['610lb'] = {
+		['name'] = 'Huracan',
+		['brand'] = 'Lamborghini',
+		['model'] = '610lb',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `610lb`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	-- ImprezaSTI
+	['sim22'] = {
+		['name'] = 'Impreza STI',
+		['brand'] = 'Subaru',
+		['model'] = 'sim22',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `sim22`,
+		['shop'] = 'luxury',
+	},
+	-- ImprezaWRXSTI
+	['subwrx'] = {
+		['name'] = 'Impreza WRX',
+		['brand'] = 'Subaru',
+		['model'] = 'subwrx',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `subwrx`,
+		['shop'] = 'luxury',
+	},
+	-- IntegraTypeR-DC5
+	['dc5'] = {
+		['name'] = 'Integra Type-R',
+		['brand'] = 'Honda',
+		['model'] = 'dc5',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `dc5`,
+		['shop'] = 'luxury',
+	},
+	-- JeepGrandCherokee
+	['trhawk'] = {
+		['name'] = 'Cherokee Trackhawk',
+		['brand'] = 'Jeep',
+		['model'] = 'trhawk',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `trhawk`,
+		['shop'] = 'luxury',
+	},
+	-- KarinDilettante
+	['dilettantedx'] = {
+		['name'] = 'Dilettante DX',
+		['brand'] = 'Karin',
+		['model'] = 'dilettantedx',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `dilettantedx`,
+		['shop'] = 'luxury',
+	},
+	-- KoenigseggJesko
+	['jesko'] = {
+		['name'] = 'Jesko',
+		['brand'] = 'Koenigsegg',
+		['model'] = 'jesko',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `jesko`,
+		['shop'] = 'luxury',
+	},
+	-- LandCruiser100
+	['lc100'] = {
+		['name'] = 'Land Cruiser',
+		['brand'] = 'Toyata',
+		['model'] = 'lc100',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `lc100`,
+		['shop'] = 'luxury',
+	},
+	-- LexusGS350
+	['gs350'] = {
+		['name'] = 'GS350',
+		['brand'] = 'Lexus',
+		['model'] = 'gs350',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `gs350`,
+		['shop'] = 'luxury',
+	},
+	-- LexusLFA
+	['lexlfa10'] = {
+		['name'] = 'LFA',
+		['brand'] = 'Lexus',
+		['model'] = 'lexlfa10',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `lexlfa10`,
+		['shop'] = 'luxury',
+	},
+	-- LexusRCF
+	['rcf'] = {
+		['name'] = 'RCF',
+		['brand'] = 'Lexus',
+		['model'] = 'rcf',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `rcf`,
+		['shop'] = 'luxury',
+	},
+	-- M2
+	['m2f22'] = {
+		['name'] = 'M2',
+		['brand'] = 'BMW',
+		['model'] = 'm2f22',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `m2f22`,
+		['shop'] = 'luxury',
+	},
+	-- M3E36RocketBunny
+	['e36prb'] = {
+		['name'] = 'M3 E36 Rocket Bunny',
+		['brand'] = 'BMW',
+		['model'] = 'e36prb',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `e36prb`,
+		['shop'] = 'luxury',
+	},
+	-- M3E46
+	['m3e46'] = {
+		['name'] = 'M3 E46',
+		['brand'] = 'BMW',
+		['model'] = 'm3e46',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `m3e46`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	-- M4
+	['m4comp'] = {
+		['name'] = 'M4',
+		['brand'] = 'BMW',
+		['model'] = 'm4comp',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `m4comp`,
+		['shop'] = 'luxury',
+	},
+	-- M5
+	['22m5'] = {
+		['name'] = 'M5',
+		['brand'] = 'BMW',
+		['model'] = '22m5',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `22m5`,
+		['shop'] = 'luxury',
+	},
+	-- M5F10
+	['f10m5'] = {
+		['name'] = 'M5 F10',
+		['brand'] = 'BMW',
+		['model'] = 'f10m5',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `f10m5`,
+		['shop'] = 'luxury',
+	},
+	-- MazdaMX5
+	['na6'] = {
+		['name'] = 'MX5',
+		['brand'] = 'Mazda',
+		['model'] = 'na6',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `na6`,
+		['shop'] = 'luxury',
+	},
+	-- MazdaRX7FC
+	['mfc'] = {
+		['name'] = 'RX7 FC',
+		['brand'] = 'Mazda',
+		['model'] = 'mfc',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `mfc`,
+		['shop'] = 'luxury',
+		['tier'] = 'S+',
+	},
+	-- MazdaRX7FD
+	['fd'] = {
+		['name'] = 'RX7 FD',
+		['brand'] = 'Mazda',
+		['model'] = 'fd',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `fd`,
+		['shop'] = 'luxury',
+		['tier'] = 'S+',
+	},
+	-- MazdaRX8
+	['rx811'] = {
+		['name'] = 'RX8',
+		['brand'] = 'Mazda',
+		['model'] = 'rx811',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `rx811`,
+		['shop'] = 'luxury',
+	},
+	-- MitsubishiEvoIX
+	['evo9'] = {
+		['name'] = 'Evo 9',
+		['brand'] = 'Mitsubishi',
+		['model'] = 'evo9',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `evo9`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	-- MitsubishiEvoVI
+	['cp9a'] = {
+		['name'] = 'Evo 6',
+		['brand'] = 'Mitsubishi',
+		['model'] = 'cp9a',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `cp9a`,
+		['shop'] = 'luxury',
+	},
+	-- MotorPotty
+	['potty'] = {
+		['name'] = 'Motor Portable Toilet',
+		['brand'] = 'Flywheels',
+		['model'] = 'potty',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `potty`,
+		['shop'] = 'luxury',
+	},
+	-- Murcielago
+	['lp670'] = {
+		['name'] = 'Murcielago',
+		['brand'] = 'Lamborghini',
+		['model'] = 'lp670',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `lp670`,
+		['shop'] = 'luxury',
+	},
+	-- MustangGT
+	['mgt'] = {
+		['name'] = 'Mustang GT',
+		['brand'] = 'Ford',
+		['model'] = 'mgt',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `mgt`,
+		['shop'] = 'luxury',
+	},
+	-- MustangGTWidebody
+	['rmodmustang'] = {
+		['name'] = 'Mustang GT Widebody',
+		['brand'] = 'Ford',
+		['model'] = 'rmodmustang',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `rmodmustang`,
+		['shop'] = 'luxury',
+	},
+	-- NA1
+	['na1'] = {
+		['name'] = 'NSX NA1',
+		['brand'] = 'Honda',
+		['model'] = 'na1',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `na1`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	-- NC1
+	['nc1'] = {
+		['name'] = 'NSX NC1',
+		['brand'] = 'Honda',
+		['model'] = 'nc1',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `nc1`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	-- Odyssey
+	['honody'] = {
+		['name'] = 'Odyssey',
+		['brand'] = 'Honda',
+		['model'] = 'honody',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `honody`,
+		['shop'] = 'luxury',
+	},
+	-- PaganiHuayra
+	['bc'] = {
+		['name'] = 'Huayra',
+		['brand'] = 'Pagani',
+		['model'] = 'bc',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `bc`,
+		['shop'] = 'luxury',
+	},
+	-- PanameraTurbo
+	['panamera17turbo'] = {
+		['name'] = 'Panamera',
+		['brand'] = 'Porsche',
+		['model'] = 'panamera17turbo',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `panamera17turbo`,
+		['shop'] = 'luxury',
+	},
+	-- Polestar
+	['starone'] = {
+		['name'] = 'Polestar',
+		['brand'] = 'Volvo',
+		['model'] = 'starone',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `starone`,
+		['shop'] = 'luxury',
+	},
+	-- PrimoARD
+	['primoard'] = {
+		['name'] = 'ARD',
+		['brand'] = 'Primo',
+		['model'] = 'primoard',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `primoard`,
+		['shop'] = 'luxury',
+	},
+	-- R32
+	['r32'] = {
+		['name'] = 'R32',
+		['brand'] = 'Nissan',
+		['model'] = 'r32',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `r32`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	-- R33
+	['r33'] = {
+		['name'] = 'R33',
+		['brand'] = 'Nissan',
+		['model'] = 'r33',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `r33`,
+		['shop'] = 'luxury',
+	},
+	-- R34
+	['skyline'] = {
+		['name'] = 'R34',
+		['brand'] = 'Nissan',
+		['model'] = 'skyline',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `skyline`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	-- R35
+	['r35'] = {
+		['name'] = 'R35',
+		['brand'] = 'Nissan',
+		['model'] = 'r35',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `r35`,
+		['shop'] = 'luxury',
+	},
+	-- R35Nismo
+	['gtr'] = {
+		['name'] = 'R35 Nismo',
+		['brand'] = 'Nissan',
+		['model'] = 'gtr',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `gtr`,
+		['shop'] = 'luxury',
+	},
+	-- R8Hycade
+	['r8hycade'] = {
+		['name'] = 'R8 Hycade',
+		['brand'] = 'Audi',
+		['model'] = 'r8hycade',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `r8hycade`,
+		['shop'] = 'luxury',
+	},
+	-- R8V10
+	['r8v10'] = {
+		['name'] = 'R8 V10',
+		['brand'] = 'Audi',
+		['model'] = 'r8v10',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `r8v10`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	-- Raid
+	['raid'] = {
+		['name'] = 'Challenger Raid',
+		['brand'] = 'Dodge',
+		['model'] = 'raid',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `raid`,
+		['shop'] = 'luxury',
+	},
+	-- RangeRover
+	['rr14'] = {
+		['name'] = 'RR14',
+		['brand'] = 'Range Rover',
+		['model'] = 'rr14',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `rr14`,
+		['shop'] = 'luxury',
+	},
+	-- ReliantRobin
+	['robin'] = {
+		['name'] = 'Robin',
+		['brand'] = 'Reliant',
+		['model'] = 'robin',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `robin`,
+		['shop'] = 'luxury',
+	},
+	-- S15
+	['s15'] = {
+		['name'] = 'S15 Silvia',
+		['brand'] = 'Nissan',
+		['model'] = 's15',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `s15`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	-- Senna
+	['senna'] = {
+		['name'] = 'Senna',
+		['brand'] = 'McLaren',
+		['model'] = 'senna',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `senna`,
+		['shop'] = 'luxury',
+	},
+	-- SentinelSG4
+	['sentinelsg4'] = {
+		['name'] = 'Sentinel SG4',
+		['brand'] = 'Ubermacht',
+		['model'] = 'sentinelsg4',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `sentinelsg4`,
+		['shop'] = 'luxury',
+	},
+	-- ShoppingKart
+	['skart'] = {
+		['name'] = 'Kart',
+		['brand'] = 'Shopping',
+		['model'] = 'skart',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `skart`,
+		['shop'] = 'luxury',
+	},
+	-- SilviaS14Boss
+	['s14boss'] = {
+		['name'] = 'S14 Boss',
+		['brand'] = 'Nissan',
+		['model'] = 's14boss',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `s14boss`,
+		['shop'] = 'luxury',
+	},
+	-- SilviaS14Kouki
+	['s14'] = {
+		['name'] = 'S14 Kouki',
+		['brand'] = 'Nissan',
+		['model'] = 's14',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `s14`,
+		['shop'] = 'luxury',
+	},
+	-- SRTViper
+	['viper'] = {
+		['name'] = 'Viper SRT',
+		['brand'] = 'Dodge',
+		['model'] = 'viper',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `viper`,
+		['shop'] = 'luxury',
+	},
+	-- StingerGT
+	['kiagt'] = {
+		['name'] = 'Stinger GT',
+		['brand'] = 'Kia',
+		['model'] = 'kiagt',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `kiagt`,
+		['shop'] = 'luxury',
+	},
+	-- Stratum
+	['stratumc'] = {
+		['name'] = 'Stratum Custom',
+		['brand'] = 'Zircoflow',
+		['model'] = 'stratumc',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `stratumc`,
+		['shop'] = 'luxury',
+	},
+	-- SultanRSV8
+	['sultanrsv8'] = {
+		['name'] = 'V8 RS',
+		['brand'] = 'Sultan',
+		['model'] = 'sultanrsv8',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `sultanrsv8`,
+		['shop'] = 'luxury',
+	},
+	-- SupraA80
+	['a80'] = {
+		['name'] = 'Supra A80',
+		['brand'] = 'Toyata',
+		['model'] = 'a80',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `a80`,
+		['shop'] = 'luxury',
+	},
+	-- SupraA90
+	['tsgr20'] = {
+		['name'] = 'Supra A90',
+		['brand'] = 'Toyata',
+		['model'] = 'tsgr20',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `tsgr20`,
+		['shop'] = 'luxury',
+	},
+	-- TeslaTruck
+	['savanna'] = {
+		['name'] = 'Savanna',
+		['brand'] = 'Coil',
+		['model'] = 'savanna',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `savanna`,
+		['shop'] = 'luxury',
+	},
+	-- V8AstonMartin
+	['v877'] = {
+		['name'] = 'V8',
+		['brand'] = 'Aston Martin',
+		['model'] = 'v877',
+		['price'] = 99999, -- ED'IT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `v877`,
+		['shop'] = 'luxury',
+	},
+	-- Valkyrie
+	['valkyrietp'] = {
+		['name'] = 'Valkyrie',
+		['brand'] = 'Aston Martin',
+		['model'] = 'valkyrietp',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `valkyrietp`,
+		['shop'] = 'luxury',
+	},
+	-- Veloster
+	['veln'] = {
+		['name'] = 'Veloster',
+		['brand'] = 'Hyundai',
+		['model'] = 'veln',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `veln`,
+		['shop'] = 'luxury',
+	},
+	-- ZL1
+	['exor'] = {
+		['name'] = 'Camaro ZL1',
+		['brand'] = 'Chevrolet',
+		['model'] = 'exor',
+		['price'] = 99999, -- EDIT ME
+		['categoryLabel'] = 'Import',
+		['hash'] = `exor`,
+		['shop'] = 'luxury',
+	},
+	-- 6STR Customs
+	-- Gauntlet WiseGuy
+	['gauntlet6str'] = {
+		['name'] = 'Gauntlet 6STR Custom',
+		['brand'] = 'Bravado',
+		['model'] = 'gauntlet6str',
+		['price'] = 300000,
+		['categoryLabel'] = 'Tuner',
+		['hash'] = `gauntlet6str`,
+		['shop'] = 'luxury',
+	},
+	-- Tempesta WiseGuy
+	['tempesta2'] = {
+		['name'] = 'Tempesta Widebody',
+		['brand'] = 'Pegassi',
+		['model'] = 'tempesta2',
+		['price'] = 300000,
+		['categoryLabel'] = 'Tuner',
+		['hash'] = `tempesta2`,
+		['shop'] = 'luxury',
+	},
+	-- Schwartzer WiseGuy
+	['schwarzer2'] = {
+		['name'] = 'Schwartzer Widebody',
+		['brand'] = 'Benefactor',
+		['model'] = 'schwarzer2',
+		['price'] = 300000,
+		['categoryLabel'] = 'Tuner',
+		['hash'] = `schwarzer2`,
+		['shop'] = 'luxury',
+	},
+	-- Ruiner WiseGuy
+	['ruiner6str'] = {
+		['name'] = 'Ruiner 450 Custom',
+		['brand'] = 'Imponte',
+		['model'] = 'ruiner6str',
+		['price'] = 300000,
+		['categoryLabel'] = 'Tuner',
+		['hash'] = `ruiner6str`,
+		['shop'] = 'luxury',
+	},
+	-- Drift Yosemite
+	['yosemite6str'] = {
+		['name'] = 'Drift Yosemite',
+		['brand'] = 'Declasse',
+		['model'] = 'yosemite6str',
+		['price'] = 300000,
+		['categoryLabel'] = 'Tuner',
+		['hash'] = `yosemite6str`,
+		['shop'] = 'luxury',
+	},
+	-- Sentinel WiseGuy
+	['sentinel6str2'] = {
+		['name'] = 'Sentinel Classic Custom',
+		['brand'] = 'Ubermacht',
+		['model'] = 'sentinel6str2',
+		['price'] = 300000,
+		['categoryLabel'] = 'Tuner',
+		['hash'] = `sentinel6str2`,
+		['shop'] = 'luxury',
+	},
+	-- Drift Ellie
+	['ellie6str'] = {
+		['name'] = 'Drift Ellie',
+		['brand'] = 'Vapid',
+		['model'] = 'ellie6str',
+		['price'] = 300000,
+		['categoryLabel'] = 'Tuner',
+		['hash'] = `ellie6str`,
+		['shop'] = 'luxury',
+	},
+	-- ZR380 WiseGuy
+	['zr3806str'] = {
+		['name'] = 'ZR380 6STR Custom',
+		['brand'] = 'Annis',
+		['model'] = 'zr3806str',
+		['price'] = 300000,
+		['categoryLabel'] = 'Tuner',
+		['hash'] = `zr3806str`,
+		['shop'] = 'luxury',
+	},
+	['tampa3'] = {
+		['name'] = 'Drift Tampa',
+		['brand'] = 'Declasse',
+		['model'] = 'tampa3',
+		['price'] = 300000,
+		['categoryLabel'] = 'Tuner',
+		['hash'] = `tampa3`,
+		['shop'] = 'luxury',
+	},
+	['ladybird6str'] = {
+		['name'] = 'Ladybird 6STR',
+		['brand'] = 'BF',
+		['model'] = 'ladybird6str',
+		['price'] = 300000,
+		['categoryLabel'] = 'Tuner',
+		['hash'] = `ladybird6str`,
+		['shop'] = 'luxury',
+		["tier"] = "S+", --see this
+	},
+	
+	-- VIPER'S IMPORTS!!!
+	-- Mustang Spec-R
+	['rtrdxr'] = {
+		['name'] = 'Mustang RTR Spec-5',
+		['brand'] = 'Ford',
+		['model'] = 'rtrdxr',
+		['price'] = 170000,
+		['categoryLabel'] = 'Muscle',
+		['hash'] = `rtrdxr`,
+		['shop'] = 'luxury',
+	},
+	-- Yamaha R1
+	['r1'] = {
+		['name'] = 'R1',
+		['brand'] = 'Yamaha',
+		['model'] = 'r1',
+		['price'] = 99999, -- Change Me
+		['categoryLabel'] = 'Motorcycles',
+		['hash'] = `r1`,
+		['shop'] = 'luxury',
+	},
+	-- ZX10R
+	['zx10r'] = {
+		['name'] = 'ZX10R',
+		['brand'] = 'Kawasaki',
+		['model'] = 'zx10r',
+		['price'] = 99999,
+		['categoryLabel'] = 'Motorcycles',
+		['hash'] = `zx10r`,
+		['shop'] = 'luxury',
+	},
+	-- Rolls Royce Cullinan
+	['rculi'] = {
+		['name'] = 'Cullinan',
+		['brand'] = 'Rolls Royce',
+		['model'] = 'rculi',
+		['price'] = 99999,
+		['categoryLabel'] = 'Suvs',
+		['hash'] = `rculi`,
+		['shop'] = 'luxury',
+	},
+	-- Tesla Model S
+	['TeslaModelS'] = {
+		['name'] = 'Model S',
+		['brand'] = 'Tesla',
+		['model'] = 'TeslaModelS',
+		['price'] = 99999,
+		['categoryLabel'] = 'Sports',
+		['hash'] = `TeslaModelS`,
+		['shop'] = 'luxury',
+	},
+	-- Porsche 718 GT4
+	['por718gt4'] = {
+		['name'] = '718 GT4',
+		['brand'] = 'Porsche',
+		['model'] = 'por718gt4',
+		['price'] = 99999,
+		['categoryLabel'] = 'Sports',
+		['hash'] = `por718gt4`,
+		['shop'] = 'luxury',
+	},
+	-- Maserati GranTurismo Liberty Walk
+	['mgt18lb'] = {
+		['name'] = 'GranTurismo LW',
+		['brand'] = 'Maserati',
+		['model'] = 'mgt18lb',
+		['price'] = 99999,
+		['categoryLabel'] = 'Sports',
+		['hash'] = `mgt18lb`,
+		['shop'] = 'luxury',
+	},
+	-- Pallet Car
+	['palletcar'] = {
+		['name'] = 'Pallet Lifter SS',
+		['brand'] = 'Flywheels',
+		['model'] = 'palletcar',
+		['price'] = 99999,
+		['categoryLabel'] = 'Off-Road',
+		['hash'] = `palletcar`,
+		['shop'] = 'luxury',
+	},	
+	-- R35 Liberty Walk
+	['lwgtr'] = {
+		['name'] = 'GTR R35 Liberty Walk',
+		['brand'] = 'Nissan',
+		['model'] = 'lwgtr',
+		['price'] = 99999,
+		['categoryLabel'] = 'Sports',
+		['hash'] = `lwgtr`,
+		['shop'] = 'luxury',
+	},
+		-- R35 Liberty Walk
+	['nisr32'] = {
+		['name'] = 'R32 Nismo',
+		['brand'] = 'Nissan',
+		['model'] = 'nisr32',
+		['price'] = 99999,
+		['categoryLabel'] = 'Sports',
+		['hash'] = `nisr32`,
+		['shop'] = 'luxury',
+	},
+	-- Delorean DMC12
+	['dmc12'] = {
+		['name'] = 'DMC 12',
+		['brand'] = 'Delorean',
+		['model'] = 'nisr32',
+		['price'] = 99999,
+		['categoryLabel'] = 'Sports',
+		['hash'] = `nisr32`,
+		['shop'] = 'luxury',
+	},
     
 }
