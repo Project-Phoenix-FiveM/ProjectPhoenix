@@ -23,7 +23,8 @@ client_scripts {
     'client/functions.lua',
     'client/loops.lua',
     'client/events.lua',
-    'client/drawtext.lua'
+    'client/drawtext.lua',
+    'client/cl_rpc.lua'
 }
 
 server_scripts {
@@ -34,7 +35,8 @@ server_scripts {
     'server/events.lua',
     'server/commands.lua',
     'server/exports.lua',
-    'server/debug.lua'
+    'server/debug.lua',
+    'server/sv_rpc.lua'
 }
 
 ui_page 'html/index.html'
