@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CVehicleModelInfoVariation>
+  <variationData>
+     <Item>
+      <modelName>mustang65</modelName>
+      <colors>
+        <Item>
+          <indices content="char_array">
+            28 
+            134 
+            4
+            156 
+            28
+            27
+            27
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            56 
+            134 
+            4
+            156 
+            11
+            58
+            58
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            52 
+            52 
+            4 
+            156 
+            52
+            99
+            99
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            0 
+            29 
+            4 
+            156 
+            11
+            34
+            34
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            62 
+            53 
+            4 
+            156 
+            62
+            53
+            53
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            74 
+            74 
+            4
+            156 
+            11
+            74
+            74
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            4 
+            4 
+            4
+            156 
+            11
+            111
+            111
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            69 
+            28
+            4
+            106 
+            69
+            28
+            28
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            103 
+            110 
+            4 
+            156 
+            11
+            110
+            110
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            97 
+            97 
+            4
+            156 
+            104
+            11
+            11
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            107 
+            107
+            4 
+            156 
+            38
+            38
+            38
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            136 
+            134 
+            4 
+            156 
+            11
+            34
+            34
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            134 
+            0 
+            4 
+            156 
+            154
+            134
+            134
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            68 
+            42 
+            4 
+            156 
+            68
+            42
+            42
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            92 
+            29 
+            4
+            156 
+            11
+            34
+            34
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            32 
+            32 
+            4 
+            156 
+            1
+            32
+            32
+          </indices>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            91 
+            29 
+            4 
+            156 
+            29
+            91
+            91
+          </indices>
+        </Item>
+      </colors>
+      <kits>
+        <Item>mustang65_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>Blue Plate</Name>
+            <Value value="50" />
+          </Item>
+          <Item>
+            <Name>Yellow Plate</Name>
+            <Value value="50" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="2" />
+      <sirenSettings value="0" />
+    </Item>
+  </variationData>
+</CVehicleModelInfoVariation>

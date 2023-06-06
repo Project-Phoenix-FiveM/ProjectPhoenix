@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CVehicleModelInfoVariation>
+  <variationData>
+	<Item>
+      <modelName>turbo33</modelName>
+      <colors>
+        <Item>
+          <indices>
+            <Item value="28" />
+            <Item value="28" />
+            <Item value="28" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+        <Item>
+          <indices>
+            <Item value="107" />
+            <Item value="0" />
+            <Item value="112" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="49" />
+            <Item value="0" />
+            <Item value="66" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="74" />
+            <Item value="0" />
+            <Item value="68" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="62" />
+            <Item value="0" />
+            <Item value="4" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="73" />
+            <Item value="0" />
+            <Item value="68" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="64" />
+            <Item value="0" />
+            <Item value="61" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="96" />
+            <Item value="0" />
+            <Item value="101" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="101" />
+            <Item value="0" />
+            <Item value="98" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="106" />
+            <Item value="0" />
+            <Item value="147" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="99" />
+            <Item value="0" />
+            <Item value="147" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="5" />
+            <Item value="0" />
+            <Item value="111" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="147" />
+            <Item value="0" />
+            <Item value="1" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="11" />
+            <Item value="0" />
+            <Item value="2" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="34" />
+            <Item value="0" />
+            <Item value="3" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="111" />
+            <Item value="0" />
+            <Item value="111" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>
+	<Item>
+          <indices>
+            <Item value="6" />
+            <Item value="0" />
+            <Item value="111" />
+            <Item value="1" />
+          </indices>
+          <liveries/>
+        </Item>        
+      </colors>
+      <kits>
+        <Item>5065_turbo33_modkit</Item>
+      </kits>
+      <windowsWithExposedEdges />
+      <plateProbabilities>
+        <Probabilities>
+          <Item>
+            <Name>standard white</Name>
+            <Value value="90" />
+          </Item>
+          <Item>
+            <Name>white plate 2</Name>
+            <Value value="10" />
+          </Item>
+        </Probabilities>
+      </plateProbabilities>
+      <lightSettings value="0" />
+      <sirenSettings value="0" />
+    </Item>
+  </variationData>
+</CVehicleModelInfoVariation>

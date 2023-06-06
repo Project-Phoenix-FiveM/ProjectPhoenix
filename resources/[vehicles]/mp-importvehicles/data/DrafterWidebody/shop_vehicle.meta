@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ShopVehicleDataArray>
+	<Vehicles>
+		<Item>
+			<lockHash>CU_DRAFTGPR_VEH</lockHash>
+			<modelNameHash>draftgpr</modelNameHash>
+			<cost value ="100"/>
+			<textLabel>DRAFTGPR</textLabel>
+			<vehicleMods />
+		</Item>
+	</Vehicles>	
+</ShopVehicleDataArray>
