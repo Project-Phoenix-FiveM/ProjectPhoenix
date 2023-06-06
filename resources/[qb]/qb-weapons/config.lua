@@ -152,6 +152,37 @@ Config.DurabilityMultiplier = {
     ['weapon_fireextinguisher']      = 0.15,
     ['weapon_hazardcan']             = 0.15,
     ['weapon_fertilizercan']         = 0.15,
+
+    --Custom Weapons
+    ['weapon_ak47'] 			     = 0.15,
+    ['weapon_de'] 	                 = 0.15,
+    ['weapon_fnx45'] 			     = 0.15,
+    ['weapon_glock17'] 		         = 0.15,
+    ['weapon_m4'] 			         = 0.15,
+    ['weapon_hk416'] 			     = 0.15,
+    ['weapon_mk14'] 			     = 0.15,
+    ['weapon_m110'] 			     = 0.15,
+    ['weapon_huntingrifle'] 	     = 0.20,
+    ['weapon_ar15'] 			     = 0.15,
+    ['weapon_m9'] 	                 = 0.15,
+    ['weapon_m70'] 			         = 0.15,
+    ['weapon_m1911'] 		         = 0.15,
+    ['weapon_mac10'] 			     = 0.15,
+    ['weapon_uzi'] 	                 = 0.15,
+    ['weapon_mp9'] 	                 = 0.15,
+    ['weapon_mossberg'] 		     = 0.15,
+    ['weapon_remington'] 		     = 0.15,
+    ['weapon_scarh'] 			     = 0.15,
+    ['weapon_shiv'] 	             = 0.15,
+    ['weapon_katana'] 	             = 0.15,
+    ['weapon_sledgehammer'] 	     = 0.15,
+    ['weapon_mp5'] 			         = 0.15,
+    ['weapon_glock18c'] 		     = 0.15,
+    ['weapon_glock22'] 			     = 0.15,
+    ['weapon_aks74'] 			     = 0.15,
+    ['weapon_ak74'] 			     = 0.15,
+ 
+        
 }
 
 Config.WeaponRepairPoints = {
