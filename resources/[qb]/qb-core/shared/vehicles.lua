@@ -5547,4 +5547,70 @@ QBShared.Vehicles = {
         ['hash'] = `virtue`,
         ['shop'] = 'luxury',
     },
+
+    --PojectSloth Vehicles
+    ['pd1'] = {
+        ['name'] = 'Ford',
+        ['brand'] = 'Crown Victoria',
+        ['model'] = 'pd1',
+        ['price'] = 72000,
+        ['category'] = 'police',
+        ['categoryLabel'] = 'police',
+        ['hash'] = `pd1`,
+        ['shop'] = 'police',
+    },
+    ['mach1rb'] = {
+        ['name'] = 'Ford',
+        ['brand'] = 'Mustang 2021',
+        ['model'] = 'mach1rb',
+        ['price'] = 72000,
+        ['category'] = 'police',
+        ['categoryLabel'] = 'police',
+        ['hash'] = `mach1rb`,
+        ['shop'] = 'police',
+    },
+    ['char'] = {
+        ['name'] = 'Dodge',
+        ['brand'] = 'Charger 2018',
+        ['model'] = 'char',
+        ['price'] = 72000,
+        ['category'] = 'police',
+        ['categoryLabel'] = 'police',
+        ['hash'] = `char`,
+        ['shop'] = 'police',
+    },
+    ['poldemonrb'] = {
+        ['name'] = 'Dodge',
+        ['brand'] = 'Demon',
+        ['model'] = 'poldemonrb',
+        ['price'] = 72000,
+        ['category'] = 'police',
+        ['categoryLabel'] = 'police',
+        ['hash'] = `poldemonrb`,
+        ['shop'] = 'police',
+    },
+    ['zr1rb'] = {
+        ['name'] = 'Police',
+        ['brand'] = 'Bike',
+        ['model'] = 'zr1rb',
+        ['price'] = 72000,
+        ['category'] = 'police',
+        ['categoryLabel'] = 'police',
+        ['hash'] = `zr1rb`,
+        ['shop'] = 'police',
+    },
+    ['as350'] = {
+        ['name'] = 'AS',
+        ['brand'] = '350',
+        ['model'] = 'as350',
+        ['price'] = 72000,
+        ['category'] = 'police',
+        ['categoryLabel'] = 'police',
+        ['hash'] = `as350`,
+        ['shop'] = 'police',
+    },
+
+    --Custom Vehicles
+    
+    
 }
