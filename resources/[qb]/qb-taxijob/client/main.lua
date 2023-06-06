@@ -553,7 +553,8 @@ end)
 
 -- setup qb-target
 function setupTarget()
-    CreateThread(function()
+    print("This is to be fixed, May remove as not important.")
+    --[[ CreateThread(function()
         exports['qb-target']:SpawnPed({
             model = 'a_m_m_indian_01',
             coords = vector4(901.34, -170.06, 74.08, 228.81),
@@ -580,7 +581,7 @@ function setupTarget()
             spawnNow = true,
             currentpednumber = 0,
           })
-    end)
+    end) ]]
 end
 
 local zone
