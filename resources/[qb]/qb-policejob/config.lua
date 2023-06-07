@@ -470,6 +470,17 @@ Config.Items = {
             slot = 23,
             authorizedJobGrades = {0, 1, 2, 3, 4}
         }
+        [24] = {
+            name = "panicbutton",
+            price = 0,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 24,
+            authorizedJobGrades = {0, 1, 2, 3, 4}
+        }
+
+        panicbutton
     }
 }
 

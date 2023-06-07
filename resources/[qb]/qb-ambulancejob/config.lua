@@ -166,6 +166,14 @@ Config.Items = { -- Items found in the ambulance shop for players with the ambul
             type = "item",
             slot = 6,
         },
+        [7] = {
+            name = "panicbutton",
+            price = 0,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 7,
+        }
     }
 }
 

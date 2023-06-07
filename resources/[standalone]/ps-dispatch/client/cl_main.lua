@@ -410,3 +410,42 @@ RegisterNetEvent("ps-dispatch:client:clearAllBlips", function()
 	end
 	QBCore.Functions.Notify('All dispatch blips cleared', "success")
 end)
+
+--new panic button 
+local PressedPanicButton = false
+RegisterNetEvent("ps-dispatch:client:TriggerPanicButton", function()
+	if (PlayerData.job.name == "police" or PlayerData.job.type == "leo") or (PlayerData.job.name == "ambulance") then 
+		if not PressedPanicButton then 
+			QBCore.Functions.Progressbar("panic_button", "Pressing Panic Button...", 5000, false, true, {
+				disableMovement = false,
+				disableCarMovement = false,
+				disableMouse = false,
+				disableCombat = true,
+			}, {}, {}, {}, function() 
+				PressedPanicButton = true
+				PlayerData = QBCore.Functions.GetPlayerData()
+				QBCore.Functions.TriggerCallback("ps-dispatch:server:PressPanicButton", function(HasItem)
+					if HasItem then 
+						if (PlayerData.job.name == "police" or PlayerData.job.type == "leo") then
+							TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 7.0, "panicbutton", 7.0)
+							exports['ps-dispatch']:OfficerDown2()
+							PressedPanicButton = false
+						elseif (PlayerData.job.name == "ambulance") then
+							TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 7.0, "panicbutton", 7.0)
+							exports['ps-dispatch']:EMSDown2()
+							PressedPanicButton = false
+						end
+					else
+						PressedPanicButton = false
+					end
+				end)
+			end, function()
+				QBCore.Functions.Notify("Panic Button Canceled", "error")
+			end)
+		end
+	end
+end)
+
+function UsedPanicButton()
+	return PressedPanicButton
+end exports("UsedPanicButton", UsedPanicButton)

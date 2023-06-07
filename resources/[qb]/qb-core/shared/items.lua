@@ -400,6 +400,8 @@ QBShared.Items = {
     ['harness']                         = {['name'] = 'harness',                           ['label'] = 'Race Harness',              ['weight'] = 1000,         ['type'] = 'item',         ['image'] = 'harness.png',                 ['unique'] = true,          ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Racing Harness so no matter what you stay in the car' , ["created"] = nil, ["decay"] = 28.0, ["delete"] = true }, 
     ['jerry_can']                       = {['name'] = 'jerry_can',                         ['label'] = 'Jerrycan 20L',              ['weight'] = 20000,        ['type'] = 'item',         ['image'] = 'jerry_can.png',               ['unique'] = false,         ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'A can full of Fuel' , ["created"] = nil, ["decay"] = 28.0, ["delete"] = true }, 
 
+    --panicbutton
+    ['panicbutton'] = {['name'] = 'panicbutton',['label'] = 'Panic Button',["created"] = nil, ['weight'] = 100,	['type']= 'item',['image'] = 'panicbutton.png', ['unique'] = true,	['useable']= true ['shouldClose'] =true,['combinable'] = nil,['description'] = 'Some sort of button?', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true }, 
 
     --cdw-fuel 
     ["syphoningkit"]				 = {["name"] = "syphoningkit", 					["label"] = "Syphoning Kit", 			["weight"] = 5000, 		["type"] = "item", 		["image"] = "syphoningkit.png", 		["unique"] = true, 		["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "A kit made to siphon gasoline from vehicles.", ["created"] = nil, ["decay"] = 28.0, ["delete"] = true }, 

@@ -572,6 +572,34 @@ end
 
 exports('OfficerDown', OfficerDown)
 
+local function OfficerDown2()
+    local plyData = QBCore.Functions.GetPlayerData()
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local callsign = QBCore.Functions.GetPlayerData().metadata["callsign"]
+    TriggerServerEvent("dispatch:server:notify", {
+        dispatchcodename = "officerdown2", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = "10-78",
+        firstStreet = locationInfo,
+        name = "COP - " .. plyData.charinfo.firstname:sub(1, 1):upper() .. plyData.charinfo.firstname:sub(2) .. " " .. plyData.charinfo.lastname:sub(1, 1):upper() .. plyData.charinfo.lastname:sub(2),
+        model = nil,
+        plate = nil,
+        callsign = callsign,
+        priority = 2, -- priority
+        firstColor = nil,
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = _U('officerdown2'), -- message
+        job = { "ambulance", "police" } -- jobs that will get the alerts
+    })
+end
+
+exports('OfficerDown2', OfficerDown2)
+
 RegisterNetEvent("ps-dispatch:client:officerdown", function ()
     OfficerDown()
 end)
@@ -603,6 +631,35 @@ local function EmsDown()
 end
 
 exports('EmsDown', EmsDown)
+
+local function EmsDown2()
+    local plyData = QBCore.Functions.GetPlayerData()
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local callsign = QBCore.Functions.GetPlayerData().metadata["callsign"]
+    TriggerServerEvent("dispatch:server:notify", {
+        dispatchcodename = "emsdown2", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = "10-78",
+        firstStreet = locationInfo,
+        model = nil,
+        plate = nil,
+        callsign = callsign,
+        priority = 2, -- priority
+        firstColor = nil,
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = _U('emsdown2'), -- message
+        job = { "ambulance", "police" } -- jobs that will get the alerts
+    })
+end
+
+exports('EmsDown2', EmsDown2)
+
+
 
 RegisterNetEvent("ps-dispatch:client:emsdown", function ()
     EmsDown()

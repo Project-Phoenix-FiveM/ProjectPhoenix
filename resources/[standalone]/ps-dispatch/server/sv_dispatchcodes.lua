@@ -27,6 +27,8 @@ dispatchCodes = {
 	["311call"] =  {displayCode = '911', description = "311 Call", radius = 0, recipientList = {'FirstResponder', 'ambulance'}, blipSprite = 480, blipColour = 3, blipScale = 1.5, blipLength = 2, sound = "Lose_1st", sound2 = "GTAO_FM_Events_Soundset", offset = "false", blipflash = "false"},
 	["officerdown"] =  {displayCode = '10-99', description = "Officer Down", radius = 15.0, recipientList = {'FirstResponder', 'ambulance'}, blipSprite = 526, blipColour = 1, blipScale = 1.5, blipLength = 2, sound = "panicbutton", offset = "false", blipflash = "false"},
 	["emsdown"] =  {displayCode = '10-99', description = "EMS Down", radius = 15.0, recipientList = {'FirstResponder', 'ambulance'}, blipSprite = 526, blipColour = 3, blipScale = 1.5, blipLength = 2, sound = "panicbutton", offset = "false", blipflash = "false"},
+	["officerdown2"] =  {displayCode = '10-78', description = "Officer Needs Assistance", radius = 15.0, recipientList = {'police'}, blipSprite = 526, blipColour = 1, blipScale = 1.5, blipLength = 2, sound = "panicbutton", offset = "false", blipflash = "false"},
+	["emsdown2"] =  {displayCode = '10-78', description = "EMS Needs Assistance", radius = 15.0, recipientList = {'police'}, blipSprite = 526, blipColour = 1, blipScale = 1.5, blipLength = 2, sound = "panicbutton", offset = "false", blipflash = "false"},
 	["storerobbery"] =  {displayCode = '10-90', description = "Store Robbery In Progress", radius = 0, recipientList = {'LEO', 'police'}, blipSprite = 52, blipColour = 1, blipScale = 1.5, blipLength = 2, sound = "Lose_1st", sound2 = "GTAO_FM_Events_Soundset", offset = "false", blipflash = "false"},
 	["bankrobbery"] =  {displayCode = '10-90', description = "Fleeca Bank Robbery In Progress", radius = 0, recipientList = {'LEO', 'police'}, blipSprite = 500, blipColour = 2, blipScale = 1.5, blipLength = 2, sound = "robberysound", offset = "false", blipflash = "false"},
 	["paletobankrobbery"] =  {displayCode = '10-90', description = "Paleto Bank Robbery In Progress", radius = 0, recipientList = {'LEO', 'police'}, blipSprite = 500, blipColour = 12, blipScale = 1.5, blipLength = 2, sound = "robberysound", offset = "false", blipflash = "false"},
@@ -54,3 +56,5 @@ dispatchCodes = {
 	["explosion"] =  {displayCode = '10-80', description = "Explosion Reported", radius = 0, recipientList = {'LEO', 'police'}, blipSprite = 436, blipColour = 1, blipScale = 1.5, blipLength = 2, sound = "Lose_1st", sound2 = "GTAO_FM_Events_Soundset", offset = "false", blipflash = "false"},
 	["hunting"] =  {displayCode = '10-13', description = "Possible Hunting Violation", radius = 0, recipientList = {'LEO', 'police'}, blipSprite = 442, blipColour = 1, blipScale = 0, blipLength = 2, sound = "Lose_1st", sound2 = "GTAO_FM_Events_Soundset", offset = "false", blipflash = "false"},
 }
+
+

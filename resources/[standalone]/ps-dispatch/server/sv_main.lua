@@ -116,3 +116,17 @@ QBCore.Commands.Add("cleardispatchblips", "Clear all dispatch blips", {}, false,
         TriggerClientEvent('ps-dispatch:client:clearAllBlips', src)
     end
 end)
+
+--panic button
+QBCore.Functions.CreateUseableItem("panicbutton", function(source, item)
+	TriggerClientEvent("ps-dispatch:client:TriggerPanicButton", source)
+end)
+
+QBCore.Functions.CreateCallback("ps-dispatch:server:PressPanicButton", function(source, cb)
+	local Player = QBCore.Functions.GetPlayer(source)
+	if Player.Functions.GetItemByName("panicbutton") then 
+		cb(true)
+	else
+		cb(false)
+	end
+end)
