@@ -280,7 +280,8 @@ function EmoteCommandStart(source, args, raw)
         if IsInAnimation then
             EmoteCancel()
         else
-          QBCore.Functions.Notify('No Emote To Cancel', 'error')
+          --Removed annoying print.
+          --QBCore.Functions.Notify('No Emote To Cancel', 'error')
         end
       return
     elseif name == "help" then
