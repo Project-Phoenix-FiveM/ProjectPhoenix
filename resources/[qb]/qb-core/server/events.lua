@@ -150,12 +150,13 @@ end)
 
 -- Player
 
-RegisterNetEvent('QBCore:UpdatePlayer', function()
+RegisterNetEvent('QBCore:UpdatePlayer', function(hungerRate, thirstRate)
+    print('Updating Player', hungerRate, thirstRate)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if not Player then return end
-    local newHunger = Player.PlayerData.metadata['hunger'] - QBCore.Config.Player.HungerRate
-    local newThirst = Player.PlayerData.metadata['thirst'] - QBCore.Config.Player.ThirstRate
+    local newHunger = Player.PlayerData.metadata['hunger'] - hungerRate
+    local newThirst = Player.PlayerData.metadata['thirst'] - thirstRate
     if newHunger <= 0 then
         newHunger = 0
     end
