@@ -378,7 +378,7 @@ QBCore.Commands.Add("depot", Lang:t("commands.depot"), {{name = "price", help = 
     end
 end)
 
-QBCore.Commands.Add("impound", Lang:t("commands.impound"), {}, false, function(source)
+--[[ QBCore.Commands.Add("impound", Lang:t("commands.impound"), {}, false, function(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if Player.PlayerData.job.name == "police" and Player.PlayerData.job.onduty then
@@ -386,7 +386,7 @@ QBCore.Commands.Add("impound", Lang:t("commands.impound"), {}, false, function(s
     else
         TriggerClientEvent('QBCore:Notify', src, Lang:t("error.on_duty_police_only"), 'error')
     end
-end)
+end) ]]
 
 QBCore.Commands.Add("paytow", Lang:t("commands.paytow"), {{name = "id", help = Lang:t('info.player_id')}}, true, function(source, args)
     local src = source
@@ -1001,24 +1001,6 @@ RegisterNetEvent('police:server:deleteObject', function(objectId)
     TriggerClientEvent('police:client:removeObject', -1, objectId)
 end)
 
-RegisterNetEvent('police:server:Impound', function(plate, fullImpound, price, body, engine, fuel)
-    local src = source
-    price = price and price or 0
-    if IsVehicleOwned(plate) then
-        if not fullImpound then
-            MySQL.query(
-                'UPDATE player_vehicles SET state = ?, depotprice = ?, body = ?, engine = ?, fuel = ? WHERE plate = ?',
-                {0, price, body, engine, fuel, plate})
-            TriggerClientEvent('QBCore:Notify', src, Lang:t("info.vehicle_taken_depot", {price = price}))
-        else
-            MySQL.query(
-                'UPDATE player_vehicles SET state = ?, body = ?, engine = ?, fuel = ? WHERE plate = ?',
-                {2, body, engine, fuel, plate})
-            TriggerClientEvent('QBCore:Notify', src, Lang:t("info.vehicle_seized"))
-        end
-    end
-end)
-
 RegisterNetEvent('evidence:server:UpdateStatus', function(data)
     local src = source
     PlayerStatus[src] = data
@@ -1188,5 +1170,24 @@ CreateThread(function()
     while true do
         Wait(5000)
         UpdateBlips()
+    end
+end)
+
+--Impound
+RegisterNetEvent('police:server:Impound', function(plate, fullImpound, price, body, engine, fuel)
+    local src = source
+    local price = price and price or 0
+    if IsVehicleOwned(plate) then
+        if not fullImpound then
+            MySQL.Async.execute(
+                'UPDATE player_vehicles SET state = ?, depotprice = ?, body = ?, engine = ?, fuel = ? WHERE plate = ?',
+                {0, price, body, engine, fuel, plate})
+            TriggerClientEvent('QBCore:Notify', src, Lang:t("info.vehicle_taken_depot", {price = price}))
+        else
+            MySQL.Async.execute(
+                'UPDATE player_vehicles SET state = ?, depotprice = ?, body = ?, engine = ?, fuel = ?, garage = ? WHERE plate = ?',
+                {2, price, body, engine, fuel, "Seized", plate})
+            TriggerClientEvent('QBCore:Notify', src, Lang:t("info.vehicle_seized"))
+        end
     end
 end)

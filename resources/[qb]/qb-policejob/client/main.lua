@@ -214,3 +214,12 @@ CreateThread(function()
         EndTextCommandSetBlipName(blip)
     end
 end)
+
+function GetJobName(job)
+    if job == PlayerJob.name then
+        return true 
+    else 
+        return false
+    end
+end
+exports("GetJobName", GetJobName)

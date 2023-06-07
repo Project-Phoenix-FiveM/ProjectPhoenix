@@ -15,9 +15,13 @@ client_scripts {
     '@PolyZone/client.lua',
     '@PolyZone/BoxZone.lua',
     '@PolyZone/ComboZone.lua',
-    'client/main.lua'
+    'client/main.lua',
+    'client/cl_towreq.lua'
 }
 
-server_script 'server/main.lua'
+server_script {
+    'server/main.lua',
+    'server/sv_towreq.lua'
+}
 
 lua54 'yes'

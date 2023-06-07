@@ -155,6 +155,38 @@ ox_target:addGlobalVehicle({
     }
 })
 
+ox_target:addGlobalVehicle({
+    {
+        name = 'ox_target:impound',
+        icon = 'fa-solid fa-car',
+        label = "Impound",
+        bones = { 'door_dside_f', 'seat_dside_f', 'boot', 'hood' },
+        canInteract = function(entity, distance, coords, name, boneId)
+            if distance >= 0.9 then return end
+            return exports['qb-policejob']:GetJobName("police")
+        end,
+        onSelect = function(data)
+            TriggerEvent('qb-policejob:copimpound') 
+        end
+    }
+})
+
+ox_target:addGlobalVehicle({
+    {
+        name = 'ox_target:impoundTow',
+        icon = 'fa-solid fa-car',
+        label = "Impound",
+        bones = { 'door_dside_f', 'seat_dside_f', 'boot', 'hood' },
+        canInteract = function(entity, distance, coords, name, boneId)
+            if distance >= 0.9 then return end
+            return exports['qb-policejob']:GetJobName("tow")
+        end,
+        onSelect = function(data)
+            TriggerEvent('qb-policejob:towimpound') 
+        end
+    }
+})
+
 ox_target:addGlobalPlayer({ 
     {
         type = "client",

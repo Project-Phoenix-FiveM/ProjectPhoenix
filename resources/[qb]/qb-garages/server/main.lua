@@ -33,6 +33,29 @@ QBCore.Functions.CreateCallback("qb-garage:server:GetOutsideVehicle", function(s
     end)
 end)
 
+--impoundlot stuff
+QBCore.Functions.CreateCallback('qb-garages:server:GetDepotVehiclesPD', function(source, cb)
+    local state = 2
+    exports.oxmysql:execute('SELECT * FROM player_vehicles WHERE state = ?', {state}, function(result)
+        if result[1] ~= nil then
+            cb(result)
+        else
+            cb(result)
+        end
+    end)
+end)
+
+RegisterServerEvent('qb-police:server:returntoimpound')
+AddEventHandler('qb-police:server:returntoimpound', function(data)
+    local src = source
+	local plate = data.plate
+    local state = 0
+    TriggerClientEvent('QBCore:Notify', src, "Vehicle has been released to the impound", 'success')
+    exports.oxmysql:execute('UPDATE player_vehicles SET state = ? WHERE plate = ? AND garage = ?', {state, plate, "pillboxgarage"})
+end)
+
+--
+
 QBCore.Functions.CreateCallback("qb-garages:server:GetVehicleLocation", function(source, cb, plate)
     local src = source
     local vehicles = GetAllVehicles()
