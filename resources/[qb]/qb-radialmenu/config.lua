@@ -1320,6 +1320,16 @@ Config.JobInteractions = {
             event = 'qb-hotdogjob:client:ToggleSell',
             shouldClose = true
         }
+    },
+    ["realestate"] = {
+        {
+            id = 'housemenu',
+            title = 'List of houses',
+            icon = 'house-laptop',
+            type = 'client',
+            event = 'qb-realestate:client:OpenHouseListMenu',
+            shouldClose = true
+        } 
     }
 }
 
