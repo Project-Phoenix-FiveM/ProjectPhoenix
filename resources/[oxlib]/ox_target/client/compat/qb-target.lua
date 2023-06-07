@@ -13,7 +13,8 @@ local function convert(options)
     -- People may pass options as a hashmap (or mixed, even)
     for k, v in pairs(options) do
         if type(k) ~= 'number' then
-            table.insert(options, v)
+            -- table.insert(options, v)
+            options[#options+1] = v
         end
     end
 

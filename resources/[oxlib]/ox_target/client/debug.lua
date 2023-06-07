@@ -52,6 +52,7 @@ ox_target:addModel(`police`, {
     }
 })
 
+
 ox_target:addGlobalPed({
     {
         name = 'ped',
