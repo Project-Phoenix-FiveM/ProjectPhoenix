@@ -5,101 +5,64 @@ QBCore.Functions.CreateCallback("qb-signrobbery:server:GetObjects", function(sou
     cb(objects)
 end)
 
+
+local table = {
+    ["obj"] = {
+        [-949234773] = {"stopsign"},
+        [1502931467] = {"walkingmansign"},
+        [1191039009] = {"dontblockintersectionsign"},
+        [4138610559] = {"uturnsign"},
+        [3830972543] = {"noparkingsign"},
+        [2643325436] = {"leftturnsign"},
+        [793482617] = {"rightturnsign"},
+        [1021214550] = {"notrespassingsign"},
+        [3654973172] = {"yieldsign"},
+    },
+    ["Items"] = {
+        ["stopsign"] = {"StopSign"},
+        ["walkingmansign"] = {"WalkingManSign"},
+        ["dontblockintersectionsign"] = {"DontBlockIntersectionSign"},
+        ["uturnsign"] = {"UturnSign"},
+        ["noparkingsign"] = {"NoParkingSign"},
+        ["leftturnsign"] = {"LeftTurnSign"},
+        ["rightturnsign"] = {"RightTurnSign"},
+        ["notrespassingsign"] = {"NoTrespassingSign"},
+        ["yieldsign"] = {"YieldSign"},
+    }
+}
+
 RegisterNetEvent('qb-signrobbery:server:delete')
 AddEventHandler('qb-signrobbery:server:delete', function(object)
     local src = source
     local sourceCoords = GetEntityCoords(GetPlayerPed(src))
     if #(sourceCoords - object.coords) < 4 then
+        local obj = table["obj"]
         local Player = QBCore.Functions.GetPlayer(tonumber(src))
         objects[#objects+1] = {coords = object.coords, model = object.model}
         TriggerClientEvent("signrobbery:client:delete", -1, object)
-        if object.model == -949234773 then
-            Player.Functions.AddItem("stopsign", 1, false)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['stopsign'], "add")
-        elseif object.model == 1502931467 then
-            Player.Functions.AddItem("walkingmansign", 1, false)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['walkingmansign'], "add")
-        elseif object.model == 1191039009 then
-            Player.Functions.AddItem("dontblockintersectionsign", 1, false)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['dontblockintersectionsign'], "add")
-        elseif object.model == 4138610559 then
-            Player.Functions.AddItem("uturnsign", 1, false)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['uturnsign'], "add")
-        elseif object.model == 3830972543 then
-            Player.Functions.AddItem("noparkingsign", 1, false)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['noparkingsign'], "add")
-        elseif  object.model == 2643325436 then
-            Player.Functions.AddItem("leftturnsign", 1, false)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['leftturnsign'], "add")
-		elseif  object.model == 793482617 then
-            Player.Functions.AddItem("rightturnsign", 1, false)
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['rightturnsign'], "add")
-		elseif  object.model == 1021214550 then
-			Player.Functions.AddItem("notrespassingsign", 1, false)
-			TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['notrespassingsign'], "add")
-		elseif  object.model == 3654973172 then
-			Player.Functions.AddItem("yieldsign", 1, false)
-			TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['yieldsign'], "add")
-		end
+        if obj[object.model] then
+            Player.Functions.AddItem(obj[object.model][1], 1, false)
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[obj[object.model][1]], "add")
+        end
 	end
 end)
 
----------------------
---- Usable Signs ----
----------------------
-QBCore.Functions.CreateUseableItem("stopsign", function(source, item)
-    local src = source
-    local Player = QBCore.Functions.GetPlayer(src)
-    TriggerClientEvent('qb-signrobbery:use:StopSign', src, item)
-end)
 
-QBCore.Functions.CreateUseableItem("walkingmansign", function(source, item)
-    local src = source
-    local Player = QBCore.Functions.GetPlayer(src)
-    TriggerClientEvent('qb-signrobbery:use:WalkingManSign', src, item)
-end)
 
-QBCore.Functions.CreateUseableItem("dontblockintersectionsign", function(source, item)
-    local src = source
-    local Player = QBCore.Functions.GetPlayer(src)
-    TriggerClientEvent('qb-signrobbery:use:DontBlockIntersectionSign', src, item)
-end)
 
-QBCore.Functions.CreateUseableItem("uturnsign", function(source, item)
-    local src = source
-    local Player = QBCore.Functions.GetPlayer(src)
-    TriggerClientEvent('qb-signrobbery:use:UturnSign', src, item)
-end)
+for i,v in pairs(table['Items']) do
+    QBCore.Functions.CreateUseableItem(i, function(source, item)
+        local src = source
+        local Player = QBCore.Functions.GetPlayer(src)
+        TriggerClientEvent('qb-signrobbery:use:'..v, src, item)
+    end)
+end
 
-QBCore.Functions.CreateUseableItem("noparkingsign", function(source, item)
-    local src = source
-    local Player = QBCore.Functions.GetPlayer(src)
-    TriggerClientEvent('qb-signrobbery:use:NoParkingSign', src, item)
-end)
-
-QBCore.Functions.CreateUseableItem("leftturnsign", function(source, item)
-    local src = source
-    local Player = QBCore.Functions.GetPlayer(src)
-    TriggerClientEvent('qb-signrobbery:use:LeftTurnSign', src, item)
-end)
-
-QBCore.Functions.CreateUseableItem("rightturnsign", function(source, item)
-    local src = source
-    local Player = QBCore.Functions.GetPlayer(src)
-    TriggerClientEvent('qb-signrobbery:use:RightTurnSign', src, item)
-end)
-
-QBCore.Functions.CreateUseableItem("notrespassingsign", function(source, item)
-    local src = source
-    local Player = QBCore.Functions.GetPlayer(src)
-    TriggerClientEvent('qb-signrobbery:use:NoTrespassingSign', src, item)
-end)
-
-QBCore.Functions.CreateUseableItem("yieldsign", function(source, item)
-    local src = source
-    local Player = QBCore.Functions.GetPlayer(src)
-    TriggerClientEvent('qb-signrobbery:use:YieldSign', src, item)
-end)
+-- QBCore.Functions.CreateUseableItem("yieldsign", function(source, item)
+--     local src = source
+--     local Player = QBCore.Functions.GetPlayer(src)
+--     TriggerClientEvent('qb-signrobbery:use:YieldSign', src, item)
+-- end)
 
 RegisterServerEvent("SignRobbery:TradeItems", function(data)
     local src = source
