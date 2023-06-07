@@ -424,8 +424,8 @@ RegisterNetEvent("ps-dispatch:client:TriggerPanicButton", function()
 			}, {}, {}, {}, function() 
 				PressedPanicButton = true
 				PlayerData = QBCore.Functions.GetPlayerData()
-				QBCore.Functions.TriggerCallback("ps-dispatch:server:PressPanicButton", function(HasItem)
-					if HasItem then 
+				-- QBCore.Functions.TriggerCallback("ps-dispatch:server:PressPanicButton", function(HasItem)
+				-- 	if HasItem then 
 						if (PlayerData.job.name == "police" or PlayerData.job.type == "leo") then
 							TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 7.0, "panicbutton", 7.0)
 							exports['ps-dispatch']:OfficerDown2()
@@ -435,10 +435,10 @@ RegisterNetEvent("ps-dispatch:client:TriggerPanicButton", function()
 							exports['ps-dispatch']:EMSDown2()
 							PressedPanicButton = false
 						end
-					else
-						PressedPanicButton = false
-					end
-				end)
+				-- 	else
+				-- 		PressedPanicButton = false
+				-- 	end
+				-- end)
 			end, function()
 				QBCore.Functions.Notify("Panic Button Canceled", "error")
 			end)
