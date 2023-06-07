@@ -155,7 +155,7 @@ ox_target:addGlobalVehicle({
     }
 })
 
-ox_target:addGlobalPed({
+ox_target:addGlobalPlayer({ 
     {
         type = "client",
         event = "bunny-cuff:client:CuffPlayer", 
