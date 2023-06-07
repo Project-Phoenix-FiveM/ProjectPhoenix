@@ -1,0 +1,18 @@
+{
+  "unlocked_door": "Otwarte drzwi",
+  "locked_door": "Zamknięte drzwi",
+  "lock_door": "[E] Zamknij drzwi",
+  "unlock_door": "[E] Otwórz drzwi",
+  "door_lock": "Zamek",
+  "passcode": "Hasło",
+  "lockpick_broke": "Twój wytrych się złamał",
+  "pick_lock": "Wyłam zamek",
+  "add_lock": "Dodaj zamek",
+  "edit_lock": "Edytuj zamek",
+  "remove_lock": "Usuń zamek",
+  "cannot_unlock": "Nie możesz otworzyć drzwi",
+  "cannot_lock": "Nie możesz zamknąć drzwi",
+  "create_modify_lock": "Utwórz zamek lub edytuj istniejący",
+  "add_door_textui": "**Utwórz nowy zamek**  \nInterakcja z [LMB]  \nAnuluj z [RMB]",
+  "command_closest": "Otwórz UI bezpośrednio do najbliższyego zamka"
+}
