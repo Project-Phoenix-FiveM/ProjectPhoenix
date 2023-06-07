@@ -1,17 +1,23 @@
 local Translations = {
     error = {
-        no_vehicles = "In dieser Garage hast du kein Fahrzeug!",
+        no_vehicles = "Es befindet sich kein Fahrzeug in dieser Garage!",
         not_impound = "Dein Auto wurde nicht abgeschleppt",
         not_owned = "Das Fahrzeug gehört dir nicht",
         not_correct_type = "Du kannst dieses Fahrzeug hier nicht parken. (Falscher Parkplatz)",
         not_enough = "Nicht genu Geld",
         no_garage = "None",
+        too_far_away = "Zu weit weg von einem Parkfeld",
+        occupied = "Parkplatz ist nicht frei",
+        all_occupied = "Alle Parkplätze sind besetzt",
+        no_vehicle = "Es gibt kein Fahrezug zu Parken",
+        no_house_keys = "Du besitzt kein Schlüssel für diese Haus Garage",
     },
     success = {
         vehicle_parked = "Auto geparkt",
     },
     menu = {
         header = {
+            house_garage = "Haus Garage",
             house_car = "Haus Garage %{value}",
             public_car = "Öffentliche  Garage %{value}",
             public_sea = "Öffentlichtes Bootshaus %{value}",
@@ -33,6 +39,7 @@ local Translations = {
             car = "⬅ Verlasse Garage",
             sea = "⬅ Verlasse Bootshaus",
             air = "⬅ Verlasse Hangar",
+            job = "⬅ Verlasse Garage"
         },
         text = {
             vehicles = "Deine geparkten Autos!",
@@ -43,15 +50,8 @@ local Translations = {
     status = {
         out = "Ausgeparkt",
         garaged = "Eingeparkt",
-        impound = "Abgeschleppt von der Polizei",
+        impound = "Abgeschleppt",
     },
-    info = {
-        car_e = "[E] Garage",
-        sea_e = "[E] Bootshause",
-        air_e = "[E] Hangar",
-        park_e = "[E] Fahrzeug einparken",
-        house_garage = "Haus Garage",
-    }
 }
 
 if GetConvar('qb_locale', 'en') == 'de' then

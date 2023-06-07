@@ -6,40 +6,40 @@ local Translations = {
         not_correct_type = "You can't store this type of vehicle here",
         not_enough = "Not enough money",
         no_garage = "None",
-        vehicle_occupied = "You can't store this vehicle as it is not empty",
+        too_far_away = "Too far away from a parking lot",
+        occupied = "Parking lot is already occupied",
+        all_occupied = "All parking spots are occupied",
+        no_vehicle = "There is no vehicle to park",
+        no_house_keys = "You don't have the keys for this house garage",
     },
     success = {
         vehicle_parked = "Vehicle Stored",
     },
     menu = {
         header = {
+            house_garage = "House Garage",
             house_car = "House Garage %{value}",
             public_car = "Public Garage %{value}",
             public_sea = "Public Boathouse %{value}",
             public_air = "Public Hangar %{value}",
-            public_rig = "Public Rig Lot %{value}",
             job_car = "Job Garage %{value}",
             job_sea = "Job Boathouse %{value}",
             job_air = "Job Hangar %{value}",
-            job_rig = "Rig Lot %{value}",
             gang_car = "Gang Garage %{value}",
             gang_sea = "Gang Boathouse %{value}",
             gang_air = "Gang Hangar %{value}",
-            gang_rig = "Gang Rig Lot %{value}",
             depot_car = "Depot %{value}",
             depot_sea = "Depot %{value}",
             depot_air = "Depot %{value}",
-            depot_rig = "Depot %{value}",
             vehicles = "Available Vehicles",
             depot = "%{value} [ $%{value2} ]",
             garage = "%{value} [ %{value2} ]",
-            unavailable_vehicle_model = "%{vehicle} | Vehicle Unavailable",
         },
         leave = {
             car = "⬅ Leave Garage",
             sea = "⬅ Leave Boathouse",
             air = "⬅ Leave Hangar",
-            rig = "⬅ Leave Lot",
+            job = "⬅ Leave Garage"
         },
         text = {
             vehicles = "View stored vehicles!",
@@ -50,16 +50,8 @@ local Translations = {
     status = {
         out = "Out",
         garaged = "Garaged",
-        impound = "Impounded By Police",
+        impound = "Impounded",
     },
-    info = {
-        car_e = "E - Garage",
-        sea_e = "E - Boathouse",
-        air_e = "E - Hangar",
-        rig_e = "E - Rig Lot",
-        park_e = "E - Store Vehicle",
-        house_garage = "House garage",
-    }
 }
 
 Lang = Lang or Locale:new({

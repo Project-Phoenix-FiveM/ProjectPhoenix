@@ -25,10 +25,12 @@ RegisterNUICallback('SetupGarageVehicles', function(_, cb)
 end)
 
 RegisterNUICallback('gps-vehicle-garage', function(data, cb)
+    TriggerEvent('qb-garages:client:TrackVehicleByPlate', data.veh.plate)
+    QBCore.Functions.Notify("Your vehicle has been marked", "success")
     local veh = data.veh
     if veh.state == 'In' then
         if veh.parkingspot then
-            SetNewWaypoint(veh.parkingspot.x, veh.parkingspot.y)
+            --SetNewWaypoint(veh.parkingspot.x, veh.parkingspot.y)
             QBCore.Functions.Notify("Your vehicle has been marked", "success")
         end
     elseif veh.state == 'Out' and findVehFromPlateAndLocate(veh.plate) then

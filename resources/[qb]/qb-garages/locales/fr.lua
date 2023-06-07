@@ -1,18 +1,23 @@
 local Translations = {
     error = {
-        no_vehicles = "Vous n'avez aucun véhicule dans ce garage!",
+        no_vehicles = "Vous n'avez aucun véhicule dans ce garage!",              
         not_impound = "Votre véhicule n'est pas à la fourrière",
         not_owned = "Le véhicule ne vous appartient pas",
         not_correct_type = "Vous ne pouvez pas stocker ce type de véhicule ici.",
         not_enough = "Pas assez d'argent",
         no_garage = "Aucun",
-        vehicle_occupied = "Vous ne pouvez pas stocker ce véhicule car il n'est pas vide",
+        too_far_away = "Trop loin d'une place de parking",
+        occupied = "Parking déjà occupé",
+        all_occupied = "Toutes les places de parking sont occupées",
+        no_vehicle = "Il n'y a pas de véhicule a garer",
+        no_house_keys = "Vous n'avez pas les clées de ce garage",
     },
     success = {
         vehicle_parked = "Véhicule garé !",
     },
     menu = {
         header = {
+            house_garage = "Garage Personnel",
             house_car = "Garage de propriété %{value}",
             public_car = "Garage Public %{value}",
             public_sea = "Hangar à bateaux Public %{value}",
@@ -34,6 +39,7 @@ local Translations = {
             car = "⬅ Quitter le garage",
             sea = "⬅ Quitter le hangar à bateaux",
             air = "⬅ Quitter le Hangar",
+            job = "⬅ Quitter le garage"
         },
         text = {
             vehicles = "Voir les véhicules stockés!",
@@ -46,13 +52,6 @@ local Translations = {
         garaged = "Garé",
         impound = "En Fourrière par la Police",
     },
-    info = {
-        car_e = "[E] Garage",
-        sea_e = "[E] Hangar à bateaux",
-        air_e = "[E] Hangar",
-        park_e = "[E] Ranger le véhicule",
-        house_garage = "Garage Personnel",
-    }
 }
 
 if GetConvar('qb_locale', 'en') == 'fr' then

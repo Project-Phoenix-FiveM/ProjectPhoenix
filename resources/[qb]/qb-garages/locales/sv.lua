@@ -6,12 +6,18 @@ local Translations = {
         not_correct_type = "Du kan inte parkera den här typen av fordon här",
         not_enough = "Inte tillräckligt med pengar",
         no_garage = "Ingen",
+        too_far_away = "Too far away from a parking lot", -- TODO
+        occupied = "Parking lot is already occupied", -- TODO
+        all_occupied = "All parkingspots are occupied", -- TODO
+        no_vehicle = "There is no vehicle to park", -- TODO
+        no_house_keys = "You don't have the keys for this house garage", -- TODO
     },
     success = {
         vehicle_parked = "Fordon har parkerats",
     },
     menu = {
         header = {
+            house_garage = "Hus Garage",
             house_car = "Husgarage %{value}",
             public_car = "Offentligt Garage %{value}",
             public_sea = "Offentlig Båthus %{value}",
@@ -33,6 +39,7 @@ local Translations = {
             car = "⬅ Lämna garage",
             sea = "⬅ Lämna båthus",
             air = "⬅ Lämna Hangar",
+            job = "⬅ Lämna garage",
         },
         text = {
             vehicles = "Visa dina parkerade fordon!",
@@ -45,13 +52,6 @@ local Translations = {
         garaged = "Parkerad",
         impound = "Beslagtaget av Polis",
     },
-    info = {
-        car_e = "[E] Garage",
-        sea_e = "[E] Båthus",
-        air_e = "[E] Hangar",
-        park_e = "[E] Parkera Fordon",
-        house_garage = "Hus Garage",
-    }
 }
 
 if GetConvar('qb_locale', 'en') == 'sv' then
