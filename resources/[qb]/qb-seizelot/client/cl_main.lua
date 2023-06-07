@@ -8,33 +8,33 @@ RegisterNetEvent('rhodinium-seizelot:client:GetSeizedList', function()
     QBCore.Functions.TriggerCallback('qb-garages:server:GetDepotVehiclesPD', function(vehcheck)  
     local vehiclelist = false
     local menu = {{
-        header = "< Go Back",
+        header = "< Inapoi",
         params = {
             event = "Garages:OpenDepot",
         }
     }}
     for i=1, #vehcheck do
-        if vehcheck[i].state == 2 then
-            table.insert(menu, {
-                header = QBCore.Shared.Vehicles[vehcheck[i].vehicle].name,
-                txt = "Plate: "..vehcheck[i].plate.." | Fine: "..vehcheck[i].depotprice.."$",
-                params = {
-                    event = "rhodinium-seizelot:client:PoliceReturn",
-                    args = {
-                        plate = vehcheck[i].plate,
-                            vehicle = vehcheck[i].vehicle,
-                            engine = vehcheck[i].engine,
-                            body = vehcheck[i].body,
-                            fuel = vehcheck[i].fuel,
-                            fine = vehcheck[i].depotprice,
-                            garage = vehcheck[i].garage
-                    }
+        -- if vehcheck[i].state == 2 then
+        menu[#menu+1] = {
+            header = QBCore.Shared.Vehicles[vehcheck[i].vehicle].name,
+            txt = "Placuta: "..vehcheck[i].plate.." | Amenda: "..vehcheck[i].depotprice.."$",
+            params = {
+                event = "rhodinium-seizelot:client:PoliceReturn",
+                args = {
+                    plate = vehcheck[i].plate,
+                    vehicle = vehcheck[i].vehicle,
+                    engine = vehcheck[i].engine,
+                    body = vehcheck[i].body,
+                    fuel = vehcheck[i].fuel,
+                    fine = vehcheck[i].depotprice,
+                    garage = vehcheck[i].garage
                 }
-            }) 
-            depotprice = vehcheck[i].depotprice
-            billedplayer = vehcheck[i].citizenid
-            vehiclelist = true
-        end
+            }
+        } 
+        depotprice = vehcheck[i].depotprice
+        billedplayer = vehcheck[i].citizenid
+        vehiclelist = true
+        -- end
         if vehiclelist then 
             exports['qb-menu']:openMenu(menu)
         end
@@ -64,7 +64,7 @@ RegisterNetEvent('rhodinium-seizelot:client:PoliceReturn', function(data)
                 TriggerServerEvent('qb-wheelfitment_sv:setfit', wheelfit, veh)
             end
         end, data.plate)
-        QBCore.Functions.SetVehicleProperties(veh, properties)
+        -- QBCore.Functions.SetVehicleProperties(veh, properties)
         SetVehicleNumberPlateText(veh, data.plate)
         exports['cdn-fuel']:SetFuel(veh, data.fuel)
         SetEntityAsMissionEntity(veh, true, true)
@@ -114,7 +114,7 @@ end
 
 RegisterNetEvent('rhodinium-seizelot:client:ReturnVehicle', function(data)
     local PlayerData = QBCore.Functions.GetPlayerData()
-    seizeinfo = exports['qb-input']:ShowInput({
+    local seizeinfo = exports['qb-input']:ShowInput({
         header = "Seize Decision",
         inputs = {
             {

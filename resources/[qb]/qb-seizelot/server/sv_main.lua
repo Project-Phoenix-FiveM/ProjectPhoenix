@@ -1,18 +1,13 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 QBCore.Functions.CreateCallback('rhodinium-seizelot:server:GetDepotVehiclesPD', function(source, cb)
-    local state = 2
-    exports.oxmysql:execute('SELECT * FROM player_vehicles WHERE state = ?', {state}, function(result)
-        if result[1] ~= nil then
-            cb(result)
-        else
-            cb(result)
-        end
+    exports.oxmysql:execute('SELECT * FROM player_vehicles WHERE state = ?', {2}, function(result)
+        if not result or json.encode(result) == "[]" then cb({}) end
+        cb(result)
     end)
 end)
 
 RegisterNetEvent('rhodinium-seizelot:server:ReturnVehicle', function(data)
-    local src = source
     local plate = data.plate
     local state = 0 
     --TriggerClientEvent('QBCore:Notify', src, "Vehicle has been released at the impound", 'success')
@@ -20,17 +15,16 @@ RegisterNetEvent('rhodinium-seizelot:server:ReturnVehicle', function(data)
 end)
 
 RegisterNetEvent('rhodinium:server:CreateInvoice', function(billed, billerjob, billerfirstname, billiercitizenid , amount)
-   --local billedID = tonumber(billed)
     local cash = tonumber(amount)
     local billedCID = billed
-    local billerInfo = biller
+    -- local billerInfo = biller
     local BilledPlayer = QBCore.Functions.GetPlayerByCitizenId(billed)
     
 
     local resource = GetInvokingResource()
-    print('Ai')
-    --if not cash or not billedCID or not billerInfo then return end
-    print('I work')
+    -- print('Ai')
+    -- --if not cash or not billedCID or not billerInfo then return end
+    -- print('I work')
     MySQL.Async.insert('INSERT INTO phone_invoices (citizenid, amount, society, sender, sendercitizenid) VALUES (?, ?, ?, ?, ?)',{
         billedCID,
         cash,

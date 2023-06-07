@@ -393,14 +393,8 @@ CreateThread(function()
     while true do
         local sleep = 1000
         if isAttached then
-            sleep = 0
+            sleep = 1000
             local ped = PlayerPedId()
-            for _, PressedKey in pairs(detachKeys) do
-                if IsControlJustPressed(0, PressedKey) or IsDisabledControlJustPressed(0, PressedKey) then
-                    detachStretcher()
-                    sleep = 100
-                end
-            end
             if IsPedShooting(ped) or IsPlayerFreeAiming(PlayerId()) or IsPedInMeleeCombat(ped) or IsEntityDead(ped) or IsPedRagdoll(ped) then
                 detachStretcher()
             end
