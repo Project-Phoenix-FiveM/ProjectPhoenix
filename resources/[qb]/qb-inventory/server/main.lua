@@ -1133,6 +1133,14 @@ RegisterNetEvent('inventory:server:SetIsOpenState', function(IsOpen, type, id)
 	end
 end)
 
+exports('getTruck', function(id)
+	return Trunks[id]
+end)
+
+exports('getGloveboxes', function(id)
+	return Gloveboxes[id]
+end)
+
 RegisterNetEvent('inventory:server:OpenInventory', function(name, id, other)
 	local src = source
 	local ply = Player(src)
