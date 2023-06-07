@@ -142,23 +142,39 @@ end
 -- Thread Stuff --
 
 if Config.LeaveEngineRunning then
-	CreateThread(function()
+	Citizen.CreateThread(function()
 		while true do
-			Wait(100)
-			local ped = PlayerPedId()
+			Citizen.Wait(0)
+			local ped = GetPlayerPed(-1)
+			local vehicle = GetVehiclePedIsIn(ped, false)
+			local engineStatus
+			
+			if IsPedGettingIntoAVehicle(ped) then
+				engineStatus = (GetIsVehicleEngineRunning(vehicle)) -- will either be true or false.
+				if not (engineStatus) then 
+					SetVehicleEngineOn(vehicle, false, true, true) -- ensures engine is off.
+					DisableControlAction(2, 71, true) -- ensures that the player doesn't auto-start the car when entering.
+				end
+			end
+			
+			if IsPedInAnyVehicle(ped, false) and not IsEntityDead(ped) and (not GetIsVehicleEngineRunning(vehicle)) then
+				DisableControlAction(2, 71, true) -- general script to disable player auto-starting the car when already in car.
+			end
+			
 			if IsPedInAnyVehicle(ped, false) and IsControlPressed(2, 75) and not IsEntityDead(ped) then
-				local vehicle = GetVehiclePedIsIn(ped, true)
-				local enginerunning = GetIsVehicleEngineRunning(vehicle)
-				if Config.FuelDebug then if enginerunning then print('Engine is running!') else print('Engine is not running!') end end
-				Wait(900)
-				if IsPedInAnyVehicle(ped, false) and IsControlPressed(2, 75) and not IsEntityDead(ped) and GetPedInVehicleSeat(GetVehiclePedIsIn(PlayerPedId()), -1) == PlayerPedId() then
-					if enginerunning then SetVehicleEngineOn(vehicle, true, true, false) enginerunning = false end
-					TaskLeaveVehicle(ped, veh, keepDooRopen and 256 or 0)
+				if (GetIsVehicleEngineRunning(vehicle)) then
+					Citizen.Wait(150) -- gives client time between car auto turning off and running following scripts.
+					SetVehicleEngineOn(vehicle, true, true, false) -- restarts car engine
+					TaskLeaveVehicle(ped, vehicle, 0)
+				else
+					TaskLeaveVehicle(ped, vehicle, 0)
 				end
 			end
 		end
 	end)
 end
+
+
 
 if Config.ShowNearestGasStationOnly then
 	RegisterNetEvent('cdn-fuel:client:updatestationlabels', function(location, newLabel)
