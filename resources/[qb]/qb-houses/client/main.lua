@@ -1495,6 +1495,28 @@ RegisterNUICallback('exit', function(_, cb)
     cb("ok")
 end)
 
+RegisterNetEvent('qb-houses:client:deletehouses', function(selectedHouse)
+    Config.Houses[selectedHouse.name] = nil
+    SetClosestHouse()
+end)
+
+RegisterNetEvent('qb-houses:client:createHousesM', function()
+    local pos = GetEntityCoords(PlayerPedId())
+    local heading = GetEntityHeading(PlayerPedId())
+	local s1, s2 = GetStreetNameAtCoord(pos.x, pos.y, pos.z)
+    local street = GetStreetNameFromHashKey(s1)
+    local coords = {
+        enter 	= { x = pos.x, y = pos.y, z = pos.z, h = heading},
+        cam 	= { x = pos.x, y = pos.y, z = pos.z, h = heading, yaw = -10.00},
+    }
+    street = street:gsub("%-", " ")
+    local price = "10000"
+    local tier = "1"
+    TriggerServerEvent('qb-houses:server:addNewHouse', street, coords, price, tier)
+    if Config.UnownedBlips then TriggerServerEvent('qb-houses:server:createBlip') end
+end)
+
+
 -- Threads
 
 CreateThread(function ()

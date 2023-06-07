@@ -129,17 +129,32 @@ Citizen.CreateThread(function()
 							local cSCoords = GetOffsetFromEntityInWorldCoords(GetPlayerPed(PlayerId()), 0.0, 0.0, -5.0)
 							local vassouspawn = CreateObject(`prop_tool_broom`, cSCoords.x, cSCoords.y, cSCoords.z, 1, 1, 1)
 							local netid = ObjToNet(vassouspawn)
-
 							TaskStartScenarioInPlace(PlayerPedId(), "world_human_janitor", 0, false)
-								AttachEntityToEntity(vassouspawn,GetPlayerPed(PlayerId()),GetPedBoneIndex(GetPlayerPed(PlayerId()), 28422),-0.005,0.0,0.0,360.0,360.0,0.0,1,1,0,1,0,1)
-								vassour_net = netid
+							AttachEntityToEntity(vassouspawn,GetPlayerPed(PlayerId()),GetPedBoneIndex(GetPlayerPed(PlayerId()), 28422),-0.005,0.0,0.0,360.0,360.0,0.0,1,1,0,1,0,1)
+							vassour_net = netid						
 
-							Citizen.Wait(10000)
-							disable_actions = false
-							DetachEntity(NetToObj(vassour_net), 1, 1)
-							DeleteEntity(NetToObj(vassour_net))
-							vassour_net = nil
-							ClearPedTasks(PlayerPedId())
+							QBCore.Functions.Progressbar("sweep", "Sweeping the ground...", 10000, false, true, { 
+								disableMovement = true,
+								disableCarMovement = true,
+								disableMouse = false,
+								disableCombat = true,
+							}, {}, {}, {}, function() -- Done
+								disable_actions = false
+								DetachEntity(NetToObj(vassour_net), 1, 1)
+								DeleteEntity(NetToObj(vassour_net))
+								vassour_net = nil
+								ClearPedTasks(PlayerPedId())
+								TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+							end, function() -- Cancel
+								disable_actions = false
+								DetachEntity(NetToObj(vassour_net), 1, 1)
+								DeleteEntity(NetToObj(vassour_net))
+								vassour_net = nil
+								ClearPedTasks(PlayerPedId())
+								QBCore.Functions.Notify("Task Canceled", "error")
+								ClearPedTasks(PlayerPedId())
+								TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+							end)
 						end
 
 						if (tmp_action.type == "gardening") then
@@ -151,13 +166,28 @@ Citizen.CreateThread(function()
 							AttachEntityToEntity(spatulaspawn,GetPlayerPed(PlayerId()),GetPedBoneIndex(GetPlayerPed(PlayerId()), 28422),-0.005,0.0,0.0,190.0,190.0,-50.0,1,1,0,1,0,1)
 							spatula_net = netid
 
-							Citizen.Wait(14000)
-							disable_actions = false
-							DetachEntity(NetToObj(spatula_net), 1, 1)
-							DeleteEntity(NetToObj(spatula_net))
-							spatula_net = nil
-							ClearPedTasks(PlayerPedId())
-						
+							QBCore.Functions.Progressbar("gard", "gardening...", 14000, false, true, { 
+								disableMovement = true,
+								disableCarMovement = true,
+								disableMouse = false,
+								disableCombat = true,
+							}, {}, {}, {}, function() -- Done
+								disable_actions = false
+								DetachEntity(NetToObj(spatula_net), 1, 1)
+								DeleteEntity(NetToObj(spatula_net))
+								spatula_net = nil
+								ClearPedTasks(PlayerPedId())
+								TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+							end, function() -- Cancel
+								disable_actions = false
+								DetachEntity(NetToObj(spatula_net), 1, 1)
+								DeleteEntity(NetToObj(spatula_net))
+								spatula_net = nil
+								ClearPedTasks(PlayerPedId())
+								QBCore.Functions.Notify("Task Canceled", "error")
+								ClearPedTasks(PlayerPedId())
+								TriggerEvent('animations:client:EmoteCommandStart', {"c"})
+							end)
 						end
 
 						if actionsRemaining == 0 then
