@@ -469,7 +469,7 @@ Config.Items = {
             type = "item",
             slot = 23,
             authorizedJobGrades = {0, 1, 2, 3, 4}
-        }
+        },
         [24] = {
             name = "panicbutton",
             price = 0,
@@ -479,8 +479,6 @@ Config.Items = {
             slot = 24,
             authorizedJobGrades = {0, 1, 2, 3, 4}
         }
-
-        panicbutton
     }
 }
 
