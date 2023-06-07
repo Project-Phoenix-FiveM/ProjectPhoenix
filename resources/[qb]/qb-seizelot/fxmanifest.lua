@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'Romoy'
+author 'rhodinium'
 
 shared_scripts {
     "@qb-core/server/sv_rpc.lua",
