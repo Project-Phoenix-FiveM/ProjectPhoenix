@@ -338,7 +338,7 @@ Config.Items = {
             },
             type = "weapon",
             slot = 11,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+            authorizedJobGrades = {0, 1, 2, 3, 4}
         },
         [12] = {
             name = "weapon_m4",
@@ -351,7 +351,7 @@ Config.Items = {
             },
             type = "weapon",
             slot = 12,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+            authorizedJobGrades = {0, 1, 2, 3, 4}
         },
         [13] = {
             name = "weapon_ar15",
@@ -366,7 +366,7 @@ Config.Items = {
             },
             type = "weapon",
             slot = 13,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+            authorizedJobGrades = {0, 1, 2, 3, 4}
         },
         [14] = {
             name = "weapon_remington",
@@ -379,7 +379,7 @@ Config.Items = {
             },
             type = "weapon",
             slot = 14,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+            authorizedJobGrades = {0, 1, 2, 3, 4}
         },
         [15] = {
             name = "weapon_scarh",
@@ -392,7 +392,7 @@ Config.Items = {
             },
             type = "weapon",
             slot = 15,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+            authorizedJobGrades = {0, 1, 2, 3, 4}
         },
         [16] = {
             name = "weapon_mk14",
@@ -405,7 +405,7 @@ Config.Items = {
             },
             type = "weapon",
             slot = 16,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14}
+            authorizedJobGrades = {0, 1, 2, 3, 4}
         },
         [17] = {
             name = "handcuffs",
@@ -477,6 +477,15 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 24,
+            authorizedJobGrades = {0, 1, 2, 3, 4}
+        },
+        [25] = {
+            name = "megaphone",
+            price = 0,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 25,
             authorizedJobGrades = {0, 1, 2, 3, 4}
         }
     }

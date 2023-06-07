@@ -403,6 +403,9 @@ QBShared.Items = {
     --panicbutton
     ['panicbutton']                     = {['name'] = 'panicbutton',                       ['label'] = 'Panic Button',              ['weight'] = 100,	       ['type']= 'item',          ['image'] = 'panicbutton.png',             ['unique'] = true,	         ['useable']= true,       ['shouldClose'] =true,       ['combinable'] = nil,   ['description'] = 'Some sort of button?', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true }, 
 
+    --Megaphone item.
+    ["megaphone"]						= {["name"] = "megaphone",			["label"] = "Megaphone",		["weight"] = 20000,	["type"] = "item",	["image"] = "megaphone.png",	["unique"] = true,	["useable"] = true,	["shouldClose"] = false,	["combinable"] = nil,	   ["description"] = "A loudspeaker to yell at civilians.", ["created"] = nil, ["decay"] = 28.0, ["delete"] = true }, 
+
     --cdw-fuel 
     ["syphoningkit"]				 = {["name"] = "syphoningkit", 					["label"] = "Syphoning Kit", 			["weight"] = 5000, 		["type"] = "item", 		["image"] = "syphoningkit.png", 		["unique"] = true, 		["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "A kit made to siphon gasoline from vehicles.", ["created"] = nil, ["decay"] = 28.0, ["delete"] = true }, 
 	["jerrycan"]				 	 = {["name"] = "jerrycan", 						["label"] = "Jerry Can", 				["weight"] = 15000, 	["type"] = "item", 		["image"] = "jerrycan.png", 			["unique"] = true, 		["useable"] = true, 	["shouldClose"] = false,   ["combinable"] = nil,   ["description"] = "A Jerry Can made to hold gasoline.", ["created"] = nil, ["decay"] = 28.0, ["delete"] = true }, 
