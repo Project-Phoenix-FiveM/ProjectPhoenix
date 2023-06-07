@@ -63,7 +63,7 @@ function SetLaststand(bool)
             LoadAnimation("veh@low@front_ps@idle_duck")
             TaskPlayAnim(ped, "veh@low@front_ps@idle_duck", "sit", 1.0, 8.0, -1, 1, -1, false, false, false)
         else
-            loadAnimDict(lastStandDict)
+            LoadAnimation(lastStandDict)
             TaskPlayAnim(ped, lastStandDict, lastStandAnim, 8.0, -8, -1, 1, 0, 0, 0, 0)
         end
         InLaststand = true
