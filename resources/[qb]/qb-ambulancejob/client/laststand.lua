@@ -1,8 +1,8 @@
 Laststand = Laststand or {}
 InLaststand = false
 LaststandTime = 0
-lastStandDict = "combat@damage@writhe"
-lastStandAnim = "writhe_loop"
+lastStandDict = "mini@cpr@char_b@cpr_def"
+lastStandAnim = "cpr_pumpchest_idle"
 isEscorted = false
 local isEscorting = false
 
@@ -63,8 +63,8 @@ function SetLaststand(bool)
             LoadAnimation("veh@low@front_ps@idle_duck")
             TaskPlayAnim(ped, "veh@low@front_ps@idle_duck", "sit", 1.0, 8.0, -1, 1, -1, false, false, false)
         else
-            LoadAnimation(lastStandDict)
-            TaskPlayAnim(ped, lastStandDict, lastStandAnim, 1.0, 8.0, -1, 1, -1, false, false, false)
+            loadAnimDict(lastStandDict)
+            TaskPlayAnim(ped, lastStandDict, lastStandAnim, 8.0, -8, -1, 1, 0, 0, 0, 0)
         end
         InLaststand = true
         TriggerServerEvent('hospital:server:ambulanceAlert', Lang:t('info.civ_down'))
