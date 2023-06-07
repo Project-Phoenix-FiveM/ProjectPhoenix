@@ -151,7 +151,6 @@ end)
 -- Player
 
 RegisterNetEvent('QBCore:UpdatePlayer', function(hungerRate, thirstRate)
-    print('Updating Player', hungerRate, thirstRate)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if not Player then return end
