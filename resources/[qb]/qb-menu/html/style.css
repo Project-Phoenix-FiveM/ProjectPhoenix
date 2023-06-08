@@ -23,19 +23,21 @@
     flex-direction: row !important;
     gap: 10px;
 }
+
+#buttons {
+    max-height: 75vh;
+    width: 31vw;
+    overflow-x: none;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+
 .title {
     cursor: default;
     gap: 10px;
     display: flex;
     flex-direction: row !important;
-}
-
-#buttons {
-    max-height: 75vh;
-    width: 35vw;
-    overflow-x: none;
-    overflow-y: auto;
-    padding: 10px;
 }
 
 html,
@@ -53,19 +55,23 @@ body::-webkit-scrollbar {
 
 .button {
     width: auto;
-    max-width: 45%;
+    max-width: 35%;
     height: 10%;
     background: #222831;
+    color: white;
+    font-size: 15px;
+    line-height: 1.5;
     margin: auto;
     position: relative;
     top: 10%;
     margin-top: 0.5rem;
     overflow: hidden;
-    padding: 0.6rem;
-    border-radius: 0.3rem;
+    padding: 0.50rem;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0.0rem 0.0rem 0.1rem 0.05rem #000000;
+    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
+    cursor: pointer;
 }
 
 .icon {
@@ -82,19 +88,21 @@ body::-webkit-scrollbar {
 
 .title {
     width: auto;
-    max-width: 45%;
+    max-width: 35%;
     height: 10%;
     background: #222831;
+    color: white;
     margin: auto;
     position: relative;
     top: 10%;
     margin-top: 0.5rem;
+    font-size: 16px;
     overflow: hidden;
-    padding: 0.7rem;
-    border-radius: 0.3rem;
+    padding: 0.50rem;
+    border-radius: 0.15rem;
     display: flex;
     flex-direction: column;
-    box-shadow: 0.0rem 0.0rem 0.1rem 0.05rem #000000;
+    box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
 }
 
 .title > div.header {
@@ -123,7 +131,6 @@ div > .header {
     position: relative;
     justify-content: left;
     overflow: wrap;
-    color:  rgb(232, 229, 229);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9rem;
     overflow: hidden;
