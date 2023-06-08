@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Venture:Bodycam</title>
+</head>
+<body>
+    <div class="tablet">
+      <center>
+      <div class="recordStream ml-5">
+        <button class="btn btn-info float-right mt-3 mr-5 btn-lg" style="display: inline;" onclick="closeVideo()"><i class="fas fa-chevron-circle-left"></i></button>
+        <!-- <video id="videoStream" controls width="1280" height="720">
+          <source  src="" type="video/webm">
+        </video> -->
+      </div>
+    </center>
+
+      <div class="page">
+<div class="bg-primary fixedhd">
+  <button class="btn btn-danger float-right mt-3 mr-5 btn-lg" onclick="CloseKayitlar()"><i class="fas fa-sign-out-alt"></i></button>
+  <img style="margin-left: 2vh;" src="./lspd.png" alt="" > <p id="lspdtext"> Bodycam recordings of Lossantos Police Department </p> 
+  <div class="form-outline w-25">
+    <input onChange="ara()" type="date"  class="form-control" placeholder="Day / Month / Year" id="filter" aria-label="Search" />
+  </div>
+</div>
+
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12" id="table">
+<div class="records">
+  <table class="table  table-light table-hover table-Records">
+    <thead class="bg-light">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Date</th>
+        <th scope="col">Key</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(v,i) in records" >
+        <th scope="row">{{i+1}}</th>
+        <td>{{v.Date}}</td>
+        <td>{{v.key}}</td>
+        <td> <button class="btn btn-primary btn-lg" v-on:click="PlayVideo(v.RecordUrl)"> Play </button></td>
+        <td> <button class="btn btn-danger btn-lg"  v-on:click="deleteRecord(v.key,v.citizen)" v-if="boss"> Delete </button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="Users">
+  <table class="table  table-light table-hover table-Users">
+    <thead class="bg-light">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(v,i) in users" >
+        <th scope="row">{{i+1}}</th>
+        <td>{{v.Name}}</td>
+        <td></td>
+        <td> <button class="btn btn-primary btn-lg" v-on:click="selectUser(v.citizen)"> View </button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+      
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <div class="bodycam" id="camera">
+        <div class="top-right-container">
+        <div class="top-right">
+        <img src="lspd.png" width="80" height="80" border="0" class="logo">
+    </div>
+    <div class="top-right">
+        &nbsp;REC&nbsp;<i class="fa fa-circle text-danger Blink"></i><span id="job">&nbsp;&nbsp;&nbsp;LOS SANTOS POLIS DEPARTMENT&nbsp;&nbsp;</span><br />
+        <span id="grade">XXX</span>&nbsp;&nbsp;<br />
+        <span id="player">XXX</span>&nbsp;&nbsp;<br />
+        <span style="padding:0px;margin:0px;" id="day">00</span>
+        <span style="padding:0px;margin:0px;" id="day">/</span>
+        <span style="padding:0px;margin:0px;" id="month">XXX</span>
+        <span style="padding:0px;margin:0px;" id="day">/</span>
+        <span class="tarih" style="padding:0px;margin:0px;" id="year">0000</span><br>
+        <span style="padding:0px;margin:0px;" id="hr">00</span>
+        <span style="padding:0px;margin:0px;">:</span>
+        <span style="padding:0px;margin:0px;" id="min">00</span>
+        <span style="padding:0px;margin:0px;">:</span>
+        <span style="padding:0px;margin-right:2vh;" id="sec">00</span>
+                </div>
+            </div>
+        </div>
+        <div class="top-right">
+          <div class="alert alert-warning mr-5 mt-5 ntf1" style="display: none;" role="alert">
+            Processing <i class="fas fa-spinner fa-pulse"></i>
+          </div>
+          <div class="alert alert-success mr-5 mt-5 ntf2" style="display: none;" role="alert">
+            Ready <i class="fas fa-check-circle"></i>
+          </div>
+        </div>
+    <canvas id="videocall-canvas" style="display: none;"></canvas>
+    <script type="module" src="../script.js"></script>
+    <script src="./recScript.js"></script>
+</body>
+</html>

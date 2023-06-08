@@ -309,6 +309,7 @@ QBShared.Items = {
     --PDBadge
     -- Ivan's Better Police Badge
 	["police_badge"] 		 	 	 	 = {["name"] = "police_badge",           			["label"] = "Law Enforcement Badge",	 			["weight"] = 1000, 		["type"] = "item", 		["image"] = "police_badge.png", 			["unique"] = true, 	["useable"] = true, 	["shouldClose"] = true,   ["combinable"] = false,   ["description"] = "A police badge.", ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['bodycam'] 					 = {['name'] = 'bodycam', 					['label'] = 'Bodycam', 					['weight'] = 100, 		['type'] = 'item',		['image'] = 'bodycam.png', 			    ['unique'] = true, 	   ['useable'] = true, 	   ['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Bodycam for Police Use', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
 
     -- QB-Vending
 	['cola'] 				 	     = {['name'] = 'cola', 			  	     		['label'] = 'eCola', 					['weight'] = 500, 		['type'] = 'item', 		['image'] = 'cola.png', 			    ['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Genuine Cola', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },

@@ -9,7 +9,7 @@ local plate_net = nil
 --PD Badge 
 exports['qb-target']:AddBoxZone("pd-badge-printer", vector3(463.67, -984.03, 30.72), 0.8, 0.45, { 
   name = "pd-badge-printer", 
-  debugPoly = true, 
+  debugPoly = false, 
   minZ=29.72,
   maxZ=31.12 
 }, {
