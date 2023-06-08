@@ -28,9 +28,7 @@ RegisterNetEvent('rhodinium:server:CreateInvoice', function(billed, billerjob, b
     
 
     local resource = GetInvokingResource()
-    print('Ai')
     --if not cash or not billedCID or not billerInfo then return end
-    print('I work')
     MySQL.Async.insert('INSERT INTO phone_invoices (citizenid, amount, society, sender, sendercitizenid) VALUES (?, ?, ?, ?, ?)',{
         billedCID,
         cash,
