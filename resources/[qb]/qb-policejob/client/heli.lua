@@ -26,7 +26,7 @@ local speed_measure = "MPH" -- default unit to measure vehicle speed but can be 
 -- Script starts here
 local target_vehicle = nil
 local manual_spotlight = false
-local tracking spotlight = false
+local tracking_spotlight = false
 local vehicle_display = 0 -- 0 is default full vehicle info display with speed/model/plate, 1 is model/plate, 2 turns off display
 local helicam = false
 local polmav_hash = GetHashKey("polas350") 
