@@ -15,9 +15,7 @@ client_scripts {
   'client.lua',
 }
 
-server_scripts {
-  'version_check.lua',
-}
+
 
 escrow_ignore {
   'client.lua',
