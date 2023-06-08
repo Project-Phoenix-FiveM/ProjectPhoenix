@@ -1,6 +1,6 @@
 Config = {}
 
-Config.Debug = true
+Config.Debug = false
 
 Config.ClothingCost = 100
 Config.BarberCost = 100
