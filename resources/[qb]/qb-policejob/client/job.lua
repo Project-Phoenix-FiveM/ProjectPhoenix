@@ -470,6 +470,10 @@ RegisterNetEvent('qb-police:client:scanFingerPrint', function()
 end)
 
 RegisterNetEvent('qb-police:client:openArmoury', function()
+    if PlayerJob.grade.level == nil then 
+        QBCore.Functions.Notify("I cant get your grade, Clock in and out.", "error", 5000)
+        return 
+    end
     local authorizedItems = {
         label = Lang:t('menu.pol_armory'),
         slots = 30,
@@ -697,7 +701,7 @@ if Config.UseTarget then
                         type = "client",
                         event = "qb-policejob:ToggleDuty",
                         icon = "fas fa-sign-in-alt",
-                        label = "Sign In",
+                        label = "Sign On/Off",
                         job = "police",
                     },
                 },
