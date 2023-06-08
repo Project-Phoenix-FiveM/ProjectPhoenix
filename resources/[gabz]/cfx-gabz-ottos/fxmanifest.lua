@@ -14,9 +14,7 @@ dependencies {
     'cfx-gabz-pizzeria', -- ⚠️PLEASE READ⚠️; Requires [cfx-gabz-pizzeria] to work properly.
 }
 
-server_scripts {
-    'version_check.lua',
-}
+
 
 escrow_ignore {
     'stream/**/*.ytd',
