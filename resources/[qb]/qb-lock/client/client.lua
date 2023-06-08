@@ -11,6 +11,10 @@ function StartLockPickCircle(circles, seconds, callback)
     Result = nil
 	print(circles, "This be the lock")
     NUI_status = true
+    if exports['ps-buffs']:HasBuff("intelligence") then
+        circles = circles - 1
+        seconds = seconds + 2
+    end
     SendNUIMessage({
         action = 'start',
         value = circles,
