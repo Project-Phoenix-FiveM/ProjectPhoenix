@@ -1261,6 +1261,8 @@ AddEventHandler('sit:helpTextThread', function(type)
 	end)
 end)
 
+local DoneStress = false
+
 AddEventHandler('sit:checkThread', function(type)
 	CreateThread(function()
 		while true do
@@ -1270,8 +1272,9 @@ AddEventHandler('sit:checkThread', function(type)
 			end
 
 			-- Reduce stress
-			if Config.ReduceStress then 
-				TriggerServerEvent('hud:server:RelieveStress', math.random(12, 24))
+			if not DoneStress then
+				DoneStress = true
+				startStressThread()
 			end
 
 			-- Distance and animation check
@@ -1296,6 +1299,11 @@ AddEventHandler('sit:checkThread', function(type)
 	end)
 end)
 
+local function startStressThread()
+	Citizen.Wait(7500) --wait every 7 seconds.
+	TriggerServerEvent('hud:server:RelieveStress', math.random(4, 8))
+	DoneStress = false
+end
 
 -- Initialization --
 CreateThread(function()
