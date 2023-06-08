@@ -37,56 +37,60 @@ Config.AlertShowInfo = 2 -- How many injuries a player must have before being al
 
 Config.Locations = { -- Edit the various interaction points for players or create new ones
     ["checking"] = {
-	    [1] = vector3(308.19, -595.35, 43.29),
-	    [2] = vector3(-254.54, 6331.78, 32.43), -- paleto
+        [1] = vector3(307.05, -595.08, 43.28), -- PILLBOX -- 3rd eye + E
+        [2] = vector3(-254.54, 6331.78, 32.43), -- PALETO
+        [3] = vector3(-816.81, -1237.37, 6.98), -- VICEROY
     },
     ["duty"] = {
-        [1] = vector3(311.18, -599.25, 43.29),
-        [2] = vector3(-254.88, 6324.5, 32.58),
+        [1] = vector3(307.36, -597.23, 43.28), -- PILLBOX -- 3rd eye
+        [2] = vector3(-817.88, -1238.88, 7.34), -- VICEROY
+        [3] = vector3(-254.88, 6324.5, 32.58),
     },
     ["vehicle"] = {
-        [1] = vector4(294.578, -574.761, 43.179, 35.79),
-        [2] = vector4(-234.28, 6329.16, 32.15, 222.5),
+        [1] = vector4(337.07, -579.08, 28.57, 341.39), -- PILLBOX -- 3rd eye
+        [2] = vector4(-827.11, -1218.8, 6.7, 320.28), -- VICEROY -- 3rd eye
+        [3] = vector4(-234.28, 6329.16, 32.15, 223.5),
     },
     ["helicopter"] = {
-        [1] = vector4(351.58, -587.45, 74.16, 160.5),
-        [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
+        [1] = vector4(351.58, -587.45, 74.16, 160.5), -- PILLBOX
+        [2] = vector4(-791.24, -1191.61, 53.03, 51.38), -- VICEROY
+        [3] = vector4(-475.43, 5988.353, 31.716, 31.34),
     },
     ["armory"] = {
-        [1] = vector3(309.93, -602.94, 43.29),
+        [1] = vector3(309.93, -602.94, 43.29), -- PILLBOX -- 3rd eye
         [2] = vector3(-245.13, 6315.71, 32.82),
     },
     ["roof"] = {
-        [1] = vector4(338.5, -583.85, 74.16, 245.5),
+        [1] = vector4(338.5, -583.85, 74.16, 245.5), -- PILLBOX -- 3rd eye
     },
     ["main"] = {
-        [1] = vector3(298.74, -599.33, 43.29),
+        [1] = vector3(298.44, -599.7, 43.29), -- PILLBOX -- 3rd eye
     },
     ["stash"] = {
-        [1] = vector3(309.78, -596.6, 43.29),
+        [1] = vector3(309.78, -596.6, 43.29), -- PILLBOX -- 3rd eye
     },
     ["beds"] = {
-        [1] = {coords = vector4(353.1, -584.6, 43.11, 152.08), taken = false, model = 1631638868},
-        [2] = {coords = vector4(356.79, -585.86, 43.11, 152.08), taken = false, model = 1631638868},
-        [3] = {coords = vector4(354.12, -593.12, 43.1, 336.32), taken = false, model = 2117668672},
-        [4] = {coords = vector4(350.79, -591.8, 43.1, 336.32), taken = false, model = 2117668672},
-        [5] = {coords = vector4(346.99, -590.48, 43.1, 336.32), taken = false, model = 2117668672},
-        [6] = {coords = vector4(360.32, -587.19, 43.02, 152.08), taken = false, model = -1091386327},
-        [7] = {coords = vector4(349.82, -583.33, 43.02, 152.08), taken = false, model = -1091386327},
-        [8] = {coords = vector4(326.98, -576.17, 43.02, 152.08), taken = false, model = -1091386327},
-	--- paleto
-	    [9] = {coords = vector4(-252.43, 6312.25, 32.34, 313.48), taken = false, model = 2117668672},
+        [1] = {coords = vector4(311.13, -582.89, 43.53, 335.65), taken = false, model = 1631638868},
+        [2] = {coords = vector4(313.96, -579.05, 43.53, 164.5), taken = false, model = 1631638868},
+        [3] = {coords = vector4(314.58, -584.09, 43.53, 335.65), taken = false, model = 1631638868},
+        [4] = {coords = vector4(317.74, -585.29, 43.53, 335.65), taken = false, model = 1631638868},
+        [5] = {coords = vector4(319.47, -581.04, 43.53, 164.5), taken = false, model = 1631638868},
+        [6] = {coords = vector4(366.43, -581.54, 43.28, 66.5), taken = false, model = 1631638868},
+        [7] = {coords = vector4(364.93, -585.86, 43.28, 67.5), taken = false, model = 1631638868},
+        [8] = {coords = vector4(363.82, -589.09, 43.28, 68.5), taken = false, model = 1631638868},
+    --- paleto
+        [9] = {coords = vector4(-252.43, 6312.25, 32.34, 313.48), taken = false, model = 2117668672},
         [10] = {coords = vector4(-247.04, 6317.95, 32.34, 134.64), taken = false, model = 2117668672},
         [11] = {coords = vector4(-255.98, 6315.67, 32.34, 313.91), taken = false, model = 2117668672},
+    --Prison Beds
     },
-    ["jailbeds"] = {
-        [1] = {coords = vector4(1761.96, 2597.74, 45.66, 270.14), taken = false, model = 2117668672},
-        [2] = {coords = vector4(1761.96, 2591.51, 45.66, 269.8), taken = false, model = 2117668672},
-        [3] = {coords = vector4(1771.8, 2598.02, 45.66, 89.05), taken = false, model = 2117668672},
-        [4] = {coords = vector4(1771.85, 2591.85, 45.66, 91.51), taken = false, model = 2117668672},
+    ['jailbeds'] = {
+        [1] = {coords = vector4(1771.8004, 2598.1752, 46.658565, 246.41351), taken = false, model = 2117668672},
+        [2] = {coords = vector4(1771.785, 2591.8798, 46.658569, 267.62844), taken = false, model = 2117668672},
     },
     ["stations"] = {
-        [1] = {label = Lang:t('info.pb_hospital'), coords = vector4(304.27, -600.33, 43.28, 272.249)}
+        [1] = {label = Lang:t('info.pb_hospital'), coords = vector4(304.27, -600.33, 43.28, 272.249)},
+        [2] = {label = Lang:t('info.vc_hospital'), coords = vector4(-813.28, -1230.96, 7.34, 49.94)},
     }
 }
 
