@@ -13,9 +13,7 @@ dependencies {
     'cfx-gabz-pdprops', -- ⚠️PLEASE READ⚠️; Requires [cfx-gabz-pdprops] to work properly.
 }
 
-server_scripts {
-    'version_check.lua',
-}
+
 
 escrow_ignore {
     'stream/**/*.ytd',

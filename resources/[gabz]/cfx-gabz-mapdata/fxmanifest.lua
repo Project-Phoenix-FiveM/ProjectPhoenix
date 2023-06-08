@@ -28,9 +28,7 @@ client_script {
     'gabz_ipl_blockers.lua',
 }
 
-server_scripts {
-    'version_check.lua',
-}
+
 
 escrow_ignore {
     'gabz-doorlocks/*.lua',
