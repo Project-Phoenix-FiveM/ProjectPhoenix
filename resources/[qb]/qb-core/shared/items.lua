@@ -306,7 +306,10 @@ QBShared.Items = {
     ['ausb2']                       = {['name'] = 'ausb2',                        ['label'] = 'Alias USB',                     ['weight'] = 3000,         ['type'] = 'item',         ['image'] = 'ausb.png',                 ['unique'] = true,         ['useable'] = true,     ['shouldClose'] = true,   ['combinable'] = nil,   ['description'] = 'Be whoever you want to be...', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
     ['racingusb2']                       = {['name'] = 'racingusb2',                        ['label'] = 'Racing Dongle',                     ['weight'] = 3000,         ['type'] = 'item',         ['image'] = 'racingusb2.png',                 ['unique'] = true,         ['useable'] = false,     ['shouldClose'] = true,   ['combinable'] = nil,   ['description'] = 'To be seized - Illegal Item!', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
     
-    
+    --PDBadge
+    -- Ivan's Better Police Badge
+	["police_badge"] 		 	 	 	 = {["name"] = "police_badge",           			["label"] = "Law Enforcement Badge",	 			["weight"] = 1000, 		["type"] = "item", 		["image"] = "police_badge.png", 			["unique"] = true, 	["useable"] = true, 	["shouldClose"] = true,   ["combinable"] = false,   ["description"] = "A police badge.", ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+
     -- QB-Vending
 	['cola'] 				 	     = {['name'] = 'cola', 			  	     		['label'] = 'eCola', 					['weight'] = 500, 		['type'] = 'item', 		['image'] = 'cola.png', 			    ['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Genuine Cola', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
 	['ecoladiet'] 				 	 = {['name'] = 'ecoladiet', 			  	    ['label'] = 'Diet eCola', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'ecoladiet.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Genuine Diet Cola', ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },

@@ -560,6 +560,17 @@ function FormatItemInfo(itemData, dom) {
                 itemData.info.citizenid +
                 "</span></p>"
             );
+        } else if (itemData.name == "police_badge") {
+             $(".item-info-title").html("<p>" + itemData.label + "</p>");
+             $(".item-info-description").html(
+                 "<p><strong></strong><span>" +
+                 itemData.info.rank +
+                 "</span></p><p><strong></strong><span>" +
+                itemData.info.name +
+                 "</span></p><p><strong></strong><span>" +
+                 itemData.info.callsign +
+                 "</span></p>"
+             );
         } else if (itemData.name == "syphoningkit") { // Syphoning Kit (CDN-Fuel or CDN-Syphoning!)
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             $(".item-info-description").html(
