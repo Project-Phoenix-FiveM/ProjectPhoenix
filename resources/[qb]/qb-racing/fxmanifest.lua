@@ -16,12 +16,14 @@ client_script {
 server_script{
     'server/main.lua',
     'server/edit.lua',
+    'server/closed.lua',
 }
 
 files {
     'html/*.html',
     'html/*.css',
     'html/*.js',
+    'html/fonts/*.otf',
     'html/img/*'
 }
 

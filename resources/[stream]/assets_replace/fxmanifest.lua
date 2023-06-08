@@ -21,6 +21,7 @@ data_file 'TIMECYCLEMOD_FILE' 'timecycle/w_xmas.xml'
 files {
     "meta/gta5.meta",
     "meta/weather.xml",
+	"meta/doortuning.ymt",
 	"meta/water.xml",
     "timecycle/timecycle_mods_1.xml",
 	"timecycle/w_blizzard.xml",

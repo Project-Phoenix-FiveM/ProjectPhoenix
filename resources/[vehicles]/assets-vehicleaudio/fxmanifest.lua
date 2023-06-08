@@ -175,3 +175,7 @@ data_file 'AUDIO_WAVEPACK' 'sfx/dlc_aq33viperv10dl'
 data_file 'AUDIO_GAMEDATA' 'audioconfig/m158huayra_game.dat'
 data_file 'AUDIO_SOUNDDATA' 'audioconfig/m158huayra_sounds.dat'
 data_file 'AUDIO_WAVEPACK' 'sfx/dlc_m158huayra'
+
+client_script {
+    'vehicle_names.lua'
+}
