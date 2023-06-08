@@ -1011,13 +1011,6 @@ Config.JobInteractions = {
             event = 'hospital:client:TreatWounds',
             shouldClose = true
         }, {
-            id = 'emergencybutton2',
-            title = 'Emergency button',
-            icon = 'bell',
-            type = 'client',
-            event = 'police:client:SendPoliceEmergencyAlert',
-            shouldClose = true
-        }, {
             id = 'escort',
             title = 'Escort',
             icon = 'user-group',
@@ -1100,13 +1093,6 @@ Config.JobInteractions = {
     },
     ["police"] = {
         {
-            id = 'emergencybutton',
-            title = 'Emergency button',
-            icon = 'bell',
-            type = 'client',
-            event = 'police:client:SendPoliceEmergencyAlert',
-            shouldClose = true
-        }, {
             id = 'checkvehstatus',
             title = 'Check Tune Status',
             icon = 'circle-info',
