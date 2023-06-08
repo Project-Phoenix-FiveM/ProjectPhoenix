@@ -128,6 +128,17 @@ RegisterNUICallback('cDataPed', function(nData, cb)
                         Wait(0)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
+                    local  RandomAnimins = {     
+                        "WORLD_HUMAN_HANG_OUT_STREET",
+                        "WORLD_HUMAN_STAND_IMPATIENT",
+                        "WORLD_HUMAN_STAND_MOBILE",
+                        "WORLD_HUMAN_SMOKING_POT",
+                        "WORLD_HUMAN_LEANING",
+                        "WORLD_HUMAN_DRUG_DEALER_HARD"
+                    }
+                    local PlayAnimin = RandomAnimins[math.random(#RandomAnimins)] 
+                    SetPedCanPlayAmbientAnims(charPed, true)
+                    TaskStartScenarioInPlace(charPed, PlayAnimin, 0, true)
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
                     FreezeEntityPosition(charPed, false)
                     SetEntityInvincible(charPed, true)
