@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               10.4.28-MariaDB - mariadb.org binary distribution
+-- Server version:               10.6.12-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win64
--- HeidiSQL Version:             12.4.0.6659
+-- HeidiSQL Version:             12.0.0.6468
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -16,7 +16,7 @@
 
 
 -- Dumping database structure for projectphoenix
-CREATE DATABASE IF NOT EXISTS `projectphoenix` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci */;
+CREATE DATABASE IF NOT EXISTS `projectphoenix` /*!40100 DEFAULT CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci */;
 USE `projectphoenix`;
 
 -- Dumping structure for table projectphoenix.apartments
@@ -29,11 +29,9 @@ CREATE TABLE IF NOT EXISTS `apartments` (
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`),
   KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Dumping data for table projectphoenix.apartments: ~1 rows (approximately)
-INSERT INTO `apartments` (`id`, `name`, `type`, `label`, `citizenid`) VALUES
-	(3, 'apartment55839', 'apartment4', 'Tinsel Towers', 'REF10868');
+-- Dumping data for table projectphoenix.apartments: ~0 rows (approximately)
 
 -- Dumping structure for table projectphoenix.bank_accounts
 CREATE TABLE IF NOT EXISTS `bank_accounts` (
@@ -62,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `bank_accounts_new` (
   `isFrozen` int(11) DEFAULT 0,
   `creator` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.bank_accounts_new: ~11 rows (approximately)
 INSERT INTO `bank_accounts_new` (`id`, `amount`, `transactions`, `auth`, `isFrozen`, `creator`) VALUES
@@ -73,7 +71,7 @@ INSERT INTO `bank_accounts_new` (`id`, `amount`, `transactions`, `auth`, `isFroz
 	('families', 0, '[]', '[]', 0, NULL),
 	('lostmc', 0, '[]', '[]', 0, NULL),
 	('mechanic', 0, '[]', '[]', 0, NULL),
-	('police', 50, '[{"trans_id":"1ef78fc4-354a-4731-a801-44cb59e51ee8","title":"Personal Account / RSF59658","time":1685903649,"message":"hewllo","trans_type":"deposit","receiver":"Law Enforcement","amount":50,"issuer":"Project Phoenix"}]', '[]', 0, NULL),
+	('police', 0, '[]', '[]', 0, NULL),
 	('realestate', 0, '[]', '[]', 0, NULL),
 	('triads', 0, '[]', '[]', 0, NULL),
 	('vagos', 0, '[]', '[]', 0, NULL);
@@ -128,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `bans` (
   KEY `license` (`license`),
   KEY `discord` (`discord`),
   KEY `ip` (`ip`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.bans: ~0 rows (approximately)
 
@@ -138,11 +136,11 @@ CREATE TABLE IF NOT EXISTS `crypto` (
   `worth` int(11) NOT NULL DEFAULT 0,
   `history` text DEFAULT NULL,
   PRIMARY KEY (`crypto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Dumping data for table projectphoenix.crypto: ~0 rows (approximately)
+-- Dumping data for table projectphoenix.crypto: ~1 rows (approximately)
 INSERT INTO `crypto` (`crypto`, `worth`, `history`) VALUES
-	('qbit', 1010, '[{"PreviousWorth":1011,"NewWorth":1010},{"PreviousWorth":1011,"NewWorth":1010},{"PreviousWorth":1011,"NewWorth":1010},{"PreviousWorth":1010,"NewWorth":1010}]');
+	('qbit', 1004, '[{"NewWorth":1010,"PreviousWorth":1010},{"NewWorth":1010,"PreviousWorth":1010},{"NewWorth":1010,"PreviousWorth":1010},{"NewWorth":1004,"PreviousWorth":1010}]');
 
 -- Dumping structure for table projectphoenix.crypto_transactions
 CREATE TABLE IF NOT EXISTS `crypto_transactions` (
@@ -153,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `crypto_transactions` (
   `date` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.crypto_transactions: ~0 rows (approximately)
 
@@ -165,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `dealers` (
   `time` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `createdby` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.dealers: ~0 rows (approximately)
 
@@ -187,8 +185,6 @@ CREATE TABLE IF NOT EXISTS `dpkeybinds` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Dumping data for table projectphoenix.dpkeybinds: ~0 rows (approximately)
-INSERT INTO `dpkeybinds` (`id`, `keybind1`, `emote1`, `keybind2`, `emote2`, `keybind3`, `emote3`, `keybind4`, `emote4`, `keybind5`, `emote5`, `keybind6`, `emote6`) VALUES
-	('license:77d729d6d03cc754a0cfae92ad5dfda1d7ad0244', 'num4', '', 'num5', '', 'num6', '', 'num7', '', 'num8', '', 'num9', '');
 
 -- Dumping structure for table projectphoenix.fuel_stations
 CREATE TABLE IF NOT EXISTS `fuel_stations` (
@@ -200,15 +196,15 @@ CREATE TABLE IF NOT EXISTS `fuel_stations` (
   `balance` int(255) DEFAULT NULL,
   `label` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`location`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.fuel_stations: ~27 rows (approximately)
 INSERT INTO `fuel_stations` (`location`, `owned`, `owner`, `fuel`, `fuelprice`, `balance`, `label`) VALUES
 	(1, 0, '0', 100000, 3, 0, 'Davis Avenue Ron'),
-	(2, 1, 'REF10868', 100000, 4, 640, 'Rhodo\'s Fuel Inc'),
+	(2, 0, '0', 100000, 4, 0, 'Rhodo\'s Fuel Inc'),
 	(3, 0, '0', 100000, 3, 0, 'Dutch London Xero'),
 	(4, 0, '0', 100000, 3, 0, 'Little Seoul LTD'),
-	(5, 0, '0', 99965, 3, 68, 'Strawberry Ave Xero'),
+	(5, 0, '0', 100000, 3, 0, 'Strawberry Ave Xero'),
 	(6, 0, '0', 100000, 3, 0, 'Popular Street Ron'),
 	(7, 0, '0', 100000, 3, 0, 'Capital Blvd Ron'),
 	(8, 0, '0', 100000, 3, 0, 'Mirror Park LTD'),
@@ -230,7 +226,7 @@ INSERT INTO `fuel_stations` (`location`, `owned`, `owner`, `fuel`, `fuelprice`, 
 	(24, 0, '0', 100000, 3, 0, 'Rex\'s Diner Globe Oil'),
 	(25, 0, '0', 100000, 3, 0, 'Palmino Freeway Ron'),
 	(26, 0, '0', 100000, 3, 0, 'North Rockford LTD'),
-	(27, 0, '0', 99985, 3, 29, 'Alta Street Globe Oil');
+	(27, 0, '0', 100000, 3, 0, 'Alta Street Globe Oil');
 
 -- Dumping structure for table projectphoenix.gloveboxitems
 CREATE TABLE IF NOT EXISTS `gloveboxitems` (
@@ -239,11 +235,9 @@ CREATE TABLE IF NOT EXISTS `gloveboxitems` (
   `items` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`plate`),
   KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.gloveboxitems: ~0 rows (approximately)
-INSERT INTO `gloveboxitems` (`id`, `plate`, `items`) VALUES
-	(1, '86FZD783', '[{"type":"item","useable":true,"image":"newspaper.png","name":"newspaper","unique":false,"label":"Newspaper","slot":1,"weight":10,"info":{"quality":97},"amount":1},{"type":"item","useable":true,"image":"newspaper.png","name":"newspaper","unique":false,"label":"Newspaper","slot":2,"weight":10,"info":{"quality":97},"amount":1},{"type":"item","useable":true,"image":"sandwich.png","created":1686136209,"name":"sandwich","unique":false,"label":"Sandwich","slot":3,"info":{"quality":99},"weight":200,"amount":2}]');
 
 -- Dumping structure for table projectphoenix.houselocations
 CREATE TABLE IF NOT EXISTS `houselocations` (
@@ -257,7 +251,7 @@ CREATE TABLE IF NOT EXISTS `houselocations` (
   `garage` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.houselocations: ~1 rows (approximately)
 INSERT INTO `houselocations` (`id`, `name`, `label`, `coords`, `owned`, `price`, `tier`, `garage`) VALUES
@@ -278,7 +272,7 @@ CREATE TABLE IF NOT EXISTS `house_plants` (
   PRIMARY KEY (`id`),
   KEY `building` (`building`),
   KEY `plantid` (`plantid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.house_plants: ~0 rows (approximately)
 
@@ -293,7 +287,7 @@ CREATE TABLE IF NOT EXISTS `lapraces` (
   `raceid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `raceid` (`raceid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.lapraces: ~0 rows (approximately)
 
@@ -306,7 +300,7 @@ CREATE TABLE IF NOT EXISTS `management_funds` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `job_name` (`job_name`),
   KEY `type` (`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.management_funds: ~12 rows (approximately)
 INSERT INTO `management_funds` (`id`, `job_name`, `amount`, `type`) VALUES
@@ -322,6 +316,22 @@ INSERT INTO `management_funds` (`id`, `job_name`, `amount`, `type`) VALUES
 	(10, 'cartel', 0, 'gang'),
 	(11, 'families', 0, 'gang'),
 	(12, 'triads', 0, 'gang');
+
+-- Dumping structure for table projectphoenix.management_outfits
+CREATE TABLE IF NOT EXISTS `management_outfits` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `job_name` varchar(50) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `minrank` int(11) NOT NULL DEFAULT 0,
+  `name` varchar(50) NOT NULL DEFAULT 'Cool Outfit',
+  `gender` varchar(50) NOT NULL DEFAULT 'male',
+  `model` varchar(50) DEFAULT NULL,
+  `props` varchar(1000) DEFAULT NULL,
+  `components` varchar(1500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dumping data for table projectphoenix.management_outfits: ~0 rows (approximately)
 
 -- Dumping structure for table projectphoenix.mdt_bolos
 CREATE TABLE IF NOT EXISTS `mdt_bolos` (
@@ -489,12 +499,9 @@ CREATE TABLE IF NOT EXISTS `mdt_weaponinfo` (
   `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `serial` (`serial`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table projectphoenix.mdt_weaponinfo: ~2 rows (approximately)
-INSERT INTO `mdt_weaponinfo` (`id`, `serial`, `owner`, `information`, `weapClass`, `weapModel`, `image`) VALUES
-	(1, '20VLA4PS009dMkb', 'Project Phoenix', 'Purchased at Ammunation', '1', 'Walther P99', 'https://cfx-nui-qb-inventory/html/images/weapon_pistol.png'),
-	(2, '94pCT5Yx304eCeN', 'Project Phoenix', 'Purchased at Ammunation', '1', 'Knife', 'https://cfx-nui-qb-inventory/html/images/weapon_knife.png');
+-- Dumping data for table projectphoenix.mdt_weaponinfo: ~0 rows (approximately)
 
 -- Dumping structure for table projectphoenix.newspaper
 CREATE TABLE IF NOT EXISTS `newspaper` (
@@ -508,7 +515,7 @@ CREATE TABLE IF NOT EXISTS `newspaper` (
   `image` varchar(250) DEFAULT NULL,
   `publisher` varchar(250) NOT NULL DEFAULT 'Los Santos Newspaper',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.newspaper: ~0 rows (approximately)
 
@@ -524,7 +531,7 @@ CREATE TABLE IF NOT EXISTS `occasion_vehicles` (
   `occasionid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `occasionId` (`occasionid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.occasion_vehicles: ~0 rows (approximately)
 
@@ -534,7 +541,7 @@ CREATE TABLE IF NOT EXISTS `ox_doorlock` (
   `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1661 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1661 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.ox_doorlock: ~829 rows (approximately)
 INSERT INTO `ox_doorlock` (`id`, `name`, `data`) VALUES
@@ -1375,11 +1382,9 @@ CREATE TABLE IF NOT EXISTS `paycheck_account` (
   `money` bigint(20) DEFAULT 0,
   PRIMARY KEY (`citizenid`),
   KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table projectphoenix.paycheck_account: ~0 rows (approximately)
-INSERT INTO `paycheck_account` (`id`, `citizenid`, `money`) VALUES
-	(1, 'REF10868', 4000);
 
 -- Dumping structure for table projectphoenix.paycheck_logs
 CREATE TABLE IF NOT EXISTS `paycheck_logs` (
@@ -1391,42 +1396,9 @@ CREATE TABLE IF NOT EXISTS `paycheck_logs` (
   `created` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table projectphoenix.paycheck_logs: ~30 rows (approximately)
-INSERT INTO `paycheck_logs` (`id`, `citizenid`, `state`, `amount`, `metadata`, `created`) VALUES
-	(1, 'REF10868', 1, 100, '{"desc":{"source":{"job":"ambulance"},"type":"from"},"account":{"current_value":100,"old_value":0}}', '2023-06-07 10:42:15'),
-	(2, 'REF10868', 1, 100, '{"desc":{"source":{"job":"ambulance"},"type":"from"},"account":{"current_value":200,"old_value":100}}', '2023-06-07 10:52:15'),
-	(3, 'REF10868', 0, 100, '{"desc":{"source":{"citizenid":"REF10868","name":"Project Phoenix"},"type":"to"},"account":{"current_value":100,"old_value":200}}', '2023-06-07 10:52:54'),
-	(4, 'REF10868', 1, 100, '{"desc":{"source":{"job":"ambulance"},"type":"from"},"account":{"current_value":200,"old_value":100}}', '2023-06-07 11:02:15'),
-	(5, 'REF10868', 1, 100, '{"desc":{"source":{"job":"ambulance"},"type":"from"},"account":{"current_value":300,"old_value":200}}', '2023-06-07 11:18:41'),
-	(6, 'REF10868', 1, 100, '{"desc":{"source":{"job":"ambulance"},"type":"from"},"account":{"current_value":400,"old_value":300}}', '2023-06-07 11:28:41'),
-	(7, 'REF10868', 1, 150, '{"account":{"current_value":550,"old_value":400},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 12:24:14'),
-	(8, 'REF10868', 1, 150, '{"account":{"current_value":700,"old_value":550},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 12:34:14'),
-	(9, 'REF10868', 1, 150, '{"account":{"current_value":850,"old_value":700},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 12:44:15'),
-	(10, 'REF10868', 1, 75, '{"account":{"current_value":925,"old_value":850},"desc":{"source":{"job":"ambulance"},"type":"from"}}', '2023-06-07 12:54:15'),
-	(11, 'REF10868', 1, 150, '{"account":{"current_value":1075,"old_value":925},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 13:04:15'),
-	(12, 'REF10868', 1, 150, '{"account":{"current_value":1225,"old_value":1075},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 13:14:15'),
-	(13, 'REF10868', 1, 150, '{"account":{"current_value":1375,"old_value":1225},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 13:24:15'),
-	(14, 'REF10868', 1, 150, '{"account":{"current_value":1525,"old_value":1375},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 14:04:15'),
-	(15, 'REF10868', 1, 125, '{"account":{"current_value":1650,"old_value":1525},"desc":{"type":"from","source":{"job":"police"}}}', '2023-06-07 14:24:43'),
-	(16, 'REF10868', 1, 125, '{"account":{"current_value":1775,"old_value":1650},"desc":{"type":"from","source":{"job":"police"}}}', '2023-06-07 14:34:43'),
-	(17, 'REF10868', 1, 125, '{"account":{"old_value":1775,"current_value":1900},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 15:00:05'),
-	(18, 'REF10868', 1, 150, '{"account":{"old_value":1900,"current_value":2050},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 15:10:05'),
-	(19, 'REF10868', 1, 150, '{"account":{"old_value":2050,"current_value":2200},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 15:27:03'),
-	(20, 'REF10868', 1, 75, '{"account":{"old_value":2200,"current_value":2275},"desc":{"source":{"job":"realestate"},"type":"from"}}', '2023-06-07 18:51:15'),
-	(21, 'REF10868', 1, 75, '{"account":{"old_value":2275,"current_value":2350},"desc":{"source":{"job":"realestate"},"type":"from"}}', '2023-06-07 19:22:12'),
-	(22, 'REF10868', 1, 150, '{"account":{"old_value":2350,"current_value":2500},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 19:32:12'),
-	(23, 'REF10868', 1, 150, '{"account":{"old_value":2500,"current_value":2650},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 19:42:13'),
-	(24, 'REF10868', 1, 150, '{"account":{"old_value":2650,"current_value":2800},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 19:52:13'),
-	(25, 'REF10868', 1, 150, '{"account":{"current_value":2950,"old_value":2800},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 20:13:03'),
-	(26, 'REF10868', 1, 150, '{"account":{"current_value":3100,"old_value":2950},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 20:23:03'),
-	(27, 'REF10868', 1, 150, '{"account":{"current_value":3250,"old_value":3100},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 20:33:03'),
-	(28, 'REF10868', 1, 150, '{"account":{"current_value":3400,"old_value":3250},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 20:43:03'),
-	(29, 'REF10868', 1, 150, '{"account":{"current_value":3550,"old_value":3400},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 20:53:03'),
-	(30, 'REF10868', 1, 150, '{"account":{"current_value":3700,"old_value":3550},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 21:03:03'),
-	(31, 'REF10868', 1, 150, '{"account":{"current_value":3850,"old_value":3700},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 22:23:00'),
-	(32, 'REF10868', 1, 150, '{"account":{"current_value":4000,"old_value":3850},"desc":{"source":{"job":"police"},"type":"from"}}', '2023-06-07 22:33:00');
+-- Dumping data for table projectphoenix.paycheck_logs: ~0 rows (approximately)
 
 -- Dumping structure for table projectphoenix.phone_chatrooms
 CREATE TABLE IF NOT EXISTS `phone_chatrooms` (
@@ -1442,7 +1414,7 @@ CREATE TABLE IF NOT EXISTS `phone_chatrooms` (
   `created` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `room_code` (`room_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.phone_chatrooms: ~3 rows (approximately)
 INSERT INTO `phone_chatrooms` (`id`, `room_code`, `room_name`, `room_owner_id`, `room_owner_name`, `room_members`, `room_pin`, `unpaid_balance`, `is_pinned`, `created`) VALUES
@@ -1460,7 +1432,7 @@ CREATE TABLE IF NOT EXISTS `phone_chatroom_messages` (
   `is_pinned` tinyint(1) DEFAULT 0,
   `created` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.phone_chatroom_messages: ~0 rows (approximately)
 
@@ -1484,7 +1456,7 @@ CREATE TABLE IF NOT EXISTS `phone_invoices` (
   `time` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.phone_invoices: ~0 rows (approximately)
 
@@ -1498,7 +1470,7 @@ CREATE TABLE IF NOT EXISTS `phone_messages` (
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`),
   KEY `number` (`number`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.phone_messages: ~0 rows (approximately)
 
@@ -1511,7 +1483,7 @@ CREATE TABLE IF NOT EXISTS `phone_note` (
   `lastupdate` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.phone_note: ~0 rows (approximately)
 
@@ -1528,7 +1500,7 @@ CREATE TABLE IF NOT EXISTS `phone_tweets` (
   `date` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB AUTO_INCREMENT=289 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=289 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.phone_tweets: ~0 rows (approximately)
 
@@ -1551,11 +1523,9 @@ CREATE TABLE IF NOT EXISTS `players` (
   KEY `id` (`id`),
   KEY `last_updated` (`last_updated`),
   KEY `license` (`license`)
-) ENGINE=InnoDB AUTO_INCREMENT=380 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Dumping data for table projectphoenix.players: ~1 rows (approximately)
-INSERT INTO `players` (`id`, `citizenid`, `cid`, `license`, `name`, `money`, `charinfo`, `job`, `gang`, `position`, `metadata`, `inventory`, `last_updated`) VALUES
-	(61, 'REF10868', 1, 'license:77d729d6d03cc754a0cfae92ad5dfda1d7ad0244', 'Karxi', '{"cash":20883.0,"crypto":0,"bank":25955.0}', '{"gender":0,"firstname":"Project","account":"US05QBCore9362428694","backstory":"placeholder backstory","birthdate":"1900-01-01","phone":"3075991428","lastname":"Phoenix","nationality":"UK","cid":"1"}', '{"type":"leo","name":"police","payment":150,"label":"Law Enforcement","onduty":false,"grade":{"level":4,"name":"Chief"},"isboss":true}', '{"label":"No Gang Affiliaton","isboss":false,"grade":{"level":0,"name":"none"},"name":"none"}', '{"x":441.5604248046875,"y":-1002.5538330078125,"z":30.7120361328125}', '{"isdead":false,"alias":"NO ALIAS","phonedata":{"SerialNumber":17975586,"InstalledApps":[]},"dealerrep":0,"fingerprint":"ch322X28szZ3809","status":[],"hunger":57.99999999999997,"inside":{"apartment":[]},"fitbit":[],"licences":{"business":false,"weapon":false,"driver":true},"crypto":{"xcoin":0,"gne":0,"shung":0,"lme":0},"inlaststand":false,"callsign":"401","thirst":62.00000000000003,"walletid":"QB-17171189","jailitems":[],"craftingrep":0,"criminalrecord":{"hasRecord":false},"stress":0,"attachmentcraftingrep":0,"ishandcuffed":false,"injail":0,"communityservice":0,"armor":0,"jobrep":{"tow":0,"taxi":0,"trucker":0,"hotdog":0},"phone":[],"tracker":false,"commandbinds":[],"bloodtype":"A-"}', '[{"name":"lockpick","amount":2,"created":1686076534,"slot":1,"type":"item","info":{"quality":96}},{"name":"radio","amount":1,"created":1686168944,"slot":2,"type":"item","info":{"quality":99}},{"name":"stopsign","amount":1,"created":1686169135,"slot":3,"type":"item","info":{"quality":99}},{"name":"driver_license","amount":1,"created":1685990456,"slot":4,"type":"item","info":{"lastname":"Phoenix","firstname":"Project","birthdate":"1900-01-01","quality":92,"type":"Class C Driver License"}},{"name":"id_card","amount":1,"created":1685990403,"slot":5,"type":"item","info":{"lastname":"Phoenix","firstname":"Project","gender":0,"birthdate":"1900-01-01","quality":92,"citizenid":"REF10868","nationality":"UK"}},{"name":"weapon_pistol","amount":1,"created":1686004066,"slot":7,"type":"weapon","info":{"quality":93,"ammo":0,"serie":"19uAv0JF383cTOB"}},{"name":"jerrycan","amount":1,"created":1686002073,"slot":18,"type":"item","info":{"gasamount":25,"quality":93}},{"name":"rifle_ammo","amount":1,"created":1686156833,"slot":20,"type":"item","info":{"quality":99}},{"name":"syphoningkit","amount":1,"created":1686002153,"slot":30,"type":"item","info":{"gasamount":0,"quality":93}},{"name":"keepcompanionhusky","amount":1,"created":1686168385,"slot":31,"type":"item","info":{"owner":{"lastname":"Phoenix","cid":"1","backstory":"placeholder backstory","nationality":"UK","firstname":"Project","gender":0,"account":"US05QBCore9362428694","phone":"3075991428","birthdate":"1900-01-01"},"level":0,"quality":100,"hash":"91kTX9uy821bevQ","health":350,"name":"Lilly","age":0,"gender":false,"XP":0,"thirst":0,"food":100,"variation":"white"}},{"name":"keepcompanionretriever","amount":1,"created":1686168321,"slot":32,"type":"item","info":{"owner":{"lastname":"Phoenix","cid":"1","backstory":"placeholder backstory","nationality":"UK","firstname":"Project","gender":0,"account":"US05QBCore9362428694","phone":"3075991428","birthdate":"1900-01-01"},"level":1,"quality":100,"hash":"65CDC1EW439jLQa","health":300.0,"name":"Lucky","age":15,"gender":true,"XP":83,"thirst":0.3,"food":97.0,"variation":"brown"}},{"name":"phone","amount":1,"created":1686085020,"slot":12,"type":"item","info":{"quality":96}},{"name":"panicbutton","amount":1,"created":1686153025,"slot":13,"type":"item","info":{"quality":99}},{"name":"cranberry","amount":1,"created":1686169962,"slot":9,"type":"item","info":{"quality":99}}]', '2023-06-07 22:59:19');
+-- Dumping data for table projectphoenix.players: ~0 rows (approximately)
 
 -- Dumping structure for table projectphoenix.playerskins
 CREATE TABLE IF NOT EXISTS `playerskins` (
@@ -1567,11 +1537,9 @@ CREATE TABLE IF NOT EXISTS `playerskins` (
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`),
   KEY `active` (`active`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Dumping data for table projectphoenix.playerskins: ~1 rows (approximately)
-INSERT INTO `playerskins` (`id`, `citizenid`, `model`, `skin`, `active`) VALUES
-	(7, 'REF10868', '1885233650', '{"pants":{"item":9,"defaultTexture":0,"defaultItem":0,"texture":0},"chimp_bone_width":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"shoes":{"item":1,"defaultTexture":0,"defaultItem":1,"texture":0},"jaw_bone_width":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"nose_4":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"chimp_bone_lowering":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"bag":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"nose_3":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"hat":{"item":-1,"defaultTexture":0,"defaultItem":-1,"texture":0},"mask":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"cheek_3":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"makeup":{"item":-1,"defaultTexture":1,"defaultItem":-1,"texture":1},"lipstick":{"item":-1,"defaultTexture":1,"defaultItem":-1,"texture":1},"nose_2":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"jaw_bone_back_lenght":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"face":{"item":8,"defaultTexture":0,"defaultItem":0,"texture":0},"glass":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"nose_0":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"cheek_2":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"lips_thickness":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"t-shirt":{"item":15,"defaultTexture":0,"defaultItem":1,"texture":0},"torso2":{"item":43,"defaultTexture":0,"defaultItem":0,"texture":0},"ear":{"item":-1,"defaultTexture":0,"defaultItem":-1,"texture":0},"hair":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"bracelet":{"item":-1,"defaultTexture":0,"defaultItem":-1,"texture":0},"accessory":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"watch":{"item":-1,"defaultTexture":0,"defaultItem":-1,"texture":0},"eyebrown_high":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"eyebrown_forward":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"beard":{"item":-1,"defaultTexture":1,"defaultItem":-1,"texture":1},"facemix":{"defaultSkinMix":0.0,"defaultShapeMix":0.0,"skinMix":0.43,"shapeMix":0},"chimp_bone_lenght":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"nose_5":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"eye_opening":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"face2":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"eyebrows":{"item":-1,"defaultTexture":1,"defaultItem":-1,"texture":1},"arms":{"item":11,"defaultTexture":0,"defaultItem":0,"texture":0},"cheek_1":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"decals":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"vest":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"chimp_hole":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"eye_color":{"item":8,"defaultTexture":0,"defaultItem":-1,"texture":0},"neck_thikness":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0},"moles":{"item":0,"defaultTexture":0,"defaultItem":-1,"texture":0},"ageing":{"item":-1,"defaultTexture":0,"defaultItem":-1,"texture":0},"blush":{"item":-1,"defaultTexture":1,"defaultItem":-1,"texture":1},"nose_1":{"item":0,"defaultTexture":0,"defaultItem":0,"texture":0}}', 1);
+-- Dumping data for table projectphoenix.playerskins: ~0 rows (approximately)
 
 -- Dumping structure for table projectphoenix.player_contacts
 CREATE TABLE IF NOT EXISTS `player_contacts` (
@@ -1581,7 +1549,7 @@ CREATE TABLE IF NOT EXISTS `player_contacts` (
   `number` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.player_contacts: ~0 rows (approximately)
 
@@ -1600,7 +1568,7 @@ CREATE TABLE IF NOT EXISTS `player_houses` (
   KEY `house` (`house`),
   KEY `citizenid` (`citizenid`),
   KEY `identifier` (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.player_houses: ~0 rows (approximately)
 
@@ -1611,22 +1579,22 @@ CREATE TABLE IF NOT EXISTS `player_jobs` (
   `employees` text DEFAULT NULL,
   `maxEmployee` tinyint(11) DEFAULT 15,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.player_jobs: ~15 rows (approximately)
 INSERT INTO `player_jobs` (`id`, `jobname`, `employees`, `maxEmployee`) VALUES
-	(106, 'realestate', '{"REF10868":{"cid":"REF10868","grade":1,"name":"Project Phoenix"}}', 15),
-	(107, 'police', '{"REF10868":{"cid":"REF10868","name":"Project Phoenix","grade":4}}', 15),
+	(106, 'realestate', '[]', 15),
+	(107, 'police', '[]', 15),
 	(108, 'judge', '[]', 15),
-	(109, 'reporter', '{"REF10868":{"cid":"REF10868","grade":0,"name":"Project Phoenix"}}', 15),
-	(110, 'tow', '{"REF10868":{"cid":"REF10868","name":"Project Phoenix","grade":0}}', 15),
+	(109, 'reporter', '[]', 15),
+	(110, 'tow', '[]', 15),
 	(111, 'taxi', '[]', 15),
 	(112, 'bus', '[]', 15),
 	(113, 'garbage', '[]', 15),
-	(114, 'ambulance', '{"REF10868":{"name":"Project Phoenix","cid":"REF10868","grade":2}}', 15),
+	(114, 'ambulance', '[]', 15),
 	(115, 'lawyer', '[]', 15),
 	(116, 'cardealer', '[]', 15),
-	(117, 'trucker', '{"RSF59658":{"grade":0,"name":"Project Phoenix","cid":"RSF59658"}}', 15),
+	(117, 'trucker', '[]', 15),
 	(118, 'vineyard', '[]', 15),
 	(119, 'mechanic', '[]', 15),
 	(120, 'hotdog', '[]', 15);
@@ -1644,7 +1612,7 @@ CREATE TABLE IF NOT EXISTS `player_mails` (
   `button` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.player_mails: ~0 rows (approximately)
 
@@ -1652,16 +1620,27 @@ CREATE TABLE IF NOT EXISTS `player_mails` (
 CREATE TABLE IF NOT EXISTS `player_outfits` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(50) DEFAULT NULL,
-  `outfitname` varchar(50) NOT NULL,
+  `outfitname` varchar(50) NOT NULL DEFAULT '0',
   `model` varchar(50) DEFAULT NULL,
-  `skin` text DEFAULT NULL,
-  `outfitId` varchar(50) NOT NULL,
+  `props` varchar(1000) DEFAULT NULL,
+  `components` varchar(1500) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `citizenid` (`citizenid`),
-  KEY `outfitId` (`outfitId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  UNIQUE KEY `citizenid_outfitname_model` (`citizenid`,`outfitname`,`model`),
+  KEY `citizenid` (`citizenid`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table projectphoenix.player_outfits: ~0 rows (approximately)
+
+-- Dumping structure for table projectphoenix.player_outfit_codes
+CREATE TABLE IF NOT EXISTS `player_outfit_codes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `outfitid` int(11) NOT NULL,
+  `code` varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `FK_player_outfit_codes_player_outfits` (`outfitid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dumping data for table projectphoenix.player_outfit_codes: ~0 rows (approximately)
 
 -- Dumping structure for table projectphoenix.player_transactions
 CREATE TABLE IF NOT EXISTS `player_transactions` (
@@ -1669,9 +1648,9 @@ CREATE TABLE IF NOT EXISTS `player_transactions` (
   `isFrozen` int(11) DEFAULT 0,
   `transactions` longtext DEFAULT '[]',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Dumping data for table projectphoenix.player_transactions: ~0 rows (approximately)
+-- Dumping data for table projectphoenix.player_transactions: ~1 rows (approximately)
 INSERT INTO `player_transactions` (`id`, `isFrozen`, `transactions`) VALUES
 	('RSF59658', 0, '[{"trans_id":"1ef78fc4-354a-4731-a801-44cb59e51ee8","title":"Personal Account / RSF59658","time":1685903649,"message":"hewllo","trans_type":"withdraw","receiver":"Law Enforcement","amount":50,"issuer":"Project Phoenix"}]');
 
@@ -1701,15 +1680,9 @@ CREATE TABLE IF NOT EXISTS `player_vehicles` (
   KEY `plate` (`plate`),
   KEY `citizenid` (`citizenid`),
   KEY `license` (`license`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Dumping data for table projectphoenix.player_vehicles: ~5 rows (approximately)
-INSERT INTO `player_vehicles` (`id`, `license`, `citizenid`, `vehicle`, `hash`, `mods`, `plate`, `fakeplate`, `garage`, `fuel`, `engine`, `body`, `state`, `depotprice`, `drivingdistance`, `status`, `balance`, `paymentamount`, `paymentsleft`, `financetime`) VALUES
-	(1, 'license:77d729d6d03cc754a0cfae92ad5dfda1d7ad0244', 'REF10868', 'rhapsody', '841808271', '{"modDoorSpeaker":-1,"modAirFilter":-1,"modHorns":-1,"interiorColor":0,"modSpoilers":-1,"headlightColor":255,"modBrakes":-1,"modTurbo":false,"modSteeringWheel":-1,"wheelSize":0.0,"plate":"1JS701PZ","windowTint":-1,"modKit19":-1,"modHood":-1,"modFrontWheels":-1,"modTransmission":-1,"modAerials":-1,"modCustomTiresR":false,"modSmokeEnabled":false,"dashboardColor":0,"modTrimA":-1,"modPlateHolder":-1,"tireBurstCompletely":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"modTrimB":-1,"modTank":-1,"oilLevel":4.76596940834568,"tankHealth":4000.2369900714818,"modLivery":-1,"modSpeakers":-1,"modStruts":-1,"plateIndex":0,"doorStatus":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"modSideSkirt":-1,"modShifterLeavers":-1,"tireBurstState":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"wheelWidth":0.0,"modCustomTiresF":false,"modVanityPlate":-1,"modKit21":-1,"modHydrolic":-1,"wheels":1,"modRearBumper":-1,"modEngine":-1,"wheelColor":156,"modRightFender":-1,"modFender":-1,"modDashboard":-1,"modGrille":-1,"fuelLevel":96.90804463636234,"engineHealth":992.9102934053518,"modXenon":false,"tireHealth":{"1":1000.0,"2":1000.0,"3":1000.0,"0":1000.0},"modWindows":-1,"modArchCover":-1,"modBackWheels":-1,"modFrontBumper":-1,"modOrnaments":-1,"modRoof":-1,"modDial":-1,"modSeats":-1,"modExhaust":-1,"color2":0,"modArmor":-1,"liveryRoof":-1,"extras":[],"neonEnabled":[false,false,false,false],"modAPlate":-1,"color1":6,"modKit47":-1,"modEngineBlock":-1,"windowStatus":{"1":true,"2":true,"3":true,"4":false,"5":false,"6":true,"7":true,"0":true},"modKit49":-1,"xenonColor":255,"neonColor":[0,0,255],"modSuspension":-1,"modKit17":-1,"tyreSmokeColor":[255,255,255],"modFrame":-1,"dirtLevel":3.9716411736214,"modTrunk":-1,"model":841808271,"pearlescentColor":111,"bodyHealth":996.0876063442489}', '1JS701PZ', NULL, 'pillboxgarage', 97, 993, 996, 1, 0, 219468, NULL, 0, 0, 0, 0),
-	(2, 'license:77d729d6d03cc754a0cfae92ad5dfda1d7ad0244', 'REF10868', '22m5', '-1229221301', '{"modSuspension":3,"color2":1,"modSideSkirt":-1,"modSeats":-1,"modCustomTiresF":false,"modHood":-1,"doorStatus":{"1":true,"2":false,"3":false,"4":false,"5":false,"0":false},"modBackWheels":-1,"modDoorSpeaker":-1,"modFrontWheels":-1,"oilLevel":4.76596940834568,"modRightFender":-1,"modHorns":-1,"wheels":3,"model":-1229221301,"modKit49":-1,"plateIndex":0,"modKit21":-1,"modFrontBumper":-1,"modDial":-1,"modTurbo":1,"neonColor":[0,0,255],"tireBurstCompletely":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"modStruts":-1,"tankHealth":1000.0592475178704,"modArchCover":-1,"modHydrolic":-1,"tireBurstState":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"tireHealth":{"1":1000.0,"2":1000.0,"3":1000.0,"0":1000.0},"engineHealth":485.334551416536,"extras":[],"liveryRoof":-1,"modKit47":-1,"modExhaust":-1,"modAirFilter":-1,"wheelColor":1,"modBrakes":2,"modCustomTiresR":false,"modOrnaments":-1,"modFender":-1,"wheelSize":1.0,"tyreSmokeColor":[255,255,255],"modTrimB":-1,"modRoof":-1,"modTank":-1,"modArmor":4,"modVanityPlate":-1,"bodyHealth":773.6757006214501,"modTrunk":-1,"color1":73,"modLivery":-1,"wheelWidth":1.0,"dirtLevel":1.58865646944856,"modDashboard":-1,"modAerials":-1,"modWindows":-1,"modTrimA":-1,"modPlateHolder":-1,"modSpoilers":-1,"modKit17":-1,"modAPlate":-1,"dashboardColor":0,"interiorColor":0,"modEngine":4,"modSteeringWheel":-1,"modXenon":false,"modGrille":-1,"modKit19":-1,"modRearBumper":-1,"modTransmission":3,"windowStatus":{"1":false,"2":true,"3":true,"4":false,"5":false,"6":true,"7":true,"0":true},"windowTint":-1,"modSmokeEnabled":false,"plate":"86FZD783","modFrame":-1,"xenonColor":255,"headlightColor":255,"modSpeakers":-1,"fuelLevel":25.418503511177,"neonEnabled":[false,false,false,false],"pearlescentColor":70,"modShifterLeavers":-1,"modEngineBlock":-1}', '86FZD783', NULL, 'Seized', 0, 486, 774, 0, 555, 21541, NULL, 0, 0, 0, 0),
-	(3, 'license:77d729d6d03cc754a0cfae92ad5dfda1d7ad0244', 'REF10868', '22m5', '-1229221301', '{"windowTint":-1,"modStruts":-1,"modSuspension":-1,"wheels":3,"modTrimB":-1,"modHydrolic":-1,"modEngineBlock":-1,"modCustomTiresR":false,"doorStatus":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"modWindows":-1,"modBrakes":-1,"wheelColor":1,"modPlateHolder":-1,"plateIndex":0,"modBackWheels":-1,"modCustomTiresF":false,"modDoorSpeaker":-1,"neonEnabled":[false,false,false,false],"wheelWidth":0.0,"modKit19":-1,"modEngine":-1,"modHorns":-1,"modSpoilers":-1,"modAerials":-1,"modTank":-1,"pearlescentColor":70,"modAPlate":-1,"engineHealth":1000.0592475178704,"tireBurstState":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"modExhaust":-1,"modSteeringWheel":-1,"modKit17":-1,"modDashboard":-1,"windowStatus":{"1":true,"2":true,"3":true,"4":false,"5":false,"6":true,"7":true,"0":true},"headlightColor":255,"modGrille":-1,"modXenon":false,"modRoof":-1,"neonColor":[0,0,255],"color1":73,"modFender":-1,"modOrnaments":-1,"modSmokeEnabled":false,"interiorColor":0,"color2":1,"model":-1229221301,"modRightFender":-1,"modFrame":-1,"modKit47":-1,"modTrimA":-1,"plate":"60TRH675","modAirFilter":-1,"tankHealth":4000.2369900714818,"modVanityPlate":-1,"modArmor":-1,"modRearBumper":-1,"modHood":-1,"modFrontWheels":-1,"modLivery":-1,"modTrunk":-1,"modArchCover":-1,"modFrontBumper":-1,"xenonColor":255,"modSideSkirt":-1,"tireHealth":{"1":1000.0,"2":1000.0,"3":1000.0,"0":1000.0},"tyreSmokeColor":[255,255,255],"oilLevel":4.76596940834568,"wheelSize":0.0,"dashboardColor":0,"modKit21":-1,"modSeats":-1,"modSpeakers":-1,"bodyHealth":1000.0592475178704,"dirtLevel":0.0,"extras":[],"modDial":-1,"liveryRoof":-1,"modTurbo":false,"modShifterLeavers":-1,"fuelLevel":71.48954112518533,"modKit49":-1,"tireBurstCompletely":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"modTransmission":-1}', '60TRH675', NULL, NULL, 100, 1000, 1000, 0, 0, 410095, NULL, 0, 0, 0, 0),
-	(4, 'license:77d729d6d03cc754a0cfae92ad5dfda1d7ad0244', 'REF10868', 'supervolito2', '-1671539132', '{"modFrame":-1,"color2":1,"modDashboard":-1,"modArchCover":-1,"modSideSkirt":-1,"modKit49":-1,"dirtLevel":3.17731293889712,"tireBurstState":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"modKit47":-1,"wheelWidth":0.0,"modFrontBumper":-1,"modDial":-1,"modRightFender":-1,"modTurbo":false,"tireBurstCompletely":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"wheelSize":0.0,"modSpoilers":-1,"model":-1671539132,"modShifterLeavers":-1,"modExhaust":-1,"liveryRoof":-1,"modHydrolic":-1,"modCustomTiresR":false,"extras":{"7":true,"2":true,"1":true},"doorStatus":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"bodyHealth":1000.0592475178704,"pearlescentColor":5,"windowTint":-1,"modArmor":-1,"modTrimA":-1,"modSpeakers":-1,"modKit17":-1,"interiorColor":0,"modRearBumper":-1,"modBrakes":-1,"modSteeringWheel":-1,"neonEnabled":[false,false,false,false],"windowStatus":{"1":true,"2":true,"3":true,"4":false,"5":false,"6":true,"7":true,"0":true},"modAirFilter":-1,"modTrunk":-1,"modEngineBlock":-1,"dashboardColor":0,"neonColor":[0,0,255],"wheelColor":156,"modKit21":-1,"modLivery":-1,"modHood":-1,"modFrontWheels":-1,"modBackWheels":-1,"oilLevel":7.94328234724281,"color1":3,"modEngine":-1,"modFender":-1,"modStruts":-1,"modKit19":-1,"plate":"5HR981PG","modSmokeEnabled":false,"modSuspension":-1,"modGrille":-1,"wheels":0,"modWindows":-1,"modAerials":-1,"modTank":-1,"modPlateHolder":-1,"modSeats":-1,"modHorns":-1,"modAPlate":-1,"tireHealth":{"1":1000.0,"2":1000.0,"3":1000.0,"0":1000.0},"modTrimB":-1,"engineHealth":1000.0592475178704,"tankHealth":4000.2369900714818,"headlightColor":255,"tyreSmokeColor":[255,255,255],"xenonColor":255,"modTransmission":-1,"modXenon":false,"modOrnaments":-1,"modRoof":-1,"fuelLevel":100.08535757525947,"modVanityPlate":-1,"modCustomTiresF":false,"modDoorSpeaker":-1,"plateIndex":4}', '5HR981PG', NULL, 'pillboxgarage', 100, 1000, 1000, 0, 0, 8364, NULL, 0, 0, 0, 0),
-	(5, 'license:77d729d6d03cc754a0cfae92ad5dfda1d7ad0244', 'REF10868', 'speeder', '231083307', '{"modTrimA":-1,"modArmor":-1,"wheelColor":156,"modRightFender":-1,"modDial":-1,"modArchCover":-1,"modTurbo":false,"oilLevel":3.17731293889712,"fuelLevel":98.4967011058109,"headlightColor":255,"liveryRoof":-1,"modDashboard":-1,"modSeats":-1,"bodyHealth":1000.0592475178704,"modAerials":-1,"modSpoilers":-1,"tyreSmokeColor":[255,255,255],"modAPlate":-1,"doorStatus":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"plateIndex":4,"color1":0,"modBrakes":-1,"modHood":-1,"modOrnaments":-1,"modPlateHolder":-1,"modFrame":-1,"modSteeringWheel":-1,"color2":4,"modFrontWheels":-1,"modRoof":-1,"modHydrolic":-1,"modSpeakers":-1,"tireBurstState":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"modKit17":-1,"modSmokeEnabled":false,"modTransmission":-1,"pearlescentColor":3,"wheelWidth":0.0,"modTank":-1,"modEngine":-1,"wheelSize":0.0,"modFrontBumper":-1,"wheels":0,"modKit47":-1,"modKit21":-1,"modKit49":-1,"modDoorSpeaker":-1,"windowTint":-1,"tireBurstCompletely":{"1":false,"2":false,"3":false,"4":false,"5":false,"0":false},"engineHealth":1000.0592475178704,"model":231083307,"modStruts":-1,"modGrille":-1,"tankHealth":4000.2369900714818,"modEngineBlock":-1,"tireHealth":{"1":0.0,"2":0.0,"3":0.0,"0":0.0},"modXenon":false,"modCustomTiresR":false,"modShifterLeavers":-1,"modSuspension":-1,"plate":"2XA287QU","dirtLevel":0.0,"neonColor":[0,0,255],"modHorns":-1,"modRearBumper":-1,"xenonColor":255,"modSideSkirt":-1,"modCustomTiresF":false,"modLivery":-1,"modTrimB":-1,"modExhaust":-1,"modBackWheels":-1,"modAirFilter":-1,"extras":[],"windowStatus":{"1":true,"2":false,"3":false,"4":false,"5":false,"6":true,"7":false,"0":true},"dashboardColor":0,"modWindows":-1,"interiorColor":0,"modVanityPlate":-1,"modKit19":-1,"modTrunk":-1,"modFender":-1,"neonEnabled":[false,false,false,false]}', '2XA287QU', NULL, 'boathouse1', 99, 1000, 1000, 1, 0, 727, NULL, 35000, 1458, 24, 1376);
+-- Dumping data for table projectphoenix.player_vehicles: ~0 rows (approximately)
 
 -- Dumping structure for table projectphoenix.player_warns
 CREATE TABLE IF NOT EXISTS `player_warns` (
@@ -1719,7 +1692,7 @@ CREATE TABLE IF NOT EXISTS `player_warns` (
   `reason` text DEFAULT NULL,
   `warnId` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.player_warns: ~0 rows (approximately)
 
@@ -1748,20 +1721,9 @@ CREATE TABLE IF NOT EXISTS `stashitems` (
   `items` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`stash`),
   KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Dumping data for table projectphoenix.stashitems: ~10 rows (approximately)
-INSERT INTO `stashitems` (`id`, `stash`, `items`) VALUES
-	(23, 'apartment55839', '[]'),
-	(9, 'Container | 4957 | 3198 |', '[]'),
-	(8, 'Container | 4958 | 3197 |', '[]'),
-	(7, 'Container | 5047 | 3931 |', '[]'),
-	(6, 'Container | 5049 | 3932 |', '[]'),
-	(3, 'Container | 5307 | 3965 |', '[]'),
-	(25, 'Container | 561 | 2670 |', '[]'),
-	(24, 'realestate_REF10868', '[]'),
-	(11, 'storage_unit_1', '[]'),
-	(22, 'storage_unit_4', '[]');
+-- Dumping data for table projectphoenix.stashitems: ~0 rows (approximately)
 
 -- Dumping structure for table projectphoenix.trunkitems
 CREATE TABLE IF NOT EXISTS `trunkitems` (
@@ -1770,7 +1732,7 @@ CREATE TABLE IF NOT EXISTS `trunkitems` (
   `items` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   PRIMARY KEY (`plate`),
   KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 -- Dumping data for table projectphoenix.trunkitems: ~0 rows (approximately)
 
@@ -1784,12 +1746,9 @@ CREATE TABLE IF NOT EXISTS `vaults` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `storage_location` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
--- Dumping data for table projectphoenix.vaults: ~2 rows (approximately)
-INSERT INTO `vaults` (`citizenid`, `password`, `storagename`, `storage_size`, `holders`, `id`, `storage_location`) VALUES
-	('REF10868', '1234', 'Rhodos Stash', 400000, NULL, 1, 'Adams_Apple'),
-	('REF10868', '1234', 'Rhos second', 400000, NULL, 2, 'Adams_Apple');
+-- Dumping data for table projectphoenix.vaults: ~0 rows (approximately)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
