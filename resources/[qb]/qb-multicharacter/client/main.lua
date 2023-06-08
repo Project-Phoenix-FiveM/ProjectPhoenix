@@ -119,36 +119,33 @@ RegisterNUICallback('cDataPed', function(nData, cb)
     SetEntityAsMissionEntity(charPed, true, true)
     DeleteEntity(charPed)
     if cData ~= nil then
-        QBCore.Functions.TriggerCallback('qb-multicharacter:server:getSkin', function(model, data)
-            model = model ~= nil and tonumber(model) or false
-            if model ~= nil then
+        QBCore.Functions.TriggerCallback('qb-multicharacter:server:getSkin', function(skinData)
+            if skinData then
+                local model = joaat(skinData.model)
                 CreateThread(function()
                     RequestModel(model)
                     while not HasModelLoaded(model) do
                         Wait(0)
                     end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
-                    local  RandomAnimins = {     
-                        "WORLD_HUMAN_HANG_OUT_STREET",
-                        "WORLD_HUMAN_STAND_IMPATIENT",
-                        "WORLD_HUMAN_STAND_MOBILE",
-                        "WORLD_HUMAN_SMOKING_POT",
-                        "WORLD_HUMAN_LEANING",
-                        "WORLD_HUMAN_DRUG_DEALER_HARD"
-                    }
-                    local PlayAnimin = RandomAnimins[math.random(#RandomAnimins)] 
-                    SetPedCanPlayAmbientAnims(charPed, true)
-                    TaskStartScenarioInPlace(charPed, PlayAnimin, 0, true)
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
                     FreezeEntityPosition(charPed, false)
                     SetEntityInvincible(charPed, true)
                     PlaceObjectOnGroundProperly(charPed)
                     SetBlockingOfNonTemporaryEvents(charPed, true)
-                    data = json.decode(data)
-                    TriggerEvent('qb-clothing:client:loadPlayerClothing', data, charPed)
+                    exports['illenium-appearance']:setPedAppearance(charPed, skinData)
                 end)
             else
                 CreateThread(function()
+                    local randommodels = {
+                        "mp_m_freemode_01",
+                        "mp_f_freemode_01",
+                    }
+                    model = joaat(randommodels[math.random(1, #randommodels)])
+                    RequestModel(model)
+                    while not HasModelLoaded(model) do
+                        Wait(0)
+                    end
                     charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
                     SetPedComponentVariation(charPed, 0, 0, 0, 2)
                     FreezeEntityPosition(charPed, false)
@@ -161,6 +158,15 @@ RegisterNUICallback('cDataPed', function(nData, cb)
         end, cData.citizenid)
     else
         CreateThread(function()
+            local randommodels = {
+                "mp_m_freemode_01",
+                "mp_f_freemode_01",
+            }
+            local model = joaat(randommodels[math.random(1, #randommodels)])
+            RequestModel(model)
+            while not HasModelLoaded(model) do
+                Wait(0)
+            end
             charPed = CreatePed(2, model, Config.PedCoords.x, Config.PedCoords.y, Config.PedCoords.z - 0.98, Config.PedCoords.w, false, true)
             SetPedComponentVariation(charPed, 0, 0, 0, 2)
             FreezeEntityPosition(charPed, false)
