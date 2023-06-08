@@ -1187,7 +1187,7 @@ RegisterNetEvent('police:server:Impound', function(plate, fullImpound, price, bo
     end
 end)
 
-- FiveM Heli Cam by mraes, Version 1.3 (2017-06-12)
+-- FiveM Heli Cam by mraes, Version 1.3 (2017-06-12)
 -- Modified by rjross2013 (2017-06-23)
 -- Further modified by Loque (2017-08-15)
 
