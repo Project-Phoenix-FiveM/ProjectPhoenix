@@ -17,7 +17,7 @@ Config.LicenseRank = 2
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 Config.Locations = {
     ["duty"] = {
-        [1] = vector3(442.93206, -982.0758, 31.778366),
+        [1] = vector3(441.71, -982.02, 30.2),
         [2] = vector3(-449.811, 6012.909, 31.815),
     },
     ["vehicle"] = {
@@ -26,7 +26,7 @@ Config.Locations = {
         [3] = vector4(448.15, -1017.4, 22.96, 19.96),
     },
     ["stash"] = {
-        [1] = vector3(452.59564, -997.9964, 32.235729),
+        [1] = vector3(461.76, -995.85, 29.79),
     },
     ["impound"] = {
         [1] = vector4(476.48, -1022.25, 28.06, 277.7), -- should be hidden now due to garage + radial
@@ -37,10 +37,10 @@ Config.Locations = {
         [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
     },
     ["armory"] = {
-        [1] = vector3(458.8327, -995.8884, 31.738615),
+        [1] = vector3(482.55, -995.21, 29.89),
     },
     ["trash"] = {
-        [1] = vector3(442.9, -982.97, 30.69),
+        [1] = vector3(446.88, -997.0, 29.79),
     },
     ["fingerprint"] = {
         [1] = vector3(473.19, -1007.55, 26.27),
@@ -48,7 +48,8 @@ Config.Locations = {
     ["evidence"] = {
         [1] = vector3(480.83, -991.82, 30.69), -- mrpd laboratory
         [2] = vector3(475.38, -1005.11, 26.27), -- mrpd processing
-        [3] = vector3(466.28231, -993.8376, 35.041114), -- evidence room
+        [3] = vector3(474.91, -996.7, 26.27), -- evidence room
+        [4] = vector3(472.86, -996.48, 26.27), -- evidence room
     },
     ["stations"] = {
         [1] = {label = "Mission Row PD", coords = vector4(428.23, -984.28, 29.76, 3.5)},

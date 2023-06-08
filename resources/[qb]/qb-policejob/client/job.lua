@@ -701,7 +701,7 @@ if Config.UseTarget then
                         type = "client",
                         event = "qb-policejob:ToggleDuty",
                         icon = "fas fa-sign-in-alt",
-                        label = "Sign In",
+                        label = "Sign On/Off",
                         job = "police",
                     },
                 },
