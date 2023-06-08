@@ -5,7 +5,7 @@ Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target in
 
 Config.BossMenus = {
     ['police'] = {
-        vector3(461.45, -986.2, 30.73),
+        vector3(463.13, -983.95, 30.69),
     },
     ['ambulance'] = {
         vector3(335.46, -594.52, 43.28),
@@ -22,11 +22,11 @@ Config.BossMenus = {
     ['mechanic'] = {
         vector3(-339.53, -156.44, 44.59),
     },
-}
+} 
 
 Config.BossMenuZones = {
     ['police'] = {
-        { coords = vector3(461.45, -986.2, 30.73), length = 0.35, width = 0.45, heading = 351.0, minZ = 30.58, maxZ = 30.68 } ,
+        { coords = vector3(463.13, -983.95, 30.69), length = 0.2, width = 0.6, heading = 2.0, minZ = 29.69, maxZ = 31.49 } ,
     },
     ['ambulance'] = {
         { coords = vector3(335.46, -594.52, 43.28), length = 1.2, width = 0.6, heading = 341.0, minZ = 43.13, maxZ = 43.73 },
