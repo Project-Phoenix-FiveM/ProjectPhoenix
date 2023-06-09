@@ -6,6 +6,23 @@ isEscorted = false
 PlayerJob = {}
 local DutyBlips = {}
 
+local function getSprite()
+    local sprite = 1
+    local plyPed = PlayerPedId()
+
+    if IsPedInAnyHeli(plyPed) then
+        sprite = 43
+    elseif IsPedInAnyBoat(plyPed) then
+        sprite = 755
+    elseif IsPedOnAnyBike(plyPed) then
+        sprite = 348
+    elseif IsPedInAnyVehicle(plyPed, false) then
+        sprite = 672
+    end
+
+    return sprite
+end
+
 -- Functions
 local function CreateDutyBlips(playerId, playerLabel, playerJob, playerLocation)
     local ped = GetPlayerPed(playerId)
@@ -16,7 +33,7 @@ local function CreateDutyBlips(playerId, playerLabel, playerJob, playerLocation)
         else
             blip = AddBlipForCoord(playerLocation.x, playerLocation.y, playerLocation.z)
         end
-        SetBlipSprite(blip, 1)
+        SetBlipSprite(blip, getSprite())
         ShowHeadingIndicatorOnBlip(blip, true)
         SetBlipRotation(blip, math.ceil(playerLocation.w))
         SetBlipScale(blip, 1.0)
@@ -32,10 +49,10 @@ local function CreateDutyBlips(playerId, playerLabel, playerJob, playerLocation)
         DutyBlips[#DutyBlips+1] = blip
     end
 
-    if GetBlipFromEntity(PlayerPedId()) == blip then
-        -- Ensure we remove our own blip.
-        RemoveBlip(blip)
-    end
+    -- if GetBlipFromEntity(PlayerPedId()) == blip then
+    --     -- Ensure we remove our own blip.
+    --     RemoveBlip(blip)
+    -- end
 end
 
 -- Events
