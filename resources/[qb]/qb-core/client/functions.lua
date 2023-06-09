@@ -105,6 +105,12 @@ function QBCore.Functions.Notify(text, texttype, length)
             })
         end
     else 
+        if texttype == "error" then
+            texttype = 2
+        elseif texttype == "success" then 
+            texttype = 1
+        end
+
         if not texttype then texttype = 1 end
         if not length then length = 12000 end 
         TriggerEvent("tasknotify:guiupdate",texttype, text, length)
