@@ -172,15 +172,17 @@ RegisterNetEvent('weapons:client:DrawWeapon', function()
                         WearingHolster = true
                     end
                 end
+                local isPoliceOnly = Config.IsHolsterPoliceOnly
+
                 if CheckWeapon(newWeap) then
                     if holstered then
-                        if WearingHolster then
+                        if (isPoliceOnly and QBCore.Functions.GetPlayerData().job.name == "police") or (not isPoliceOnly and WearingHolster) then
                             --TaskPlayAnim(ped, "rcmjosh4", "josh_leadout_cop2", 8.0, 2.0, -1, 48, 10, 0, 0, 0 )
                             canFire = false
                             CeaseFire()
                             currentHolster = GetPedDrawableVariation(ped, 7)
                             currentHolsterTexture = GetPedTextureVariation(ped, 7)
-                            TaskPlayAnimAdvanced(ped, "rcmjosh4", "josh_leadout_cop2", pos.x, pos.y, pos.z, 0, 0, rot, 3.0, 3.0, -1, 50, 0, 0, 0)
+                            TaskPlayAnimAdvanced(ped, "reaction@intimidation@cop@unarmed", "intro", pos.x, pos.y, pos.z, 0, 0, rot, 3.0, 3.0, -1, 50, 0, 0, 0)
                             Wait(300)
                             SetCurrentPedWeapon(ped, newWeap, true)
 
@@ -205,7 +207,7 @@ RegisterNetEvent('weapons:client:DrawWeapon', function()
                             canFire = true
                         end
                     elseif newWeap ~= currWeapon and CheckWeapon(currWeapon) then
-                        if WearingHolster then
+                        if (isPoliceOnly and QBCore.Functions.GetPlayerData().job.name == "police") or (not isPoliceOnly and WearingHolster) then
                             canFire = false
                             CeaseFire()
 
@@ -220,7 +222,7 @@ RegisterNetEvent('weapons:client:DrawWeapon', function()
                             currentHolster = GetPedDrawableVariation(ped, 7)
                             currentHolsterTexture = GetPedTextureVariation(ped, 7)
 
-                            TaskPlayAnimAdvanced(ped, "rcmjosh4", "josh_leadout_cop2", pos.x, pos.y, pos.z, 0, 0, rot, 3.0, 3.0, -1, 50, 0, 0, 0)
+                            TaskPlayAnimAdvanced(ped, "reaction@intimidation@cop@unarmed", "intro", pos.x, pos.y, pos.z, 0, 0, rot, 3.0, 3.0, -1, 50, 0, 0, 0)
                             Wait(300)
                             SetCurrentPedWeapon(ped, newWeap, true)
 
@@ -249,11 +251,11 @@ RegisterNetEvent('weapons:client:DrawWeapon', function()
                             canFire = true
                         end
                     else
-                        if WearingHolster then
+                        if (isPoliceOnly and QBCore.Functions.GetPlayerData().job.name == "police") or (not isPoliceOnly and WearingHolster) then
                             SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
                             currentHolster = GetPedDrawableVariation(ped, 7)
                             currentHolsterTexture = GetPedTextureVariation(ped, 7)
-                            TaskPlayAnimAdvanced(ped, "rcmjosh4", "josh_leadout_cop2", pos.x, pos.y, pos.z, 0, 0, rot, 3.0, 3.0, -1, 50, 0, 0, 0)
+                            TaskPlayAnimAdvanced(ped, "reaction@intimidation@cop@unarmed", "intro", pos.x, pos.y, pos.z, 0, 0, rot, 3.0, 3.0, -1, 50, 0, 0, 0)
                             Wait(300)
                             SetCurrentPedWeapon(ped, newWeap, true)
 
@@ -280,7 +282,7 @@ RegisterNetEvent('weapons:client:DrawWeapon', function()
                     end
                 else
                     if not holstered and CheckWeapon(currWeapon) then
-                        if WearingHolster then
+                        if (isPoliceOnly and QBCore.Functions.GetPlayerData().job.name == "police") or (not isPoliceOnly and WearingHolster) then
                             canFire = false
                             CeaseFire()
                             TaskPlayAnimAdvanced(ped, "reaction@intimidation@cop@unarmed", "intro", pos.x, pos.y, pos.z, 0, 0, rot, 3.0, 3.0, -1, 50, 0, 0, 0)
