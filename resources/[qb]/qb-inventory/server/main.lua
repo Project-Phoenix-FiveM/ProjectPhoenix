@@ -2171,22 +2171,15 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 	local Player = QBCore.Functions.GetPlayer(id)
 	local amount = tonumber(args[3]) or 1
 	local itemData = QBCore.Shared.Items[tostring(args[2]):lower()]
+	local cardlist = {"id_card", "driver_license", "weaponlicense", "lawyerpass"}
 	if Player then
 			if itemData then
 				-- check iteminfo
 				local info = {}
-				if itemData["name"] == "id_card" then
-					info.citizenid = Player.PlayerData.citizenid
-					info.firstname = Player.PlayerData.charinfo.firstname
-					info.lastname = Player.PlayerData.charinfo.lastname
-					info.birthdate = Player.PlayerData.charinfo.birthdate
-					info.gender = Player.PlayerData.charinfo.gender
-					info.nationality = Player.PlayerData.charinfo.nationality
-				elseif itemData["name"] == "driver_license" then
-					info.firstname = Player.PlayerData.charinfo.firstname
-					info.lastname = Player.PlayerData.charinfo.lastname
-					info.birthdate = Player.PlayerData.charinfo.birthdate
-					info.type = "Class C Driver License"
+				if string.find(table.concat(cardlist, ","), itemData["name"]) then
+					exports['um-idcard']:CreateMetaLicense(source, itemData["name"])
+					QBCore.Functions.Notify(source, Lang:t("notify.yhg") ..GetPlayerName(id).." "..amount.." "..itemData["name"].. "", "success")
+					return			
 				elseif itemData["type"] == "weapon" then
 					amount = 1
 					info.serie = tostring(QBCore.Shared.RandomInt(2) .. QBCore.Shared.RandomStr(3) .. QBCore.Shared.RandomInt(1) .. QBCore.Shared.RandomStr(2) .. QBCore.Shared.RandomInt(3) .. QBCore.Shared.RandomStr(4))
@@ -2260,57 +2253,57 @@ end, 'admin')
 --     end
 -- end)
 
-CreateUsableItem("driver_license", function(source, item)
-	local playerPed = GetPlayerPed(source)
-	local playerCoords = GetEntityCoords(playerPed)
-	local players = QBCore.Functions.GetPlayers()
-	for _, v in pairs(players) do
-		local targetPed = GetPlayerPed(v)
-		local dist = #(playerCoords - GetEntityCoords(targetPed))
-		if dist < 3.0 then
-			TriggerClientEvent('chat:addMessage', v,  {
-					template = '<div class="chat-message advert"><div class="chat-message-body"><strong>{0}:</strong><br><br> <strong>First Name:</strong> {1} <br><strong>Last Name:</strong> {2} <br><strong>Birth Date:</strong> {3} <br><strong>Licenses:</strong> {4}</div></div>',
-					args = {
-						"Drivers License",
-						item.info.firstname,
-						item.info.lastname,
-						item.info.birthdate,
-						item.info.type
-					}
-				}
-			)
-		end
-	end
-end)
+--CreateUsableItem("driver_license", function(source, item)
+--	local playerPed = GetPlayerPed(source)
+--	local playerCoords = GetEntityCoords(playerPed)
+--	local players = QBCore.Functions.GetPlayers()
+--	for _, v in pairs(players) do
+--		local targetPed = GetPlayerPed(v)
+--		local dist = #(playerCoords - GetEntityCoords(targetPed))
+--		if dist < 3.0 then
+--			TriggerClientEvent('chat:addMessage', v,  {
+--					template = '<div class="chat-message advert"><div class="chat-message-body"><strong>{0}:</strong><br><br> <strong>First Name:</strong> {1} <br><strong>Last Name:</strong> {2} <br><strong>Birth Date:</strong> {3} <br><strong>Licenses:</strong> {4}</div></div>',
+--					args = {
+--						"Drivers License",
+--						item.info.firstname,
+--						item.info.lastname,
+--						item.info.birthdate,
+--						item.info.type
+--					}
+--				}
+--			)
+--		end
+--	end
+--end)
 
-CreateUsableItem("id_card", function(source, item)
-	local playerPed = GetPlayerPed(source)
-	local playerCoords = GetEntityCoords(playerPed)
-	local players = QBCore.Functions.GetPlayers()
-	for _, v in pairs(players) do
-		local targetPed = GetPlayerPed(v)
-		local dist = #(playerCoords - GetEntityCoords(targetPed))
-		if dist < 3.0 then
-			local gender = "Man"
-			if item.info.gender == 1 then
-				gender = "Woman"
-			end
-			TriggerClientEvent('chat:addMessage', v,  {
-					template = '<div class="chat-message advert"><div class="chat-message-body"><strong>{0}:</strong><br><br> <strong>Civ ID:</strong> {1} <br><strong>First Name:</strong> {2} <br><strong>Last Name:</strong> {3} <br><strong>Birthdate:</strong> {4} <br><strong>Gender:</strong> {5} <br><strong>Nationality:</strong> {6}</div></div>',
-					args = {
-						"ID Card",
-						item.info.citizenid,
-						item.info.firstname,
-						item.info.lastname,
-						item.info.birthdate,
-						gender,
-						item.info.nationality
-					}
-				}
-			)
-		end
-	end
-end)
+--CreateUsableItem("id_card", function(source, item)
+--	local playerPed = GetPlayerPed(source)
+--	local playerCoords = GetEntityCoords(playerPed)
+--	local players = QBCore.Functions.GetPlayers()
+--	for _, v in pairs(players) do
+--		local targetPed = GetPlayerPed(v)
+--		local dist = #(playerCoords - GetEntityCoords(targetPed))
+--		if dist < 3.0 then
+--			local gender = "Man"
+--			if item.info.gender == 1 then
+--				gender = "Woman"
+--			end
+--			TriggerClientEvent('chat:addMessage', v,  {
+--					template = '<div class="chat-message advert"><div class="chat-message-body"><strong>{0}:</strong><br><br> <strong>Civ ID:</strong> {1} <br><strong>First Name:</strong> {2} <br><strong>Last Name:</strong> {3} <br><strong>Birthdate:</strong> {4} <br><strong>Gender:</strong> {5} <br><strong>Nationality:</strong> {6}</div></div>',
+--					args = {
+--						"ID Card",
+--						item.info.citizenid,
+--						item.info.firstname,
+--						item.info.lastname,
+--						item.info.birthdate,
+--						gender,
+--						item.info.nationality
+--					}
+--				}
+--			)
+--		end
+--	end
+--end)
 
 
 CreateThread(function()
