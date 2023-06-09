@@ -81,27 +81,40 @@ RegisterNUICallback('getNotifyConfig', function(_, cb)
 end)
 
 function QBCore.Functions.Notify(text, texttype, length)
-    if type(text) == "table" then
-        local ttext = text.text or 'Placeholder'
-        local caption = text.caption or 'Placeholder'
-        texttype = texttype or 'primary'
-        length = length or 5000
-        SendNUIMessage({
-            action = 'notify',
-            type = texttype,
-            length = length,
-            text = ttext,
-            caption = caption
-        })
-    else
-        texttype = texttype or 'primary'
-        length = length or 5000
-        SendNUIMessage({
-            action = 'notify',
-            type = texttype,
-            length = length,
-            text = text
-        })
+    if QBConfig.useNativeNotify then 
+        if texttype == 2 then texttype = "error" elseif texttype == 1 then texttype = "success" end --Added support for "error" or 2
+        if type(text) == "table" then
+            local ttext = text.text or 'Placeholder'
+            local caption = text.caption or 'Placeholder'
+            texttype = texttype or 'primary'
+            length = length or 5000
+            SendNUIMessage({
+                action = 'notify',
+                type = texttype,
+                length = length,
+                text = ttext,
+                caption = caption
+            })
+        else
+            texttype = texttype or 'primary'
+            length = length or 5000
+            SendNUIMessage({
+                action = 'notify',
+                type = texttype,
+                length = length,
+                text = text
+            })
+        end
+    else 
+        if texttype == "error" then
+            texttype = 2
+        elseif texttype == "success" then 
+            texttype = 1
+        end
+
+        if not texttype then texttype = 1 end
+        if not length then length = 12000 end 
+        TriggerEvent("tasknotify:guiupdate",texttype, text, length)
     end
 end
 

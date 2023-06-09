@@ -1,0 +1,67 @@
+@import "compass/css3";
+.nicesexytext {
+  font-family: sans-serif;
+  font-weight:0;
+  font-size:18px;
+  letter-spacing:0.1em;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+  color:white;
+  width:100%;
+  opacity:0.8;
+  margin-top:-9%;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0px 0px 0px black;
+}
+
+.divwrap {
+	display:block;
+  margin-left:68%;
+  width:30%;
+  height:15%;
+  margin-top:1%;
+  color:white;
+  padding:1px;
+}
+
+.notify-wrap {
+  height: 99%;
+  overflow: hidden;
+  position: relative;
+}
+
+.notification-bg {
+  color: #fff;
+  margin:6px;
+  text-align:center;
+  padding:8px;
+  border-radius:4px;
+  font-weight:bold;
+  font-size:12px;
+  display:inline-block;
+  background-color: rgba(51, 112, 165, 0.7);
+  border-right: 1px solid rgba(25,56,82,0.5);
+  border-bottom: 3px solid rgba(25,56,82,0.5);
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+.red {
+  background-color: rgba(147, 62, 47, 0.7);
+  border-color: rgba(73, 31, 23, 0.5);
+}
+
+.taxi {
+  background-color: rgba(21, 100, 15, 0.7);
+  border-color: rgba(10, 50, 7, 0.5)
+}
+
+.medical {
+  background-color: rgba(51, 70, 195, 0.7);
+  border-color: rgba(26, 35, 98, 0.5);
+}
