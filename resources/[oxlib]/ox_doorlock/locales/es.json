@@ -1,8 +1,8 @@
 {
   "unlocked_door": "Abierto",
   "locked_door": "Cerrado",
-  "lock_door": "[E] Cerrar",
-  "unlock_door": "[E] Abrir",
+  "lock_door": " Cerrar",
+  "unlock_door": " Abrir",
   "door_lock": "Bloqueo de Puertas",
   "passcode": "PIN",
   "lockpick_broke": "Se ha roto tu ganzúa",

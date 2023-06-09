@@ -1,8 +1,8 @@
 {
   "unlocked_door": "Porta sbloccata",
   "locked_door": "Porta chiusa",
-  "lock_door": "[E] Chiudi porta",
-  "unlock_door": "[E] Apri porta",
+  "lock_door": " Chiudi porta",
+  "unlock_door": " Apri porta",
   "door_lock": "Serratura della porta",
   "passcode": "codice di accesso",
   "lockpick_broke": "il tuo grimaldello si è rotto",

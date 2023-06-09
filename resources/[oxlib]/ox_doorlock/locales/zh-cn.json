@@ -1,8 +1,8 @@
 {
   "unlocked_door": "已将门解锁",
   "locked_door": "已将门锁上",
-  "lock_door": "[E] 锁门",
-  "unlock_door": "[E] 解锁门",
+  "lock_door": " 锁门",
+  "unlock_door": " 解锁门",
   "door_lock": "门锁",
   "passcode": "密码",
   "lockpick_broke": "你的开锁工具坏了",

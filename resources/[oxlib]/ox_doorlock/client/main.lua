@@ -334,7 +334,15 @@ CreateThread(function()
 
 		if ClosestDoor and ClosestDoor.distance < ClosestDoor.maxDistance then
 			if Config.DrawTextUI and not ClosestDoor.hideUi and ClosestDoor.state ~= showUI then
-				lib.showTextUI(ClosestDoor.state == 0 and lockDoor or unlockDoor)
+				lib.showTextUI(ClosestDoor.state == 0 and lockDoor or unlockDoor, {
+					icon = (ClosestDoor.state == 0 and "lock" or "lock-open"),
+					style = {
+						borderRadius = 0,
+						backgroundColor = '	#0e1111',
+						color = (ClosestDoor.state == 0 and "#FF6961" or "#B4D3B2"),
+						fontWeight = "900"
+					}
+				})
 				showUI = ClosestDoor.state
 			end
 

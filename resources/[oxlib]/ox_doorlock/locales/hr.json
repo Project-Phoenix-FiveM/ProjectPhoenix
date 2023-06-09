@@ -1,8 +1,8 @@
 {
   "unlocked_door": "Otključana vrata",
   "locked_door": "Zaključana vrata",
-  "lock_door": "[E] Zaključaj vrata",
-  "unlock_door": "[E] Otključaj vrata",
+  "lock_door": " Zaključaj vrata",
+  "unlock_door": " Otključaj vrata",
   "door_lock": "Lokot",
   "passcode": "Lozinka",
   "lockpick_broke": "Polomila Vam se brava",

@@ -1,8 +1,8 @@
 {
   "unlocked_door": "Otwarte drzwi",
   "locked_door": "Zamknięte drzwi",
-  "lock_door": "[E] Zamknij drzwi",
-  "unlock_door": "[E] Otwórz drzwi",
+  "lock_door": " Zamknij drzwi",
+  "unlock_door": " Otwórz drzwi",
   "door_lock": "Zamek",
   "passcode": "Hasło",
   "lockpick_broke": "Twój wytrych się złamał",

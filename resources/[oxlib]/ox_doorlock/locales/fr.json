@@ -1,8 +1,8 @@
 {
   "unlocked_door": "Porte déverrouillée",
   "locked_door": "Porte verrouillée",
-  "lock_door": "[E] Verrouiller la porte",
-  "unlock_door": "[E] Déverrouiller la porte",
+  "lock_door": " Verrouiller la porte",
+  "unlock_door": " Déverrouiller la porte",
   "door_lock": "Verrou de porte",
   "passcode": "Mot de passe",
   "lockpick_broke": "Votre crochet s'est cassé",

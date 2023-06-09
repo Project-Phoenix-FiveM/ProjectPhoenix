@@ -1,8 +1,8 @@
 {
   "unlocked_door": "Open deur",
   "locked_door": "Gesloten deur",
-  "lock_door": "[E] Sluiten",
-  "unlock_door": "[E] Openen",
+  "lock_door": " Sluiten",
+  "unlock_door": " Openen",
   "door_lock": "Deurslot",
   "passcode": "Toegangscode",
   "lockpick_broke": "Je lockpick is gebroken",

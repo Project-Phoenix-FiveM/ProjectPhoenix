@@ -1,8 +1,8 @@
 {
   "unlocked_door": "Durys atrakintos",
   "locked_door": "Durys užrakintos",
-  "lock_door": "[E] Užrakinti duris",
-  "unlock_door": "[E] Atrakinti duris",
+  "lock_door": " Užrakinti duris",
+  "unlock_door": " Atrakinti duris",
   "door_lock": "Durų užraktas",
   "passcode": "Slaptažodis",
   "lockpick_broke": "Tavo įsilaužimo įrankis sulūžo",

@@ -1,8 +1,8 @@
 {
   "unlocked_door": "Dveře odemčeny",
   "locked_door": "Dveře zamčeny",
-  "lock_door": "[E] Zamknout dveře",
-  "unlock_door": "[E] Odemknout dveře",
+  "lock_door": " Zamknout dveře",
+  "unlock_door": " Odemknout dveře",
   "door_lock": "Zámek dveří",
   "passcode": "Heslo",
   "lockpick_broke": "Šperhák se zlomil",

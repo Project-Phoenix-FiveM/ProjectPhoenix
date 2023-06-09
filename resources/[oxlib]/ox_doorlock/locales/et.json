@@ -1,8 +1,8 @@
 {
   "unlocked_door": "Avatud",
   "locked_door": "Lukustatud",
-  "lock_door": "[E] Lukusta uks",
-  "unlock_door": "[E] Ava uks",
+  "lock_door": " Lukusta uks",
+  "unlock_door": " Ava uks",
   "door_lock": "Ukselukk",
   "passcode": "Parool",
   "lockpick_broke": "Sinu muukraud murdus",

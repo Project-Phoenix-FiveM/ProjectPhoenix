@@ -1,8 +1,8 @@
 {
   "unlocked_door": "Ajtó kinyitva",
   "locked_door": "Ajtó bezárva",
-  "lock_door": "[E] Bezárás",
-  "unlock_door": "[E] Kinyitás",
+  "lock_door": " Bezárás",
+  "unlock_door": " Kinyitás",
   "door_lock": "Ajtózár",
   "passcode": "Jelszó",
   "lockpick_broke": "A zárfeltörőd eltört",

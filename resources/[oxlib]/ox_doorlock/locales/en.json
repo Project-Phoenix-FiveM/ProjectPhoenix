@@ -1,8 +1,8 @@
 {
   "unlocked_door": "Unlocked door",
   "locked_door": "Locked door",
-  "lock_door": "[E] Lock door",
-  "unlock_door": "[E] Unlock door",
+  "lock_door": " Lock door",
+  "unlock_door": " Unlock door",
   "door_lock": "Door lock",
   "passcode": "Passcode",
   "lockpick_broke": "Your lockpick broke",

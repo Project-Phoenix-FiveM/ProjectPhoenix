@@ -1,8 +1,8 @@
 {
     "unlocked_door": "Låst opp dør",
     "locked_door": "Låst dør",
-    "lock_door": "[E] Lås dør",
-    "unlock_door": "[E] Lås opp dør",
+    "lock_door": " Lås dør",
+    "unlock_door": " Lås opp dør",
     "door_lock": "Dørlås",
     "passcode": "Passord",
     "lockpick_broke": "Din låsdirk har gått i stykker",
