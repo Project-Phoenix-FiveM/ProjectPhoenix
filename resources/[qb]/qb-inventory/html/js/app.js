@@ -547,6 +547,22 @@ function FormatItemInfo(itemData, dom) {
                 itemData.info.birthdate +
                 "</span></p>"
             );
+        } else if (itemData.name == "meth1g") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p><strong>Strain: </strong><span>" +
+                itemData.info.strain +
+                "</span></p><p><strong>Purity: </strong><span>" +
+                itemData.info.purity +
+                "</p>"
+            );
+        }    else if (itemData.name == "cd") {
+                $(".item-info-title").html("<p>" + itemData.label + "</p>");
+                $(".item-info-description").html(
+                    "<p> Artist : " + itemData.info.artist + "</p>" + 
+                    "<p> Song : " + itemData.info.song + "</p>"
+        );
+
         } else if (itemData.name == "lawyerpass") {
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             $(".item-info-description").html(

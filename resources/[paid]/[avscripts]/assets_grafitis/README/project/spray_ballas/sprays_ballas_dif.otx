@@ -1,0 +1,10 @@
+Version 13 30
+{
+	Image sprays_ballas_dif.dds
+	Type Regular
+	PixelFormat DXT5
+	Levels 1
+	Usage UNKNOWN
+	UsageFlags -
+	ExtraFlags 0
+}

@@ -631,6 +631,32 @@ Config.Products = {
             slot = 19
         },
     },
+    ["digitalden"] = {
+        [1] = {
+            name = 'laptop',
+            price = 10000,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 1
+        },
+        [2] = {
+            name = 'gopro',
+            price = 4750,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 2
+        },
+        [3] = {
+            name = 'vpn',
+            price = 6250,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 3
+        },
+    },
 }
 Config.Locations = {
     -- 24/7 Locations
@@ -1278,5 +1304,19 @@ Config.Locations = {
         ["blipsprite"] = 267,
         ["blipcolor"] = 5,
         ["delivery"] = vector4(562.18, 2733.74, 42.06, 95.32)
+    },
+    ["digitalden"] = {
+        ["label"] = "Digital Den",
+        ["coords"] = vector4(1134.48, -467.94, 66.49, 164.21), --or vector4(-659.87, -936.46, 21.83, 130.04), --  for mlo https://www.gta5-mods.com/maps/
+        ["ped"] = 'S_M_M_StrVend_01',
+        ["scenario"] = "WORLD_HUMAN_COP_IDLES",
+        ["radius"] = 1.5,
+        ["targetIcon"] = "fas fa-laptop",
+        ["targetLabel"] = "Open Digital Den Shop",
+        ["products"] = Config.Products["digitalden"],
+        ["showblip"] = true,
+        ["blipsprite"] = 628, 
+        ["blipcolor"] = 2,
+        ["delivery"] = vector4(1146.72, -475.55, 66.38, 64.52)
     }
 }

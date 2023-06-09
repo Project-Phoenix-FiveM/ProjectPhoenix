@@ -1,0 +1,1 @@
+import{E as r,F as a,G as t}from"./index.75547906.js";var e={},o=a.exports;Object.defineProperty(e,"__esModule",{value:!0});var u=e.default=void 0,d=o(r()),l=t,i=(0,d.default)((0,l.jsx)("path",{d:"M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"}),"KeyboardArrowDown");u=e.default=i;export{u as d};

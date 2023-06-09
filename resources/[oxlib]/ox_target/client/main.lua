@@ -334,7 +334,8 @@ local function getResponse(option, server)
     if server then
         response.entity = response.entity ~= 0 and NetworkGetEntityIsNetworked(response.entity) and NetworkGetNetworkIdFromEntity(response.entity) or 0
     end
-
+    
+    response.job = response.groups
     response.icon = nil
     response.groups = nil
     response.items = nil

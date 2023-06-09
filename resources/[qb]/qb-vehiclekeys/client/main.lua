@@ -279,6 +279,7 @@ end)
 
 
 RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
+    if exports['av_boosting']:isBoosting() then return end
     LockpickDoor(isAdvanced)
 end)
 -- Backwards Compatibility ONLY -- Remove at some point --

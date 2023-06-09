@@ -161,3 +161,34 @@ QBShared.FemaleNoGloves = {
     [161] = true,
     [165] = true
 }
+
+if IsDuplicityVersion() then
+    AddEventHandler('av_restaurant:QBItem', function(data)
+        local name = data['name']
+        local path = GetResourcePath('qb-inventory')
+        if not QBShared.Items[name] then
+            QBShared.Items[name] = {
+                name = name,
+                label = data['label'],
+                weight = data['weight'],
+                type = 'item',
+                image = data['name']..'.png',
+                unique = false,
+                useable = true,
+                shouldClose = true,
+                combinable = {},
+                description = data['description']
+            }
+            if data.image then
+                PerformHttpRequest(data.image, function (errorCode, resultData, resultHeaders)
+                    if errorCode >= 200 and errorCode < 300 then
+                        local image = assert(io.open(path..'/html/images/'..data.name..'.png', "wb"))
+                        image:write(resultData)
+                        image:flush()
+                        image:close()
+                    end
+                end)
+            end
+        end
+    end)
+end

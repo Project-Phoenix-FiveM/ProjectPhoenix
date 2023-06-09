@@ -729,7 +729,7 @@ QBShared.Items = {
 	},
     ["petwaterbottleportable"]  = {
 		["name"] = "petwaterbottleportable",
-		["label"] = "Portable water bottle",
+		["label"] = "Portable water bottle", 
 		["weight"] = 1000,
 		["type"] = "item",
 		["image"] = "petwaterbottleportable.png",
@@ -753,6 +753,34 @@ QBShared.Items = {
 	},
 
 
+    --AV Laptop + Dependant Scripts.
+    --AV Laptop
+    ['laptop'] =    {['name'] = 'laptop', ['label'] = 'Laptop', ['weight'] = 12000, ['type'] = 'item', ['image'] = 'laptop.png', ['unique'] = true, ['useable'] = true, 	['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Laptop',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['decrypter'] = {['name'] = 'decrypter', ['label'] = 'Decrypter', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'decrypter.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil, ['description'] = 'Decrypter [TO BE SEIZED BY PD]',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['black_usb'] = {['name'] = 'black_usb', ['label'] = 'Black USB', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'black_usb.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil, ['description'] = 'Whats this? [TO BE SEIZED BY PD]',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    
+    --AV Boosting
+    ['dongle'] = {['name'] = 'dongle', ['label'] = 'USB Dongle', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'dongle.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Dingle Dongle [TO BE SEIZED BY PD]',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['vpn'] = {['name'] = 'vpn', ['label'] = 'VPN', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'vpn.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil, ['description'] = 'VPN [TO BE SEIZED BY PD]',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['transponder'] = {['name'] = 'transponder', ['label'] = 'Transponder', ['weight'] = 2000, ['type'] = 'item', ['image'] = 'transponder.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = '',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['hacking_device'] = {['name'] = 'hacking_device', ['label'] = 'Hacking Device', ['weight'] = 2000, ['type'] = 'item', ['image'] = 'hacking_device.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Hacking Device [TO BE SEIZED BY PD]',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
 
+    --AV Cameras
+    ['gopro'] = {['name'] = 'gopro', ['label'] = 'GoPro', ['weight'] = 2000, ['type'] = 'item', ['image'] = 'gopro.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'GoPro Camera',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
 
+    --AV Gangs
+    ['spray'] = {['name'] = 'spray', ['label'] = 'Spray', ['weight'] = 2000, ['type'] = 'item', ['image'] = 'spray.png', ['unique'] = true, ['useable'] = true, 	['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'SprayPaint',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['spray_remover'] = {['name'] = 'spray_remover', ['label'] = 'Spray Remover', ['weight'] = 5000, ['type'] = 'item', ['image'] = 'spray_remover.png', ['unique'] = true, ['useable'] = true, 	['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Spray Detergent',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+
+    --AV Meth
+    ['meth_table'] = {['name'] = 'meth_table', ['label'] = 'Table', ['weight'] = 25000, ['type'] = 'item', ['image'] = 'meth_table.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Meth Table [TO BE SEIZED BY PD]',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['lab_key'] = {['name'] = 'lab_key', ['label'] = 'Key', ['weight'] = 2000, ['type'] = 'item', ['image'] = 'lab_key.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Meth Lab Key [TO BE SEIZED BY PD]',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['meth_batch'] = {['name'] = 'meth_batch', ['label'] = 'Meth Batch', ['weight'] = 2000, ['type'] = 'item', ['image'] = 'meth_batch.png', ['unique'] = true, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Meth batch',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['ammonia'] = {['name'] = 'ammonia', ['label'] = 'Ammonia', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'ammonia.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil, ['description'] = 'Amonia',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['meth_tray'] = {['name'] = 'meth_tray', ['label'] = 'Meth Tray', ['weight'] = 2000, ['type'] = 'item', ['image'] = 'meth_tray.png', ['unique'] = true, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil, ['description'] = 'Meth Tray',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['baggies'] = {['name'] = 'baggies', ['label'] = 'Baggies', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'baggies.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil, ['description'] = 'Baggies',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+    ['meth1g'] = {['name'] = 'meth1g', ['label'] = 'Meth 1g', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'meth1g.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = false, ['combinable'] = nil, ['description'] = 'Meth 1G',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+
+    --AV Music
+    ['cd'] = {['name'] = 'cd', ['label'] = 'CD', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'cd.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Support your local artist!',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
 }
