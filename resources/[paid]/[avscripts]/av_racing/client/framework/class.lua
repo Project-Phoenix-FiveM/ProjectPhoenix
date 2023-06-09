@@ -8,7 +8,7 @@ function getClass(vehicle)
 	local fTractionCurveMin = GetVehicleHandlingFloat(vehicle, 'CHandlingData', "fTractionCurveMin")
 	local fSuspensionReboundDamp = GetVehicleHandlingFloat(vehicle, 'CHandlingData', "fSuspensionReboundDamp")
 	local fBrakeForce = GetVehicleHandlingFloat(vehicle, 'CHandlingData', "fBrakeForce")
-	local force = fInitialDriveForce
+	local force = fInitialDriveForce 
 	if fInitialDriveForce > 0 and fInitialDriveForce < 1 then
 		force = force * 1.1
 	end
@@ -22,7 +22,7 @@ function getClass(vehicle)
 		handling = handling / 2
 	end
 	local braking = ((fTractionCurveMin / fInitialDragCoeff) * fBrakeForce) * 7
-	local perfRating = ((accel * 5) + speed + handling + braking) * 15
+	local perfRating = ((accel * 5) + speed + handling + braking) * 20
 	local vehClass = "D"
 	if isMotorCycle then
 		vehClass = "M"
