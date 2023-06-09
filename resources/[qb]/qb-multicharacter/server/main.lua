@@ -101,13 +101,13 @@ RegisterNetEvent('qb-multicharacter:server:createCharacter', function(data)
             loadHouseData(src)
             TriggerClientEvent("qb-multicharacter:client:closeNUI", src)
             TriggerClientEvent('apartments:client:setupSpawnUI', src, newData)
-            GiveStarterItems(src)
+            exports['um-idcard']:CreateMetaLicense(src, {'id_card','driver_license'})
         else
             print('^2[qb-core]^7 '..GetPlayerName(src)..' has succesfully loaded!')
             QBCore.Commands.Refresh(src)
             loadHouseData(src)
             TriggerClientEvent("qb-multicharacter:client:closeNUIdefault", src)
-            GiveStarterItems(src)
+            exports['um-idcard']:CreateMetaLicense(src, {'id_card','driver_license'})
         end
 	end
 end)
