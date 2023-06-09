@@ -1299,7 +1299,7 @@ AddEventHandler('sit:checkThread', function(type)
 	end)
 end)
 
-local function startStressThread()
+function startStressThread()
 	Citizen.Wait(7500) --wait every 7 seconds.
 	TriggerServerEvent('hud:server:RelieveStress', math.random(4, 8))
 	DoneStress = false
