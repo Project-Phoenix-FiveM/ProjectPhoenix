@@ -1,5 +1,5 @@
 
 
 1 - setup all resturants and bars.
-2 - Fix car class system racing/client/framework/class.lua
+
 3 - av_corners when adding new drugs add them to the config.
