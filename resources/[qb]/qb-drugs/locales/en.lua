@@ -13,8 +13,7 @@ local Translations = {
         dealer_already_exists = "A dealer already exists with this name",
         dealer_not_exists = "This dealer doesn't exist",
         no_dealers = "No dealers have been placed",
-        dealer_not_exists_command = "Dealer %{dealerName} doesn't exist",
-        in_vehicle = "Can't sell while in a vehicle"
+        dealer_not_exists_command = "Dealer %{dealerName} doesn't exist"
     },
     success = {
         helped_player = "You helped a person up",
@@ -31,6 +30,7 @@ local Translations = {
         suspicious_situation = "Suspicious situation",
         possible_drug_dealing = "Possible drug dealing",
         drug_offer = "[E] %{bags}x %{drugLabel} for $%{randomPrice}? / [G] Decline offer",
+        decline_offer = "Decline offer",
         target_drug_offer = "Sell %{bags}x %{drugLabel} for $%{randomPrice}?",
         search_ped = "Search ped",
         pick_up_button = "[E] Pick up",
@@ -72,8 +72,7 @@ local Translations = {
         dealergoto_command_help1_name = "name",
         dealergoto_command_help1_help = "Dealer name",
         list_dealers_title = "List of all dealers: ",
-        list_dealers_name_prefix = "Name: ",
-        selling_to_ped = "Selling drugs..."
+        list_dealers_name_prefix = "Name: "
     }
 }
 
