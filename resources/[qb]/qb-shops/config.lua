@@ -371,7 +371,7 @@ Config.Products = {
         [1] = {
             name = "weapon_knife",
             price = 250,
-            amount = 250,
+            amount = 100,
             info = {},
             type = "item",
             slot = 1,
@@ -379,7 +379,7 @@ Config.Products = {
         [2] = {
             name = "weapon_bat",
             price = 250,
-            amount = 250,
+            amount = 100,
             info = {},
             type = "item",
             slot = 2,
@@ -387,7 +387,7 @@ Config.Products = {
         [3] = {
             name = "weapon_hatchet",
             price = 250,
-            amount = 250,
+            amount = 100,
             info = {},
             type = "item",
             slot = 3,
@@ -423,11 +423,84 @@ Config.Products = {
         [7] = {
             name = "pistol_ammo",
             price = 250,
-            amount = 250,
+            amount = 100,
             info = {},
             type = "item",
             slot = 7,
             requiresLicense = true
+        },
+        --tints
+        [8] = {
+            name = "weapontint_black",
+            price = 8750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 8,
+            requiresLicense = false
+        },
+        [9] = {
+            name = "weapontint_green",
+            price = 8750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 9,
+            requiresLicense = false
+        },
+        [10] = {
+            name = "weapontint_gold",
+            price = 45000,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 10,
+            requiresLicense = false
+        },
+        [11] = {
+            name = "weapontint_pink",
+            price = 8750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 11,
+            requiresLicense = false
+        },
+        [12] = {
+            name = "weapontint_army",
+            price = 8750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 12,
+            requiresLicense = false
+        },
+        [13] = {
+            name = "weapontint_lspd",
+            price = 8750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 13,
+            requiresLicense = false
+        },
+        [14] = {
+            name = "weapontint_orange",
+            price = 8750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 14,
+            requiresLicense = false
+        },
+        [15] = {
+            name = "weapontint_plat",
+            price = 62000,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 15,
+            requiresLicense = false
         },
     },
     ["casino"] = {
