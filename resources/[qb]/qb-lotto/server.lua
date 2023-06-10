@@ -14,6 +14,5 @@ AddEventHandler('qb-lotto:win', function()
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
 	local money = math.random(100, 200)
-	print("the fuck bro")
 	Player.Functions.AddMoney('cash', money)
 end)
