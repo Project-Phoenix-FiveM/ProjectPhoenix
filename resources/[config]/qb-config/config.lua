@@ -17,4 +17,6 @@ Config = Config or {}
 -- realestate = true
 -- resturants = true
 
-Config.enableAvScripts = true --Setting this to false will disable av_scripts to remove errors and overlaps.
+PaidScripts = {
+    ['avScripts'] = true --Setting this to false will disable av_scripts to remove errors and overlaps.
+}
