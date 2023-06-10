@@ -298,7 +298,7 @@ Config.PhoneApplications = {
         slot = 21,
         Alerts = 0,
     },
-    ["racing"] = {
+    --[[ ["racing"] = {
         app = "racing",
         color = "#353b48",
         color2 = "#242830",
@@ -309,7 +309,7 @@ Config.PhoneApplications = {
         blockedjobs = {},
         slot = 22,
         Alerts = 0,
-    },
+    }, ]]
     ["bank"] = {
         app = "bank",
         color = "#9c88ff",

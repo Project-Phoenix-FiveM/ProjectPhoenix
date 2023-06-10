@@ -1,0 +1,5 @@
+
+
+1 - setup all resturants and bars.
+
+3 - av_corners when adding new drugs add them to the config.

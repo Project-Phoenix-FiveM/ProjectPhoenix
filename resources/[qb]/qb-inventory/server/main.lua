@@ -2484,3 +2484,7 @@ QBCore.Functions.CreateCallback('inventory:server:ConvertQuality', function(sour
     data.other = other
     cb(data)
 end)
+
+RegisterNetEvent('inventory:refresh', function()
+    QBCore = exports['qb-core']:GetCoreObject()
+end)

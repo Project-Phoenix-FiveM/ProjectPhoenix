@@ -144,8 +144,8 @@ end
 if Config.LeaveEngineRunning then
 	Citizen.CreateThread(function()
 		while true do
-			Citizen.Wait(0)
-			local ped = GetPlayerPed(-1)
+			Citizen.Wait(10)
+			local ped = PlayerPedId()
 			local vehicle = GetVehiclePedIsIn(ped, false)
 			local engineStatus
 			

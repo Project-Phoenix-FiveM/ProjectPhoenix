@@ -24,6 +24,7 @@ Locales = {
         ['service'] = "Service vehicle",
         ['military'] = "Military vehicle",
         ['truck'] = "Truck",
+        ['BoostingTheft'] = "Cracker Devied Used On Vehicle",
         -- DISPATCH MESSAGES
         ['vehicleshots'] = "Shots Fired from Vehicle",
         ['shooting'] = "Discharge of a firearm",

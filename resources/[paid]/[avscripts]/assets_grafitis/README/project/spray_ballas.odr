@@ -1,0 +1,32 @@
+Version 165 32
+{
+	Shaders
+	{
+		decal.sps
+		{
+			DiffuseSampler spray_ballas\sprays_ballas_dif.otx
+			UseTessellation 0.00000000
+			SpecularIntensityMult 0.00000000
+			SpecularFalloffMult 100.00000000
+			SpecularFresnel 0.97000000
+		}
+	}
+	Skeleton null
+	LodGroup
+	{
+		Center 0.00000000 0.00000000 0.00000000
+		Radius 2.82843000
+		AABBMin -2.00000000 0.00000000 -2.00000000
+		AABBMax 2.00000000 0.00000000 2.00000000
+		High 9998.00000000
+		{
+			spray_ballas\spray_ballas_high.mesh 0
+		}
+		Med 9998.00000000
+		Low 9998.00000000
+		Vlow 9998.00000000
+	}
+	Joints null
+	Light null
+	Bound spray_ballas\spray_ballas.bound
+}

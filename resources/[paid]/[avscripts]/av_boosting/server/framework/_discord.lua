@@ -1,0 +1,1 @@
+webhook = "YOUR_DISCORD_WEBHOOK_GOES_HERE"
