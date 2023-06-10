@@ -752,6 +752,9 @@ QBShared.Items = {
 		["description"] = "Pet Grooming Kit"
 	},
 
+    --Lotto Ticket
+    ["lotto"] = { ["name"] = "lotto", ["label"] = "Lotto ticket",["weight"] = 10,["type"] = "item", ["image"] = "lotto.png",["unique"] = false, ["useable"] = true, ["shouldClose"] = true,  ["combinable"] = nil,  ["description"] = "Lucky Ticket",   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+
 
     --AV Laptop + Dependant Scripts.
     --AV Laptop
