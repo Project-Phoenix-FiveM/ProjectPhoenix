@@ -504,36 +504,6 @@ QBShared.Jobs = {
             },
         },
 	},
-    ['popsdiner'] = {
-		label = 'Pops Diner',
-        type = "popsdiner",
-		defaultDuty = true,
-		offDutyPay = false,
-		grades = {
-            ['0'] = {
-                name = 'Trainee',
-                payment = 50
-            },
-			['1'] = {
-                name = 'Employee',
-                payment = 75
-            },
-			['2'] = {
-                name = 'Assistant Manager',
-                payment = 100
-            },
-			['3'] = {
-                name = 'Resturant Manager',
-                payment = 125
-            },
-			['4'] = {
-                name = 'Resturant Owner',
-				isboss = true,
-                payment = 150,
-                bankAuth = true
-            },
-        },
-	},
     ['upnatom'] = {
 		label = 'Up n Atom Diner',
         type = "upnatom",
