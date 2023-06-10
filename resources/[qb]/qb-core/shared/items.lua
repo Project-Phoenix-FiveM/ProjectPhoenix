@@ -783,4 +783,8 @@ QBShared.Items = {
 
     --AV Music
     ['cd'] = {['name'] = 'cd', ['label'] = 'CD', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'cd.png', ['unique'] = false, ['useable'] = true, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Support your local artist!',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+
+    --AvResturaunts 
+    ['ingredients'] = {['name'] = 'ingredients', ['label'] = 'Ingredients', ['weight'] = 1000, ['type'] = 'item', ['image'] = 'ingredients.png', ['unique'] = false, ['useable'] = false, ['shouldClose'] = true, ['combinable'] = nil, ['description'] = 'Ingredients for food crafting',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+
 }

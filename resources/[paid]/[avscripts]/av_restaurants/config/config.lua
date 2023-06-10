@@ -28,6 +28,7 @@ Config.Events = { -- Used to create zones
     ['food'] = {label = "Food", event = "av_restaurant:food", icon = "fas fa-utensils"},
     ['joint'] = {label = "Joint", event = "av_restaurant:joint", icon = "fas fa-cannabis"},
     ['others'] = {label = "Others", event = "av_restaurant:others", icon = "fas fa-box"},
+    ['washhands'] = {label = "Hand Wash", event = "av_restaurant:washhands", icon = "fas fa-droplet"},
     ['stash'] = {label = "Stash", event = "av_restaurant:stash", icon = "fas fa-box-open"},
     ['tray'] = {label = "Tray", event = "av_restaurant:tray", icon = "fas fa-box-open"},
     ['rate'] = {label = "Rate", event = "av_restaurant:rate", icon = "fas fa-star"},
