@@ -18,7 +18,7 @@ function CreatePrisonBlip()
 
         SetBlipSprite (currentBlip, 402)
         SetBlipDisplay(currentBlip, 4)
-        SetBlipScale  (currentBlip, 0.8)
+        SetBlipScale  (currentBlip, 0.6)
         SetBlipAsShortRange(currentBlip, true)
         SetBlipColour(currentBlip, 1)
 
