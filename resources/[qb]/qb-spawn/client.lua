@@ -189,7 +189,9 @@ RegisterNUICallback('spawnplayer', function(data, cb)
         end
         TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
         TriggerEvent('QBCore:Client:OnPlayerLoaded')
-        TriggerServerEvent('av_realestate:spawn', true) -- For spawning in the motel room
+        if exports['qb-config']:isPaidEnabled() then
+            TriggerServerEvent('av_realestate:spawn', true) -- For spawning in the motel room
+        end
         PostSpawnPlayer()
     elseif type == "house" then
         PreSpawnPlayer()
@@ -199,7 +201,9 @@ RegisterNUICallback('spawnplayer', function(data, cb)
         TriggerServerEvent('qb-houses:server:SetInsideMeta', 0, false)
         TriggerServerEvent('qb-apartments:server:SetInsideMeta', 0, 0, false)
         PostSpawnPlayer()
-        TriggerServerEvent('av_realestate:spawn', false) -- For spawning in the motel room
+        if exports['qb-config']:isPaidEnabled() then
+            TriggerServerEvent('av_realestate:spawn', false) -- For spawning in the motel room
+        end
     elseif type == "normal" then
         local pos = QB.Spawns[location].coords
         PreSpawnPlayer()
@@ -212,7 +216,9 @@ RegisterNUICallback('spawnplayer', function(data, cb)
         SetEntityCoords(ped, pos.x, pos.y, pos.z)
         SetEntityHeading(ped, pos.w)
         PostSpawnPlayer()
-        TriggerServerEvent('av_realestate:spawn', false) -- For spawning in the motel room
+        if exports['qb-config']:isPaidEnabled() then
+            TriggerServerEvent('av_realestate:spawn', false) -- For spawning in the motel room
+        end
     end
     cb('ok')
 end)
