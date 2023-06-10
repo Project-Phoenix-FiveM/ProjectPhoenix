@@ -223,49 +223,51 @@ CreateThread(function()
 end)
 
 CreateThread(function()
-    if Config.OxTarget then
-	    local options = {
-	    	{
-	    	name = 'Check Vin',
-	    	icon = 'fa-solid fa-car',
-	    	label = 'Check Vin',
-	    	bones = {'bonnet'},
-	    	groups = 'police',
-	    	distance = 5.0,
-	    	onSelect = function(data)
-	    	local res = exports['av_boosting']:getVin()
-                if res then
-                    QBCore.Functions.Notify("Vin Number Does Not Match", 'error')
-                else
-                    QBCore.Functions.Notify("Vin Number Matches Vehicle", 'success')
-                end
-	    	end,
-	    	}
-	    }
-	    exports.ox_target:addGlobalVehicle(options)
-    else
-        local bones = {
-            'bonnet'
-          }
-        exports['qb-target']:AddTargetBone(bones, {
-            options = {
-              {
-                num = 1,
+    if exports['qb-config']:isPaidEnabled() then
+        if Config.OxTarget then
+            local options = {
+                {
+                name = 'Check Vin',
                 icon = 'fa-solid fa-car',
                 label = 'Check Vin',
-                action = function(entity)
-                    local res = exports['av_boosting']:getVin()
+                bones = {'bonnet'},
+                groups = 'police',
+                distance = 5.0,
+                onSelect = function(data)
+                local res = exports['av_boosting']:getVin()
                     if res then
                         QBCore.Functions.Notify("Vin Number Does Not Match", 'error')
                     else
                         QBCore.Functions.Notify("Vin Number Matches Vehicle", 'success')
                     end
                 end,
-                job = 'police',
-              },
-              
-            },
-        distance = 4.0,
-        })
+                }
+            }
+            exports.ox_target:addGlobalVehicle(options)
+        else
+            local bones = {
+                'bonnet'
+            }
+            exports['qb-target']:AddTargetBone(bones, {
+                options = {
+                {
+                    num = 1,
+                    icon = 'fa-solid fa-car',
+                    label = 'Check Vin',
+                    action = function(entity)
+                        local res = exports['av_boosting']:getVin()
+                        if res then
+                            QBCore.Functions.Notify("Vin Number Does Not Match", 'error')
+                        else
+                            QBCore.Functions.Notify("Vin Number Matches Vehicle", 'success')
+                        end
+                    end,
+                    job = 'police',
+                },
+                
+                },
+            distance = 4.0,
+            })
+        end
     end
 end)

@@ -193,13 +193,20 @@ local function LoadPhone()
             PhoneData.ChatRooms = pData.ChatRooms
         end
 
+        local updateApplications = {}
+        if exports['qb-config']:isPaidEnabled("avScripts") then 
+            updateApplications = Config.PhoneApplications
+        else
+            updateApplications = Config.PhoneApplicationsPaid
+        end
+
         SendNUIMessage({
             action = "LoadPhoneData",
             PhoneData = PhoneData,
             PlayerData = PlayerData,
             PlayerJob = PlayerData,
             PhoneJobs = QBCore.Shared.Jobs,
-            applications = Config.PhoneApplications,
+            applications = updateApplications,
             PlayerId = GetPlayerServerId(PlayerId())
         })
 

@@ -15,7 +15,7 @@ Config.DongleName = "dongle" -- Item used to register your username/photo in lap
 Config.TrackerItem = "hacking_device" -- Item used to disable GPS from vehicles
 Config.MaxUsernameCharacters = 20 -- Max characters an username can have
 Config.RenewUserWithSameDongle = false -- True if you want players be able to use the same dongle to change their username, false means 1 dongle = 1 username
-Config.DefaultPicture = "https://i.imgur.com/3VYqpa7.jpg"
+Config.DefaultPicture = "https://i.imgur.com/a86BdrW.png"
 Config.CryptoAccount = "gne" -- Crypto used for APP
 Config.PoliceJobName = "police" -- Police job name
 Config.PoliceRadiusCheck = 25.0 -- Distance check for cops around you

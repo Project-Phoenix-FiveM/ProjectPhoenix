@@ -9,7 +9,7 @@
 
 Config = {}
 Config.Framework = "QBCore" -- "QBCore" or "ESX", for ESX uncomment the import from fxmanifest.lua
-Config.DefaultPicture = "https://i.imgur.com/3VYqpa7.jpg" -- Used for APP avatar
+Config.DefaultPicture = "https://i.imgur.com/a86BdrW.png" -- Used for APP avatar
 Config.AVBoosting = true -- True if you are using av_boosting
 Config.DongleItem = "dongle" -- Item used to customize player user and photo, ignore it if you have AVBoosting = true
 Config.MaxUsernameCharacters = 20
