@@ -28,7 +28,7 @@ RegisterNetEvent('qb-trashsearch:server:recieveItem', function()
     local chosenrandomItem = Loot[math.random(1, #Loot)]
     print(chosenrandomItem[1], chosenrandomItem[2])
     TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[chosenrandomItem[1]], "add")
-    ply.Functions.AddItem(chosenrandomItem[1], chosenrandomItem[2])
+    ply.Functions.AddItem(chosenrandomItem[1], chosenrandomItem[2], nil, {})
 end)
 
 RegisterNetEvent('qb-trashsearch:server:givemoney', function(money)
