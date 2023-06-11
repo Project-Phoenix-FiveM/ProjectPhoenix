@@ -194,8 +194,6 @@ RegisterCommand('Cuff', function()
                 end
                 Wait(3500)
                 cantCuff = false
-            else
-                QBCore.Functions.Notify("Action not available at the moment..", "error")
             end
         elseif IsPedInAnyVehicle(PlayerPedId(), false) then
             QBCore.Functions.Notify("Action not available at the moment(In Vehicle)..", "error")
@@ -217,8 +215,6 @@ RegisterCommand('UnCuff', function()
                 TriggerServerEvent('bunny-cuff:server:clientuncuffcommand')
                 Wait(1500)
                 cantCuff = false
-            else
-                QBCore.Functions.Notify("Action not available at the moment..", "error")
             end
         elseif IsPedInAnyVehicle(PlayerPedId(), false) then
             QBCore.Functions.Notify("Action not available at the moment(In Vehicle)..", "error")
