@@ -10,7 +10,7 @@ Config.Crafting = true -- Set to false to disable crafting or if you own qb-pris
 -------------------------
 --Extra Config Options --
 -------------------------
-Config.PrisonMap =  'qb' -- Set to 'gabz' or 'qb'
+Config.PrisonMap =  'gabz' -- Set to 'gabz' or 'qb'
 Config.RemoveJobs = false -- Set to false if you don't want to remove player's job.
 
 -- If you are using qb-prisonjobs by xThrasherrr#6666 then set this to true
