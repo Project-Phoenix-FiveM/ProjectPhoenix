@@ -42,9 +42,9 @@ Config.intraction = {
                     textureId = 1,
                }
           },
-          coords = vector4(241.50, 227.0, 105.43, 145.0),
+          coords = vector4(257.51, 228.19, 105.28, 157.27),
           voice = 'A_F_Y_BUSINESS_02_WHITE_FULL_01',
-          animDict = 'anim@amb@board_room@stenographer@computer@',
+          --[[ animDict = 'anim@amb@board_room@stenographer@computer@',
           anim = {
                'glance_board_01_left_amy_skater_01',
                'idle_01_right_amy_skater_01',
@@ -60,7 +60,7 @@ Config.intraction = {
                'scratch_leg_01_right_amy_skater_01',
                'tired_01_left_amy_skater_01',
                'tired_01_right_amy_skater_01',
-          },
+          }, ]]
           flag = 1,
           freeze = true,
           invincible = true,
