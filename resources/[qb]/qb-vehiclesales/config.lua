@@ -3,16 +3,16 @@ Config = Config or {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 
 Config.Zones = {
-    ["SandyOccasions"] = {
+    ["SandyOccasions"] = { 
         BusinessName = "Vehicle Sales Contract - Larry's Vehicle Sales",
-        SellVehicle = vector4(1235.61, 2733.44, 37.4, 0.42),
+        SellVehicle = vector4(1235.61, 2733.44, 37.4, 0.42), 
         BuyVehicle = vector4(1213.31, 2735.4, 38.27, 182.5),
 
         PolyZone = {
             vector2(1338.3748779297, 2645.0153808594),
             vector2(1098.9381103516, 2621.7487792969),
             vector2(1117.9478759766, 2822.0729980469),
-            vector2(1370.98828125, 2859.197265625)
+            vector2(1370.98828125, 2859.197265625) 
         },
         MinZ = 36.0,
         MaxZ = 64.0,
@@ -41,8 +41,34 @@ Config.Zones = {
             vector4(1239.93, 2722.39, 38.27, 163.5),
             vector4(1248.28, 2727.41, 38.53, 338.5),
             vector4(1251.84, 2725.65, 38.52, 331.5),
-            vector4(1255.19, 2723.21, 38.44, 309.5),
+            vector4(1255.19, 2723.21, 38.44, 309.5), 
             vector4(1257.28, 2719.77, 38.49, 296.5),
         }
-    }
+    },
+    --[[ ["OttosOccasions"] = {
+        BusinessName = "Vehicle Sales Contract - Otto's Vehicle Sales",
+        SellVehicle = vector4(803.38, -820.64, 26.18, 90.84),
+        BuyVehicle = vector4(843.41, -814.93, 26.33, 357.51),
+
+        PolyZone = {
+            vector2(768.41510009766, -919.91223144531),
+            vector2(841.93707275391, -870.263671875),
+            vector2(834.59136962891, -704.35717773438),
+            vector2(759.45788574219, -691.52581787109)
+        },
+        MinZ = 36.0,
+        MaxZ = 64.0,
+
+        VehicleSpots = {
+            vector4(798.25, -818.28, 25.68, 270.03), 
+            vector4(798.21, -815.04, 25.68, 271.27),
+            vector4(798.16, -811.82, 25.69, 271.44),
+            vector4(798.1, -808.66, 25.75, 269.93),
+            vector4(798.06, -805.47, 25.77, 269.96),
+            vector4(807.55, -805.44, 25.73, 90.0),
+            vector4(807.56, -808.78, 25.72, 91.43),
+            vector4(807.56, -811.95, 25.68, 89.69),
+            vector4(807.5, -815.03, 25.69, 89.62),
+        }
+    } ]]
 }
