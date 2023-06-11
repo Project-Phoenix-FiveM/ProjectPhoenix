@@ -13,7 +13,7 @@ Config.Shops = {
         ['Type'] = 'free-use', -- no player interaction is required to purchase a car
         ['Zone'] = {
             ['Shape'] = {--polygon that surrounds the shop
-                vector2(-56.727394104004, -1086.2325439453),
+                vector2(-56.727394104004, -1086.2325439453), 
                 vector2(-60.612808227539, -1096.7795410156),
                 vector2(-58.26834487915, -1100.572265625),
                 vector2(-35.927803039551, -1109.0034179688),
@@ -282,4 +282,50 @@ Config.Shops = {
             },
         },
     },
+    ['tuner'] = {
+        ['Type'] = 'free-use', -- no player interaction is required to purchase a car
+        ['Zone'] = {
+            ['Shape'] = {--polygon that surrounds the shop
+                vector2(168.50222, -3021.91),
+                vector2(170.46095, -3040.056),
+                vector2(170.12066, -3064.62),
+                vector2(114.23769, -3063.388),
+                vector2(114.20518, -3043.06),
+                vector2(114.19347, -3021.313),
+                vector2(114.44706, -3008.16)
+            },
+            ['minZ'] = 17.0, -- min height of the shop zone
+            ['maxZ'] = 30.0, -- max height of the shop zone
+            ['size'] = 4.75 -- size of the vehicles zones
+        },
+        ['Job'] = 'none', -- Name of job or none
+        ['ShopLabel'] = 'Import Vehicle Shop', -- Blip name
+        ['showBlip'] = true, -- true or false
+        ['blipSprite'] = 326, -- Blip sprite
+        ['blipColor'] = 3, -- Blip color
+        ['TestDriveTimeLimit'] = 0.5, -- Time in minutes until the vehicle gets deleted
+        ['Location'] = vector3(163.27218, -3043.269, 5.0962305), -- Blip Location
+        ['ReturnLocation'] = vector4(163.27218, -3043.269, 5.0962305, 90.63742), -- Location to return vehicle, only enables if the vehicleshop has a job owned
+        ['VehicleSpawn'] = vector4(162.71537, -3009.491, 5.1061568, 89.548088), -- Spawn location when vehicle is bought
+        ['TestDriveSpawn'] = vector4(162.84681, -3033.778, 5.7669782, 266.89471), -- Spawn location for test drive
+        ['ShowroomVehicles'] = {
+            [1] = {
+                coords = vector4(150.94, -3043.11, 6.55, 27.34), -- where the vehicle will spawn on display
+                defaultVehicle = '22m5', -- Default display vehicle
+                chosenVehicle = '22m5', -- Same as default but is dynamically changed when swapping vehicles
+            },
+            [2] = {
+                coords = vector4(145.47, -3046.35, 6.54, 32.4),
+                defaultVehicle = 'gtr',
+                chosenVehicle = 'gtr',
+            },
+            [3] = {
+                coords = vector4(140.08, -3047.02, 6.37, 341.69),
+                defaultVehicle = 'r33',
+                chosenVehicle = 'r33',
+            },
+        },
+    },
 }
+
+
