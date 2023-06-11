@@ -7,7 +7,7 @@ Config.PaymentWarning = 10 -- time in minutes that player has to make payment be
 Config.PaymentInterval = 24 -- time in hours between payment being due
 Config.MinimumDown = 10 -- minimum percentage allowed down
 Config.MaximumPayments = 24 -- maximum payments allowed
-Config.PreventFinanceSelling = false -- allow/prevent players from using /transfervehicle if financed
+Config.PreventFinanceSelling = true -- allow/prevent players from using /transfervehicle if financed
 Config.Shops = {
     ['pdm'] = {
         ['Type'] = 'free-use', -- no player interaction is required to purchase a car
@@ -80,7 +80,7 @@ Config.Shops = {
         },
     },
     ['luxury'] = {
-        ['Type'] = 'managed', -- meaning a real player has to sell the car
+        ['Type'] = 'free-use', -- meaning a real player has to sell the car
         ['Zone'] = {
             ['Shape'] = {
                 vector2(-1260.6973876953, -349.21334838867),
