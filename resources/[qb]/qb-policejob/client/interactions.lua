@@ -195,8 +195,6 @@ RegisterCommand('Cuff', function()
                 Wait(3500)
                 cantCuff = false
             end
-        elseif IsPedInAnyVehicle(PlayerPedId(), false) then
-            QBCore.Functions.Notify("Action not available at the moment(In Vehicle)..", "error")
         end
     end
 end)
@@ -216,8 +214,6 @@ RegisterCommand('UnCuff', function()
                 Wait(1500)
                 cantCuff = false
             end
-        elseif IsPedInAnyVehicle(PlayerPedId(), false) then
-            QBCore.Functions.Notify("Action not available at the moment(In Vehicle)..", "error")
         end
     end
 end)
