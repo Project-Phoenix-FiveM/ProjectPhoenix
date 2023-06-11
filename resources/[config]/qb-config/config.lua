@@ -18,5 +18,5 @@ Config = Config or {}
 -- resturants = true
 
 PaidScripts = {
-    ['avScripts'] = true --Setting this to false will disable av_scripts to remove errors and overlaps.
+    ['avScripts'] = false --Setting this to false will disable av_scripts to remove errors and overlaps.
 }
