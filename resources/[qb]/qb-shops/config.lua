@@ -1398,7 +1398,7 @@ Config.Locations = {
     },
     ["digitalden"] = {
         ["label"] = "Digital Den",
-        ["coords"] = vector4(1134.48, -467.94, 66.49, 164.21), --or vector4(-659.87, -936.46, 21.83, 130.04), --  for mlo https://www.gta5-mods.com/maps/
+        ["coords"] = vector4(-1531.31, -403.21, 35.64, 233.4), --or vector4(-659.87, -936.46, 21.83, 130.04), --  for mlo https://www.gta5-mods.com/maps/
         ["ped"] = 'S_M_M_StrVend_01',
         ["scenario"] = "WORLD_HUMAN_COP_IDLES",
         ["radius"] = 1.5,
@@ -1409,6 +1409,6 @@ Config.Locations = {
         ["blipsprite"] = 628, 
         ["blipscale"] = 0.6,
         ["blipcolor"] = 2,
-        ["delivery"] = vector4(1146.72, -475.55, 66.38, 64.52)
+        ["delivery"] = vector4(-1531.31, -403.21, 35.64, 233.4)
     }
 }
