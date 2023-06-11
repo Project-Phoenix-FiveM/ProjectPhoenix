@@ -6,8 +6,8 @@ exports('GetDealers', function()
 end)
 
 -- Callbacks
-QBCore.Functions.CreateCallback('qb-drugs:server:RequestConfig', function(_, cb)
-    cb(Config.Dealers)
+lib.callback.register('qb-drugs:server:RequestConfig', function()
+    return Config.Dealers
 end)
 
 -- Events
@@ -17,12 +17,12 @@ RegisterNetEvent('qb-drugs:server:updateDealerItems', function(itemData, amount,
 
     if not Player then return end
 
-    if Config.Dealers[dealer]["products"][itemData.slot].amount - 1 >= 0 then
-        Config.Dealers[dealer]["products"][itemData.slot].amount -= amount
+    if Config.Dealers[dealer].products[itemData.slot].amount - 1 >= 0 then
+        Config.Dealers[dealer].products[itemData.slot].amount -= amount
         TriggerClientEvent('qb-drugs:client:setDealerItems', -1, itemData, amount, dealer)
     else
         Player.Functions.RemoveItem(itemData.name, amount)
-        Player.Functions.AddMoney('cash', amount * Config.Dealers[dealer]["products"][itemData.slot].price)
+        Player.Functions.AddMoney('cash', amount * Config.Dealers[dealer].products[itemData.slot].price)
         TriggerClientEvent("QBCore:Notify", src, Lang:t("error.item_unavailable"), "error")
     end
 end)
@@ -155,17 +155,13 @@ QBCore.Commands.Add("newdealer", Lang:t("info.newdealer_command_desc"), {{
     if result then return TriggerClientEvent('QBCore:Notify', source, Lang:t("error.dealer_already_exists"), "error") end
     MySQL.insert('INSERT INTO dealers (name, coords, time, createdby) VALUES (?, ?, ?, ?)', {dealerName, pos, time, Player.PlayerData.citizenid}, function()
         Config.Dealers[dealerName] = {
-            ["name"] = dealerName,
-            ["coords"] = {
-                ["x"] = coords.x,
-                ["y"] = coords.y,
-                ["z"] = coords.z
+            name = dealerName,
+            coords = vec3(coords.x, coords.y, coords.z),
+            time = {
+                min = minTime,
+                max = maxTime
             },
-            ["time"] = {
-                ["min"] = minTime,
-                ["max"] = maxTime
-            },
-            ["products"] = Config.Products
+            products = Config.Products
         }
         TriggerClientEvent('qb-drugs:client:RefreshDealers', -1, Config.Dealers)
     end)
@@ -191,7 +187,7 @@ QBCore.Commands.Add("dealers", Lang:t("info.dealers_command_desc"), {}, false, f
     local DealersText = ""
     if Config.Dealers ~= nil and next(Config.Dealers) ~= nil then
         for _, v in pairs(Config.Dealers) do
-            DealersText = DealersText .. Lang:t("info.list_dealers_name_prefix") .. v["name"] .. "<br>"
+            DealersText = DealersText .. Lang:t("info.list_dealers_name_prefix") .. v.name .. "<br>"
         end
         TriggerClientEvent('chat:addMessage', source, {
             template = '<div class="chat-message advert"><div class="chat-message-body"><strong>' .. Lang:t("info.list_dealers_title") .. '</strong><br><br> ' .. DealersText .. '</div></div>',
@@ -209,7 +205,7 @@ QBCore.Commands.Add("dealergoto", Lang:t("info.dealergoto_command_desc"), {{
     local DealerName = tostring(args[1])
     if Config.Dealers[DealerName] then
         local ped = GetPlayerPed(source)
-        SetEntityCoords(ped, Config.Dealers[DealerName]['coords']['x'], Config.Dealers[DealerName]['coords']['y'], Config.Dealers[DealerName]['coords']['z'])
+        SetEntityCoords(ped, Config.Dealers[DealerName].coords.x, Config.Dealers[DealerName].coords.y, Config.Dealers[DealerName].coords.z, false, false, false, false)
         TriggerClientEvent('QBCore:Notify', source, Lang:t("success.teleported_to_dealer", {dealerName = DealerName}), 'success')
     else
         TriggerClientEvent('QBCore:Notify', source, Lang:t("error.dealer_not_exists"), 'error')
@@ -218,24 +214,21 @@ end, "admin")
 
 CreateThread(function()
     Wait(500)
-    local dealers = MySQL.query.await('SELECT * FROM dealers', {})
-    if dealers[1] then
-        for _, v in pairs(dealers) do
-            local coords = json.decode(v.coords)
-            local time = json.decode(v.time)
+    local dealers = MySQL.query.await('SELECT * FROM dealers')
+    if dealers and #dealers ~= 0 then
+        for i = 1, #dealers do
+            local data = dealers[i]
+            local coords = json.decode(data.coords)
+            local time = json.decode(data.time)
 
-            Config.Dealers[v.name] = {
-                ["name"] = v.name,
-                ["coords"] = {
-                    ["x"] = coords.x,
-                    ["y"] = coords.y,
-                    ["z"] = coords.z
+            Config.Dealers[data.name] = {
+                name = data.name,
+                coords = vec3(coords.x, coords.y, coords.z),
+                time = {
+                    min = time.min,
+                    max = time.max
                 },
-                ["time"] = {
-                    ["min"] = time.min,
-                    ["max"] = time.max
-                },
-                ["products"] = Config.Products
+                products = Config.Products
             }
         end
     end

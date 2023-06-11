@@ -223,7 +223,7 @@ CreateThread(function()
 end)
 
 CreateThread(function()
-    if exports['qb-config']:isPaidEnabled() then
+    if exports['qb-config']:isPaidEnabled("avScripts") then
         if Config.OxTarget then
             local options = {
                 {

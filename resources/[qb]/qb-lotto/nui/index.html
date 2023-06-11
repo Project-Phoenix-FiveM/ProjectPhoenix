@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Emoji Scratch Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript" src="ui.js"></script>
+
+  
+</head>
+
+<body>
+<div id="divp" style="display: none;">
+  <div class="card">
+
+    <div class="instructions">
+        <h1>Match 3<span>💵</span> to win!</h1>
+      <hr></hr>
+        <h2>Click <span>🎁</span> to reveal!</h2>
+    </div>
+
+    <div class="emoji-container">
+        <button class="emoji-btn"><span class="emoji-output"></span></button>
+        <button class="emoji-btn"><span class="emoji-output"></span></button>
+        <button class="emoji-btn"><span class="emoji-output"></span></button>
+        <button class="emoji-btn"><span class="emoji-output"></span></button>
+        <button class="emoji-btn"><span class="emoji-output"></span></button>
+        <button class="emoji-btn"><span class="emoji-output"></span></button>
+        <button class="emoji-btn"><span class="emoji-output"></span></button>
+        <button class="emoji-btn"><span class="emoji-output"></span></button>
+        <button class="emoji-btn"><span class="emoji-output"></span></button>
+    </div>
+</div>
+
+<div class="dialog-box">
+    <h2 class="dialog-message"></h2>
+</div>
+
+<audio src="pop.mp3" class="bell-sound-1"></audio>
+<audio src="pop.mp3" class="bell-sound-2"></audio>
+<audio src="pop.mp3" class="bell-sound-3"></audio>
+<audio src="win.mp3" class="win-sound"></audio>
+<audio src="lose.mp3" class="lose-sound"></audio>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+</div>
+</body>
+
+</html>

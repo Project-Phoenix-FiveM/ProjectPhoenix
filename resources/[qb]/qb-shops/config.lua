@@ -106,6 +106,14 @@ Config.Products = {
             type = "item",
             slot = 12,
         },
+        [13] = {
+            name = "lotto",
+            price = 15,
+            amount = 75,
+            info = {},
+            type = "item",
+            slot = 13,
+        },
     },
     ["liquor"] = {
         [1] = {
@@ -371,7 +379,7 @@ Config.Products = {
         [1] = {
             name = "weapon_knife",
             price = 250,
-            amount = 250,
+            amount = 100,
             info = {},
             type = "item",
             slot = 1,
@@ -379,7 +387,7 @@ Config.Products = {
         [2] = {
             name = "weapon_bat",
             price = 250,
-            amount = 250,
+            amount = 100,
             info = {},
             type = "item",
             slot = 2,
@@ -387,7 +395,7 @@ Config.Products = {
         [3] = {
             name = "weapon_hatchet",
             price = 250,
-            amount = 250,
+            amount = 100,
             info = {},
             type = "item",
             slot = 3,
@@ -423,11 +431,84 @@ Config.Products = {
         [7] = {
             name = "pistol_ammo",
             price = 250,
-            amount = 250,
+            amount = 100,
             info = {},
             type = "item",
             slot = 7,
             requiresLicense = true
+        },
+        --tints
+        [8] = {
+            name = "weapontint_black",
+            price = 8750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 8,
+            requiresLicense = false
+        },
+        [9] = {
+            name = "weapontint_green",
+            price = 8750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 9,
+            requiresLicense = false
+        },
+        [10] = {
+            name = "weapontint_gold",
+            price = 45000,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 10,
+            requiresLicense = false
+        },
+        [11] = {
+            name = "weapontint_pink",
+            price = 8750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 11,
+            requiresLicense = false
+        },
+        [12] = {
+            name = "weapontint_army",
+            price = 8750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 12,
+            requiresLicense = false
+        },
+        [13] = {
+            name = "weapontint_lspd",
+            price = 8750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 13,
+            requiresLicense = false
+        },
+        [14] = {
+            name = "weapontint_orange",
+            price = 8750,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 14,
+            requiresLicense = false
+        },
+        [15] = {
+            name = "weapontint_plat",
+            price = 62000,
+            amount = 5,
+            info = {},
+            type = "item",
+            slot = 15,
+            requiresLicense = false
         },
     },
     ["casino"] = {
@@ -672,7 +753,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(26.45, -1315.51, 29.62, 0.07)
     },
 
@@ -688,7 +769,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(-3047.95, 590.71, 7.62, 19.53)
     },
 
@@ -704,7 +785,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(-3245.76, 1005.25, 12.83, 269.45)
     },
 
@@ -720,7 +801,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(1741.76, 6419.61, 35.04, 6.83)
     },
 
@@ -736,7 +817,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(1963.81, 3750.09, 32.26, 302.46)
     },
 
@@ -752,7 +833,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(541.54, 2663.53, 42.17, 120.51)
     },
 
@@ -768,7 +849,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(2662.19, 3264.95, 55.24, 168.55)
     },
 
@@ -784,7 +865,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(2553.24, 399.73, 108.56, 344.86)
     },
 
@@ -800,7 +881,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(379.97, 357.3, 102.56, 26.42)
     },
 
@@ -817,7 +898,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(-40.51, -1747.45, 29.29, 326.39)
     },
 
@@ -833,7 +914,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(-702.89, -917.44, 19.21, 181.96)
     },
 
@@ -849,7 +930,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(-1829.29, 801.49, 138.41, 41.39)
     },
 
@@ -865,7 +946,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(1160.62, -312.06, 69.28, 3.77)
     },
 
@@ -881,7 +962,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(1702.68, 4917.28, 42.22, 139.27)
     },
 
@@ -898,7 +979,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(-1226.92, -901.82, 12.28, 213.26)
     },
 
@@ -914,7 +995,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(-1468.29, -387.61, 38.79, 220.13)
     },
 
@@ -930,7 +1011,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(-2961.49, 376.25, 15.02, 111.41)
     },
 
@@ -946,7 +1027,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(1194.52, 2722.21, 38.62, 9.37)
     },
 
@@ -962,7 +1043,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 52,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 2,
         ["delivery"] = vector4(1129.73, -989.27, 45.97, 280.98)
     },
 
@@ -978,8 +1059,8 @@ Config.Locations = {
         ["products"] = Config.Products["hardware"],
         ["showblip"] = true,
         ["blipsprite"] = 402,
-        ["blipscale"] = 0.8,
-        ["blipcolor"] = 0,
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 21,
         ["delivery"] = vector4(89.15, -1745.29, 30.09, 315.25)
     },
 
@@ -994,8 +1075,8 @@ Config.Locations = {
         ["products"] = Config.Products["hardware"],
         ["showblip"] = true,
         ["blipsprite"] = 402,
-        ["blipscale"] = 0.8,
-        ["blipcolor"] = 0,
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 21,
         ["delivery"] = vector4(2704.68, 3457.21, 55.54, 176.28)
     },
 
@@ -1010,8 +1091,8 @@ Config.Locations = {
         ["products"] = Config.Products["hardware"],
         ["showblip"] = true,
         ["blipsprite"] = 402,
-        ["blipscale"] = 0.8,
-        ["blipcolor"] = 0,
+        ["blipscale"] = 0.6,
+        ["blipcolor"] = 21,
         ["delivery"] = vector4(-438.25, 6146.9, 31.48, 136.99)
     },
 
@@ -1029,7 +1110,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 110,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 6,
         ["delivery"] = vector4(-660.61, -938.14, 21.83, 167.22)
     },
     ["ammunation2"] = {
@@ -1045,7 +1126,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 110,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 6,
         ["delivery"] = vector4(820.97, -2146.7, 28.71, 359.98)
     },
     ["ammunation3"] = {
@@ -1061,7 +1142,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 110,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 6,
         ["delivery"] = vector4(1687.17, 3755.47, 34.34, 163.69)
     },
     ["ammunation4"] = {
@@ -1077,7 +1158,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 110,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 6,
         ["delivery"] = vector4(-341.72, 6098.49, 31.32, 11.05)
     },
     ["ammunation5"] = {
@@ -1093,7 +1174,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 110,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 6,
         ["delivery"] = vector4(249.0, -50.64, 69.94, 60.71)
     },
     ["ammunation6"] = {
@@ -1109,7 +1190,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 110,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 6,
         ["delivery"] = vector4(-5.82, -1107.48, 29.0, 164.32)
     },
     ["ammunation7"] = {
@@ -1125,7 +1206,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 110,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 6,
         ["delivery"] = vector4(2578.77, 285.53, 108.61, 277.2)
     },
     ["ammunation8"] = {
@@ -1141,7 +1222,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 110,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 6,
         ["delivery"] = vector4(-1127.67, 2708.18, 18.8, 41.76)
     },
     ["ammunation9"] = {
@@ -1157,7 +1238,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 110,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 6,
         ["delivery"] = vector4(847.83, -1020.36, 27.88, 88.29)
     },
     ["ammunation10"] = {
@@ -1173,7 +1254,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 110,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 6,
         ["delivery"] = vector4(-1302.44, -385.23, 36.62, 303.79)
     },
     ["ammunation11"] = {
@@ -1189,7 +1270,7 @@ Config.Locations = {
         ["showblip"] = true,
         ["blipsprite"] = 110,
         ["blipscale"] = 0.6,
-        ["blipcolor"] = 0,
+        ["blipcolor"] = 6,
         ["delivery"] = vector4(-3183.6, 1084.35, 20.84, 68.13)
     },
 
@@ -1205,7 +1286,7 @@ Config.Locations = {
         ["products"] = Config.Products["casino"],
         ["showblip"] = true,
         ["blipsprite"] = 617,
-        ["blipscale"] = 0.8,
+        ["blipscale"] = 0.6,
         ["blipcolor"] = 0,
         ["delivery"] = vector4(972.6, 9.22, 81.04, 233.38)
     },
@@ -1221,7 +1302,7 @@ Config.Locations = {
         ["products"] = Config.Products["liquor"],
         ["showblip"] = false,
         ["blipsprite"] = 52,
-        ["blipscale"] = 0.8,
+        ["blipscale"] = 0.6,
         ["blipcolor"] = 0,
         ["delivery"] = vector4(937.16, 1.0, 78.76, 152.4)
     },
@@ -1238,7 +1319,7 @@ Config.Locations = {
         ["products"] = Config.Products["weedshop"],
         ["showblip"] = true,
         ["blipsprite"] = 140,
-        ["blipscale"] = 0.8,
+        ["blipscale"] = 0.6,
         ["blipcolor"] = 0,
         ["delivery"] = vector4(-1162.13, -1568.57, 4.39, 328.52)
     },
@@ -1255,7 +1336,7 @@ Config.Locations = {
         ["products"] = Config.Products["gearshop"],
         ["showblip"] = true,
         ["blipsprite"] = 52,
-        ["blipscale"] = 0.8,
+        ["blipscale"] = 0.6,
         ["blipcolor"] = 0,
         ["delivery"] = vector4(-1674.18, -1073.7, 13.15, 333.56)
     },
@@ -1272,7 +1353,7 @@ Config.Locations = {
         ["products"] = Config.Products["leisureshop"],
         ["showblip"] = true,
         ["blipsprite"] = 52,
-        ["blipscale"] = 0.8,
+        ["blipscale"] = 0.6,
         ["blipcolor"] = 0,
         ["delivery"] = vector4(-1507.64, 1505.52, 115.29, 262.2)
     },
@@ -1288,6 +1369,7 @@ Config.Locations = {
         ["products"] = Config.Products["huntingshop"],
         ["showblip"] = true,
         ["blipsprite"] = 626,
+        ["blipscale"] = 0.6,
         ["blipcolor"] = 1,
         ["delivery"] = vector4(-682.84, 5831.09, 17.33, 227.75)
     },
@@ -1302,6 +1384,7 @@ Config.Locations = {
         ["products"] = Config.Products["petshop"],
         ["showblip"] = true,
         ["blipsprite"] = 267,
+        ["blipscale"] = 0.6,
         ["blipcolor"] = 5,
         ["delivery"] = vector4(562.18, 2733.74, 42.06, 95.32)
     },
@@ -1316,6 +1399,7 @@ Config.Locations = {
         ["products"] = Config.Products["digitalden"],
         ["showblip"] = true,
         ["blipsprite"] = 628, 
+        ["blipscale"] = 0.6,
         ["blipcolor"] = 2,
         ["delivery"] = vector4(1146.72, -475.55, 66.38, 64.52)
     }

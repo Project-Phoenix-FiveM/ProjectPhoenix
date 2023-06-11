@@ -17,15 +17,8 @@ Config.RewardTypes = {
 
 --rewards for small trashcans
 Config.RewardsSmall = {
-        [1] = {item = "cokebaggy", minAmount = 1, maxAmount = 1},
-        [2] = {item = "lockpick", minAmount = 1, maxAmount = 1},
-        [3] = {item = "rubber", minAmount = 1, maxAmount = 3},
-        [4] = {item = "rolling_paper", minAmount = 1, maxAmount = 4},
-        [5] = {item = "plastic", minAmount = 1, maxAmount = 7},
-        [6] = {item = "cigarette", minAmount = 1, maxAmount = 1},
-        [7] = {item = "cloth", minAmount = 1, maxAmount = 6},
-        [8] = {item = "bottle", minAmount = 2, maxAmount = 10},
-        [9] = {item = "can", minAmount = 1, maxAmount = 7},
+        [1] = {item = "water", minAmount = 1, maxAmount = 1},
+        [2] = {item = "sandwich", minAmount = 1, maxAmount = 1},
 }
 
 Config.Dumpsters = {

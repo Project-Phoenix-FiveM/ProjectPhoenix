@@ -30,6 +30,7 @@ local Translations = {
         suspicious_situation = "Situación sospechosa",
         possible_drug_dealing = "Posible tráfico de drogas",
         drug_offer = "[E] %{bags}x %{drugLabel} por $%{randomPrice}? / [G] Rechazar oferta",
+        decline_offer = "Rechazar oferta",
         target_drug_offer = "Vender %{bags}x %{drugLabel} for $%{randomPrice}?",
         search_ped = "Buscar ped",
         pick_up_button = "[E] Recoger",
