@@ -752,6 +752,10 @@ QBShared.Items = {
 		["description"] = "Pet Grooming Kit"
 	},
 
+    --ps-camera
+    ['camera'] 						 = {['name'] = 'camera', 			  	  		['label'] = 'Camera', 					['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'camera.png', 				['unique'] = true, 	['useable'] = true, 	['shouldClose'] = true,   ['combinable'] = nil,   ['description'] = 'Camera to take pretty pictures.',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+	['photo'] 				 		 = {['name'] = 'photo', 			  	  		['label'] = 'Saved Pic', 				['weight'] = 500, 		['type'] = 'item', 		['image'] = 'photo.png', 				['unique'] = true, 	['useable'] = true, 	['shouldClose'] = true,   ['combinable'] = nil,   ['description'] = 'Brand new picture saved!',   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
+
     --Lotto Ticket
     ["lotto"] = { ["name"] = "lotto", ["label"] = "Lotto ticket",["weight"] = 10,["type"] = "item", ["image"] = "lotto.png",["unique"] = false, ["useable"] = true, ["shouldClose"] = true,  ["combinable"] = nil,  ["description"] = "Lucky Ticket",   ["created"] = nil, ["decay"] = 28.0, ["delete"] = true },
 

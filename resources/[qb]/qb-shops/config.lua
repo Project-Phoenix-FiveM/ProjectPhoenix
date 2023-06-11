@@ -737,6 +737,14 @@ Config.Products = {
             type = 'item',
             slot = 3
         },
+        [4] = {
+            name = 'camera',
+            price = 2700,
+            amount = 5,
+            info = {},
+            type = 'item',
+            slot = 4
+        },
     },
 }
 Config.Locations = {
