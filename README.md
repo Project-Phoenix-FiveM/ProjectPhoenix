@@ -34,7 +34,7 @@ We encourage developers to contribute to the project and help us improve the pro
 
 Join our Discord server to connect with other developers, seek assistance, and stay up-to-date with the latest announcements and updates regarding Project Phoenix.
 
-[![Join our Discord server](https://discordapp.com/api/guilds/878379225357369404/widget.png?style=banner2)](https://dsc.gg/project-phoenix)
+[![Join our Discord server](https://discordapp.com/api/guilds/947662586164420619/widget.png?style=banner2)](https://dsc.gg/project-phoenix)
 
 ## License
 
