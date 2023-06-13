@@ -1,6 +1,13 @@
 lib.callback.register('av_boosting:checkVinscratch', function(source)
+    local src = source
+    local identifier = exports['av_laptop']:getIdentifier(src)
     local owned = 0
-    local query = MySQL.query.await('SELECT * FROM '..Config.VehicleTable..' WHERE vinscratch = ?', {1})
+    local query = {}
+    if Config.Framework == "QBCore" then
+       query = MySQL.query.await('SELECT * FROM '..Config.VehicleTable..' WHERE vinscratched = ? and citizenid = ?', {1, identifier})
+    else
+        query = MySQL.query.await('SELECT * FROM '..Config.VehicleTable..' WHERE vinscratched = ? and owner = ?', {1, identifier})
+    end
     if query and query[1] then
         owned = #query
     end
