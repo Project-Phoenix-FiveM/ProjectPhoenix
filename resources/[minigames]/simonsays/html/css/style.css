@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+    flex-direction: column;
+}
+  
+.keypad {
+    display: flex;
+    border: black solid 1px;
+    flex-direction: column;
+    background-color: #232832;
+    padding: 1%;
+    transform: scale(0.62) translate(2px, -46px);
+    overflow: hidden;
+}
+
+  
+.keypad__row {
+    display: flex;
+    flex-direction: row;
+}
+
+.keypad__key {
+    height: 25vw;
+    max-height: 200px;
+    width: 25vw;
+    max-width: 200px;
+    margin: 5px;
+    background-color: #0B4E1A;
+}
+
+.keypad__key:hover {
+    background-color: rgb(7, 88, 18);
+}
+
+.keypad__key--clicked_correct {
+    background-color: #3EED57 !important;
+}
+  
+.keypad__key--clicked_incorrect {
+    background-color: red !important;
+}
+
+.keypad__key--highlight {
+    background-color: #3EED57 !important;
+}
+
+.interface {
+    display: flex;
+    flex-direction: column;
+}
+
+.interface__row {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.interface__timer {
+    height: 40px;
+    width: 300px;
+    max-width: 40vw;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Roboto';
+    font-weight: 500;
+}
+
+.interface__text {
+    font-family: Roboto;
+    font-weight: 500;
+    color: white;
+    margin: auto;
+    padding-bottom: 3px;
+}

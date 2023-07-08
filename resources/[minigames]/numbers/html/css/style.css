@@ -1,0 +1,208 @@
+body{
+    background-color: #15181d00;
+}
+.streaks {
+    display: block;
+    margin: 80px auto 40px;
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: #028000;
+    padding: 12px;
+    border-radius: 18px;
+}
+.best_time, 
+.time {
+    display: inline-block;
+    width: 100px;
+}
+.streaks .fa {
+    padding: 0 10px;
+}
+.options{
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto 10px;
+}
+.option{
+    display: inline-block;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 20px;
+    background-color: #20282e;
+    padding: 10px 20px;
+    margin: 0 auto 10px;
+    border-radius: 6px;
+}
+.option.speed input,
+.option.numbers input{
+    vertical-align: text-top;
+}
+.speed_value,
+.numbers_value{
+    display: inline-block;
+    width: 18px;
+    text-align: right;
+}
+.minigame{
+    margin: 0 auto 20px;
+    width: 600px;
+    min-width: 600px;
+    max-width: 600px;
+    height: 215px;
+    min-height: 215px;
+    max-height: 215px;
+    background-color: #232832;
+    margin-top: 20%;
+}
+.splash{
+    display: inline-block;
+    width: 100%;
+    margin: 48px auto;
+    font-family: sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+.splash .hacker{
+    font-size: 65px;
+    margin-bottom: 30px;
+}
+.minigame .numbers{
+    padding: 80px 0;
+    font-family: sans-serif;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 44px;
+	user-select: none;
+}
+.answer{
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    padding-top: 70px;
+}
+.answer label{
+    display: block;
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 8px;
+}
+.answer-wrapper {
+    display:inline-block;
+    position: relative;
+    width: 222px;
+    color: #b7bdc1;
+}
+.answer-wrapper:after {
+    font-family: "Font Awesome 5 Free", sans-serif;
+    content: '\f21b';
+    position: absolute;
+    left: 3px;
+    font-size: 18px;
+    top: 25px;
+}
+.answer-wrapper.wrong:before {
+    font-family: "Font Awesome 5 Free", sans-serif;
+    content: '\f057';
+    position: absolute;
+    right: -25px;
+    bottom: 5px;
+    font-size: 18px;
+    color:red;
+}
+.answer-wrapper.right:before {
+    font-family: "Font Awesome 5 Free", sans-serif;
+    content: '\f058';
+    position: absolute;
+    right: -25px;
+    bottom: 5px;
+    font-size: 18px;
+    color: green;
+}
+#answer{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    padding: 0 0 6px 28px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+.answer-wrapper.wrong #answer {
+    border-bottom-color: red;
+}
+.answer-wrapper.right #answer {
+    border-bottom-color: green;
+}
+#answer::placeholder{
+    color: #626a71;
+}
+#answer:focus{
+    outline: none;
+}
+.solution{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    font-family: sans-serif;
+    width: 222px;
+    margin: 10px auto 0;
+    padding-left: 57px;
+}
+
+.solution .good{
+    color: #00ff00;
+}
+.solution .bad{
+    color: #ff0000;
+}
+.hidden {
+    display: none;
+}
+.restart{
+    font-family: sans-serif;
+    text-align: center;
+}
+.btn_again {
+    padding: 6px 15px;
+    font-weight: bold;
+}
+.credits{
+    font-family: sans-serif;
+    text-align: center;
+    color: gray;
+    margin-top: 40px;
+}
+.credits a{
+    color: #ccc;
+}
+.credits b{
+    color: white;
+}
+.credits .fas{
+    color: red;
+}
+.credits .donate{
+    margin: 20px 0;
+}
+.credits .coin{
+    font-weight: bold;
+    color: white;
+}
+.credits .wallet{
+    font-family: monospace;
+    font-size: 20px;
+}

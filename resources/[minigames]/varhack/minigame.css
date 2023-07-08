@@ -1,0 +1,203 @@
+body{
+    background-color: #15181d00;
+    font-family: 'Roboto', sans-serif;
+}
+
+.title{
+    text-align: center;
+    color: white;
+}
+.description{
+    text-align: center;
+    color: gray;
+}
+
+/**
+ MINIGAME SQUARES
+ */
+.streaks {
+    display: block;
+    margin: 40px auto;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: #028000;
+    padding: 12px;
+    border-radius: 18px;
+}
+.options{
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto 10px;
+}
+.option{
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 20px;
+    background-color: #20282e;
+    padding: 10px 20px;
+    margin: 0 auto 10px;
+    border-radius: 6px;
+}
+.option.numbers input,
+.option.speed input{
+    vertical-align: text-top;
+}
+.numbers_value,
+.speed_value{
+    display: inline-block;
+    width: 18px;
+    text-align: right;
+}
+.splash{
+    display: inline-block;
+    width: 100%;
+    margin: 352px auto;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+.splash .hacker{
+    font-size: 64px;
+    margin-bottom: 30px;
+}
+.splash .message{
+    font-size: 24px;
+}
+.splash .sub_message{
+    display: block;
+    font-size: 17px;
+    margin-top: 5px;
+}
+
+.sub_text{
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn_again {
+    margin: 70px auto;
+    padding: 15px 20px;
+    font-weight: bold;
+    display: block;
+    color: #ffffff;
+    background-color: #2c465e;
+    border: 1px solid #16181d;
+    cursor: pointer;
+}
+.btn_again:hover {
+    background-color: #425e79;
+}
+.groups .btn_again{
+    margin: 0 auto;
+}
+
+.minigame{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    width: 70%;
+    min-width: 1536px;
+    max-width: 1536px;
+    height: 60%;
+    min-height: 865px;
+    max-height: 865px;
+    background-color: #20282e;
+    display: none;
+}
+
+.splash{
+    display: inline-block;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+.splash .hacker{
+    font-size: 65px;
+    margin-bottom: 30px;
+}
+.splash .text{
+    font-weight: bold;
+}
+
+.groups{
+    position: relative;
+    user-select: none;
+}
+.group{
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    background-color: #10487f;
+    cursor: pointer;
+    text-align: center;
+    font-size: 62px;
+    color: #ffffff;
+    line-height: 100px;
+    border: 1px solid white;
+}
+.groups.playing .group{
+    color: transparent;
+}
+
+.group.bg1{
+    background-color: #00ffff;
+}
+.group.bg2{
+    background-color: #088f90;
+}
+.group.bg3{
+    background-color: #708fae;
+}
+.group.bg4{
+    background-color: #7392b2;
+}
+.group.bg5{
+    background-color: #6394ed;
+}
+.group.bg6{
+    background-color: #10487f;
+}
+.group.bg7{
+    background-color: #0047ab;
+}
+.group.bg8{
+    background-color: #1335a3;
+}
+.group.bg9{
+    background-color: #00018b;
+}
+
+.group.good{
+    background-color: #3a5c81;
+    border: none;
+}
+.group.bad{
+    background-color: #802525;
+    border: none;
+}
+
+.credits{
+    text-align: center;
+    color: gray;
+}
+.credits a{
+    color: #ccc;
+}
+.credits b{
+    color: white;
+}
+
+.hidden {
+    display: none;
+}

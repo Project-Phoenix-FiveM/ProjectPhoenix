@@ -1,0 +1,170 @@
+body{
+    background-color: #15181d00;
+    font-family: sans-serif;
+    position: fixed;
+    top: 25%;
+    left: 35%;
+}
+
+.title{
+    text-align: center;
+    color: white;
+}
+.description{
+    text-align: center;
+    color: gray;
+}
+.description sub{
+    font-style: italic;
+}
+
+/*!
+ * Game
+ */
+
+.streaks {
+    display: block;
+    margin: 40px auto;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: #028000;
+    padding: 12px;
+    border-radius: 18px;
+}
+.best_time,
+.time {
+    display: inline-block;
+    width: 100px;
+}
+.streaks .fa {
+    padding: 0 10px;
+}
+.options{
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto 10px;
+}
+.option{
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 20px;
+    background-color: #20282e;
+    padding: 10px 20px;
+    margin: 0 auto 10px;
+    border-radius: 6px;
+}
+.option.grid input,
+.option.speed input{
+    vertical-align: text-top;
+}
+.speed_value{
+    display: inline-block;
+    width: 18px;
+    text-align: right;
+}
+.grid_value{
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+}
+.minigame{
+    margin: 0 auto 20px;
+    width: 540px;
+    min-width: 540px;
+    max-width: 540px;
+    height: 540px;
+    min-height: 540px;
+    max-height: 540px;
+    background-color: #232832;
+    display: none;
+}
+.splash{
+    display: inline-block;
+    width: 100%;
+    margin: 220px auto;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+.splash .hacker{
+    font-size: 65px;
+    margin-bottom: 30px;
+}
+.groups{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    user-select: none;
+}
+.group{
+    width: 61px;
+    height: 61px;
+    border: 8px #232832 solid;
+    background-color: #094e1c;
+    font-family: "Font Awesome 5 Free", sans-serif;
+    font-size: 26px;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+}
+.group:first-child {
+    color: #008001!important;
+    background-color: #6acf66;
+}
+.group:last-child {
+    color: #F00F18!important;
+    background-color: #6acf66;
+}
+.group.breathing{
+    animation: 0.5s infinite alternate ease-in-out breathing-bg;
+}
+@keyframes breathing-bg {
+    from{background-color: #094e1c;}
+    to{background-color: #6acf66;}
+}
+.groups.transparent .group{
+    color: transparent;
+}
+.proper{
+    border-image: linear-gradient(45deg, #ecc800, #564800) 1;
+}
+.good{
+    background-color: #3cec54;
+}
+.bad{
+    background-color: #F00F18;
+}
+
+.hidden {
+    display: none;
+}
+.restart{
+    text-align: center;
+}
+.btn_again {
+    padding: 6px 15px;
+    font-weight: bold;
+}
+.credits{
+    text-align: center;
+    color: gray;
+    margin-top: 40px;
+}
+.credits a{
+    color: #ccc;
+}
+.credits b{
+    color: white;
+}
+.credits .fas{
+    color: red;
+}

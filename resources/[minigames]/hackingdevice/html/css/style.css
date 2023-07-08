@@ -1,0 +1,204 @@
+body{
+
+    font-family: sans-serif;
+}
+
+.title{
+    text-align: center;
+    color: white;
+}
+.description{
+    text-align: center;
+    color: gray;
+}
+
+/**
+ MINIGAME SQUARES
+ */
+
+.streaks {
+    display: block;
+    margin: 40px auto;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: #028000;
+    padding: 12px;
+    border-radius: 18px;
+}
+.best_time,
+.time {
+    display: inline-block;
+    width: 100px;
+}
+.streaks .fa {
+    padding: 0 10px;
+}
+.options{
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto 10px;
+    cursor: default;
+    user-select: none;
+}
+.option{
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 20px;
+    background-color: #20282e;
+    padding: 10px 20px;
+    margin: 0 auto 10px;
+    border-radius: 6px;
+}
+.option.setting{
+    display: inline-flex;
+    height: 32px;
+    padding: 0;
+}
+.option.setting label{
+    font-size: 12px;
+    padding: 6px 10px 6px 6px;
+    cursor: pointer;
+}
+.option.setting input{
+    vertical-align: -2px;
+    cursor: pointer;
+}
+.option.timeout label{
+    padding: 9px;
+}
+.option.timeout input{
+    vertical-align: text-top;
+}
+.timeout_value{
+    font-size: 12px;
+    display: inline-block;
+    width: 18px;
+    text-align: right;
+    padding: 9px 12px 9px 5px;
+}
+.minigame{
+    display: none;
+    margin: 22vh auto 20px;
+    width: 540px;
+    min-width: 540px;
+    max-width: 540px;
+    background-color: #232832;
+    padding: 30px 0;
+    
+}
+.splash {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+.splash .hacker{
+    font-size: 65px;
+    margin-bottom: 30px;
+}
+.splash .text{
+    font-weight: bold;
+}
+
+.splash-success {
+    display: none;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+.splash-success .hacker{
+    font-size: 65px;
+    margin-bottom: 30px;
+}
+.splash-success .text{
+    font-weight: bold;
+}
+
+.minigame .find{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+	user-select: none;
+    margin-top: 10px;
+}
+.minigame .find > div{
+    display: inline-block;
+}
+.minigame .timer{
+    text-align: center;
+    color: green;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.minigame .codes {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    margin: auto;
+}
+.minigame .codes > div{
+    flex: 1 0 10%;
+    margin: 7px 0;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+.minigame .codes > div.red{
+    color: red;
+}
+.minigame .codes > div.green{
+    color: green;
+}
+.minigame .mirrored .find > div,
+.minigame .mirrored .codes > div {
+    -moz-transform: scale(-1, -1);
+    -o-transform: scale(-1, -1);
+    -webkit-transform: scale(-1, -1);
+    transform: scale(-1, -1);
+}
+.hidden {
+    display: none;
+}
+.restart{
+    text-align: center;
+}
+.btn_again {
+    padding: 6px 15px;
+    font-weight: bold;
+}
+.credits{
+    text-align: center;
+    color: gray;
+    margin-top: 40px;
+}
+.credits a{
+    color: #ccc;
+}
+.credits b{
+    color: white;
+}
+.credits .fas{
+    color: red;
+}
+.credits .donate{
+    margin: 20px 0;
+}
+.credits .coin{
+    font-weight: bold;
+    color: white;
+}
+.credits .wallet{
+    font-family: monospace;
+    font-size: 20px;
+}
