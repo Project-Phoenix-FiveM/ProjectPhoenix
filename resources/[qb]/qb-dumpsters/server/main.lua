@@ -1,20 +1,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 Loot = {
-    {'recyclablematerial', math.random(1,3)}, -- spelled correctly
-    {'weapon_bat', 1},
-    {'phone', math.random(1,2)},
-    -- {'xs-condom', 1},  -- invalid item
-    {'weed_ak47', math.random(1,13)},
-    {'kurkakola', math.random(1,3)},
-	{'pokebox', 1},
-    {'venusaur', 1},
-    {'rainbowvmaxcharizard', 1},
-    {'rainbowvmaxpikachu', 1},
-    {'snorlaxvmaxrainbow', 1},
-    {'pikachuv', 1},
-    {'blastoisevmax', 1},
-    {'mewtwogx', 1},
+    {'recyclablematerial', math.random(1,3)}, -- Need to ad dmore entries.
 }
 
 RegisterServerEvent('qb-trashsearch:server:startDumpsterTimer')

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Cyberspace';
+    src: url('Cyberspace.woff2') format('woff2'),
+        url('Cyberspace.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

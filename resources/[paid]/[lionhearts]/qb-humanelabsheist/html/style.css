@@ -1,0 +1,19 @@
+html {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.imagecontainer {
+    margin: 12em auto;
+    height: 80%;
+    width: 70%;
+    background-color: transparent;
+}
+
+.imageself {
+    display: block;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+}

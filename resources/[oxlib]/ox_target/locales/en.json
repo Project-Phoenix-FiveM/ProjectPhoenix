@@ -12,5 +12,6 @@
   "debug_vehicle": "(Debug) Vehicle",
   "debug_object": "(Debug) Object",
   "toggle_targeting": "Toggle targeting",
-  "garbage_bag": "Dispose Garbage Bag"
+  "garbage_bag": "Dispose Garbage Bag",
+  "go_back": "Go back"
 }

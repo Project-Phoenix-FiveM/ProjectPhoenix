@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titre</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link href="https://cdn.staticaly.com/gh/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css" /> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin" rel="stylesheet">
+	<link rel="preload" href="./font/Cyberspace.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body>
+        <div class="MenuContainer" style="display: none;">
+            <div class="menu">
+				<i class="fas fa-times closeMenu"></i>
+				<div class="menuBG" >
+					<h1 id="titreType" class="titre">PLASMAGAME</h1>
+					<div class="PageAcceuil">
+						<div class="Division">
+							<div class="SelectType CreateGame">
+								<h1>CREATE</h1>
+							</div>
+							<div class="SelectType JoinGame">
+								<h1>JOIN</h1>
+							</div>
+						</div>
+					</div>
+					<div class="CreateGamePage" style="display:none;">
+						<div class="leftPartCreate">
+							
+							<div class="CreateMap">
+								<h1 style="color: rgba(255, 255, 255, 0.899);">Maps</h1>
+								<select class= "InputCreateMap" name="craftingItemList" id="InputCreateMapID" placeholder="Position" style="outline: none; border: none;" onchange="changeListMap(this)"> 
+									<option value="" selected disabled hidden>Choose Maps</option>
+									<option value="PatocheSquare"  class="MapItemSelect">PatocheSquare (6 Ply)</option>
+									<option value="PatocheRound"   class="MapItemSelect">PatocheRound (4 Ply)</option>
+									<option value="PatocheSquare2" class="MapItemSelect">PatocheSquare 2 (6 Ply)</option>
+									<option value="PatocheRound2"  class="MapItemSelect">PatocheRound 2 (4 Ply)</option>
+								</select>
+							</div>
+							
+							<div class="CreateGameMode">
+								<h1 style="color: rgba(255, 255, 255, 0.899);">Game Mode</h1>
+								<select class= "InputCreateGameMode" name="craftingItemList" id="InputCreateMapID" placeholder="Position" style="outline: none; border: none;"> 
+									<option value="" selected disabled hidden>Choose Mode</option>
+									<option value="PatocheSquare"  class="GameModeItemSelect">PatocheSquare (6 Ply)</option>
+									<option value="PatocheRound"   class="GameModeItemSelect">PatocheRound (4 Ply)</option>
+									<option value="PatocheSquare2" class="GameModeItemSelect">PatocheSquare 2 (6 Ply)</option>
+									<option value="PatocheRound2"  class="GameModeItemSelect">PatocheRound 2 (4 Ply)</option>
+								</select>
+							</div>
+						</div>
+						<div class="rightPartCreate">
+							<div class="CreateNbPlayer">
+								<h1 style="color: rgba(255, 255, 255, 0.899);">Player team</h1>
+								<select class= "InputCreateNbPlayer" name="craftingItemList" id="InputCreateMapID" placeholder="Position" style="outline: none; border: none;"> 
+									<option value="" selected disabled hidden>Max Player per team</option>
+									<option value="1" class="MaxPlyItemSelect">1</option>
+									<option value="2" class="MaxPlyItemSelect">2</option>
+								</select>
+							</div>
+							<div class="CreateRound">
+								<h1 style="color: rgba(255, 255, 255, 0.899);">Round</h1>
+								<select class= "InputCreateRound" name="craftingItemList" id="craftingItemList" placeholder="Position" style="outline: none; border: none;">
+									<option value="" selected disabled hidden>NB round to play</option>
+									<option value="1" class="RoundItemSelect">1</option>
+									<option value="2" class="RoundItemSelect">2</option>
+									<option value="3" class="RoundItemSelect">3</option>
+									<option value="4" class="RoundItemSelect">4</option>
+									<option value="5" class="RoundItemSelect">5</option>
+									<option value="6" class="RoundItemSelect">6</option>
+								</select>
+							</div>
+						</div>
+					
+						<div class="centerPart">
+							<div class="CreateIMGMap">
+								<div class="CreateIMGMapBox" id = "CreateIMGMapBoxID">
+								</div>
+							</div>
+							<div class="CreateinputImage" style="display: none;">
+							</div>
+							<i class="fas fa-check ValidateCreateGame"></i>
+						</div>
+
+					</div>
+					<div class="GameDetails" style="display: none;">
+					<!-- <div class="GameDetails"> -->
+						<div class="leftPart">
+						
+							<div class="JoinRed">
+								<!-- <h1>Join Red</h1> -->
+								<button class="ButtonJoinRed" type="button">Join Red</button>
+								<!-- <input type="text" name="" placeholder="Dog" class="JoinInput" readonly="readonly" id="JoinMapName" style="outline: none; border: none;"> -->
+							</div>
+						
+							<div class="JoinGameMode">
+								<h1>Game Mode</h1>
+								<input type="text" name="" placeholder="Pan !" class="JoinInput" readonly="readonly" id="JoinGameMode" style="outline: none; border: none;">
+							</div>
+							
+							<div class="JoinMap">
+								<h1 style="color: rgba(255, 255, 255, 0.899);">Map</h1>
+								<input type="text" name="" placeholder="Dog" class="JoinInput" readonly="readonly" id="JoinMapName" style="outline: none; border: none;">
+							</div>
+							
+							<div class="JoinNbRound">
+								<h1 style="color: rgba(255, 255, 255, 0.899);">NbRound</h1>
+								<input type="text" name="" placeholder="Dog" class="JoinInput" readonly="readonly" id="JoinNbRound" style="outline: none; border: none;">
+							</div>
+							
+							
+						</div>
+						<div class="centerPart2">
+							<div class="HiddenData" hidden>
+								<input type="text" name="" placeholder="Dog" class="HiddenDataInput" id="HiddenDataID" style="display: none; border: none;">
+							</div>
+							<div class="JoinScreen">
+								<!-- <h1 style="color: rgba(255, 255, 255, 0.899);">Screenshot</h1> -->
+								<div class="JoinBox" id="JoinBoxID">
+								</div>
+							</div>
+							<!-- <i class="fas fa-sign-in-alt ValidateJoinGame" onclick="JoinGame()"><span class="tooltiptext">Join</span></i> -->
+							<i class="fas fa-play ValidateStartGame" onclick="StartGame()"><span class="tooltiptext">Start</span></i>
+							<!-- <i class="fas fa-camera SpectateGame" onclick="SpectateGame()"><span class="tooltiptext">Spectate</span></i> -->
+							<i class="fas fa-backward BackListGame" onclick="BackFromList()"></i>
+							<i class="fas fa-sign-out-alt ExitLobby" onclick="ExitLobby()"><span class="tooltiptext">Leave Lobby</span></i>
+						</div>
+						<div class="rightPart">
+							<div class="JoinBlue">
+								<!-- <h1>Join Red</h1> -->
+								<button class="ButtonJoinBlue" type="button">Join Blue</button>
+								<!-- <input type="text" name="" placeholder="Dog" class="JoinInput" readonly="readonly" id="JoinMapName" style="outline: none; border: none;"> -->
+							</div>
+							
+							<div class="JoinLobbyName">
+								<h1 style="color: rgba(255, 255, 255, 0.899);">Lobby Name</h1>
+								<input name="" placeholder="Creator Name" class="JoinInput" readonly="readonly" id="JoinLobbyName" style="outline: none; border: none;">
+							</div>
+							
+							<div class="JoinPlayerList">
+								<h1>Player List</h1>
+								<textarea name="" id="JoinPlayerList" placeholder="" class="JoinInput" readonly="readonly" cols="30" rows="4" style="width: 15vw; height: 6.2vw;outline: none; border: none; resize: none;"></textarea>
+							</div>
+						</div>
+					</div>
+				
+					<h2 id="titreType2" class="titre2">by PATAMODS</h2>
+				</div>
+			</div> 
+        </div>
+		
+		<div class="ListContainer" style="display: none;">
+			<i class="fas fa-times closeMenuList"></i>
+			<div class="ListReportPe">
+				<div class="menuBG">
+					<h1 id="titreType" class="titre">PLASMAGAME</h1>
+					<div class="BorrarPinga">
+						<div class="bodyContLista">
+							<table>
+								<thead>
+									<tr>
+										<!-- <th><i class="fas fa-pen"></i> <span> Name</span></th> -->
+										<th><i class="fas fa-crown"></i> <span> Lobby</span></th>
+										<!-- <th><i class="fas fa-user-group"></i> <span> Owner</span></th> -->
+										<th><i class="fas fa-gamepad"></i> <span> Mode</span></th>
+										<th><i class="fas fa-map"></i> <span> Map</span></th>
+										
+										
+										
+										
+										<th><i class="fas fa-user-friends"></i> <span> Player</span></th>
+										<th><i class="fas fa-redo-alt"></i> <span> Round</span></th>
+										<th><i class="fas fa-spinner"></i> <span> Status</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- <tr class="eachListGame" id="1"> -->
+										<!-- <td class="LobbyName">Une pute</td> -->
+										<!-- <td class="GameMode">Pan !</td> -->
+										<!-- <td class="GameMap">Baisodrome</td> -->
+										<!-- <td class="NbPlayer">69</td> -->
+										<!-- <td class="GameRound">69</td> -->
+										<!-- <td class="GameStatus">En cours</td> -->
+									<!-- </tr> -->
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

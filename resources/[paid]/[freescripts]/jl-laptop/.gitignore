@@ -1,6 +1,0 @@
-node_modules
-web/public/build
-yarn.lock
-.DS_Store
-.pnpm-debug.log
-jl-laptop.rar

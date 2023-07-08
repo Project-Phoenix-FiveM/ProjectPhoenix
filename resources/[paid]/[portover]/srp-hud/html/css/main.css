@@ -1,0 +1,760 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:700&display=swap');
+
+@font-face {
+    font-family: 'pricedownblack';
+    src: url('pricedown_bl-webfont.woff2') format('woff2'),
+         url('pricedown_bl-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'gta-ui';
+    src: url('gta-ui.ttf');
+}
+
+@font-face {
+    font-family: 'pdown';
+    src: url('pdown.ttf');
+}
+
+.hudcontainer{
+    display:none;
+	position: absolute; 
+    left: 10px!important;
+    bottom: 10px!important;
+}
+
+.hudcontainer.div {
+	float: left;
+	margin-left: 20px;
+	display: inline-block;
+}
+
+html {
+    overflow: hidden;
+}
+
+p {
+    margin: 0 !important;
+}
+
+.fa-microphone {
+    position: absolute;
+    top: 35%;
+    left: 33%;
+    color: white;
+    z-index: 1;
+}
+.fa-walkie-talkie {
+    position: absolute;
+    top: 33%;
+    left: 30%;
+    color: white;
+    z-index: 1;
+}
+.progress1 {
+    position: relative; 
+    width: 45px !important;
+    height: 45px !important;
+	display: inline-block;
+	float: left;	
+}
+.circle-progress1 {
+    position: absolute; 
+    width: 100% !important;
+    height: 100% !important;
+}
+.circle-progress-value1 {
+    stroke-width: 10px;
+    stroke: #ffffff;
+}
+.circle-progress-circle1 {
+    stroke-width: 10px;
+    stroke: rgba(255, 255, 255, 0.493);
+    fill: rgba(0, 0, 0, 0.493);
+}
+
+.fa-heart {
+    position: absolute;
+    top: 35%;
+    left: 26%;
+    color: white;
+    z-index: 1;
+}
+.progress2 {
+    position: relative; 
+    width: 45px !important;
+    height: 45px !important;
+	float: left;
+	margin-left: 10px;
+}
+.circle-progress2 {
+    position: absolute; 
+    width: 100% !important;
+    height: 100% !important;
+}
+.circle-progress-value2 {
+    stroke-width: 10px;
+    stroke: #69B788;
+}
+.circle-progress-circle2 {
+    stroke-width: 10px;
+    stroke: rgba(105, 183, 136, 0.493);
+    fill: rgba(0, 0, 0, 0.493);
+}
+
+.fa-shield-alt {
+    position: absolute;
+    top: 33%;
+    left: 26%;
+    color: white;
+    z-index: 1;
+}
+.progress3 {
+    position: relative; 
+    width: 45px !important;
+    height: 45px !important;
+	float: left;
+	margin-left: 10px;
+}
+.circle-progress3 {
+    position: absolute; 
+    width: 100% !important;
+    height: 100% !important;
+}
+.circle-progress-value3 {
+    stroke-width: 10px;
+	stroke: #2461AB;
+}
+.circle-progress-circle3 {
+    stroke-width: 10px;
+    stroke: rgba(36, 97, 171, 0.493);
+    fill: rgba(0, 0, 0, 0.493);
+}
+
+.fa-lungs {
+    position: absolute;
+    top: 30%;
+    left: 22%;
+    color: white;
+    z-index: 1;
+}
+.progress4 {
+    position: relative; 
+    width: 45px !important;
+    height: 45px !important;
+	float: left;
+	margin-left: 10px;
+}
+.circle-progress4 {
+    position: absolute; 
+    width: 100% !important;
+    height: 100% !important;
+}
+.circle-progress-value4 {
+    stroke-width: 10px;
+	stroke: #83cbec;
+}
+.circle-progress-circle4 {
+    stroke-width: 10px;
+    stroke: rgba(131, 203, 236, 0.493);
+    fill: rgba(0, 0, 0, 0.493);
+}
+
+.fa-hamburger {
+    position: absolute;
+    top: 30%;
+    left: 26%;
+    color: white;
+    z-index: 1;
+}
+.progress5 {
+    position: relative; 
+    width: 45px !important;
+    height: 45px !important;
+	float: left;
+	margin-left: 10px;	
+}
+.circle-progress5 {
+    position: relative; 
+    width: 100% !important;
+    height: 100% !important;
+}
+.circle-progress-value5 {
+    stroke-width: 10px;
+	stroke: #f0730d;
+}
+.circle-progress-circle5 {
+    stroke-width: 10px;
+    stroke: rgba(240, 115, 13, 0.493);
+    fill: rgba(0, 0, 0, 0.493);
+}
+
+.fa-tint {
+    position: absolute;
+    top: 32%;
+    left: 34%;
+    color: white;
+    z-index: 1;
+}
+.progress6 {
+    position: relative; 
+    width: 45px !important;
+    height: 45px !important;
+	float: left;
+	margin-left: 10px;
+}
+.circle-progress6 {
+    position: absolute; 
+    width: 100% !important;
+    height: 100% !important;
+}
+.circle-progress-value6 {
+    stroke-width: 10px;
+	stroke: #357891;
+}
+.circle-progress-circle6 {
+    stroke-width: 10px;
+    stroke: rgba(53, 120, 145, 0.493);
+    fill: rgba(0, 0, 0, 0.493);
+	margin-left: 20px;
+}
+
+
+.fa-brain {
+    position: absolute;
+    top: 33%;
+    left: 24%;
+    color: white;
+    z-index: 1;
+}
+.progress7 {
+    position: relative; 
+    width: 45px !important;
+    height: 45px !important;
+	float: left;
+	margin-left: 10px;
+}
+
+.circle-progress7 {
+    position: absolute; 
+    width: 100% !important;
+    height: 100% !important;
+}
+.circle-progress-value7 {
+    stroke-width: 10px;
+	stroke: #fa4ff1;
+}
+.circle-progress-circle7 {
+    stroke-width: 10px;
+    stroke: rgba(250, 79, 241, 0.493);
+    fill: rgba(0, 0, 0, 0.493);
+}
+
+.progress8 {
+    position: relative; 
+    width: 45px !important;
+    height: 45px !important;
+	float: left;
+	margin-left: 10px;
+}
+
+.fa-syringe {
+	position: absolute;
+    top: 30%;
+    left: 26%;
+    color: white;
+    z-index: 1;
+}
+
+.circle-progress8 {
+    position: absolute; 
+    width: 100% !important;
+    height: 100% !important;
+}
+.circle-progress-value8 {
+    stroke-width: 10px;
+	stroke: #fa4ff1;
+}
+.circle-progress-circle8 {
+    stroke-width: 10px;
+    stroke: rgba(250, 79, 241, 0.493);
+    fill: rgba(0, 0, 0, 0.493);
+}
+
+.fa-meteor {
+    position: absolute;
+    top: 34%;
+    left: 28%;
+    color: white;
+    z-index: 1;
+}
+
+.progress9 {
+    position: relative; 
+    width: 45px !important;
+    height: 45px !important;
+	float: left;
+	margin-left: 10px;
+}
+
+.circle-progress9 {
+    position: absolute; 
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.circle-progress-value9 {
+    stroke-width: 10px;
+	stroke: #d61b1b;
+}
+
+.circle-progress-circle9 {
+    stroke-width: 10px;
+    stroke: rgba(255, 255, 255, 0.493);
+    fill: rgba(3, 3, 3, 0.493);
+	margin-left: 20px;
+}
+
+
+.money-container {
+    position: absolute;
+    right: 5vw;
+    top: 7vh;
+}
+
+#container {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+#cash {
+    color: white;
+}
+
+.money-cash,.money-bank {
+    display: none;
+    float:right;
+    font-family: 'pdown';
+    font-weight: 400;
+    font-size: 29px;
+    color: white;
+    padding: 4px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin: 0;
+    margin-right: 6px;
+    margin-top: 6px;
+    padding: 0;
+}
+
+.money-cash {
+    color: rgb(210, 210, 210);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: right;
+}
+
+.money-bank {
+    color: rgb(167, 167, 167);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: right;
+    top: 55px;
+}
+
+#plus-changeamount {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: right;
+    color: #f0f0f0;
+}
+
+#minus-changeamount {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: right;
+    color: #f0f0f0;
+}
+
+.minus {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: right;
+    color: #801e1f;
+}
+
+.munnie {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: right;
+    color: #277418;
+}
+
+.moneyupdate {
+    float: right;
+    padding-left: 0.5vw;
+}
+
+.plus {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: right;
+    color: #277418;
+}
+
+.ui-container {
+    display: none;
+    font-size: 10vh;
+    overflow: hidden;
+    font-family: sans-serif;
+    font-variant: small-caps;
+    font-weight: bold;
+    letter-spacing: .1vh;
+}
+
+.ui-car-container {
+    display: none;
+	margin-left:50px;
+}
+
+.ui-car-meters {
+    display: block !important;
+    position: absolute;
+    font-size: 1.5vh;
+    bottom: 4.5vw;
+    left: 18.5vw;
+    color: #ffffff;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+.car-info {
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    top: 0;
+    left: 28%;
+    position: absolute;
+	width: 300px;
+	font-size: 1rem;
+}
+
+.car-info ul {
+	list-style-type: none;
+}
+.car-info ul li {
+	float: left;
+	margin-left: 10px;
+	line-height: 80px;
+}
+
+.fa-user-slash {
+	color: #ef8c02;
+}
+
+.fa-oil-can {
+	color: #FADA5E;
+}
+
+.oil-red {
+	color: #ef0202 ;
+}
+
+.ui-car-otherinfo {
+    position: absolute;
+    height: 3vh;
+    min-width: 5vh;
+    width: fit-content;
+	bottom:0.5vh;
+    left: 17.7vw;
+    line-height: 3vh;
+    color: white;
+    font-size: 1.6vh;
+    /* background-color: black; */
+    text-shadow: 1px 1px 0px #000000;
+}
+
+.info-label {
+    position: relative;
+    top: -.35vh;
+    font-size: 1vh;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+.ui-car-street {
+    font-size: 15px;
+    position: absolute;
+    bottom: 0.28vh;
+	top: 1vh;
+    left: 53.5vw;
+    text-shadow: 1px 1px 0px #000000;
+    color: #ffffff;
+}
+
+.ui-car-streetZone {
+    font-size: 15px;
+    position: absolute;
+    bottom: 0.28vh;
+	top: 1vh;
+    left:26.2vw;
+	width:20vw;
+	text-align:right !important;
+    text-shadow: 1px 1px 0px #000000;
+    color: #ffffff;
+}
+
+.car-engine-info img {
+    width: 3vh;
+}
+
+.car-seatbelt-info img {
+    width: 3vh;
+	margin-left: -55px;
+}
+
+.seatbelt-text {
+    font-size: 1.45vh;
+    color: #46ad34;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+.compass-container {
+    position: absolute;
+    width: 10.2vh;
+    height: 4.5vh;
+    bottom: 0.28vh;
+	top: 0.2vh;
+    left: 47vw;
+    overflow: hidden;
+}
+
+.compass-ui {
+    position: absolute;
+    width: 100vh;
+    height: 100%;
+    right: 0vh;
+}
+
+.compass-current {
+    position: absolute;
+    width: 100%;
+    height: 3vh;
+    color: white;
+    text-align: center;
+    font-size: 2vh;
+}
+
+.compass-current > span {
+    position: relative;
+    top: -1.6vh;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+.big-degree {
+    position: relative;
+    float: left;
+    height: 60%;
+    width: 3vh;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    text-align: center;
+    font-size: 1.5vh;
+    line-height: 2vh;
+    top: 0.5vh;
+}
+
+.big-degree-liniuta {
+    position: relative;
+    float: left;
+    height: 60%;
+    width: 3vh;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: white;
+    text-shadow: 1px 1px 0px #000000;
+    text-align: center;
+    font-size: 1.1vh;
+    line-height: 3vh;
+    top: 0.1235vh;
+	/*left:1.5725vw;*/
+}
+
+.big-degree-line {
+    color: white !important;
+    font-size: 1.2vh !important;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+.degree-line {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 0.8vh;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    font-size: 0.8vh;
+    margin-top: 0.5vh;
+    line-height: 2.2vh;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+.degree-label {
+    position: absolute;
+    bottom: 2.3vh;
+    left: -.6vh;
+    font-size: 1vh;
+    color: white;
+    font-family: sans-serif;
+    font-variant: normal !important;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+/* HUD Settings */
+#ui-settings {
+	display:none;
+	widh: 100%;
+	height: 100%;
+}
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.05);
+	background-color: rgba(245, 245, 245, 0.089);
+}
+
+::-webkit-scrollbar
+{
+	width: 0.8vh;
+	background-color: rgb(11, 23, 28, 1);
+}
+
+::-webkit-scrollbar-thumb
+{
+	/*background-color: background-color: rgba(245, 245, 245, 0.789);*/
+	background-color: rgba(13, 110, 253, 0.389);
+	/*background-color: #0d6efd;*/
+}
+
+#ui-settings ul {
+	list-style-type: none;
+	color: #8e8e8e;
+}
+
+#ui-settings ul li {
+	margin-bottom: 3vh;
+    height: 3vh;
+	font-size: 1.2vh;
+}
+
+.form-check-input {
+	display: inline-block;
+}
+
+.form-check-label {
+	display: inline-block;
+}
+
+#ui-settings ul li span {
+	display: inline-block;
+	width: 18vh;
+	float: left;
+	line-height: 1vh;
+}
+
+#ui-settings ul li span.label {
+	display: inline-block;
+	width: 20vh;
+	float: left;
+	line-height: 2vh;
+}
+
+#ui-settings ul li span.description{
+	width: 26vh;
+	float: left;
+	font-size: 0.9vh;	
+}
+
+#ui-settings ul li span.description input {
+	width: 100%;
+	border: 0;
+	background-color: transparent;
+	border-bottom: 1px solid #8e8e8e;
+	color: #8e8e8e;
+	width: 19.5vh;
+    line-height: 1.5vh;
+	font-size: 1.2vh;
+}
+
+#ui-settings ul li span.description input:focus {
+	border: none;
+	border-bottom: 1px solid #0d6efd;
+	outline: none;
+}
+
+#ui-settings .settingsContainer {
+	position: absolute;
+	left: 50%;
+	top: 5vh;
+	width: 54vh;
+	height: 30vh;
+	margin-left: -25vh;	
+	background-color: rgb(0, 0, 0, .7);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow-y: scroll;
+}
+
+#ui-settings .settingsTitle {
+	text-align: center;
+	color: #fff;
+	font-size: 1.5vh;
+	margin-top: 1.5vh;
+}
+#ui-settings .statusSettings {
+	width:50vh;
+	margin: 0 auto;
+}
+
+#ui-settings .statusSettings .statusTitle {
+	margin: 10px 0;
+	color: #8e8e8e;
+	font-weight: bold;
+}
+
+#ui-settings .saveSettings {
+	width: 100%;
+}
+
+#ui-settings .saveSettings button {
+	position: absolute;
+	left: 50%;
+	margin-left: -5vh;
+	width: 10vh;
+	margin-bottom: 20px;
+}
+
+#close-hudSettings {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	color: #fff;
+	font-size: 1.3vh;
+}
+
+.outline {
+	position: fixed;
+	bottom: 8.1vh;
+	left: -3.1vh;
+	/* overflow: hidden; */
+	width: 29.529vh;
+	text-align: center;
+	}
+.mapborder {
+	width: 21.40vh;
+	height: 19.60vh;
+	border: 3px solid;
+	border-color: #ffffff;
+	border-radius: 50%;
+	position: relative;
+	top: 2.10vh;
+	display: inline-block;
+}
+
+

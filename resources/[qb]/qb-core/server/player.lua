@@ -144,11 +144,6 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
         InstalledApps = {},
     }
 
-    --LJ-Laptop 
-    if not exports['qb-config']:isPaidEnabled("avScripts") then
-        PlayerData.metadata['laptop'] = PlayerData.metadata['laptop'] or {background = 'default',darkfont = false,}
-        PlayerData.metadata['carboostrep'] = PlayerData.metadata['carboostrep'] or 0
-    end
     -- Job
     if PlayerData.job and PlayerData.job.name and not QBCore.Shared.Jobs[PlayerData.job.name] then PlayerData.job = nil end
     PlayerData.job = PlayerData.job or {}
@@ -632,7 +627,7 @@ function QBCore.Player.CreateCitizenId()
     local UniqueFound = false
     local CitizenId = nil
     while not UniqueFound do
-        CitizenId = tostring(QBCore.Shared.RandomStr(3) .. QBCore.Shared.RandomInt(5)):upper()
+        CitizenId = tostring("SRP" .. "-" .. QBCore.Shared.RandomInt(2) .. "-" .. QBCore.Shared.RandomInt(4)):upper()
         local result = MySQL.prepare.await('SELECT COUNT(*) as count FROM players WHERE citizenid = ?', { CitizenId })
         if result == 0 then
             UniqueFound = true
@@ -659,7 +654,7 @@ function QBCore.Functions.CreatePhoneNumber()
     local UniqueFound = false
     local PhoneNumber = nil
     while not UniqueFound do
-        PhoneNumber = math.random(100,999) .. math.random(1000000,9999999)
+        PhoneNumber = 55 .. math.random(1,9) .. math.random(1000,9999)
         local query = '%' .. PhoneNumber .. '%'
         local result = MySQL.prepare.await('SELECT COUNT(*) as count FROM players WHERE charinfo LIKE ?', { query })
         if result == 0 then
@@ -687,7 +682,7 @@ function QBCore.Player.CreateWalletId()
     local UniqueFound = false
     local WalletId = nil
     while not UniqueFound do
-        WalletId = 'QB-' .. math.random(11111111, 99999999)
+        WalletId = 'SRPB-' .. math.random(111111, 999999)
         local query = '%' .. WalletId .. '%'
         local result = MySQL.prepare.await('SELECT COUNT(*) as count FROM players WHERE metadata LIKE ?', { query })
         if result == 0 then

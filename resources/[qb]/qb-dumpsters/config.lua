@@ -19,8 +19,6 @@ Config.RewardTypes = {
 Config.RewardsSmall = {
         [1] = {item = "water", minAmount = 1, maxAmount = 1},
         [2] = {item = "sandwich", minAmount = 1, maxAmount = 1},
-        [3] = {item = "weedplant_seedm", minAmount = 1, maxAmount = 1},
-        
 }
 
 Config.Dumpsters = {

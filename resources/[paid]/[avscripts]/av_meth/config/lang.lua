@@ -7,6 +7,7 @@ Lang = {
     ['press_e'] = "Press ~b~[E]~w~ to confirm",
     ['notification_header'] = "Meth Table",
     ['table_expired'] = "Table expired",
+    ['lab_expired'] = "Lab expired",
     ['notification_instructions'] = "Use the left / right keys to rotate",
     ['already_placed'] = "This table has been already placed somewhere else",
     ['placing_table'] = "Placing table",

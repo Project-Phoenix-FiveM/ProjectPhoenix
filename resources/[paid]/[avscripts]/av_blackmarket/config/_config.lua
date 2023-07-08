@@ -12,7 +12,6 @@ Market.Categories = {
 }
 -- Job = false or "jobName" will make the category restricted
 Market.Items = {
-    {name = "dongle", label = "Dongle", category = "hacker", stock = 20, price = 25},
     {name = "hacking_device", label = "Hacking Device", category = "hacker", stock = 99, price = 50},
     {name = "transponder", label = "Transponder", category = "hacker", stock = 99, price = 50}, 
     

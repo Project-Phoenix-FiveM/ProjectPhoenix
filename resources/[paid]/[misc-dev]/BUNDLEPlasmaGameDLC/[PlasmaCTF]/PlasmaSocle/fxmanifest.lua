@@ -1,0 +1,11 @@
+fx_version 'cerulean'
+game 'gta5'
+lua54 'yes'
+this_is_a_map 'yes'
+name 'PlasmaSocle'
+version '1.0.0'
+description 'Podium by patoche for PlasmaGame'
+author 'Patoche'
+
+data_file 'DLC_ITYP_REQUEST' 'stream/plasma_socle.ytyp'
+dependency '/assetpacks'

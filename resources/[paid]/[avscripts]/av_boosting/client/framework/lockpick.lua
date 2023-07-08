@@ -1,8 +1,10 @@
 -- NumberOfCircles, MS
+local QBCore = exports['qb-core']:GetCoreObject()
+
 local circleConfig = {
     ["D"] = {circles = 5, ms = 40},
     ["C"] = {circles = 6, ms = 40},
-    ["B"] = {circles = 7, ms = 40},
+    ["B"] = {circles = 7, ms = 40}, 
 }
 -- Type (alphabet, numeric, alphanumeric, greek, braille, runes), Time (Seconds), Mirrored (0: Normal, 1: Normal + Mirrored 2: Mirrored only )
 local decrypterConfig = {

@@ -1,0 +1,493 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="css/all.css" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" type="text/css" href="css/vstyle.css" />
+        <link rel="stylesheet" type="text/css" href="css/loading-bar.css" />
+
+        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">-->       <!-- Bootstrap CSS -->
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+        <!-- jQuery UI --> 
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    </head>
+    <body style="background-color: rgba(0,0,0,0);">	
+        <div class="money-container">
+            <div class="money-content">
+                <div class="money-cash">
+                    <p class="munnie">$&nbsp;<span id="cash">0</span></p>
+                </div>
+                <div class="money-bank">
+                    <p class="munnie">$&nbsp;<span id="bank">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hudcontainer">
+			<div class="progress1" id="microphone">
+				<i class="fad fa-microphone fa-lg"></i>
+            </div>
+            <div class="progress2">
+                <i class="fas fa-heart fa-lg"></i>
+            </div>
+            <div class="progress3">
+                <i class="fas fa-shield-alt fa-lg"></i>
+            </div>
+            <div class="progress4">
+                <i class="fas fa-lungs fa-lg" id="stamina"></i>
+            </div>
+            <div class="progress5">
+                <i class="fas fa-hamburger fa-lg" id="hunger"></i>
+            </div>
+            <div class="progress6">
+                <i class="fas fa-tint fa-lg" id="thirst"></i>
+            </div>
+            <div class="progress7">
+                <i class="fas fa-brain fa-lg" id="stress"></i>
+            </div>
+			<div class="progress8">
+                <i class="fas fa-syringe fa-lg" id="bleeding"></i>
+            </div>
+            <div class="progress9">
+                <i class="fas fa-meteor fa-lg" id="nos"></i>
+            </div>
+        </div>
+        
+        <div class="ui-container">            
+
+            <div class="compass-container">
+                <div class="compass-current"><span>↓</span></div>
+                <div class="compass-ui">
+                    <div class="degree-line big-degree-line"><span class="degree-label">SE</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>S</div>
+                    <div class="degree-line big-degree-line">|</div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">SW</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>W</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">NW</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>N</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">NE</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>E</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">SE</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>S</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">SW</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>W</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">NW</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>N</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">NE</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>E</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">SE</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">S</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">SW</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>W</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">NW</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>N</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">NE</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>E</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">SE</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>S</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">SW</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>W</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">NW</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>N</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">NE</span></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="big-degree">|<br>S</div>
+                    <div class="degree-line big-degree-line"></div>
+                    <div class="degree-line">|</div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line"></div>
+                    <div class="degree-line big-degree-line"><span class="degree-label">SE</span></div>
+                </div>
+            </div>
+	
+            <div class="ui-car-container">				
+                <div class="ui-car-street"></div>
+				<div class="ui-car-streetZone"></div>			
+            </div>
+        </div>
+		
+		<div class="outline" style="display: none;">
+			<center>
+				<div class="mapborder"></div>
+			</center>
+		</div>	
+		
+		<!---- //////////////////////////////// -->
+        <!---- ////////// VEHICLE HUD ///////// -->
+        <!---- //////////////////////////////// -->
+
+        <div id="ui">
+            <div class="carStats" style="display: none;">
+                <div class="counter" id="idCounter">
+                    <div class="counter2" id="idCounter2">
+                        <div class="speedometer">
+                            <svg class="circle" width="50" height="50">
+                                <circle class="outer" stroke="#ffffff" stroke-width="0.9" style="stroke-opacity: 0.2;" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                                <circle class="backgroundCircle" stroke="#ffffff" stroke-width="4" style="stroke-opacity: 0.4;" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                                <circle class="progress progress-speed" stroke="url(#gradient)" stroke-width="2.5" style="stroke-opacity: 1;" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                                <defs>
+                                    <linearGradient id="gradient">
+                                        <stop offset="30%" stop-color="#ffffff" />
+                                        <stop offset="100%" stop-color="#ffffff" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="text">
+                                <span class="speed"></span>
+                                <div class="mph">MPH</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- GAUGES -->
+                <div class="gauges">
+                    <!-- FUEL -->
+                    <div class="dials" style="background-image: url('./img/fuel.png');">
+                        <svg class="circle" width="40" height="40">
+                            <circle class="backgroundCircle" stroke="#ffffff" stroke-width="3.5" style="stroke-opacity: 0.5;" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+                            <circle class="progress progress-fuel" id="fuel" stroke="#ffffff" stroke-width="3.5" style="stroke-opacity: 1.0;" fill="transparent" r="18" cx="20" cy="20" stroke-dasharray="70 30" stroke-dashoffset="0"/>                            
+                        </svg>
+                    </div>    				
+                </div>
+				<div class="counter" id="idCounterAlt">
+					<div class="counter2Alt" id="idCounter2Alt">
+						<div class="altimeter">
+							<svg class="circle" width="50" height="50">
+								<circle class="backgroundCircle" stroke="#ffffff" stroke-width="4" style="stroke-opacity: 0.4;" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+								<circle class="progress progress-alt" stroke="url(#gradient)" stroke-width="2.5" style="stroke-opacity: 1;" fill="transparent" r="18" cx="25" cy="25" stroke-dasharray="70 30" stroke-dashoffset="0"/>
+								<defs>
+									<linearGradient id="gradient">
+										<stop offset="30%" stop-color="#ffffff" />
+										<stop offset="100%" stop-color="#ffffff" />
+									</linearGradient>
+								</defs>
+							</svg>
+							<div class="text">
+								<span class="alt"></span>
+								<div class="mph">ALT</div>
+							</div>
+						</div>
+					</div>
+                </div>
+				<div class="car-info">
+					<ul>
+						<li class="car-seatbelt-info"><i class="fas fa-user-slash fa-lg"></i></li>
+						<li class="car-engine-info"><i class="fas fa-oil-can fa-lg"></i></li>
+					</ul>
+				</div>
+				<!--
+				<div class="car-info car-seatbelt-info">&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/seatbelt.png"></div>
+                <div class="car-info car-engine-info">&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/engine.png"></div>
+				-->
+            </div>
+        </div>
+		
+		<!---- ///////////////////////////////// -->
+        <!---- ////////// HUD SETTINGS ///////// -->
+        <!---- ///////////////////////////////// -->
+
+        <div id="ui-settings">
+			<div class="settingsContainer">
+				<i class="material-icons" id="close-hudSettings">close</i>
+				<div class="settingsTitle">HUD Settings</div>
+				
+				<div class="statusSettings">
+					<div class="statusTitle">Status</div>
+					<ul class="char-register-inputs-data">
+						<li>
+							<span class="label">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowHealth" checked> 
+									<label class="form-check-label" for="statusShowHealth">Show Health</label>
+								</div>
+							</span>
+							<span class="description">Hide when more than ... (100 = never hide)
+								  <p>% <input name="healthSettings" id="healthSettings" value="" placeholder="100"></p>
+							</span>
+							
+						</li>
+						<li>
+							<span class="label">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowArmor" checked> 
+									<label class="form-check-label" for="statusShowArmor">Show Armor</label>
+								</div>
+							</span>
+							<span class="description">Hide when more than ... (100 = never hide)
+								  <p>% <input name="armorSettings" id="armorSettings" value="100"></p>
+							</span>
+						</li>
+						</li>
+						<li>
+							<span class="label">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowFood" checked> 
+									<label class="form-check-label" for="statusShowFood">Show Food</label>
+								</div>
+							</span>
+							<span class="description">Hide when more than ... (100 = never hide)
+								  <p>% <input name="foodSettings" id="foodSettings" value="100"></p>
+							</span>
+						</li>
+						</li>
+						<li>
+							<span class="label">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowWater" checked> 
+									<label class="form-check-label" for="statusShowWater">Show Water</label>
+								</div>
+							</span>
+							<span class="description">Hide when more than ... (100 = never hide)
+								  <p>% <input name="waterSettings" id="waterSettings" value="100"></p>
+							</span>
+						</li>
+						
+						<li>
+							<span class="label">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowStress" checked> 
+									<label class="form-check-label" for="statusShowStreess">Show Stress when relevant</label>
+								</div>
+							</span>
+							<span class="label">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowOxygen" checked> 
+									<label class="form-check-label" for="statusShowOxygen">Show Oxygen when relevant</label>
+								</div>
+							</span>	
+						</li>
+						<li>
+							<span style="width: 30vh;">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowBleeding" checked> 
+									<label class="form-check-label" for="statusShowBleeding">Show Bleeding when relevant</label>
+								</div>
+							</span>
+						</li>
+					</ul>
+					
+					<div class="statusTitle">Vehicle</div>
+					<ul class="char-register-inputs-data">
+						<li>
+							<span class="label">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowMinimap" checked> 
+									<label class="form-check-label" for="statusShowMinimap">Show Minimap</label>
+								</div>
+							</span>
+							<span style="width: 25vh;">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowCarHud" checked> 
+									<label class="form-check-label" for="statusShowCarHud">Show Car Hud</label>
+								</div>
+							</span>	
+						</li>
+						<li>
+							<span class="label">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowMinimapBorder" checked> 
+									<label class="form-check-label" for="statusShowMinimapBorder">Show Minimap Border</label>
+								</div>
+							</span>
+							<span style="width: 25vh;">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="color" value="#ffffff" id="statusMinimapBorderColor"> 
+									<label class="form-check-label" for="statusMinimapBorderColor">Border Color</label>
+								</div>
+							</span>	
+						</li>
+					</ul>
+					
+					<div class="statusTitle">Compass</div>
+					<ul class="char-register-inputs-data">
+						<li>
+							<span class="label">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowCompass" checked> 
+									<label class="form-check-label" for="statusShowCompass">Enable</label>
+								</div>
+							</span>
+							<span style="width: 25vh;">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowStreetNames" checked> 
+									<label class="form-check-label" for="statusShowStreetNames">Show street names when in a vehicle</label>
+								</div>
+							</span>	
+						</li>
+					</ul>
+					
+					<div class="statusTitle">Postal Code</div>
+					<ul class="char-register-inputs-data">
+						<li>
+							<span class="label">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowPostal"> 
+									<label class="form-check-label" for="statusShowPostal">Enable</label>
+								</div>
+							</span>
+							<span style="width: 25vh;">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusShowPostalMap"> 
+									<label class="form-check-label" for="statusShowPostalMap">Show postal codes on map</label>
+								</div>
+							</span>	
+						</li>
+					</ul>
+
+                    <div class="statusTitle">Reticle/Crosshair (Lame feature)</div>
+                    <ul class="char-register-inputs-data">
+                        <li>
+							<span class="label">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="statusReticle">
+									<label class="form-check-label" for="statusReticle">Enable</label>
+								</div>
+							</span>
+                        </li>
+                    </ul>
+					
+					<div class="saveSettings">
+						<button id="saveSettings" type="button" class="btn btn-primary">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="js/loading-bar.js" type="text/javascript"></script>
+        <script src="js/app.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,196 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/reset.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+
+	<script src="./scripts/jquery.min.js"></script>
+	<script src="./scripts/howler.min.js" type="text/javascript"></script>
+	<script src="./scripts/vue.min.js" type="text/javascript"></script>
+
+	<script src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflJJaNgk/www-widgetapi.js"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body id = "body" style = "background: transparent;">
+<div id = "trash"></div>
+<div class = "radio_cont" v-if="visible">
+	<div id = "radio">
+		<div id = "useless">
+			<div id = "volume">{{volume}}% </div>
+			<svg style="height: 27px;fill: white;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="Layer 2" id="Layer_2"><path d="M20,13h0V10A8,8,0,0,0,4,10v3H4a5,5,0,0,0,3,9H8a1,1,0,0,0,1-1V13a1,1,0,0,0-1-1H7a5,5,0,0,0-1,.1V10a6,6,0,0,1,12,0v2.1a5,5,0,0,0-1-.1H16a1,1,0,0,0-1,1v8a1,1,0,0,0,1,1h1a5,5,0,0,0,3-9Z"/></g></svg>
+		</div>
+		<div id = "time">14:56</div>
+
+		<!-- Rewind controler -->
+		<div class = "playCustom" v-if="page === 'rewind'">
+			<div>
+				<p class = "status">{{locales.playing}}</p>
+				<p class = "nameSong">{{locales.nothing}}</p></br>
+				<p class = "timeSong">{{locales.timeSong}}</p>
+				<input type="range" id="timestamp_drag" step="1" name="timestamp" min="0" :value="(maxTimeStamp - timeSong)" :max="maxTimeStamp" style= "width: 50%;" @change="slideInputChanged">
+			</div>
+		</div>
+
+		<!-- Volume control -->
+		<div class = "playCustom" v-if="page === 'volume'">
+			<div class = "box full" id = "volumedown" v-on:click="changeVolume(true)">
+				<div class = "center-box">
+					<svg viewBox="0 0 512 512"><g><polygon points="311,407.7 311,104.4 216.2,192 112,192 112,320 216.2,320  "/><path d="M367.2,355.6c20.5-27.8,32.8-62.3,32.8-99.6c0-37.4-12.3-71.8-32.8-99.6l-20.4,15.3c17.4,23.6,27.8,52.7,27.8,84.3   c0,31.6-10.4,60.7-27.8,84.3L367.2,355.6z"/></g></svg>
+					<h3>Decrease volume</h3>
+				</div>
+			</div>
+			<div class = "box full" id = "volumeup" v-on:click="changeVolume(false)">
+				<div class = "center-box">
+					<svg viewBox="0 0 512 512"><title/><polygon points="157.65 176.1 64 176.1 64 335.9 157.65 335.9 288 440 288 72 157.65 176.1"/><path d="M352,320c9.74-19.41,16-40.81,16-64,0-23.51-6-44.4-16-64" /><path d="M400,368c19.48-34,32-64,32-112s-12-77.7-32-112"/></svg>
+					<h3 class="test">Increase volume</h3>
+				</div>
+			</div>
+		</div>
+
+		<!-- input for custom music / pausing / stop music + info about music how long until end etc -->
+		<div class = "playCustom" v-if="page === 'custom'">
+			<p class = "status">{{locales.playing}}</p>
+			<p class = "nameSong">{{locales.nothing}}</p></br>
+			<p class = "timeSong">{{locales.timeSong}}</p>
+
+			<input type="text" id="url" name="url" placeholder="Your link to the music youtube / mp3"></br>
+			<div id = "playSong">
+				<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"   v-on:click="pauseMusic()"><path d="M5.74609 3C4.7796 3 3.99609 3.7835 3.99609 4.75V19.25C3.99609 20.2165 4.7796 21 5.74609 21H9.24609C10.2126 21 10.9961 20.2165 10.9961 19.25V4.75C10.9961 3.7835 10.2126 3 9.24609 3H5.74609Z"/><path d="M14.7461 3C13.7796 3 12.9961 3.7835 12.9961 4.75V19.25C12.9961 20.2165 13.7796 21 14.7461 21H18.2461C19.2126 21 19.9961 20.2165 19.9961 19.25V4.75C19.9961 3.7835 19.2126 3 18.2461 3H14.7461Z"/></svg>
+				<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"   v-on:click="playCustomMusic()"><path d="M0 0h48v48H0z" fill="none"/><path d="M20 33l12-9-12-9v18zm4-29C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16z"/></svg>
+				<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" v-on:click="turnOffMusic()"><path d="M392,432H120a40,40,0,0,1-40-40V120a40,40,0,0,1,40-40H392a40,40,0,0,1,40,40V392A40,40,0,0,1,392,432Z"/></svg>
+			</div>
+		</div>
+
+		<!-- hardcoded playlist from config.lua -->
+		<div id = "musicList" v-if="page === 'list'">
+			<div v-for="item, index in songs" class = "music">
+				<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" v-on:click="playMusic(item.url)"><path d="M0 0h48v48H0z" fill="none"/><path d="M20 33l12-9-12-9v18zm4-29C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16z"/></svg>
+				<p>{{ item.label }}</p>
+			</div>
+		</div>
+
+		<!-- User saved list of music -->
+		<div class = "playCustom" v-if="page === 'playlist' && framework != 0" style="overflow: overlay;">
+			<div class = "music">
+				<svg fill="white" style="margin-bottom: 12px;" v-on:click="editMusic(null, null, true)" enable-background="new 0 0 47 47" viewBox="0 0 47 47" width="47px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<path d="M46.46,8.434l-6.19,6.19l-6.992-0.707l-0.785-7.071l6.148-6.148c-4.398-1.508-9.47-0.585-12.943,2.889  c-3.565,3.565-4.432,8.829-3,13.054L0.524,38.813c-1.22,1.221-0.778,3.17,0.442,4.391l2.947,2.945  c1.22,1.221,3.169,1.662,4.39,0.442l22.172-22.172c4.227,1.431,9.516,0.591,13.08-2.975C47.063,17.936,48.01,12.838,46.46,8.434z"/>
+				</svg>
+				<br>
+				<p>Add new music</p>
+			</div>
+
+			<div v-for="item, index in userSongs" class = "music" v-if="item.active">
+				<svg v-on:click="playMusic(item.url)" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h48v48H0z" fill="none"/><path d="M20 33l12-9-12-9v18zm4-29C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16z"/></svg>
+				<svg v-on:click="editMusic(item.url, item.label, null, index)" enable-background="new 0 0 47 47" version="1.1" viewBox="0 0 47 47" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M46.46,8.434l-6.19,6.19l-6.992-0.707l-0.785-7.071l6.148-6.148c-4.398-1.508-9.47-0.585-12.943,2.889  c-3.565,3.565-4.432,8.829-3,13.054L0.524,38.813c-1.22,1.221-0.778,3.17,0.442,4.391l2.947,2.945  c1.22,1.221,3.169,1.662,4.39,0.442l22.172-22.172c4.227,1.431,9.516,0.591,13.08-2.975C47.063,17.936,48.01,12.838,46.46,8.434z"/></svg>
+				<p>{{ item.label }}</p>
+			</div>
+		</div>
+		<div class = "playCustom" v-if="page === 'playlist' && framework == 0">
+			<h4 style="text-align: center;">This feature wont work if the mysql is disabled in config.lua | mysql == {{framework}}</h4>
+		</div>
+
+		<!-- que music list -->
+		<div class = "playCustom" id = "quemusic" v-if="page === 'quemusic'" style="overflow: overlay;">
+			<div class = "music">
+				<svg  v-on:click="changePage('add_menu_to_que')" style="margin-bottom: 12px;" enable-background="new 0 0 32 32" viewBox="0 0 32 32"><g id="background"><rect/></g><g><g><polygon points="30,12 20,12 20,2 12,2 12,12 2,12 2,20 12,20 12,30 20,30 20,20 30,20"/></g></g></svg>
+				<br>
+				<p>Add music to que</p>
+			</div>
+
+			<div class = "music">
+				<svg style="margin-bottom: 12px;" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" v-on:click="playQueList()"><path d="M0 0h48v48H0z" fill="none"/><path d="M20 33l12-9-12-9v18zm4-29C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16z"/></svg>
+				<br>
+				<p>Play the list</p>
+			</div>
+
+			<div class = "music">
+				<svg style="margin-bottom: 12px;" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" v-on:click="stopQueList()"><path d="M392,432H120a40,40,0,0,1-40-40V120a40,40,0,0,1,40-40H392a40,40,0,0,1,40,40V392A40,40,0,0,1,392,432Z"/></svg>
+				<br>
+				<p>Stop the list</p>
+			</div>
+
+			<div v-for="item, index in customPlayList" class = "music" v-if="!item.removed" style="margin-top: 12px;">
+				<svg v-on:click="removeFromPlayList(index, item)" viewBox="0 0 24 24" v-bind:class="{ 'non_active_que': !item.active, 'active_que': item.active}">
+					<g>
+						<path d="M18,7h-1V6c0-1.104-0.896-2-2-2H8C6.896,4,6,4.896,6,6v1H5C4.448,7,4,7.448,4,8s0.448,1,1,1v8c0,2.206,1.794,4,4,4h5   c2.206,0,4-1.794,4-4V9c0.552,0,1-0.448,1-1S18.552,7,18,7z M8,6h7v1H8V6z M16,17c0,1.104-0.896,2-2,2H9c-1.104,0-2-0.896-2-2V9h1   h7h1V17z"/>
+						<path d="M8.5,10.5C8.225,10.5,8,10.725,8,11v6c0,0.275,0.225,0.5,0.5,0.5S9,17.275,9,17v-6C9,10.725,8.775,10.5,8.5,10.5z"/><path d="M10.5,10.5c-0.275,0-0.5,0.225-0.5,0.5v6c0,0.275,0.225,0.5,0.5,0.5S11,17.275,11,17v-6C11,10.725,10.775,10.5,10.5,10.5z"/>
+						<path d="M12.5,10.5c-0.275,0-0.5,0.225-0.5,0.5v6c0,0.275,0.225,0.5,0.5,0.5S13,17.275,13,17v-6C13,10.725,12.775,10.5,12.5,10.5z"/>
+						<path d="M14.5,10.5c-0.275,0-0.5,0.225-0.5,0.5v6c0,0.275,0.225,0.5,0.5,0.5S15,17.275,15,17v-6C15,10.725,14.775,10.5,14.5,10.5z"/>
+					</g>
+				</svg>
+				<p style="padding-top: 15px;">{{ item.label }}</p>
+			</div>
+		</div>
+
+		<!-- Add music to que list -->
+		<div class = "editSong" v-if="page === 'add_menu_to_que'">
+			<p style="position: relative;bottom: -8px;font-size: 17px;">URL for the song</p>
+			<input type="text" id="UrlForQue" name="url" placeholder="Your link to the music youtube / mp3"></br>
+			<svg viewBox="0 0 18 18" v-on:click="addToQue()"><g fill-rule="evenodd"><g><g><path d="M14,0 L2,0 C0.9,0 0,0.9 0,2 L0,16 C0,17.1 0.9,18 2,18 L16,18 C17.1,18 18,17.1 18,16 L18,4 L14,0 L14,0 Z M9,16 C7.3,16 6,14.7 6,13 C6,11.3 7.3,10 9,10 C10.7,10 12,11.3 12,13 C12,14.7 10.7,16 9,16 L9,16 Z M12,6 L2,6 L2,2 L12,2 L12,6 L12,6 Z" id="Shape"/></g></g></g></svg>
+			<svg v-on:click="changePage('quemusic')" viewBox="0 0 24 24" class="trash">
+				<g>
+					<path d="M18,7h-1V6c0-1.104-0.896-2-2-2H8C6.896,4,6,4.896,6,6v1H5C4.448,7,4,7.448,4,8s0.448,1,1,1v8c0,2.206,1.794,4,4,4h5   c2.206,0,4-1.794,4-4V9c0.552,0,1-0.448,1-1S18.552,7,18,7z M8,6h7v1H8V6z M16,17c0,1.104-0.896,2-2,2H9c-1.104,0-2-0.896-2-2V9h1   h7h1V17z"/>
+					<path d="M8.5,10.5C8.225,10.5,8,10.725,8,11v6c0,0.275,0.225,0.5,0.5,0.5S9,17.275,9,17v-6C9,10.725,8.775,10.5,8.5,10.5z"/><path d="M10.5,10.5c-0.275,0-0.5,0.225-0.5,0.5v6c0,0.275,0.225,0.5,0.5,0.5S11,17.275,11,17v-6C11,10.725,10.775,10.5,10.5,10.5z"/>
+					<path d="M12.5,10.5c-0.275,0-0.5,0.225-0.5,0.5v6c0,0.275,0.225,0.5,0.5,0.5S13,17.275,13,17v-6C13,10.725,12.775,10.5,12.5,10.5z"/>
+					<path d="M14.5,10.5c-0.275,0-0.5,0.225-0.5,0.5v6c0,0.275,0.225,0.5,0.5,0.5S15,17.275,15,17v-6C15,10.725,14.775,10.5,14.5,10.5z"/>
+				</g>
+			</svg>
+		</div>
+
+		<!-- Will edit/add music to his saved playlist -->
+		<div class = "editSong" v-if="page === 'edit'">
+			<p style="position: relative;bottom: -8px;font-size: 17px;">Name of the song</p>
+			<input type="text" id="AddName" name="name" placeholder="Name of your wonderfull music"></br>
+			<p style="position: relative;bottom: -8px;font-size: 17px;">URL for the song</p>
+			<input type="text" id="AddUrl" name="url" placeholder="Your link to the music youtube / mp3"></br>
+			<svg viewBox="0 0 18 18" v-on:click="editSong();"><g fill-rule="evenodd"><g><g><path d="M14,0 L2,0 C0.9,0 0,0.9 0,2 L0,16 C0,17.1 0.9,18 2,18 L16,18 C17.1,18 18,17.1 18,16 L18,4 L14,0 L14,0 Z M9,16 C7.3,16 6,14.7 6,13 C6,11.3 7.3,10 9,10 C10.7,10 12,11.3 12,13 C12,14.7 10.7,16 9,16 L9,16 Z M12,6 L2,6 L2,2 L12,2 L12,6 L12,6 Z" id="Shape"/></g></g></g></svg>
+			<svg v-on:click="removeSong();" viewBox="0 0 24 24" class="trash">
+				<g>
+					<path d="M18,7h-1V6c0-1.104-0.896-2-2-2H8C6.896,4,6,4.896,6,6v1H5C4.448,7,4,7.448,4,8s0.448,1,1,1v8c0,2.206,1.794,4,4,4h5   c2.206,0,4-1.794,4-4V9c0.552,0,1-0.448,1-1S18.552,7,18,7z M8,6h7v1H8V6z M16,17c0,1.104-0.896,2-2,2H9c-1.104,0-2-0.896-2-2V9h1   h7h1V17z"/>
+					<path d="M8.5,10.5C8.225,10.5,8,10.725,8,11v6c0,0.275,0.225,0.5,0.5,0.5S9,17.275,9,17v-6C9,10.725,8.775,10.5,8.5,10.5z"/><path d="M10.5,10.5c-0.275,0-0.5,0.225-0.5,0.5v6c0,0.275,0.225,0.5,0.5,0.5S11,17.275,11,17v-6C11,10.725,10.775,10.5,10.5,10.5z"/>
+					<path d="M12.5,10.5c-0.275,0-0.5,0.225-0.5,0.5v6c0,0.275,0.225,0.5,0.5,0.5S13,17.275,13,17v-6C13,10.725,12.775,10.5,12.5,10.5z"/>
+					<path d="M14.5,10.5c-0.275,0-0.5,0.225-0.5,0.5v6c0,0.275,0.225,0.5,0.5,0.5S15,17.275,15,17v-6C15,10.725,14.775,10.5,14.5,10.5z"/>
+				</g>
+			</svg>
+		</div>
+
+		<!-- bottom menu if any new item added the width has to be adjusted  -->
+		<div id = "menu">
+			<div class = "box" id = "buttonOff" v-on:click="changePage('playlist')">
+				<svg viewBox="0 0 18 18"><g fill-rule="evenodd"><g><g><path d="M14,0 L2,0 C0.9,0 0,0.9 0,2 L0,16 C0,17.1 0.9,18 2,18 L16,18 C17.1,18 18,17.1 18,16 L18,4 L14,0 L14,0 Z M9,16 C7.3,16 6,14.7 6,13 C6,11.3 7.3,10 9,10 C10.7,10 12,11.3 12,13 C12,14.7 10.7,16 9,16 L9,16 Z M12,6 L2,6 L2,2 L12,2 L12,6 L12,6 Z" id="Shape"/></g></g></g></svg>
+			</div>
+
+			<div class = "box" id = "search" v-on:click="changePage('custom')">
+				<svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M344.5,298c15-23.6,23.8-51.6,23.8-81.7c0-84.1-68.1-152.3-152.1-152.3C132.1,64,64,132.2,64,216.3  c0,84.1,68.1,152.3,152.1,152.3c30.5,0,58.9-9,82.7-24.4l6.9-4.8L414.3,448l33.7-34.3L339.5,305.1L344.5,298z M301.4,131.2  c22.7,22.7,35.2,52.9,35.2,85c0,32.1-12.5,62.3-35.2,85c-22.7,22.7-52.9,35.2-85,35.2c-32.1,0-62.3-12.5-85-35.2  c-22.7-22.7-35.2-52.9-35.2-85c0-32.1,12.5-62.3,35.2-85c22.7-22.7,52.9-35.2,85-35.2C248.5,96,278.7,108.5,301.4,131.2z"/></svg>
+			</div>
+
+			<div class = "box" id = "rewind" v-on:click="changePage('rewind')">
+				<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1024 544v448q0 14-9 23t-23 9h-320q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h224v-352q0-14 9-23t23-9h64q14 0 23 9t9 23zm416 352q0-148-73-273t-198-198-273-73-273 73-198 198-73 273 73 273 198 198 273 73 273-73 198-198 73-273zm224 0q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/></svg>
+			</div>
+
+			<div class = "box" id = "play" v-on:click="changePage('list')">
+				<svg style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M26.7,2.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4c3.5,3.5,3.5,9.1,0,12.6c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.5,0.3,0.7,0.3   s0.5-0.1,0.7-0.3C31,13.5,31,6.5,26.7,2.3z"/><path d="M22,12.6c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c1.1-1.1,1.7-2.5,1.6-4.1c0-1.5-0.7-3-1.8-4.1   c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4C23.3,8.7,23.4,11.2,22,12.6z"/><path d="M6.7,16.3c-3.5-3.5-3.5-9.1,0-12.6c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0C1,6.5,1,13.5,5.3,17.7C5.5,17.9,5.7,18,6,18   s0.5-0.1,0.7-0.3C7.1,17.3,7.1,16.7,6.7,16.3z"/><path d="M8.8,14.2c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4c-1.5-1.5-1.6-4-0.2-5.4c0.4-0.4,0.4-1,0-1.4   S9,5.6,8.6,6C7.5,7.1,7,8.5,7,10.1C7,11.6,7.7,13.1,8.8,14.2z"/><path d="M24,28h-2.2l-4-15.6C18.5,11.9,19,11,19,10c0-1.7-1.3-3-3-3s-3,1.3-3,3c0,1,0.5,1.9,1.3,2.4l-4,15.6H8c-0.6,0-1,0.4-1,1   s0.4,1,1,1h16c0.6,0,1-0.4,1-1S24.6,28,24,28z M17.6,20h-3.3l1.6-6.3L17.6,20z M13.9,22c0,0,0.1,0,0.1,0h4c0.1,0,0.1,0,0.1,0l1.6,6   h-7.4L13.9,22z"/></g></svg>
+			</div>
+
+			<div class = "box" id = "change_volume" v-on:click="changePage('volume')">
+				<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><g data-name="Layer 2" id="Layer_2"><path d="M20,13h0V10A8,8,0,0,0,4,10v3H4a5,5,0,0,0,3,9H8a1,1,0,0,0,1-1V13a1,1,0,0,0-1-1H7a5,5,0,0,0-1,.1V10a6,6,0,0,1,12,0v2.1a5,5,0,0,0-1-.1H16a1,1,0,0,0-1,1v8a1,1,0,0,0,1,1h1a5,5,0,0,0,3-9Z"/></g></svg>
+			</div>
+
+			<div class = "box" v-on:click="changePage('quemusic')">
+				<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/><path d="M20,6V16a3,3,0,1,1-3-3,2.77,2.77,0,0,1,1,.18V6a1,1,0,0,1,2,0Z"/><path d="M11,19H5a1,1,0,0,1,0-2h6a1,1,0,0,1,0,2Z"/><path d="M11,15H5a1,1,0,0,1,0-2h6a1,1,0,0,1,0,2Z"/><path d="M14,11H5A1,1,0,0,1,5,9h9a1,1,0,0,1,0,2Z"/><path d="M15,7H5A1,1,0,0,1,5,5H15a1,1,0,0,1,0,2Z"/></svg>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script src="./scripts/config.js" type="text/javascript"></script>
+<script src="./scripts/listener.js" type="text/javascript"></script>
+<script src="./scripts/class.js" type="text/javascript"></script>
+<script src="./scripts/functions.js" type="text/javascript"></script>
+<script src="./scripts/SoundPlayer.js" type="text/javascript"></script>
+</html>

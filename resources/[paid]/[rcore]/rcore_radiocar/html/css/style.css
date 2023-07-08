@@ -1,0 +1,327 @@
+/* This applies to all elements (bad practice) */
+* {
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 900;
+	user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.fa-headphones{
+	background: url(./img/headphones.png);
+    background-size: 100% 100%;
+}
+
+@font-face {
+    font-family: 'digital-7regular';
+    src: url('digital-7.regular-webfont.woff2') format('woff2'),
+         url('digital-7.regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+	background: url(./img/bg.png);
+    background-size: 100% 100%;
+}
+
+#radio{
+	background: url(./img/radio.png);
+    background-size: 100% 100%;
+    height: 520px;
+    width: 880px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.playCustom{
+    position: absolute;
+    height: 201px;
+    width: 656px;
+    top: 119px;
+    left: 137px;
+}
+
+.playCustom p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    font-size: 21px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#playSong{
+    font-size: 44px;
+    position: absolute;
+    top: 136px;
+    left: 254px;
+    height: 52px;
+    width: 159px;
+}
+
+
+#playSong svg{
+    text-align: center;
+    height: 40px;
+    fill: white;
+}
+
+#playSong svg:hover{
+	fill: #ff7878;
+    cursor: pointer;
+}
+
+.playCustom input{
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    position: absolute;
+    top: 188px;
+    width: 330px;
+    left: 160px;
+    text-align: center;
+    border: solid 3px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#time{
+    position: absolute;
+    top: 60px;
+    right: 392px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+#useless{
+    position: absolute;
+    top: 60px;
+    right: 99px;
+    font-size: 20px;
+	display: flex;
+}
+
+#UrlForQue{
+	text-align: center;
+	color: black;
+    width: 350px;
+    position: relative;
+    right: 81px;
+}
+
+.non_active_que {
+    fill: white !important;
+}
+
+.active_que {
+    fill: #08ff08 !important;
+}
+
+.non_active_que:hover {
+    fill: #ff7878 !important;
+}
+
+.active_que:hover {
+    fill: #ff7878 !important;
+}
+
+#AddName {
+	text-align: center;
+	color: black;
+    width: 350px;
+    position: relative;
+    right: 81px;
+}
+#AddUrl{
+    text-align: center;
+    color: black;
+    width: 350px;
+    position: relative;
+    right: 81px;
+}
+
+.editSong p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+	text-align: center;
+}
+
+.editSong svg{
+    fill: white;
+	height: 45px;
+    position: relative;
+    top: 15px;
+    left: 36px;
+}
+
+.trash{
+	height: 60px !important;
+	top: 21px !important;
+}
+
+.editSong svg:hover{
+	fill: #30f96e;
+	cursor: pointer;
+}
+
+.editSong{
+    position: absolute;
+    height: 193px;
+    width: 179px;
+    top: 17px;
+    left: 44px;
+    right: 0;
+    bottom: 82px;
+    margin: auto;
+}
+
+#menu{
+    height: 63px;
+    width: 661px;
+    position: absolute;
+    bottom: 92px;
+    right: 84px;
+}
+
+#menu svg{
+    height: 40px;
+}
+
+#musicList{
+    height: 272px;
+    width: 657px;
+    position: absolute;
+    top: 92px;
+    left: 137px;
+    overflow: overlay;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border: 2px solid white;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.music{
+    height: 108px;
+    width: 218px;
+    float: left;
+    text-align: center;
+    font-size: 31px;
+    display: block;
+    padding: 25px;
+}
+
+.music p{
+    font-size: 16px;
+    position: relative;
+    top: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-decoration: underline;
+    height: 27px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 45px;
+}
+
+.music svg{
+    height: 60px;
+}
+
+.music svg{
+	fill: white;
+}
+
+.music svg:hover{
+	fill: #ff7878;
+	cursor: pointer;
+}
+
+.music span{
+    color: white;
+    position: relative;
+    top: 3px;
+}
+
+.music span:hover{
+	color: #30f96e;
+	cursor: pointer;
+}
+
+.correctVolumeText{
+	
+}
+
+.box svg{
+    fill: white;
+}
+
+.box{
+    height: 63px;
+    width: 110.1px;
+    float: left;
+    text-align: center;
+    font-size: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box.full svg{
+    height: 60px;
+    display: unset;
+}
+
+
+.box.full{
+    height: 210px;
+    width: 50%;
+    display: unset;
+}
+
+.box:hover{
+	cursor: pointer;
+}
+
+.box:hover svg{
+	fill: #ff7878;
+	cursor: pointer;
+}
+
+.box:hover i{
+	color: #ff7878;
+	cursor: pointer;
+}
+
+.center-box{
+    display: block;
+    height: 50%;
+    width: 100%;
+    transform: translate(0, 50%);
+}

@@ -1,4 +1,5 @@
 Music = {}
+Music.Debug = false -- Enable debug mode, it will do some extra prints to find possible errors
 Music.Framework = "QBCore" -- QBCore or ESX
 Music.MaxCDs = 20 -- Max CDs a player can burn at the same time, no one wants someone with 9999999 items.
 Music.RecordLabels = {

@@ -1,0 +1,432 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+* {padding: 0; margin: 0;  font-family: 'Roboto', sans-serif;}
+
+.carStats{
+	display: none;
+    position: absolute;
+    left: 27vh;
+    bottom: 6vh;
+	display: flex;
+}
+
+.carStats .stat{
+	background: linear-gradient(to top, #5b5b5b 90%, #1bd295 90%);
+	text-align: right;
+}
+
+.carStats .stat .icon{
+	float: right;
+	right: 0px;
+	left: 15px;
+}
+
+.carStats .stat span{
+	white-space: nowrap;
+	right: 20px;
+}
+
+
+#gas img{
+	width: 40%;
+	margin-left: -1px;											
+}
+
+#damage img{
+	width: 40%;
+	margin-left: 0px;
+}
+
+#air img{
+	margin-left: -2px;
+}
+
+@media(min-width:2100px){
+	.stat,
+	.stat .icon {
+		height: 44px;
+	}
+}
+
+@media(min-width:2200px){
+	.stat,
+	.stat .icon {
+		height: 46px;
+	}
+	.status{
+		width:280px;
+	}					
+	.stat{
+		width:251px;
+	}
+	.stat span {
+		font-size: 14px;
+		line-height: 15px;
+		margin-top: 2px;
+	}
+}
+
+@media(min-width:2300px){
+	.stat,
+	.stat .icon {
+		height: 48px;
+	}
+}
+
+@media(min-width:2400px){
+	.stat,
+	.stat .icon {
+		height: 50px;
+	}
+	.status{
+		width:300px;
+	}
+	.stat{
+		width:271px;
+	}
+}
+
+@media(min-width:2500px){
+	.stat,
+	.stat .icon {
+		height: 52px;
+	}
+	.carStats{
+		left: 26vh;
+	}
+}
+
+
+@media(max-width:1800px){
+	.stat,
+	.stat .icon {
+		height: 38px;
+	}
+}
+
+@media(max-width:1700px){
+	.stat,
+	.stat .icon {
+		height: 36px;
+	}
+}
+
+@media(max-width:1600px){
+	.stat,
+	.stat .icon {
+		height: 34px;
+	}
+	.status{
+		width:240px;
+	}
+	.stat{
+		width:211px;
+	}
+	.stat span {
+		font-size: 12px;
+		line-height: 12px;
+		margin-top: 2px;
+	}
+	.stat .icon img {
+		margin-top: 2px;
+	}
+}
+
+@media(max-width:1500px){
+	.stat,
+	.stat .icon {
+		height: 32px;
+	}
+}
+
+@media(max-width:1400px){
+	.stat,
+	.stat .icon {
+		height: 30px;
+	}
+	.status{
+		width:225px;
+	}
+	.stat{
+		width:196px;
+		margin-bottom: 4px;
+	}
+	.carStats{
+		left: 29vh;
+	}
+}
+
+@media(max-width:1300px){
+	.stat,
+	.stat .icon {
+		height: 28px;
+	}
+}
+
+@media(max-width:1200px){
+	.stat,
+	.stat .icon {
+		height: 26px;
+	}
+	.stat span{
+		font-size:10px;
+		line-height: 10px;
+	}
+	.status{
+		width:200px;
+	}
+	.stat{
+		width:171px;
+	}
+}
+
+@media(max-width:1100px){
+	.stat,
+	.stat .icon {
+		height: 24px;
+	}
+}
+
+.progress {
+	-webkit-transition: 0.35s stroke-dashoffset;
+	-o-transition: 0.35s stroke-dashoffset;
+	transition: 0.35s stroke-dashoffset;
+	-webkit-transform: rotate(140deg);
+	-ms-transform: rotate(140deg);
+	transform: rotate(140deg);
+	-webkit-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.backgroundCircle, .outer {
+	-webkit-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+	-webkit-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.dials {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: 50% 40%;
+	background-size: 45% 45%;
+	
+}
+    .dials span {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 12px;
+	}
+    .dials svg {
+      opacity: 1 !important; }
+
+.dials span {
+  opacity: 0;
+}
+
+.dials span:after {
+  position: relative;
+  content: '%';
+  font-size: 7px; }
+
+.dials g {
+  -webkit-transform: translate(16px, 13px);
+  -ms-transform: translate(16px, 13px);
+  transform: translate(16px, 13px); }
+
+  .counter {
+	height: 100%;
+	width: 100%; }
+
+  .counter .counter2 {
+    position: relative;
+    height: 200%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%); }
+    .counter .counter2 div {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 10px; }
+      .counter .counter2 div svg {
+        opacity: .2; }
+    .counter .counter2 .active svg {
+      opacity: .8; }
+
+  .counter .counter2 .speedometer {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	-webkit-clip-path: polygon(100% 45%, 80% 45%, 60% 100%, 0% 100%, 0% 0%, 100% 0%);
+	clip-path: polygon(100% 45%, 80% 45%, 60% 100%, 0% 100%, 0% 0%, 100% 0%); }
+	.counter .counter2 .speedometer svg {
+	  opacity: 1;
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	  -webkit-transform: scale(2) translate(-25%, -25%);
+	  -ms-transform: scale(2) translate(-25%, -25%);
+	  transform: scale(2) translate(-25%, -25%); }
+	.counter .counter2 .speedometer .outer {
+	  opacity: .3;
+	  -webkit-transform: rotate(180deg) scale(1.2);
+	  -ms-transform: rotate(180deg) scale(1.2);
+	  transform: rotate(180deg) scale(1.2); }
+	.counter .counter2 .speedometer .text {
+	  width: 100%;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
+	  -webkit-transform: translate(-50%, -50%);
+	  -ms-transform: translate(-50%, -50%);
+	  transform: translate(-50%, -50%);
+	  margin: 0; }
+	  .counter .counter2 .speedometer .text .speed {
+		color: white;
+		font-size: 27px;
+		display: block; 
+		text-shadow: 1px 1px 3px black; }
+	  .counter .counter2 .speedometer .text .mph {
+		color: rgb(255, 255, 255);
+		font-size: 11px;
+		display: block;
+		text-transform: uppercase; 
+		text-shadow: 1px 1px 3px black; }
+		
+    #idCounterAlt { margin-left: -20px; }
+	
+  .counter .counter2Alt {	  
+    position: relative;
+    height: 200%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%); }
+    .counter .counter2Alt div {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 10px; }
+      .counter .counter2Alt div svg {
+        opacity: .2; }
+    .counter .counter2Alt .active svg {
+      opacity: .8; }
+
+  .counter .counter2Alt .altimeter {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	/*-webkit-clip-path: polygon(100% 45%, 80% 45%, 60% 100%, 0% 100%, 0% 0%, 100% 0%);
+	clip-path: polygon(100% 45%, 80% 45%, 60% 100%, 0% 100%, 0% 0%, 100% 0%);*/ }
+	.counter .counter2Alt .altimeter svg {
+	  opacity: 1;
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	  -webkit-transform: scale(2) translate(-25%, -25%);
+	  -ms-transform: scale(2) translate(-25%, -25%);
+	  transform: scale(2) translate(-25%, -25%); }
+	.counter .counter2Alt .altimeter .outer {
+	  opacity: .3;
+	  -webkit-transform: rotate(180deg) scale(1.2);
+	  -ms-transform: rotate(180deg) scale(1.2);
+	  transform: rotate(180deg) scale(1.2); }
+	.counter .counter2Alt .altimeter .text {
+	  width: 100%;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
+	  -webkit-transform: translate(-50%, -50%);
+	  -ms-transform: translate(-50%, -50%);
+	  transform: translate(-50%, -50%);
+	  margin: 0; }
+	  .counter .counter2Alt .altimeter .text .alt {
+		color: white;
+		font-size: 27px;
+		display: block; 
+		text-shadow: 1px 1px 3px black; }
+	  .counter .counter2Alt .altimeter .text .mph {
+		color: rgb(255, 255, 255);
+		font-size: 11px;
+		display: block;
+		text-transform: uppercase; 
+		text-shadow: 1px 1px 3px black; }		
+
+.time { 
+	display: flex;
+	position: absolute;
+	bottom: 7.9%;
+	left: 17.9%;
+	font-size: 12px; 
+	color: #FFF; 
+	text-align: center; 
+	font-weight: bold; 
+	letter-spacing: 0.6px; 
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
+}
+
+.time-watch { 
+	display: flex;
+	position: absolute;
+	bottom: 3.9%;
+	left: 13%;
+	font-size: 12px; 
+	color: #FFF; 
+	text-align: center; 
+	font-weight: bold; 
+	letter-spacing: 0.6px; 
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
+}
+
+.gauges {
+	display: flex;
+	position: absolute;
+	top: 42%;
+	left: 13%;
+}
+
+.location2 {
+	/* display: flex; */
+	position: absolute;
+	bottom: 1.1%;
+	left: 3.8%;
+
+	overflow: hidden;
+	float: left;
+	font-family: 'Roboto', sans-serif;
+	font-size: 19px;
+	color: rgb(255, 255, 255);
+	text-align: left; 
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
+	font-weight: 500;
+	letter-spacing: 0.6px;
+}
+  
+/* Compass -------------------- */
+
+/* .direction {
+	position: absolute;
+	bottom: 1%;
+	left: 12.9%;
+	color: #111111;
+	background-color: rgba(226, 226, 226, 0);
+	width: 100px;
+	height: 26px;
+	overflow: hidden;
+	float: left;
+}
+  
+.image {
+	height: 100%;
+	background-position: center center;
+	background-size: 400px;
+	background-repeat: repeat;
+	width: 800%;
+	z-index: 1;
+	background-image: url('compass.png');
+} */
+

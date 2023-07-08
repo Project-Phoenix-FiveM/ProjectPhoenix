@@ -63,7 +63,13 @@ function DeathTimer()
         deathTime = deathTime - 1
         if deathTime <= 0 then
             if IsControlPressed(0, 38) and hold <= 0 and not isInHospitalBed then
-                TriggerEvent("hospital:client:RespawnAtHospital")
+                QBCore.Functions.GetPlayerData(function(PlayerData)
+                    if PlayerData.metadata.injail ~= 0 then
+                        TriggerEvent("qb-jail:client:PrisonRevive")
+                    else
+                        TriggerEvent("hospital:client:RespawnAtHospital")
+                    end
+                end)
                 hold = 5
             end
             if IsControlPressed(0, 38) then
@@ -121,6 +127,23 @@ AddEventHandler('gameEventTriggered', function(event, data)
 end)
 
 -- Threads
+
+function GetVehicle()
+    local ped = PlayerPedId()
+    local pos = GetEntityCoords(ped)
+    local vehicle = GetVehiclePedIsIn(PlayerPedId())
+
+    while vehicle == 0 do
+        vehicle = QBCore.Functions.GetClosestVehicle()
+        if #(pos - GetEntityCoords(vehicle)) > 8 then
+            QBCore.Functions.Notify(Lang:t("notify.vehclose"), "error")
+            return
+        end
+    end
+
+    if not IsEntityAVehicle(vehicle) then vehicle = nil end
+    return vehicle
+end
 
 emsNotified = false
 
@@ -188,9 +211,14 @@ CreateThread(function()
                     if IsControlJustPressed(0, 47) and not emsNotified then
                         QBCore.Functions.TriggerCallback('hhfw:docOnline', function(EMSOnline, hasEnoughMoney)
                             if EMSOnline <= 0 and hasEnoughMoney then
-                                exports["hh_aidoc"]:sendAiDoctor()
-                                TriggerServerEvent('hospital:server:ambulanceAlert', Lang:t('info.civ_down'))
-                                emsNotified = true
+                                local vehicle = GetVehicle()
+                                if IsPedInVehicle(PlayerPedId(), vehicle) then
+                                    Notify("Auto doc is unable to help while in a vehicle.", "error")
+                                else
+                                    exports["hh_aidoc"]:sendAiDoctor()
+                                    TriggerServerEvent('hospital:server:ambulanceAlert', Lang:t('info.civ_down'))
+                                    emsNotified = true
+                                end
                             else
                                 if EMSOnline > 0 then
                                     TriggerServerEvent('hospital:server:ambulanceAlert', Lang:t('info.civ_down'))

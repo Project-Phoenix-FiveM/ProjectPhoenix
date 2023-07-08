@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CWeaponModelInfo__InitDataList>
+	<InitDatas>
+    <Item>
+      <modelName>W_SR_SPRINGFIELD</modelName>
+      <txdName>W_SR_SPRINGFIELD</txdName>
+      <ptfxAssetName>null</ptfxAssetName>
+      <lodDist value="500"/>
+    </Item>
+	<Item>
+      <modelName>W_PI_PLASMAPISTOL</modelName>
+      <txdName>W_PI_PLASMAPISTOL</txdName>
+      <ptfxAssetName>null</ptfxAssetName>
+      <lodDist value="500"/>
+    </Item>
+	<Item>
+	  <modelName>W_PI_PLASMA_BULLET</modelName>
+	  <txdName>W_PI_PLASMA_BULLET</txdName>
+	  <ptfxAssetName>null</ptfxAssetName>
+	  <lodDist value="500"/>
+	</Item>
+	<Item>
+	  <modelName>W_PI_NEEDLER_NEEDLE</modelName>
+	  <txdName>W_PI_NEEDLER_NEEDLE</txdName>
+	  <ptfxAssetName>null</ptfxAssetName>
+	  <lodDist value="500"/>
+	</Item>
+	<Item>
+      <modelName>W_AR_RAZORBACK</modelName>
+      <txdName>W_AR_RAZORBACK</txdName>
+      <ptfxAssetName>null</ptfxAssetName>
+      <lodDist value="500"/>
+    </Item>
+    <Item>
+      <modelName>W_SG_RAYSGUN</modelName>
+      <txdName>W_SG_RAYSGUN</txdName>
+      <ptfxAssetName>weap_xs_weapons</ptfxAssetName>
+      <lodDist value="500"/>
+    </Item>
+	<Item>
+	  <modelName>W_PI_NEEDLER</modelName>
+	  <txdName>W_PI_NEEDLER</txdName>
+	  <ptfxAssetName>null</ptfxAssetName>
+	  <lodDist value="500"/>
+	</Item>
+    </InitDatas>
+</CWeaponModelInfo__InitDataList>

@@ -1,0 +1,35 @@
+CREATE TABLE IF NOT EXISTS `casino_rooms` (
+  `id` int(11) NOT NULL,
+  `citizenid` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `expire` datetime DEFAULT (current_timestamp() + interval 7 day),
+  `roomlabel` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+INSERT INTO `casino_rooms` (`id`, `citizenid`, `name`, `password`, `expire`, `roomlabel`) VALUES
+	(1, NULL, NULL, NULL, DEFAULT, '501'),
+	(2, NULL, NULL, NULL, DEFAULT, '502'),
+	(3, NULL, NULL, NULL, DEFAULT, '503'),
+	(4, NULL, NULL, NULL, DEFAULT, '504'),
+	(5, NULL, NULL, NULL, DEFAULT, '505'),
+	(6, NULL, NULL, NULL, DEFAULT, '506'),
+	(7, NULL, NULL, NULL, DEFAULT, '507'),
+	(8, NULL, NULL, NULL, DEFAULT, '508'),
+	(9, NULL, NULL, NULL, DEFAULT, '509'),
+	(10, NULL, NULL, NULL, DEFAULT, '510'),
+	(11, NULL, NULL, NULL, DEFAULT, '511'),
+	(12, NULL, NULL, NULL, DEFAULT, '512'),
+	(13, NULL, NULL, NULL, DEFAULT, '513'),
+	(14, NULL, NULL, NULL, DEFAULT, '514'),
+	(15, NULL, NULL, NULL, DEFAULT, '515'),
+	(16, NULL, NULL, NULL, DEFAULT, '516'),
+	(17, NULL, NULL, NULL, DEFAULT, '517'),
+	(18, NULL, NULL, NULL, DEFAULT, '518'),
+	(19, NULL, NULL, NULL, DEFAULT, '519'),
+	(20, NULL, NULL, NULL, DEFAULT, '520'),
+	(21, NULL, NULL, NULL, DEFAULT, '521'),
+	(22, NULL, NULL, NULL, DEFAULT, '522'),
+	(23, NULL, NULL, NULL, DEFAULT, '523'),
+	(24, NULL, NULL, NULL, DEFAULT, '524');

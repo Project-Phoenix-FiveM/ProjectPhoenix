@@ -14,7 +14,7 @@ Setup:
   ```  
     local function PostSpawnPlayer(ped)
     FreezeEntityPosition(ped, false)
-    RenderScriptCams(false, true, 500, true, true)
+    RenderScriptCams(false, true, 500, true, true) 
     SetCamActive(cam, false)
     DestroyCam(cam, true)
     SetCamActive(cam2, false)
@@ -22,7 +22,7 @@ Setup:
     SetEntityVisible(PlayerPedId(), true)
     Wait(500)
     DoScreenFadeIn(250)
-    TriggerEvent("backitems:start")
+    TriggerEvent("backitems:start") 
     end
 ```
 
@@ -69,10 +69,10 @@ end)
 ```
 
 If you use fivem-appearance you need to add the triggers whenever you call the startPlayerCustomization export
-
+ 
 ```	
 	TriggerEvent("backitems:displayItems", false)
-	exports['fivem-appearance']:startPlayerCustomization(function (appearance)
+	exports['fivem-appearance']:startPlayerCustomization(function (appearance) 
 		if appearance then
 			TriggerServerEvent('fivem-appearance:save', appearance)
 			print('Player Clothing Saved')
