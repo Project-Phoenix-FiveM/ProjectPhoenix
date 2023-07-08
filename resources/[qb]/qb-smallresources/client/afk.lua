@@ -1,4 +1,4 @@
-local QBCore = exports['qb-core']:GetCoreObject()
+--[[ local QBCore = exports['qb-core']:GetCoreObject()
 local isLoggedIn = LocalPlayer.state.isLoggedIn
 local checkUser = true
 local prevPos, time = nil, nil
@@ -70,4 +70,8 @@ CreateThread(function()
             end
         end
     end
+end) ]]
+
+Citizen.CreateThread(function()
+    DisableIdleCamera(true)
 end)

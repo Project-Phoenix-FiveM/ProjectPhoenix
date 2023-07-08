@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="./css/casino.css">
     <link rel="stylesheet" href="./css/ping.css">
     <link rel="stylesheet" href="./css/calculator.css">
+    <link rel="stylesheet" href="./css/jobcenter.css">
     <link rel="stylesheet" href="./css/groups.css">
     <link rel="stylesheet" href="./css/employment.css">
     <link rel="stylesheet" href="./css/debt.css">
@@ -39,7 +40,7 @@
     <link rel="stylesheet" href="./css/lsbn.css">
     <link rel="stylesheet" href="./css/publicphone.css">
     <link rel="stylesheet" href="./css/group-chats.css">
-
+    <link rel="stylesheet" href="./css/hotspot.css">
     <!-- CDN's -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js" integrity="sha512-hkvXFLlESjeYENO4CNi69z3A1puvONQV5Uh+G4TUDayZxSLyic5Kba9hhuiNLbHqdnKNMk2PxXKm0v7KDnWkYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -69,6 +70,23 @@
                         <i class="fas fa-sun" id="phone-sun" data-toggle="tooltip" data-placement="left" title="Weather Unavailable"></i>
                         <i class="fas fa-unlock" id="phone-unlock" style="color: #9ed4a6;" data-toggle="tooltip" data-placement="left" title="Unlocked"></i>
                         <i class="fas fa-signal" id="phone-signal" data-toggle="tooltip" data-placement="left" title="QBCore 5G"></i>
+                    </div>
+                </div>
+
+                <div class="phone-menu-body" id="hotspot-connect-menu">
+                    <div class="phone-menu-main">
+                        <div class="hotspot-dropdown">
+                            <div class="select">
+                              <span>Network</span>
+                              <i class="fa fa-chevron-left"></i>
+                            </div>
+                            <input type="hidden" name="gender">
+                            <ul class="hotspot-dropdown-menu"></ul>
+                        </div>
+                        <input class="phone-menu-text hotspot-password" type="text"><i class="fas fa-user-lock" id="phone-menu-icon"></i><span class="phone-menu-title">Password</span>
+                        <p> </p>
+                        <div class="phone-menu-button phone-menu-cancel" id="box-new-cancel">Cancel</div>
+                        <div class="phone-menu-button phone-menu-accept" id="hotspot-connect-submit">Submit</div>
                     </div>
                 </div>
 
@@ -689,6 +707,13 @@
                         </div>
                     </div>
 
+                    <div class="job-app">
+                        <div class="job-header">
+                            <p>Job Center</p>
+                        </div>
+                        <div class="job-list">
+                        </div>
+                    </div>
 
                     <div class="jobcenter-app">
                         <div class="phone-menu-body" id="jobcenter-box-new-dashboard">
@@ -922,6 +947,23 @@
                                 <p> </p>
                                 <div class="phone-menu-button phone-menu-cancel" id="box-new-cancel">Cancel</div>
                                 <div class="phone-menu-button phone-menu-accept" id="advert-sendmessage-chat">Post</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hotspot-app">
+                        <div class="hotspot-header">
+                            <div class="hotspot-overview"></div> <!-- The main icon bar -->
+                        </div>
+                    
+                        <div class="hotspot-lists"></div>
+                    
+                        <div class="phone-menu-body" id="hotspot-purchase-menu">
+                            <div class="phone-menu-main">
+                                <span class="phone-menu-label">Confirm Purchase</span>
+                                <p> </p>
+                                <div class="phone-menu-button phone-menu-cancel" id="box-new-cancel">Cancel</div>
+                                <div class="phone-menu-button phone-menu-accept" id="hotspot-submit">Confirm</div>
                             </div>
                         </div>
                     </div>
@@ -1342,6 +1384,7 @@
         </div>
 
         <!-- JavaScript File's -->
+        <script src="./js/hotspot.js"></script>
         <script src="./js/config.js"></script>
         <script src="./js/app.js"></script>
         <script src="./js/settings.js"></script>
@@ -1364,6 +1407,7 @@
         <script src="./js/casino.js"></script>
         <script src="./js/ping.js"></script>
         <script src="./js/calculator.js"></script>
+        <script src="./js/jobcenter.js"></script>
         <script src="./js/groups.js"></script>
         <script src="./js/employment.js"></script>
         <script src="./js/debt.js"></script>

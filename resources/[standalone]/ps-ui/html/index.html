@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PS-UI</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+	<!-- Font Awesome Icons Import -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="nui://game/ui/jquery.js"></script>
+</head>
+    <body>
+
+        <div class="var-hack">
+            <div class="var-splash">
+                <div class="fa var-hacker">&#xf21b;</div>
+                <span class="var-text">PREPARING INTERFACE...</span>
+            </div>
+            <div class="var-groups hidden"></div>
+        </div>
+
+        <div class="numbermaze-hack">
+            <div class="numbermaze-splash">
+                <div class="fa numbermaze-hacker">&#xf21b;</div>
+                <span class="numbermaze-text">Network Access Blocked... Override Required</span>
+            </div>
+            <div class="numbermaze-groups hidden"></div>
+        </div>
+
+        <div class="thermite">
+            <div class="thermite-splash">
+                <div class="fa thermite-hacker">&#xf21b;</div>
+                <span class="thermite-text">Remote Sequencing Required</span>
+            </div>
+            <div class="thermite-groups hidden"></div>
+        </div>
+
+        <div class="notif-container"></div>
+        <div class="notification template"></div>
+
+        <div class="scrambler">
+            <div class="scrambler-splash"><div class="fa scrambler-hacker">&#xf21b;</div><span class="scrambler-text">PREPARING INTERFACE...</span></div>
+            <div class="scrambler-hack hidden">
+                <div class="scrambler-find"></div>
+                <div class="scrambler-timer">00:00</div>
+                <div class="scrambler-codes"></div>
+            </div>
+        </div>
+
+        <canvas id="circle" height="300" width="300"; visibility: hidden></canvas>
+
+        <div id="display-container">
+            <div id="display-text"></div>
+        </div>
+
+        <div class="status"></div>
+
+        <div class="menu">
+            <div id="menu-items"></div>
+        </div>
+
+        <div class="input"></div>
+
+        <div id="showImage">
+            <button class='btn' id="showImageClose">X</button>
+            <div id='imgcontainer'></div>
+		</div>
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/@mojs/core@1.2.1/dist/mo.umd.min.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/numbermaze.js"></script>
+        <script src="js/thermite.js"></script>
+        <script src="js/var.js"></script>
+        <script src="js/circle.js"></script>
+        <script src="js/notify.js"></script>
+        <script src="js/scrambler.js"></script>
+        <script src="js/display.js"></script>
+        <script src="js/menu.js"></script>
+        <script src="js/status.js"></script>
+        <script src="js/input.js"></script>
+        <script src="js/showImage.js"></script>
+    </body>
+</html>

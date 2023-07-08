@@ -38,42 +38,42 @@ Config.Shops = {
         ['TestDriveSpawn'] = vector4(-56.79, -1109.85, 26.43, 71.5), -- Spawn location for test drive
         ['ShowroomVehicles'] = {
             [1] = {
-                coords = vector4(-49.98, -1083.96, 25.7, 201.21), -- where the vehicle will spawn on display
+                coords = vector4(-49.98, -1083.96, 26.27, 201.21), -- where the vehicle will spawn on display
                 defaultVehicle = 'ardent', -- Default display vehicle
                 chosenVehicle = 'ardent', -- Same as default but is dynamically changed when swapping vehicles
             },
             [2] = {
-                coords = vector4(-54.73, -1096.79, 25.7, 352.1),
+                coords = vector4(-54.73, -1096.79, 26.27, 352.1),
                 defaultVehicle = 'schafter2',
                 chosenVehicle = 'schafter2'
             },
             [3] = {
-                coords = vector4(-47.37, -1092.25, 25.7, 233.61),
+                coords = vector4(-47.37, -1092.25, 26.27, 233.61),
                 defaultVehicle = 'coquette',
                 chosenVehicle = 'coquette'
             },
             [4] = {
-                coords = vector4(-42.35, -1101.0, 25.7, 12.83),
+                coords = vector4(-42.35, -1101.0, 26.27, 12.83),
                 defaultVehicle = 'vigero',
                 chosenVehicle = 'vigero'
             },
             [5] = {
-                coords = vector4(-37.2, -1093.08, 25.7, 70.01),
+                coords = vector4(-37.2, -1093.08, 26.27, 70.01),
                 defaultVehicle = 'rhapsody',
                 chosenVehicle = 'rhapsody'
             },
             [6] = {
-                coords = vector4(-48.58, -1101.31, 25.62, 275.3),
+                coords = vector4(-48.58, -1101.31, 26.27, 275.3),
                 defaultVehicle = 'bati',
                 chosenVehicle = 'bati'
             },
             [7] = {
-                coords = vector4(-47.96, -1099.5, 25.62, 278.16),
+                coords = vector4(-47.96, -1099.5, 26.27, 278.16),
                 defaultVehicle = 'bati',
                 chosenVehicle = 'bati'
             },
             [8] = {
-                coords = vector4(-47.25, -1097.71, 25.62, 283.63),
+                coords = vector4(-47.25, -1097.71, 26.27, 283.63),
                 defaultVehicle = 'bati',
                 chosenVehicle = 'bati'
             }

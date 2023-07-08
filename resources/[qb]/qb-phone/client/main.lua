@@ -193,25 +193,19 @@ local function LoadPhone()
             PhoneData.ChatRooms = pData.ChatRooms
         end
 
-        local updateApplications = {}
-        if exports['qb-config']:isPaidEnabled("avScripts") then 
-            updateApplications = Config.PhoneApplications
-        else
-            updateApplications = Config.PhoneApplicationsPaid
-        end
-
         SendNUIMessage({
             action = "LoadPhoneData",
             PhoneData = PhoneData,
             PlayerData = PlayerData,
             PlayerJob = PlayerData,
             PhoneJobs = QBCore.Shared.Jobs,
-            applications = updateApplications,
+            applications = Config.PhoneApplications,
             PlayerId = GetPlayerServerId(PlayerId())
         })
 
     end)
 end
+
 local function DisableDisplayControlActions()
     DisableControlAction(0, 1, true) -- disable mouse look
     DisableControlAction(0, 2, true) -- disable mouse look
@@ -354,7 +348,7 @@ local function CallContact(CallData, AnonymousCall)
             break
         end
     end
-end
+end exports('CallContact', CallContact)
 
 local function AnswerCall()
     if (PhoneData.CallData.CallType == "incoming" or PhoneData.CallData.CallType == "outgoing") and PhoneData.CallData.InCall and not PhoneData.CallData.AnsweredCall then

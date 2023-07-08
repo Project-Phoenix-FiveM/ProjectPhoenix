@@ -34,7 +34,27 @@ Config.IllegalActions = {
         minimumPolice = 4,
         busy = false,
         label = "Paleto Bay Bank"
-    }
+    },
+    ["fleeca"] = {
+        minimumPolice = 2,
+        busy = false,
+        label = "Fleeca Bank"
+    },
+    ["maze"] = {
+        minimumPolice = 2,
+        busy = false,
+        label = "Maze Bank"
+    },
+    ["paleto"] = {
+        minimumPolice = 3,
+        busy = false,
+        label = "Paleto Bank"
+    },
+    ["pacific"] = {
+        minimumPolice = 4,
+        busy = false,
+        label = "Pacific Bank"
+    },
 }
 
 -- Show ID's for all players or Opted in Staff

@@ -48,7 +48,7 @@ exports['qb-target']:AddTargetBone(bones, {
         },
         {
             type = "client",
-            event = "vehiclekeys:client:GiveKeys",
+            event = "qb-vehiclekeys:client:GiveKeys", 
             icon = "fas fa-key", 
             label = "Give Keys",
             canInteract = function()

@@ -279,10 +279,8 @@ end)
 
 
 RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
-    if exports['qb-config']:isPaidEnabled("avScripts") then
-        if exports['av_boosting']:isBoosting() then 
-            return 
-        end
+    if exports['av_boosting']:isBoosting() then 
+        return 
     end
     LockpickDoor(isAdvanced)
 end)

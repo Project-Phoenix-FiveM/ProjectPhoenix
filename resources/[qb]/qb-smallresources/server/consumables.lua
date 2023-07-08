@@ -124,10 +124,12 @@ end
 
 QBCore.Functions.CreateUseableItem("lockpick", function(source)
     TriggerClientEvent("lockpicks:UseLockpick", source, false)
+    TriggerClientEvent("qb-houserobbery:client:openDoor", source)
 end)
 
 QBCore.Functions.CreateUseableItem("advancedlockpick", function(source)
     TriggerClientEvent("lockpicks:UseLockpick", source, true)
+    TriggerClientEvent("qb-houserobbery:client:openDoor", source)
 end)
 
 ----------- / Unused

@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+.hotspot-app {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: #212832;
+    overflow: hidden;
+}
+
+.hotspot-header {
+    position: absolute;
+    width: 100%;
+    height: 9.5vh;
+    top: 0.7vh;
+    text-align: center;
+}
+
+.hotspot-lists {
+    position: absolute;
+    width: 77.0%;
+    height: 41.5vh;
+    top: 5.8vh;
+    margin: 0 auto;
+    left: 0;
+    right: 0.0vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.hotspot-lists::-webkit-scrollbar {
+    display: none;
+}
+
+.hotspot-list {
+    position: relative;
+    width: 100%;
+    color: white;
+    height: 6.0vh;
+    background-color: rgb(44, 70, 95);
+    border-bottom: .1vh solid #fff;
+    margin-bottom: 3.5%;
+}
+
+.hotspot-icon {
+    position: absolute;
+    line-height: 5.5vh;
+    left: 0vh;
+    padding-bottom: 1.1vh;
+    padding-left: 1.6vh;
+    padding-right: 2.6vh;
+    color: white;
+    font-size: 3.7vh;
+    transition: .05s linear;
+}
+
+.hotspot-label {
+    position: absolute;
+    left: 7.2vh;
+    color: white;
+    line-height: 3vh;
+    font-size: 1.4vh;
+}
+
+.hotspot-value {
+    position: absolute;
+    left: 7.2vh;
+    color: white;
+    line-height: 8vh;
+    font-size: 1.2vh;
+}
+
+.hotspot-distance {
+    position: absolute;
+    left: 17.2vh;
+    color: white;
+    line-height: 8vh;
+    font-size: 1.2vh;
+}
+
+/* Action Buttons */
+
+.hotspot-action-buttons {
+    visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 5.1vh;
+    left: 0;
+    right: 0;
+}
+
+.hotspot-action-buttons > i {
+    position: relative;
+    float: left;
+    margin-left: 1.8vh;
+    left: 8.0vh;
+    top: 1.7vh;
+    font-size: 1.8vh;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.hotspot-action-buttons > i:hover {
+    color: #2c465f;
+}
+
+.hotspot-list:hover .hotspot-action-buttons {
+    background: #0d1218c0;
+    visibility: visible;
+}
+
+/* Class Dropdown Shit */
+
+.hotspot-dropdown {
+    position: relative;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    width: 80%;
+    line-height: 3.0vh;
+    transition: all .5s ease;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: left;
+    background-color: rgb(44, 70, 95);
+    outline: none;
+    border-bottom: .1vh solid #fff;
+}
+
+.hotspot-dropdown .select {
+    cursor: pointer;
+    display: block;
+    padding: 10px
+}
+
+.hotspot-dropdown .select > i {
+    font-size: 13px;
+    color: white;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    float: right;
+    line-height: 34px
+}
+
+.hotspot-dropdown:active {
+    background-color: #3F607D
+}
+
+.hotspot-dropdown.active:hover,
+.hotspot-dropdown.active {
+    background-color: #3F607D
+}
+
+.hotspot-dropdown.active .select > i {
+    transform: rotate(-90deg)
+}
+
+.hotspot-dropdown .hotspot-dropdown-menu {
+    position: absolute;
+    background-color: #333943;
+    color: white;
+    width: 100%;
+    left: 0;
+    margin-top: 1px;
+    overflow: hidden;
+    display: none;
+    max-height: 285px;
+    overflow-y: auto;
+    z-index: 9
+}
+
+.hotspot-dropdown .hotspot-dropdown-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.hotspot-dropdown .hotspot-dropdown-menu li {
+    padding: 10px;
+    transition: all .2s ease-in-out;
+    cursor: pointer
+}
+
+.hotspot-dropdown .hotspot-dropdown-menu {
+    padding: 0;
+    list-style: none
+}
+
+.hotspot-dropdown .hotspot-dropdown-menu li:hover {
+    background-color: #505969
+}
+
+.hotspot-dropdown .hotspot-dropdown-menu li:active {
+    background-color: #505969
+}

@@ -217,313 +217,15 @@ Config.PhoneApplications = {
         color = "#151515",
         color2 = "#161616",
         icon = "fas fa-id-badge",
-        tooltipText = "Job Center",
+        tooltipText = "Group",
         style = "color: #78bdfd; font-size: 2.7vh";
         job = false,
         blockedjobs = {},
         slot = 15,
         Alerts = 0,
     },
-    ["employment"] = {
-        app = "employment",
-        color = "#151515",
-        color2 = "#161616",
-        icon = "fas fa-ad",
-        tooltipText = "Employment",
-        job = false,
-        blockedjobs = {},
-        slot = 16,
-        Alerts = 0,
-    },
-    ["lsbn"] = {
-        app = "lsbn",
-        color = "#151515",
-        color2 = "#161616",
-        icon = "fas fa-ad",
-        tooltipText = "LSBN",
-        job = false,
-        blockedjobs = {},
-        slot = 17,
-        Alerts = 0,
-    },
-    ["taxi"] = {
-        app = "taxi",
-        color = "#c6c900",
-        color2 = "#abad00",
-        icon = "fas fa-briefcase",
-        tooltipText = "Taxi",
-        tooltipPos = "bottom",
-        style = "font-size: 3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 18,
-        Alerts = 0,
-    },
-    ["casino"] = {
-        app = "casino",
-        color = "#000100",
-        color2 = "#000100",
-        icon = "fas fa-gem",
-        tooltipText = "Betting",
-        tooltipPos = "bottom",
-        style = "font-size: 2.7vh";
-        job = false,
-        blockedjobs = {},
-        slot = 19,
-        Alerts = 0,
-    },
-    ["calculator"] = {
-        app = "calculator",
-        color = "#c94001",
-        color2 = "#9c3100",
-        icon = "fas fa-calculator",
-        tooltipText = "Calculator",
-        tooltipPos = "bottom",
-        style = "font-size: 2.5vh";
-        job = false,
-        blockedjobs = {},
-        slot = 20,
-        Alerts = 0,
-    },
-    ["gallery"] = {
-        app = "gallery",
-        color = "#189ec0",
-        color2 = "#14819c",
-        icon = "fas fa-images",
-        tooltipText = "Gallery",
-        tooltipPos = "bottom",
-        style = "font-size: 2.7vh";
-        job = false,
-        blockedjobs = {},
-        slot = 21,
-        Alerts = 0,
-    },
-    ["bank"] = {
-        app = "bank",
-        color = "#9c88ff",
-        color2 = "#8070d5",
-        icon = "fas fa-file-contract",
-        tooltipText = "Invoices",
-        style = "font-size: 2.7vh";
-        job = false,
-        blockedjobs = {},
-        slot = 22,
-        Alerts = 0,
-    },
-    ["gopro"] = {
-        app = "gopro",
-        color = "#008FFF",
-        color2 = "#008FFF",
-        icon = "fas fa-camera",
-        tooltipText = "camera",
-        tooltipPos = "top",
-        style = "padding-right: .08vh; font-size: 3.3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 23,
-        Alerts = 0,
-    },
-    ["group-chats"] = {
-        app = "group-chats",
-        color = "#7289da",
-        color2 = "#7289da",
-        icon = "fab fa-discord",
-        tooltipText = "Discord",
-        tooltipPos = "top",
-        style = "padding-right: .08vh; font-size: 3.3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 24,
-        Alerts = 0,
-    },
-    ["meos"] = {
-        app = "meos",
-        color = "#004682",
-        color2 = "#00325c",
-        icon = "fas fa-ad",
-        tooltipText = "MDT",
-        job = "police",
-        blockedjobs = {},
-        slot = 25,
-        Alerts = 0,
-    },
-}
-
-Config.PhoneApplicationsPaid = {
-    ["details"] = {
-        app = "details",
-        color = "#5db9fc",
-        color2 = "#008eff",
-        icon = "fas fa-info-circle",
-        tooltipText = "Details",
-        tooltipPos = "top",
-        style = "font-size: 3.3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 1,
-        Alerts = 0,
-    },
-    ["contacts"] = {
-        app = "contacts",
-        color = "#345b7a",
-        color2 = "#122445",
-        icon = "fas fa-phone-volume",
-        tooltipText = "Contacts",
-        tooltipPos = "top",
-        style = "font-size: 3.3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 2,
-        Alerts = 0,
-    },
-    ["phone"] = {
-        app = "phone",
-        color = "#51da80",
-        color2 = "#009436",
-        icon = "fas fa-phone-volume",
-        tooltipText = "Phone",
-        tooltipPos = "top",
-        style = "font-size: 3.3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 3,
-        Alerts = 0,
-    },
-    ["whatsapp"] = {
-        app = "whatsapp",
-        color = "#8bfc76",
-        color2 = "#18d016",
-        icon = "fas fa-comment",
-        tooltipText = "Messages",
-        tooltipPos = "top",
-        style = "font-size: 3.3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 4,
-        Alerts = 0,
-    },
-    ["ping"] = {
-        app = "ping",
-        color = "#6d10f5",
-        color2 = "#4b67ef",
-        icon = "fas fa-map-marker-alt",
-        tooltipText = "Ping",
-        tooltipPos = "top",
-        style = "font-size: 3.3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 5,
-        Alerts = 0,
-    },
-    ["mail"] = {
-        app = "mail",
-        color = "#009ee5",
-        color2 = "#87d9e7",
-        icon = "fas fa-envelope",
-        tooltipText = "Mail",
-        style = "font-size: 3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 6,
-        Alerts = 0,
-    },
-    ["advert"] = {
-        app = "advert",
-        color = "#ffc900",
-        color2 = "#f7c816",
-        icon = "fas fa-bullhorn",
-        tooltipText = "Advertisements",
-        style = "font-size: 2vh";
-        job = false,
-        blockedjobs = {},
-        slot = 7,
-        Alerts = 0,
-    },
-    ["twitter"] = {
-        app = "twitter",
-        color = "#151515",
-        color2 = "#161616",
-        icon = "fab fa-twitter",
-        tooltipText = "Twitter",
-        tooltipPos = "top",
-        style = "color: #2cabe0; font-size: 3.3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 8,
-        Alerts = 0,
-    },
-    ["garage"] = {
-        app = "garage",
-        color = "#ff8077",
-        color2 = "#bb345d",
-        icon = "fas fa-car",
-        tooltipText = "Vehicles",
-        style = "font-size: 3.3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 9,
-        Alerts = 0,
-    },
-    ["debt"] = {
-        app = "debt",
-        color = "#fdfeff",
-        color2 = "#d5e6fa",
-        icon = "fas fa-ad",
-        tooltipText = "Debt",
-        job = false,
-        blockedjobs = {},
-        slot = 10,
-        Alerts = 0,
-    },
-    ["wenmo"] = {
-        app = "wenmo",
-        color = "#151515",
-        color2 = "#161616",
-        icon = "fas fa-ad",
-        tooltipText = "Wenmo",
-        job = false,
-        blockedjobs = {},
-        slot = 11,
-        Alerts = 0,
-    },
-    ["documents"] = {
-        app = "documents",
-        color = "#f15ac1",
-        color2 = "#aa4edd",
-        icon = "fas fa-sticky-note",
-        tooltipText = "Documents",
-        style = "font-size: 3.3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 12,
-        Alerts = 0,
-    },
-    ["houses"] = {
-        app = "houses",
-        color = "#42a042",
-        color2 = "#3f9e4a",
-        icon = "fas fa-house-user",
-        tooltipText = "Houses",
-        style = "font-size: 3vh";
-        job = false,
-        blockedjobs = {},
-        slot = 13,
-        Alerts = 0,
-    },
-    ["crypto"] = {
-        app = "crypto",
-        color = "#000000",
-        color2 = "#000000",
-        icon = "fab fa-bitcoin",
-        tooltipText = "Crypto",
-        style = "font-size: 2.7vh";
-        job = false,
-        blockedjobs = {},
-        slot = 14,
-        Alerts = 0,
-    },
-    ["jobcenter"] = {
-        app = "jobcenter",
+    ["job"] = {
+        app = "job",
         color = "#151515",
         color2 = "#161616",
         icon = "fas fa-id-badge",
@@ -531,7 +233,7 @@ Config.PhoneApplicationsPaid = {
         style = "color: #78bdfd; font-size: 2.7vh";
         job = false,
         blockedjobs = {},
-        slot = 15,
+        slot = 16,
         Alerts = 0,
     },
     ["employment"] = {
@@ -542,7 +244,7 @@ Config.PhoneApplicationsPaid = {
         tooltipText = "Employment",
         job = false,
         blockedjobs = {},
-        slot = 16,
+        slot = 17,
         Alerts = 0,
     },
     ["lsbn"] = {
@@ -553,7 +255,7 @@ Config.PhoneApplicationsPaid = {
         tooltipText = "LSBN",
         job = false,
         blockedjobs = {},
-        slot = 17,
+        slot = 18,
         Alerts = 0,
     },
     ["taxi"] = {
@@ -566,7 +268,7 @@ Config.PhoneApplicationsPaid = {
         style = "font-size: 3vh";
         job = false,
         blockedjobs = {},
-        slot = 18,
+        slot = 19,
         Alerts = 0,
     },
     ["casino"] = {
@@ -579,7 +281,7 @@ Config.PhoneApplicationsPaid = {
         style = "font-size: 2.7vh";
         job = false,
         blockedjobs = {},
-        slot = 19,
+        slot = 20,
         Alerts = 0,
     },
     ["calculator"] = {
@@ -592,7 +294,7 @@ Config.PhoneApplicationsPaid = {
         style = "font-size: 2.5vh";
         job = false,
         blockedjobs = {},
-        slot = 20,
+        slot = 21,
         Alerts = 0,
     },
     ["gallery"] = {
@@ -603,18 +305,6 @@ Config.PhoneApplicationsPaid = {
         tooltipText = "Gallery",
         tooltipPos = "bottom",
         style = "font-size: 2.7vh";
-        job = false,
-        blockedjobs = {},
-        slot = 21,
-        Alerts = 0,
-    },
-    ["racing"] = {
-        app = "racing",
-        color = "#353b48",
-        color2 = "#242830",
-        icon = "fas fa-flag-checkered",
-        tooltipText = "Racing",
-        style = "font-size: 3vh";
         job = false,
         blockedjobs = {},
         slot = 22,
@@ -658,6 +348,18 @@ Config.PhoneApplicationsPaid = {
         slot = 25,
         Alerts = 0,
     },
+    ["hotspot"] = {
+        app = "hotspot",
+        color = "#7F54B7",
+        color2 = "#7F54B7",
+        icon = "fas fa-user-secret",
+        tooltipText = "Milk Road",
+        style = "font-size: 3vh";
+        job = false,
+        blockedjobs = {},
+        slot = 26,
+        Alerts = 0,
+    },
     ["meos"] = {
         app = "meos",
         color = "#004682",
@@ -666,8 +368,38 @@ Config.PhoneApplicationsPaid = {
         tooltipText = "MDT",
         job = "police",
         blockedjobs = {},
-        slot = 26,
+        slot = 27,
         Alerts = 0,
+    },
+}
+
+Config.Milkroad = {
+    {
+        label = 'VPN', -- Item Label
+        description = '25 SHUNG', -- Description
+        item = 'vpn', -- Item Name
+        info = {}, -- Item Info
+        icon = 'fas fa-user-secret', -- Icon
+        cryptoType = 'shung', -- Crypto to use
+        amount = 25, -- Amount needed to purchase this item
+    },
+    {
+        label = 'Phone Dongle (R)',
+        description = '50 GNE',
+        item = 'dongle',
+        info = {},
+        icon = 'fas fa-mask',
+        cryptoType = 'gne',
+        amount = 50,
+    },
+    {
+        label = 'Meth App Access',
+        description = '90 GNE', 
+        item = 'black_usb',
+        info = {},
+        icon = 'fas fa-clipboard-list',
+        cryptoType = 'gne',
+        amount = 90,
     },
 }
 
@@ -675,30 +407,65 @@ Config.MaxSlots = 28
 
 Config.JobCenter = {
     [1] = {
-        job = "unemployed",
-        label = "Unemployment",
-        Coords = {},
+        vpn = false,
+        icon = 'fas fa-warehouse',
+        icons = '💲💲💲💲💲',
+        label = "Impound Worker",
+        event = "qb-phone:jobcenter:tow",
     },
     [2] = {
-        job = "garbage",
-        label = "Garbage",
-        Coords = {-344.76, -1564.34},
+        vpn = false,
+        icon = 'fas fa-trash',
+        label = "Sanitation Worker",
+        icons = '💲💲💲💲💲',
+        event = "qb-phone:jobcenter:sanitation",
     },
-    [3] = {
-        job = "taxi",
-        label = "Taxi Driver",
-        Coords = {909.11, -174.59},
-    },
-    [4] = {
-        job = "amazon",
-        label = "Amazon Driver",
-        Coords = {-1071.08, -2004.0},
-    },
-    [5] = {
-        job = "trucker",
-        label = "Truck Driver",
-        Coords = {925.83, -1560.23},
-    },
+    --[[ [2] = {
+        vpn = true,
+        icon = 'fas fa-house',
+        label = "House Robbery",
+        event = "qb-robbery:waypoint", -- Make Your Own Event
+    }, ]]
+    --[[ [3] = {
+        vpn = true,
+        icon = 'fas fa-pills',
+        label = "Meth Run",
+        event = "kevin-methruns:waypoint", -- Make Your Own Event
+    }, ]]
+    --[[ [4] = {
+        vpn = false,
+        icon = 'fas fa-fish',
+        icons = '💲💲💲💲',
+        label = 'Fishing',
+        event = 'qb-phone:jobcenter:fish',
+    }, ]]
+    --[[ [5] = {
+        vpn = true,
+        icon = 'fas fa-tablets',
+        label = "Oxy Run",
+        event = "kevin-oxyruns:waypoint", -- Make Your Own Event
+    }, ]]
+    
+    --[[ [7] = {
+        vpn = false,
+        icon = 'fas fa-shop',
+        icons = '💲💲💲💲',
+        label = "Road Runner Delivery",
+        event = "qb-phone:jobcenter:postop",
+    }, ]]
+    --[[ [8] = {
+        vpn = true,
+        icon = 'fas fa-cannabis',
+        label = "Weed Runs",
+        event = "kevin-weedruns:waypoint", -- Make Your Own Event
+    }, ]]
+--[[     [9] = {
+        vpn = false,
+        icon = 'fas fa-warehouse',
+        icons = '💲💲💲💲💲',
+        label = "PD Impound Worker",
+        event = "qb-phone:jobcenter:pdimpound"
+    } ]]
 }
 
 Config.TaxiJob = {
@@ -713,7 +480,7 @@ Config.CryptoCoins = {
         abbrev = 'SHUNG', -- abbreviation
         icon = 'fas fa-caret-square-up', -- icon
         metadata = 'shung', -- meta data name
-        value = 50, -- price of coin
+        value = 250, -- price of coin
         purchase = true, -- TRUE ( crypto is purchaseable in the phone) FALSE ( crypto is not purchaseable and only exchangeable )
         sell = true -- TRUE ( crypto is sellable in the phone) FALSE ( crypto is not sellable )
     },
@@ -722,7 +489,7 @@ Config.CryptoCoins = {
         abbrev = 'GNE',
         icon = 'fas fa-horse-head',
         metadata = 'gne',
-        value = 100,
+        value = 250,
         purchase = true,
         sell = false
     },

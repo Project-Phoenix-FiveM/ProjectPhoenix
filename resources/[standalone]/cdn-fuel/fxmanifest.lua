@@ -41,12 +41,12 @@ dependencies { -- Make sure these are started before cdn-fuel in your server.cfg
     'PolyZone',
     'interact-sound',
     -- QB-Core Functionality (Input, Target, Menu)
-    --'qb-target',
+    'qb-target',
     --'qb-input',
     --'qb-menu',
     -- QBox | Overextended Functionalities (Input, Progressbar, Target, Menu etc.)
     'ox_lib', -- Ox Library
-    'ox_target',
+    --'ox_target',
 }
 
 data_file 'DLC_ITYP_REQUEST' 'stream/[electric_nozzle]/electric_nozzle_typ.ytyp'

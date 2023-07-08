@@ -2198,6 +2198,22 @@ QBCore.Commands.Add("giveitem", "Give An Item (Admin Only)", {{name="id", help="
 					info.url = "https://cdn.discordapp.com/attachments/870094209783308299/870104331142189126/Logo_-_Display_Picture_-_Stylized_-_Red.png"
 				elseif QBCore.Shared.Items[itemData["name"]]["decay"] and QBCore.Shared.Items[itemData["name"]]["decay"] > 0 then
 					info.quality = 100
+				elseif itemData["name"] == "water_can" then
+					info.uses = 30
+				elseif itemData["name"] == "ak_47_seed" then
+					info.gender = 'Male'
+				elseif itemData["name"] == "blue_dream_seed" then
+					info.gender = 'Male'
+				elseif itemData["name"] == "og_kush_seed" then
+					info.gender = 'Male'
+				elseif itemData["name"] == "pineapple_express_seed" then
+					info.gender = 'Male'
+				elseif itemData["name"] == "purple_haze_seed" then
+					info.gender = 'Male'
+				elseif itemData["name"] == "white_widow_seed" then
+					info.gender = 'Male'
+				elseif itemData["name"] == "weed_seed" then
+					info.gender = 'Male'
 				end
 
 				if AddItem(id, itemData["name"], amount, false, info) then

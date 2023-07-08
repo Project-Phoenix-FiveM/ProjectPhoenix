@@ -85,6 +85,8 @@ QB.Phone.Functions.SetupApplications = function(data) {
                 icon = '<img src="./img/apps/debt.png">';
             } else if (app.app == "wenmo"){
                 icon = '<img src="./img/apps/wenmo.png" class="calc-icon">';
+            }else if (app.app == "job"){
+                icon = '<img src="./img/apps/employments.png" class="calc-icon">';
             } else if (app.app == "jobcenter"){
                 icon = '<img src="./img/apps/jobcenter.png" class="calc-icon">';
             } else if (app.app == "crypto"){
@@ -229,6 +231,9 @@ $(document).on('click', '.phone-application', function(e){
                 else if (PressedApplication == "casino") {
                     LoadCasinoJob();
                 }
+                else if (PressedApplication == "job") {
+                    LoadJobCenter();
+                }
                 else if (PressedApplication == "jobcenter") {
                     LoadJobCenterApp();
                 }
@@ -254,7 +259,11 @@ $(document).on('click', '.phone-application', function(e){
                 }
                 else if (PressedApplication == "lsbn") {
                     LoadLSBNEvent();
-                } else if (PressedApplication == "contacts") {
+                }
+                else if (PressedApplication == "hotspot") {
+                    loadMilkroad();
+                } 
+                else if (PressedApplication == "contacts") {
                     $("#phone-contact-search").show();
                     $.post('https://qb-phone/ClearGeneralAlerts', JSON.stringify({
                         app: "contacts"

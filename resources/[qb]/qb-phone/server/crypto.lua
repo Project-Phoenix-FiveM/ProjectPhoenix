@@ -33,6 +33,7 @@ local function hasEnough(src, type, amount)
     local Crypto = Player.PlayerData.metadata.crypto
 
     if not Crypto then return end
+    print(Crypto[type])
     if Crypto[type] - tonumber(amount) >= 0 then
         return true
     else

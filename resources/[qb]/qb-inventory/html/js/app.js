@@ -600,7 +600,10 @@ function FormatItemInfo(itemData, dom) {
                 );
             } else if (itemData.name == "rentalpapers") {
                 $(".item-info-title").html('<p>' + itemData.label + '</p>')
-                $(".item-info-description").html('<p><strong>Name: </strong><span>'+ itemData.info.firstname + '</span></p><p><strong>Last Name: </strong><span>'+ itemData.info.lastname+ '</span></p><p><strong>Plate: </strong><span>'+ itemData.info.plate + '<p><strong>Model: </strong><span>'+ itemData.info.model +'</span></p>');
+                $(".item-info-description").html('<p><strong>First Name: </strong><span>'+ itemData.info.firstname + '</span></p><p><strong>Last Name: </strong><span>'+ itemData.info.lastname +
+                '</span></p><p><strong>Vehicle Model: </strong><span>'+ itemData.info.model + '</span></p><p><strong>License Plate: </strong><span>'+ itemData.info.plate+
+                '</span></p><p><strong>Rental Date: </strong><span>'+ itemData.info.date + '</span></p><p><strong>Rented At: </strong><span>'+ itemData.info.rentedtime + '</span></p><p><strong>Rental Until: </strong><span>'+ 
+                itemData.info.rentaltime);
         } else if (itemData.name == "syphoningkit") { // Syphoning Kit (CDN-Fuel or CDN-Syphoning!)
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             $(".item-info-description").html(
@@ -618,6 +621,49 @@ function FormatItemInfo(itemData, dom) {
             $(".item-info-description").html(
                 "<p>" + itemData.info.uses + " uses left.</p>"
             );
+        } else if (itemData.name == "weed_jar") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p><strong>Strain: </strong><span>" +
+                itemData.info.packednuggets +'s' +
+                "</span></p><p><strong>Amount: </b> " + "<a style=\"font-size:bold;color:green\">" +
+                itemData.info.packedamount +"</a>"
+            );
+        } else if (itemData.name == "weed_bucket") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p><strong>Strain: </strong><span>" +
+                itemData.info.driedplants +'s' +
+                "</span></p><p><strong>Amount: </b> " + "<a style=\"font-size:bold;color:green\">" +
+                itemData.info.driedamount +"</a>"
+            );
+        } else if (itemData.name == "water_can") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            $(".item-info-description").html(
+                "<p><strong>Uses Remaining: </strong><span>" + "<a style=\"font-size:11px;color:#00CDF7\">" +
+                itemData.info.uses + "</a>"
+            );
+        } else if (itemData.name == "ak_47_seed") {
+            $(".item-info-title").html('<p>' + itemData.label + '</p>')
+            $(".item-info-description").html('<p><strong>Gender: </strong><span>'+ itemData.info.gender);
+        } else if (itemData.name == "blue_dream_seed") {
+            $(".item-info-title").html('<p>' + itemData.label + '</p>')
+            $(".item-info-description").html('<p><strong>Gender: </strong><span>'+ itemData.info.gender);
+        } else if (itemData.name == "og_kush_seed") {
+            $(".item-info-title").html('<p>' + itemData.label + '</p>')
+            $(".item-info-description").html('<p><strong>Gender: </strong><span>'+ itemData.info.gender);
+        } else if (itemData.name == "pineapple_express_seed") {
+            $(".item-info-title").html('<p>' + itemData.label + '</p>')
+            $(".item-info-description").html('<p><strong>Gender: </strong><span>'+ itemData.info.gender);
+        } else if (itemData.name == "purple_haze_seed") {
+            $(".item-info-title").html('<p>' + itemData.label + '</p>')
+            $(".item-info-description").html('<p><strong>Gender: </strong><span>'+ itemData.info.gender);
+        } else if (itemData.name == "white_widow_seed") {
+            $(".item-info-title").html('<p>' + itemData.label + '</p>')
+            $(".item-info-description").html('<p><strong>Gender: </strong><span>'+ itemData.info.gender);
+        } else if (itemData.name == "weed_seed") {
+            $(".item-info-title").html('<p>' + itemData.label + '</p>')
+            $(".item-info-description").html('<p><strong>Gender: </strong><span>'+ itemData.info.gender);
         } else if (itemData.type == "weapon") {
             $(".item-info-title").html("<p>" + itemData.label + "</p>");
             if (itemData.info.ammo == undefined) {

@@ -267,7 +267,7 @@ QBCore.Commands.Add("unjail", Lang:t("commands.unjail_player"), {{name = "id", h
     local Player = QBCore.Functions.GetPlayer(src)
     if Player.PlayerData.job.name == "police" and Player.PlayerData.job.onduty then
         local playerId = tonumber(args[1])
-        TriggerClientEvent("prison:client:UnjailPerson", playerId)
+        exports['qb-jail']:unJailPlayer(playerId)
     else
         TriggerClientEvent('QBCore:Notify', src, Lang:t("error.on_duty_police_only"), 'error')
     end
@@ -860,10 +860,10 @@ RegisterNetEvent('police:server:JailPlayer', function(playerId, time)
 
     local currentDate = os.date("*t")
     if currentDate.day == 31 then
-        currentDate.day = 30 
+        currentDate.day = 30
     end
 
-    OtherPlayer.Functions.SetMetaData("injail", time)
+    exports['qb-jail']:jailPlayer(playerId, true, time)
     OtherPlayer.Functions.SetMetaData("criminalrecord", {
         ["hasRecord"] = true,
         ["date"] = currentDate
